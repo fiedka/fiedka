@@ -1,0 +1,44 @@
+{
+  "name": "utk-web",
+  "version": "1.0.0",
+  "description": "A web visualiztion for utk's JSON output",
+  "main": "index.js",
+  "scripts": {
+    "start": "next",
+    "build": "next build && next export",
+    "lint": "eslint src/**/*.jsx",
+    "fmt": "prettier --write src/**/*.jsx",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orangecms/utk-web.git"
+  },
+  "keywords": [
+    "web",
+    "firmware",
+    "utk",
+    "uefi",
+    "dxe",
+    "pei"
+  ],
+  "author": "Daniel Maslowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orangecms/utk-web/issues"
+  },
+  "homepage": "https://github.com/orangecms/utk-web#readme",
+  "dependencies": {
+    "next": "^9.5.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-jsx": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.20.6",
+    "jest": "^26.0.1",
+    "prettier": "^2.1.2"
+  }
+}
