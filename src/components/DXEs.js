@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
@@ -8,46 +8,30 @@ import {
   getDepEx,
   hasName,
 } from "../util/dxe-helpers";
-import { GUIDContext } from "../context/GUIDContext";
-import DepEx from "./DepEx";
+import DXE from "./DXE";
 
 const DXEs = ({ dxes, open = false }) => {
   const namedDxes = dxes.filter((d) => hasName(d));
   // const namedDxes = dxes.filter((d) => isDxe(d));
-  const guidContext = useContext(GUIDContext);
-  const [contextGuid] = guidContext;
   return (
     <>
-      <ul className={open ? "open" : ""}>
+      <ul className={classnames({ open })}>
         {namedDxes.map((d) => {
           const guid = getGuidFromDxe(d);
           const name = getName(d);
-          const className = classnames("dxe-id", {
-            selected: contextGuid === guid,
-          });
-          return (
-            <li key={d.Header.GUID.GUID}>
-              {name}
-              <div className={className}>{guid}</div>
-              {<DepEx depEx={getDepEx(d)} />}
-            </li>
-          );
+          const depEx = getDepEx(d);
+          return <DXE key={guid} guid={guid} name={name} depEx={depEx} />;
         })}
       </ul>
       <style jsx>{`
         ul {
           max-height: 135px;
           overflow: hidden;
+          list-style: none;
+          padding: 0;
         }
         .open {
           max-height: none;
-        }
-        .selected {
-          padding-left: 4px;
-          color: blue;
-        }
-        .dxe-id {
-          font-weight: bold;
         }
       `}</style>
     </>
