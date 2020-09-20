@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import BlobCard from "./BlobCard";
 import { getDxesFromFile } from "../util/dxe-helpers.js";
+import { GUIDContext } from "../context/GUIDContext";
 
 const FV = ({ guid, files }) => {
+  const guidContext = useContext(GUIDContext);
+  const [contextGuid, setContextGuid] = guidContext;
   const [visible, setVisible] = useState(true);
   return (
     <>
       <div className="fv-card">
-        <h3 onClick={() => setVisible(!visible)}>{guid}</h3>
+        <button onClick={() => setContextGuid(guid)}>mark GUID</button>
+        <h3
+          className={(contextGuid === guid && "selected") || ""}
+          onClick={() => setVisible(!visible)}
+        >
+          {guid}
+        </h3>
         <div className={`fv${(!visible && " hidden") || ""}`}>
           {files.map((e) => {
             const { GUID } = e.Header;
@@ -44,6 +53,10 @@ const FV = ({ guid, files }) => {
         }
         .hidden {
           display: none;
+        }
+        .selected {
+          padding-left: 4px;
+          color: blue;
         }
       `}</style>
     </>

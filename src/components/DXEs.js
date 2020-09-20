@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import {
   getGuidFromDepEx,
@@ -7,9 +7,12 @@ import {
   getDepEx,
   hasName,
 } from "../util/dxe-helpers";
+import { GUIDContext } from "../context/GUIDContext";
 
 const DepEx = ({ depEx }) => {
   // GUIDs may appear multuple times, hence can't be used as keys
+  const guidContext = useContext(GUIDContext);
+  const [contextGuid, setContextGuid] = guidContext;
   return (
     <>
       <div className="depex">
@@ -18,7 +21,15 @@ const DepEx = ({ depEx }) => {
           .filter((d) => !!getGuidFromDepEx(d))
           .map((d, i) => {
             const guid = getGuidFromDepEx(d);
-            return <div key={i}>&gt; {guid}</div>;
+            return (
+              <div
+                className={(contextGuid === guid && " selected") || ""}
+                key={i}
+                onClick={() => setContextGuid(guid)}
+              >
+                &gt; {guid}
+              </div>
+            );
           })}
       </div>
       <style jsx>{`
@@ -32,6 +43,10 @@ const DepEx = ({ depEx }) => {
           text-align: center;
           font-weight: bold;
         }
+        .selected {
+          padding-left: 4px;
+          color: blue;
+        }
       `}</style>
     </>
   );
@@ -44,16 +59,27 @@ DepEx.propTypes = {
 const DXEs = ({ dxes, open = false }) => {
   const namedDxes = dxes.filter((d) => hasName(d));
   // const namedDxes = dxes.filter((d) => isDxe(d));
+  const guidContext = useContext(GUIDContext);
+  const [contextGuid] = guidContext;
   return (
     <>
       <ul className={open ? "open" : ""}>
-        {namedDxes.map((d) => (
-          <li key={d.Header.GUID.GUID}>
-            {getName(d)}
-            <div className="dxe-id">{getGuidFromDxe(d)}</div>
-            {<DepEx depEx={getDepEx(d)} />}
-          </li>
-        ))}
+        {namedDxes.map((d) => {
+          const guid = getGuidFromDxe(d);
+          return (
+            <li key={d.Header.GUID.GUID}>
+              {getName(d)}
+              <div
+                className={`dxe-id${
+                  (contextGuid === guid && " selected") || ""
+                }`}
+              >
+                {guid}
+              </div>
+              {<DepEx depEx={getDepEx(d)} />}
+            </li>
+          );
+        })}
       </ul>
       <style jsx>{`
         ul {
@@ -62,6 +88,10 @@ const DXEs = ({ dxes, open = false }) => {
         }
         .open {
           max-height: none;
+        }
+        .selected {
+          padding-left: 4px;
+          color: blue;
         }
         .dxe-id {
           font-weight: bold;

@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import DXEs from "./DXEs";
+import { GUIDContext } from "../context/GUIDContext";
 
 const BlobCard = ({ guid, type, name, dxes }) => {
   const [openDxes, setOpenDxes] = useState(false);
+  const guidContext = useContext(GUIDContext);
+  const [contextGuid, setContextGuid] = guidContext;
   return (
     <>
-      <div className="card">
+      <div className={`card${(contextGuid === guid && " selected") || ""}`}>
         <span className="type">{type}</span>
         <hr />
         {name && <div className="name">{name}</div>}
-        <span className="guid">{guid}</span>
+        <span onClick={() => setContextGuid(guid)} className="guid">
+          {guid}
+        </span>
         {dxes && (
           <>
             <button onClick={() => setOpenDxes(!openDxes)}>
@@ -37,6 +42,10 @@ const BlobCard = ({ guid, type, name, dxes }) => {
         .name,
         .guid {
           font-weight: bold;
+        }
+        .selected {
+          padding-left: 4px;
+          color: blue;
         }
       `}</style>
     </>
