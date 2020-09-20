@@ -23,7 +23,7 @@ export const getName = (d) => {
   const section = d.Sections.find(
     ({ Type }) => Type === "EFI_SECTION_USER_INTERFACE"
   );
-  return section.Name;
+  return section.Name || "-- unnamed --";
 };
 
 /**

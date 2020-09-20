@@ -8,6 +8,7 @@ import {
   hasName,
 } from "../util/dxe-helpers";
 import { GUIDContext } from "../context/GUIDContext";
+import classnames from "classnames";
 
 const DepEx = ({ depEx }) => {
   // GUIDs may appear multuple times, hence can't be used as keys
@@ -21,9 +22,10 @@ const DepEx = ({ depEx }) => {
           .filter((d) => !!getGuidFromDepEx(d))
           .map((d, i) => {
             const guid = getGuidFromDepEx(d);
+            const className = classnames({ selected: contextGuid === guid });
             return (
               <div
-                className={(contextGuid === guid && " selected") || ""}
+                className={className}
                 key={i}
                 onClick={() => setContextGuid(guid)}
               >
@@ -66,16 +68,14 @@ const DXEs = ({ dxes, open = false }) => {
       <ul className={open ? "open" : ""}>
         {namedDxes.map((d) => {
           const guid = getGuidFromDxe(d);
+          const name = getName(d);
+          const className = classnames("dxe-id", {
+            selected: contextGuid === guid,
+          });
           return (
             <li key={d.Header.GUID.GUID}>
-              {getName(d)}
-              <div
-                className={`dxe-id${
-                  (contextGuid === guid && " selected") || ""
-                }`}
-              >
-                {guid}
-              </div>
+              {name}
+              <div className={className}>{guid}</div>
               {<DepEx depEx={getDepEx(d)} />}
             </li>
           );
