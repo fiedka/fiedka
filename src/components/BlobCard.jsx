@@ -1,41 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-
-const hasName = (d) => d.Sections && d.Sections.find((s) => s.Name);
-
-const getName = (d) => {
-  const section = d.Sections.find((s) => s.Name);
-  return section.Name;
-};
-
-const DXEs = ({ dxes }) => {
-  const [open, setOpen] = useState(false);
-  const namedDxes = dxes.filter((d) => hasName(d));
-  return (
-    <>
-      <ul className={open ? "open" : ""} onClick={() => setOpen(!open)}>
-        {namedDxes.map((d) => (
-          <li key={d.Header.GUID.GUID}>{getName(d)}</li>
-        ))}
-      </ul>
-      <style jsx>{`
-        ul {
-          max-height: 135px;
-          overflow: hidden;
-        }
-        .open {
-          max-height: none;
-        }
-      `}</style>
-    </>
-  );
-};
-
-DXEs.propTypes = {
-  dxes: PropTypes.array,
-};
+import DXEs from "./DXEs";
 
 const BlobCard = ({ guid, type, name, dxes }) => {
+  const [openDxes, setOpenDxes] = useState(false);
   return (
     <>
       <div className="card">
@@ -43,7 +11,14 @@ const BlobCard = ({ guid, type, name, dxes }) => {
         <hr />
         {name && <div className="name">{name}</div>}
         <span className="guid">{guid}</span>
-        {dxes && <DXEs dxes={dxes} />}
+        {dxes && (
+          <>
+            <button onClick={() => setOpenDxes(!openDxes)}>
+              expand DXE blobs
+            </button>
+            <DXEs open={openDxes} dxes={dxes} />
+          </>
+        )}
       </div>
       <style jsx>{`
         .card {
