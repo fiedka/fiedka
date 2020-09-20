@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
+
 import DXEs from "./DXEs";
 import { GUIDContext } from "../context/GUIDContext";
 
@@ -7,31 +9,34 @@ const BlobCard = ({ guid, type, name, dxes }) => {
   const [openDxes, setOpenDxes] = useState(false);
   const guidContext = useContext(GUIDContext);
   const [contextGuid, setContextGuid] = guidContext;
+  const className = classnames("card", { selected: contextGuid === guid });
+  const icon = (openDxes && "/^\\") || "\\V/";
   return (
     <>
-      <div className={`card${(contextGuid === guid && " selected") || ""}`}>
+      <div className={className}>
         <span className="type">{type}</span>
         <hr />
         {name && <div className="name">{name}</div>}
-        <span onClick={() => setContextGuid(guid)} className="guid">
+        <div onClick={() => setContextGuid(guid)} className="guid">
           {guid}
-        </span>
-        {dxes && (
-          <>
+        </div>
+        {(dxes.length && (
+          <div className="expand">
             <button onClick={() => setOpenDxes(!openDxes)}>
-              expand DXE blobs
+              {icon} DXES: {dxes.length} {icon}
             </button>
-            <DXEs open={openDxes} dxes={dxes} />
-          </>
-        )}
+          </div>
+        )) ||
+          ""}
+        {(dxes.length && <DXEs open={openDxes} dxes={dxes} />) || ""}
       </div>
       <style jsx>{`
         .card {
           border: 1px solid #422384;
-          margin: 10px;
+          margin: 10px 1%;
           padding: 4px;
-          min-width: 320px;
-          width: 22%;
+          min-width: 600px;
+          width: 48%;
         }
         .type {
           background-color: #f1f2f3;
@@ -42,10 +47,20 @@ const BlobCard = ({ guid, type, name, dxes }) => {
         .name,
         .guid {
           font-weight: bold;
+          text-align: right;
+          font-size: 12px;
         }
         .selected {
           padding-left: 4px;
           color: blue;
+        }
+        .expand {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        button {
+          width: 80%;
         }
       `}</style>
     </>

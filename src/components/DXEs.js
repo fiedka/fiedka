@@ -29,6 +29,8 @@ const DXEs = ({ dxes, open = false }) => {
           overflow: hidden;
           list-style: none;
           padding: 0;
+          display: flex;
+          flex-wrap: wrap;
         }
         .open {
           max-height: none;

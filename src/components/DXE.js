@@ -15,26 +15,25 @@ const DXE = ({ guid, name, depEx }) => {
   return (
     <>
       <li className={classnames({ activeBorder: active })}>
-        <header
-          className={classnames({ active })}
-          onClick={() => setActive(!active)}
-        >
+        <button onClick={() => setActive(!active)}>
           <div className="name">{name}</div>
           <div className={className}>{guid}</div>
-        </header>
+        </button>
         {<DepEx depEx={depEx} />}
       </li>
       <style>{`
         li {
-          margin: 6px;
+          width: 48%;
+          margin: 4px 1%;
+          padding: 6px;
           border: 2px dotted #f9fafa;
         }
         li.activeBorder {
           border-color: #f94040;
         }
-        header {
+        button {
           font-weight: bold;
-          cursor: pointer;
+          width: 100%;
         }
         .name {
           margin: 2px;
@@ -42,6 +41,7 @@ const DXE = ({ guid, name, depEx }) => {
         }
         .guid {
           text-align: right;
+          font-size: 10px;
         }
         .active {
           color: red;
