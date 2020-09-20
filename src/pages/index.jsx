@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import fixture from "../fixtures/A3MSTX_3.60.json";
 import FV from "../components/FV";
+import { GUIDContext, GUIDProvider } from "../context/GUIDContext";
 
 const volumes = fixture.Elements.filter(
   (e) => e.Type === "*uefi.FirmwareVolume"
@@ -9,13 +10,21 @@ const volumes = fixture.Elements.filter(
 
 const Page = () => {
   return (
-    <>
+    <GUIDProvider>
       {volumes.map((fv) => {
+        const guidContext = useContext(GUIDContext);
+        const { guid: contextGuid, setGuid: setContextGuid } = guidContext;
         const guid = fv.Value.FVName.GUID;
         const files = fv.Value.Files;
-        return <FV key={guid} guid={guid} files={files} />;
+        return (
+          <span key={guid}>
+            ----{contextGuid}----
+            <button onClick={() => setContextGuid(guid)}>set</button>
+            <FV guid={guid} files={files} />
+          </span>
+        );
       })}
-    </>
+    </GUIDProvider>
   );
 };
 
