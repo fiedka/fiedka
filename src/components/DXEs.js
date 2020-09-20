@@ -9,15 +9,16 @@ import {
 } from "../util/dxe-helpers";
 
 const DepEx = ({ depEx }) => {
+  // GUIDs may appear multuple times, hence can't be used as keys
   return (
     <>
       <div className="depex">
         <div className="headline">DepEx</div>
         {depEx
           .filter((d) => !!getGuidFromDepEx(d))
-          .map((d) => {
+          .map((d, i) => {
             const guid = getGuidFromDepEx(d);
-            return <div key={guid}>&gt; {guid}</div>;
+            return <div key={i}>&gt; {guid}</div>;
           })}
       </div>
       <style jsx>{`
@@ -40,7 +41,7 @@ DepEx.propTypes = {
   depEx: PropTypes.array,
 };
 
-const DXEs = ({ dxes, open }) => {
+const DXEs = ({ dxes, open = false }) => {
   const namedDxes = dxes.filter((d) => hasName(d));
   // const namedDxes = dxes.filter((d) => isDxe(d));
   return (
@@ -71,7 +72,7 @@ const DXEs = ({ dxes, open }) => {
 };
 
 DXEs.propTypes = {
-  open: PropTypes.boolean,
+  open: PropTypes.bool,
   dxes: PropTypes.array,
 };
 

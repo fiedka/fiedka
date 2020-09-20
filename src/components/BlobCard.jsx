@@ -45,7 +45,7 @@ const BlobCard = ({ guid, type, name, dxes }) => {
 
 BlobCard.propTypes = {
   guid: PropTypes.string,
-  type: PropTypes.number,
+  type: PropTypes.string,
   name: PropTypes.string,
   dxes: PropTypes.array,
 };
