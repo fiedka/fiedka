@@ -14,5 +14,5 @@ export const GUIDProvider = ({ children }) => {
 };
 
 GUIDProvider.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.object,
 };
