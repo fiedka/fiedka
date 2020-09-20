@@ -17,7 +17,9 @@ const DepEx = ({ depEx }) => {
           .filter((d) => !!getGuidFromDepEx(d))
           .map((d, i) => {
             const guid = getGuidFromDepEx(d);
-            const className = classnames({ selected: contextGuid === guid });
+            const className = classnames("guid", {
+              selected: contextGuid === guid,
+            });
             return (
               <div
                 className={className}
@@ -40,8 +42,17 @@ const DepEx = ({ depEx }) => {
           text-align: center;
           font-weight: bold;
         }
-        .selected {
+        .guid {
+          cursor: pointer;
+          text-align: left;
           padding-left: 4px;
+          background-color: #f7f7f7;
+        }
+        .guid:nth-child(even) {
+          background-color: #eeeeee;
+        }
+        .selected {
+          padding-left: 8px;
           color: blue;
         }
       `}</style>
