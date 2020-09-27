@@ -1,18 +1,30 @@
 import React from "react";
-
-import fixture from "../fixtures/A3MSTX_3.60.json";
-import { GUIDProvider } from "../context/GUIDContext";
-import Volumes from "../components/Volumes";
+import Link from "next/link";
 
 const Page = () => {
-  const volumes = fixture.Elements.filter(
-    (e) => e.Type === "*uefi.FirmwareVolume"
-  );
-
   return (
-    <GUIDProvider>
-      <Volumes volumes={volumes} />
-    </GUIDProvider>
+    <>
+      <h1>UTK web</h1>
+      <menu>
+        <ul>
+          <li>
+            <Link href="/A3MSTX_3.50">
+              <a>A3MSTX_3.50</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/A3MSTX_3.60">
+              <a>A3MSTX_3.60</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/Y520-15IKBN">
+              <a>Y520-15IKBN</a>
+            </Link>
+          </li>
+        </ul>
+      </menu>
+    </>
   );
 };
 
