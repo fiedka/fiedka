@@ -16,6 +16,9 @@ const Page = () => {
             <Link href="/A3MSTX_3.60">
               <a>A3MSTX_3.60</a>
             </Link>
+            <Link href="/A3MSTX_3.60_psp">
+              <a className="psp">A3MSTX_3.60 PSP</a>
+            </Link>
           </li>
           <li>
             <Link href="/Y520-15IKBN">
@@ -24,6 +27,11 @@ const Page = () => {
           </li>
         </ul>
       </menu>
+      <style jsx>{`
+        .psp {
+          margin-left: 12px;
+        }
+      `}</style>
     </>
   );
 };
