@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const PspCard = ({ psp }) => {
-  const { address, size, section_type, magic, version, info, md5 } = psp;
+  const { address, size, section_type, magic, version, info, md5, sizes } = psp;
 
   return (
     <>
@@ -15,8 +15,9 @@ const PspCard = ({ psp }) => {
           </div>
         )}
         <div className="flex-around">
-          <span>address {address}</span>
-          <span>size {size}</span>
+          <span>address: {address}</span>
+          <span>size: {size}</span>
+          <span>hash: {md5}</span>
         </div>
         {info.length > 0 && (
           <div>
@@ -28,7 +29,13 @@ const PspCard = ({ psp }) => {
             ))}
           </div>
         )}
-        hash: {md5}
+        {sizes && (
+          <div className="flex-around">
+            <span>signed: {sizes.signed}</span>
+            <span>uncompressed: {sizes.uncompressed}</span>
+            <span>packed: {sizes.packed}</span>
+          </div>
+        )}
       </div>
       <style jsx>{`
         header {
