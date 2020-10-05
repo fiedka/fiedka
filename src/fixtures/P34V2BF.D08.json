@@ -1,0 +1,1955 @@
+{
+  "IFD": {
+    "DescriptorMapStart": 20,
+    "RegionStart": 64,
+    "MasterStart": 96,
+    "DescriptorMap": {
+      "ComponentBase": 3,
+      "NumberOfFlashChips": 0,
+      "RegionBase": 4,
+      "NumberOfRegions": 2,
+      "MasterBase": 6,
+      "NumberOfMasters": 2,
+      "PchStrapsBase": 16,
+      "NumberOfPchStraps": 21,
+      "ProcStrapsBase": 32,
+      "NumberOfProcStraps": 1,
+      "IccTableBase": 33,
+      "NumberOfIccTableEntries": 27,
+      "DmiTableBase": 255,
+      "NumberOfDmiTableEntries": 255,
+      "Reserved0": 255,
+      "Reserved1": 255
+    },
+    "Region": {
+      "FlashBlockEraseSize": 0,
+      "FlashRegions": [
+        {
+          "Base": 1024,
+          "Limit": 2047
+        },
+        {
+          "Base": 1,
+          "Limit": 1023
+        },
+        {
+          "Base": 32767,
+          "Limit": 0
+        },
+        {
+          "Base": 32767,
+          "Limit": 0
+        },
+        {
+          "Base": 32767,
+          "Limit": 0
+        },
+        {
+          "Base": 32767,
+          "Limit": 0
+        },
+        {
+          "Base": 65535,
+          "Limit": 65535
+        },
+        {
+          "Base": 0,
+          "Limit": 65535
+        },
+        {
+          "Base": 0,
+          "Limit": 65535
+        },
+        {
+          "Base": 280,
+          "Limit": 65535
+        },
+        {
+          "Base": 65535,
+          "Limit": 65535
+        },
+        {
+          "Base": 65535,
+          "Limit": 65535
+        },
+        {
+          "Base": 65535,
+          "Limit": 65535
+        },
+        {
+          "Base": 65535,
+          "Limit": 65535
+        },
+        {
+          "Base": 65535,
+          "Limit": 65535
+        }
+      ]
+    },
+    "Master": {
+      "BIOS": {
+        "ID": 0,
+        "Read": 255,
+        "Write": 255
+      },
+      "ME": {
+        "ID": 0,
+        "Read": 255,
+        "Write": 255
+      },
+      "GBE": {
+        "ID": 280,
+        "Read": 255,
+        "Write": 255
+      }
+    },
+    "ExtractPath": ""
+  },
+  "Regions": [
+    {
+      "Type": "*uefi.MERegion",
+      "Value": {
+        "FPT": {
+          "PartitionCount": 19,
+          "PartitionMapStart": 48,
+          "Entries": [
+            {
+              "Name": "PSVN",
+              "Owner": [
+                75,
+                82,
+                73,
+                68
+              ],
+              "Offset": 3008,
+              "Length": 64,
+              "Reserved": [
+                1,
+                1,
+                0
+              ],
+              "Flags": 100227
+            },
+            {
+              "Name": "FOVD",
+              "Owner": [
+                75,
+                82,
+                73,
+                68
+              ],
+              "Offset": 3072,
+              "Length": 1024,
+              "Reserved": [
+                1,
+                1,
+                0
+              ],
+              "Flags": 1923
+            },
+            {
+              "Name": "MDES",
+              "Owner": [
+                77,
+                68,
+                73,
+                68
+              ],
+              "Offset": 4096,
+              "Length": 4096,
+              "Reserved": [
+                1,
+                1,
+                0
+              ],
+              "Flags": 9091
+            },
+            {
+              "Name": "FCRS",
+              "Owner": [
+                79,
+                83,
+                73,
+                68
+              ],
+              "Offset": 8192,
+              "Length": 4096,
+              "Reserved": [
+                1,
+                1,
+                0
+              ],
+              "Flags": 9091
+            },
+            {
+              "Name": "EFFS",
+              "Owner": [
+                79,
+                83,
+                73,
+                68
+              ],
+              "Offset": 12288,
+              "Length": 262144,
+              "Reserved": [
+                2880,
+                10080,
+                0
+              ],
+              "Flags": 42756
+            },
+            {
+              "Name": "NVCL",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 27081,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "NVCP",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 41920,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "NVHM",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 88,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "NVJC",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 15776,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "NVKR",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 23600,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "NVNF",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 5983,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "NVSH",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 8896,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "NVSM",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 7656,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "NVTD",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 8171,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "NVUK",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 4294967295,
+              "Length": 35136,
+              "Reserved": [
+                4294967295,
+                4294967295,
+                4294967295
+              ],
+              "Flags": 2
+            },
+            {
+              "Name": "GLUT",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 274432,
+              "Length": 16384,
+              "Reserved": [
+                1,
+                1,
+                0
+              ],
+              "Flags": 42883
+            },
+            {
+              "Name": "FTPR",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 290816,
+              "Length": 557056,
+              "Reserved": [
+                1,
+                1,
+                0
+              ],
+              "Flags": 42880
+            },
+            {
+              "Name": "NFTP",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 847872,
+              "Length": 487424,
+              "Reserved": [
+                1,
+                1,
+                0
+              ],
+              "Flags": 42880
+            },
+            {
+              "Name": "MDMV",
+              "Owner": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "Offset": 1335296,
+              "Length": 225280,
+              "Reserved": [
+                1,
+                1,
+                0
+              ],
+              "Flags": 42880
+            }
+          ],
+          "ExtractPath": ""
+        },
+        "ExtractPath": "",
+        "FRegion": {
+          "Base": 1,
+          "Limit": 1023
+        },
+        "RegionType": 1,
+        "FreeSpaceOffset": 1560576
+      }
+    },
+    {
+      "Type": "*uefi.BIOSRegion",
+      "Value": {
+        "Elements": [
+          {
+            "Type": "*uefi.FirmwareVolume",
+            "Value": {
+              "FileSystemGUID": {
+                "GUID": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+              },
+              "Length": 131072,
+              "Signature": 1213613663,
+              "Attributes": 261887,
+              "HeaderLen": 72,
+              "Checksum": 59054,
+              "ExtHeaderOffset": 0,
+              "Revision": 2,
+              "Blocks": [
+                {
+                  "Count": 32,
+                  "Size": 4096
+                }
+              ],
+              "FVName": {
+                "GUID": "00000000-0000-0000-0000-000000000000"
+              },
+              "ExtHeaderSize": 0,
+              "Files": [
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "CEF5B9A3-476D-497F-9FDC-E98143E0422C"
+                    },
+                    "Type": 1,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_RAW",
+                  "NVarStore": {
+                    "Entries": [
+                      {
+                        "Header": {
+                          "Size": 1775,
+                          "Attributes": 131
+                        },
+                        "GUID": {
+                          "GUID": "4599D26F-1A11-49B8-B91F-858745CFF824"
+                        },
+                        "GUIDIndex": 0,
+                        "Name": "StdDefaults",
+                        "NVarStore": {
+                          "Entries": [
+                            {
+                              "Header": {
+                                "Size": 1173,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9"
+                              },
+                              "GUIDIndex": 0,
+                              "Name": "Setup",
+                              "Type": 4,
+                              "Offset": 0,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 17
+                            },
+                            {
+                              "Header": {
+                                "Size": 30,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C"
+                              },
+                              "GUIDIndex": 1,
+                              "Name": "PlatformLang",
+                              "Type": 4,
+                              "Offset": 1173,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 24
+                            },
+                            {
+                              "Header": {
+                                "Size": 21,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C"
+                              },
+                              "GUIDIndex": 1,
+                              "Name": "Timeout",
+                              "Type": 4,
+                              "Offset": 1203,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 19
+                            },
+                            {
+                              "Header": {
+                                "Size": 104,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "C811FA38-42C8-4579-A9BB-60E94EDDFB34"
+                              },
+                              "GUIDIndex": 2,
+                              "Name": "AMITSESetup",
+                              "Type": 4,
+                              "Offset": 1224,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 23
+                            },
+                            {
+                              "Header": {
+                                "Size": 30,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "2A28A81A-DCBF-42F2-8366-B92FA64FE7F7"
+                              },
+                              "GUIDIndex": 3,
+                              "Name": "GIGABYTEHiddenFun",
+                              "Type": 4,
+                              "Offset": 1328,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 29
+                            },
+                            {
+                              "Header": {
+                                "Size": 54,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9"
+                              },
+                              "GUIDIndex": 0,
+                              "Name": "UsbSupport",
+                              "Type": 4,
+                              "Offset": 1358,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 22
+                            },
+                            {
+                              "Header": {
+                                "Size": 109,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "7B77FB8B-1E0D-4D7E-953F-3980A261E077"
+                              },
+                              "GUIDIndex": 4,
+                              "Name": "IccAdvancedSetupDataVar",
+                              "Type": 4,
+                              "Offset": 1412,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 35
+                            },
+                            {
+                              "Header": {
+                                "Size": 31,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "D1405D16-7AFC-4695-BB12-41459D3695A2"
+                              },
+                              "GUIDIndex": 5,
+                              "Name": "NetworkStackVar",
+                              "Type": 4,
+                              "Offset": 1521,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 27
+                            },
+                            {
+                              "Header": {
+                                "Size": 34,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "981CEAEE-931C-4A17-B9C8-66C7BCFD77E1"
+                              },
+                              "GUIDIndex": 6,
+                              "Name": "SecureBootSetup",
+                              "Type": 4,
+                              "Offset": 1552,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 27
+                            },
+                            {
+                              "Header": {
+                                "Size": 22,
+                                "Attributes": 131
+                              },
+                              "GUID": {
+                                "GUID": "80E1202E-2697-4264-9CC9-80762C3E5863"
+                              },
+                              "GUIDIndex": 7,
+                              "Name": "Setup",
+                              "Type": 4,
+                              "Offset": 1586,
+                              "NextOffset": 0,
+                              "ExtractPath": "",
+                              "DataOffset": 17
+                            }
+                          ],
+                          "GUIDStore": [
+                            {
+                              "GUID": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9"
+                            },
+                            {
+                              "GUID": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C"
+                            },
+                            {
+                              "GUID": "C811FA38-42C8-4579-A9BB-60E94EDDFB34"
+                            },
+                            {
+                              "GUID": "2A28A81A-DCBF-42F2-8366-B92FA64FE7F7"
+                            },
+                            {
+                              "GUID": "7B77FB8B-1E0D-4D7E-953F-3980A261E077"
+                            },
+                            {
+                              "GUID": "D1405D16-7AFC-4695-BB12-41459D3695A2"
+                            },
+                            {
+                              "GUID": "981CEAEE-931C-4A17-B9C8-66C7BCFD77E1"
+                            },
+                            {
+                              "GUID": "80E1202E-2697-4264-9CC9-80762C3E5863"
+                            }
+                          ],
+                          "FreeSpaceOffset": 1608,
+                          "GUIDStoreOffset": 1624,
+                          "Length": 1752
+                        },
+                        "Type": 4,
+                        "Offset": 0,
+                        "NextOffset": 0,
+                        "ExtractPath": "",
+                        "DataOffset": 23
+                      }
+                    ],
+                    "GUIDStore": [
+                      {
+                        "GUID": "4599D26F-1A11-49B8-B91F-858745CFF824"
+                      }
+                    ],
+                    "FreeSpaceOffset": 1775,
+                    "GUIDStoreOffset": 130960,
+                    "Length": 130976
+                  },
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                }
+              ],
+              "DataOffset": 72,
+              "FVOffset": 0,
+              "ExtractPath": "",
+              "Resizable": false
+            }
+          },
+          {
+            "Type": "*uefi.BIOSPadding",
+            "Value": {
+              "Offset": 131072,
+              "ExtractPath": ""
+            }
+          },
+          {
+            "Type": "*uefi.FirmwareVolume",
+            "Value": {
+              "FileSystemGUID": {
+                "GUID": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+              },
+              "Length": 2818048,
+              "Signature": 1213613663,
+              "Attributes": 261887,
+              "HeaderLen": 72,
+              "Checksum": 58357,
+              "ExtHeaderOffset": 0,
+              "Revision": 2,
+              "Blocks": [
+                {
+                  "Count": 688,
+                  "Size": 4096
+                }
+              ],
+              "FVName": {
+                "GUID": "00000000-0000-0000-0000-000000000000"
+              },
+              "ExtHeaderSize": 0,
+              "Files": [
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "AE717C2F-1A42-4F2B-8861-78B79CA07E07"
+                    },
+                    "Type": 11,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FIRMWARE_VOLUME_IMAGE",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 1
+                      },
+                      "Type": "EFI_SECTION_COMPRESSION",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E4536585-7909-4A60-B5C6-ECDEA6EBFB54"
+                    },
+                    "Type": 240,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FFS_PAD",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "17088572-377F-44EF-8F4E-B09FFF46A070"
+                    },
+                    "Type": 1,
+                    "Attributes": 72,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_RAW",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "EFD652CC-0E99-40F0-96C0-E08C089070FC"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                }
+              ],
+              "DataOffset": 72,
+              "FVOffset": 327680,
+              "ExtractPath": "",
+              "Resizable": false
+            }
+          },
+          {
+            "Type": "*uefi.BIOSPadding",
+            "Value": {
+              "Offset": 3145728,
+              "ExtractPath": ""
+            }
+          },
+          {
+            "Type": "*uefi.FirmwareVolume",
+            "Value": {
+              "FileSystemGUID": {
+                "GUID": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+              },
+              "Length": 131072,
+              "Signature": 1213613663,
+              "Attributes": 261887,
+              "HeaderLen": 72,
+              "Checksum": 59054,
+              "ExtHeaderOffset": 0,
+              "Revision": 2,
+              "Blocks": [
+                {
+                  "Count": 32,
+                  "Size": 4096
+                }
+              ],
+              "FVName": {
+                "GUID": "00000000-0000-0000-0000-000000000000"
+              },
+              "ExtHeaderSize": 0,
+              "Files": [
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "B52282EE-9B66-44B9-B1CF-7E5040F787C1"
+                    },
+                    "Type": 1,
+                    "Attributes": 8,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_RAW",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E4536585-7909-4A60-B5C6-ECDEA6EBFB54"
+                    },
+                    "Type": 240,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FFS_PAD",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "C30FFF4A-10C6-4C0F-A454-FD319BAF6CE6"
+                    },
+                    "Type": 1,
+                    "Attributes": 8,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_RAW",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E4536585-7909-4A60-B5C6-ECDEA6EBFB54"
+                    },
+                    "Type": 240,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FFS_PAD",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "7C9A98F8-2B2B-4027-8F16-F7D277D58025"
+                    },
+                    "Type": 1,
+                    "Attributes": 8,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_RAW",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E4536585-7909-4A60-B5C6-ECDEA6EBFB54"
+                    },
+                    "Type": 240,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FFS_PAD",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "6520F532-2A27-4195-B331-C0854683E0BA"
+                    },
+                    "Type": 1,
+                    "Attributes": 120,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_RAW",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E4536585-7909-4A60-B5C6-ECDEA6EBFB54"
+                    },
+                    "Type": 240,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FFS_PAD",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "1068E0ED-5C8E-4724-B011-2C5F95065DF2"
+                    },
+                    "Type": 2,
+                    "Attributes": 8,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FREEFORM",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 25
+                      },
+                      "Type": "EFI_SECTION_RAW",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "414D94AD-998D-47D2-BFCD-4E882241DE32"
+                    },
+                    "Type": 2,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FREEFORM",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 24
+                      },
+                      "Type": "EFI_SECTION_FREEFORM_SUBTYPE_GUID",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                }
+              ],
+              "DataOffset": 72,
+              "FVOffset": 3276800,
+              "ExtractPath": "",
+              "Resizable": false
+            }
+          },
+          {
+            "Type": "*uefi.FirmwareVolume",
+            "Value": {
+              "FileSystemGUID": {
+                "GUID": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+              },
+              "Length": 786432,
+              "Signature": 1213613663,
+              "Attributes": 261887,
+              "HeaderLen": 72,
+              "Checksum": 58884,
+              "ExtHeaderOffset": 0,
+              "Revision": 2,
+              "Blocks": [
+                {
+                  "Count": 192,
+                  "Size": 4096
+                }
+              ],
+              "FVName": {
+                "GUID": "00000000-0000-0000-0000-000000000000"
+              },
+              "ExtHeaderSize": 0,
+              "Files": [
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "CA9D8617-D652-403B-B6C5-BA47570116AD"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "3B42EF57-16D3-44CB-8632-9FDB06B41451"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E4536585-7909-4A60-B5C6-ECDEA6EBFB54"
+                    },
+                    "Type": 240,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FFS_PAD",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "17088572-377F-44EF-8F4E-B09FFF46A070"
+                    },
+                    "Type": 1,
+                    "Attributes": 72,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_RAW",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "8401A046-6F70-4505-8471-7015B40355E3"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E008B434-0E73-440C-8612-A143F6A07BCB"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "0D1ED2F7-E92B-4562-92DD-5C82EC917EAE"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "1D88C542-9DF7-424A-AA90-02B61F286938"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "92685943-D810-47FF-A112-CC8490776A1F"
+                    },
+                    "Type": 4,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEI_CORE",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 16
+                      },
+                      "Type": "EFI_SECTION_PE32",
+                      "ExtractPath": ""
+                    },
+                    {
+                      "Header": {
+                        "Type": 21
+                      },
+                      "Type": "EFI_SECTION_USER_INTERFACE",
+                      "ExtractPath": "",
+                      "Name": "CORE_PEI"
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "01359D99-9446-456D-ADA4-50A711C03ADA"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "C866BD71-7C79-4BF1-A93B-066B830D8F9A"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "0AC2D35D-1C77-1033-A6F8-7CA55DF7D0AA"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E4536585-7909-4A60-B5C6-ECDEA6EBFB54"
+                    },
+                    "Type": 240,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FFS_PAD",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "2D27C618-7DCD-41F5-BB10-21166BE7E143"
+                    },
+                    "Type": 1,
+                    "Attributes": 40,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_RAW",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "1555ACF3-BD07-4685-B668-A86945A4124D"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "2BB5AFA9-FF33-417B-8497-CB773C2B93BF"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "C7D4BBCF-EB0A-4C91-BD8B-FCA99F28B011"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "F7D22BCA-1BCA-5591-CC8B-1CA98F2890FE"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "C1FBD624-27EA-40D1-AA48-94C3DC5C7E0D"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "9EA28D33-0175-4788-BEA8-6950516030A5"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "0F69F6D7-0E4B-43A6-BFC2-6871694369B0"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "FD236AE7-0791-48C4-B29E-29BDEEE1A838"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "FF259F16-18D1-4298-8DD2-BD87FF2894A9"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "643DF777-F312-42ED-81CC-1B1F57E18AD6"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "FF456B9C-0DC7-4682-9E92-0DE84B6E4067"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "AA652CB9-2D52-4624-9FAE-D4E58B67CA46"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "6B4FDBD2-47E1-4A09-BA8E-8E041F208B95"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "79AA6086-035A-4AD9-A89A-A6D5AA27F0E2"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "6ECFCE51-5724-450C-A38A-58553E954422"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "0E2DAF63-8A4F-4026-A899-DE2D7F46E5EC"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "FD236AE7-0791-48C4-B29E-29BDEEE1A811"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E23710FA-6109-40B0-82B5-2882525294E4"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "D6D2FBA6-EF60-4C38-A83E-6769814D23B0"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E0CF004B-A5E6-4B75-B2B8-AA4D463ECEB9"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "53F019E9-BB0C-424B-870A-1FAF10B1CB4C"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "B9846521-FF99-4953-8FA2-85C9ADCCE5AF"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "0C3B7B59-28E5-4C99-85E5-D0116DBFAAF2"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "9CF30325-DC5C-4556-A8B0-74215C5F7FC4"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "3E4817FD-2742-4351-B59F-91493280329C"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "5479E09C-2E74-481B-89F8-B0172E388D1F"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "8C376010-2400-4D7D-B47B-9D851DF3C9D1"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "12C67BE1-AD2E-4F13-A95F-6EDC2C4392DE"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "A05ECE52-15A8-424E-BFD3-FCF3D566A09C"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "08EFD15D-EC55-4023-B648-7BA40DF7D05D"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "CC0F8A3F-3DEA-4376-9679-5426BA0A907E"
+                    },
+                    "Type": 2,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FREEFORM",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 1
+                      },
+                      "Type": "EFI_SECTION_COMPRESSION",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "5B85965C-455D-4CC6-9C4C-7F086967D2B0"
+                    },
+                    "Type": 2,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FREEFORM",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 25
+                      },
+                      "Type": "EFI_SECTION_RAW",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "83FA5AED-5171-4949-BDC9-0CBC9E123663"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "FD44820B-F1AB-41C0-AE4E-0C55556EB9BD"
+                    },
+                    "Type": 2,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FREEFORM",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 25
+                      },
+                      "Type": "EFI_SECTION_RAW",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "0FE9DA53-043D-4265-A94D-FD77FEDE2EB4"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "34989D8E-930A-4A95-AB04-2E6CFDFF6631"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "6B844C5B-6B75-42CA-8E8E-1CB94412B59B"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "9B3F28D5-10A6-46C8-BA72-BD40B847A71A"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E9312938-E56B-4614-A252-CF7D2F377E26"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "DE9BF6A0-E353-4C5C-ADB3-00FCB212D965"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "CBC91F44-A4BC-4A5B-8696-703451D0B053"
+                    },
+                    "Type": 2,
+                    "Attributes": 8,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FREEFORM",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 25
+                      },
+                      "Type": "EFI_SECTION_RAW",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "B41956E1-7CA2-42DB-9562-168389F0F066"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "0DCA793A-EA96-42D8-BD7B-DC7F684E38C1"
+                    },
+                    "Type": 2,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FREEFORM",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 24
+                      },
+                      "Type": "EFI_SECTION_FREEFORM_SUBTYPE_GUID",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "3FD1D3A2-99F7-420B-BC69-8BB1D492A332"
+                    },
+                    "Type": 2,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FREEFORM",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 24
+                      },
+                      "Type": "EFI_SECTION_FREEFORM_SUBTYPE_GUID",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "083D5BAE-A203-44D7-86DF-272D69BF110B"
+                    },
+                    "Type": 6,
+                    "Attributes": 64,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_PEIM",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "E4536585-7909-4A60-B5C6-ECDEA6EBFB54"
+                    },
+                    "Type": 240,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FFS_PAD",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "D1E59F50-E8C3-4545-BF61-11F002233C97"
+                    },
+                    "Type": 1,
+                    "Attributes": 40,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_RAW",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "078F54D4-CC22-4048-9E94-879C214D562F"
+                    },
+                    "Type": 240,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_FFS_PAD",
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                },
+                {
+                  "Header": {
+                    "GUID": {
+                      "GUID": "1BA0062E-C779-4582-8566-336AE8F78F09"
+                    },
+                    "Type": 3,
+                    "Attributes": 0,
+                    "State": 248
+                  },
+                  "Type": "EFI_FV_FILETYPE_SECURITY_CORE",
+                  "Sections": [
+                    {
+                      "Header": {
+                        "Type": 16
+                      },
+                      "Type": "EFI_SECTION_PE32",
+                      "ExtractPath": ""
+                    },
+                    {
+                      "Header": {
+                        "Type": 25
+                      },
+                      "Type": "EFI_SECTION_RAW",
+                      "ExtractPath": ""
+                    }
+                  ],
+                  "ExtractPath": "",
+                  "DataOffset": 24
+                }
+              ],
+              "DataOffset": 72,
+              "FVOffset": 3407872,
+              "ExtractPath": "",
+              "Resizable": false
+            }
+          }
+        ],
+        "ExtractPath": "",
+        "Length": 4194304,
+        "FRegion": {
+          "Base": 1024,
+          "Limit": 2047
+        },
+        "RegionType": 0
+      }
+    }
+  ],
+  "ExtractPath": "",
+  "FlashSize": 8388608
+}

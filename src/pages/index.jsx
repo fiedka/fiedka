@@ -25,6 +25,11 @@ const Page = () => {
               <a>Y520-15IKBN</a>
             </Link>
           </li>
+          <li>
+            <Link href="/P34V2BF.D08">
+              <a>P34V2BF.D08</a>
+            </Link>
+          </li>
         </ul>
       </menu>
       <style jsx>{`
