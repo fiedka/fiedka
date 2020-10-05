@@ -11,7 +11,7 @@ export const getDxesFromFile = (e) => {
     ).Value.Encapsulated[0].Value.Files;
     return encDxes;
   }
-  return null;
+  return [];
 };
 
 export const hasName = (d) => d.Sections && d.Sections.find((s) => s.Name);
