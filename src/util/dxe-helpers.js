@@ -6,10 +6,12 @@ export const getDxesFromFile = (e) => {
   const encapsulated = encaps && encaps.Encapsulated;
 
   if (encapsulated && Array.isArray(encapsulated)) {
-    const encDxes = encapsulated.find(
+    const fv = encapsulated.find(
       (enc) => enc.Value.Type === "EFI_SECTION_FIRMWARE_VOLUME_IMAGE"
-    ).Value.Encapsulated[0].Value.Files;
-    return encDxes;
+    );
+    if (fv && fv.Value && fv.Value.Encapsulated) {
+      return fv.Value.Encapsulated[0].Value.Files;
+    }
   }
   return [];
 };

@@ -30,6 +30,14 @@ const Page = () => {
               <a>P34V2BF.D08</a>
             </Link>
           </li>
+          <li>
+            <Link href="/E7C52AMS.360">
+              <a>E7C52AMS.360</a>
+            </Link>
+            <Link href="/E7C52AMS.360.psp">
+              <a className="psp">E7C52AMS.360 PSP</a>
+            </Link>
+          </li>
         </ul>
       </menu>
       <style jsx>{`
