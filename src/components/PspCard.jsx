@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import cn from "classnames";
 
 const PspCard = ({ psp }) => {
   const { address, size, sectionType, magic, version, info, md5, sizes } = psp;
@@ -7,10 +8,11 @@ const PspCard = ({ psp }) => {
     typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY")
       ? "🔑"
       : null;
+  const signed = info.length > 0 && info.find((i) => i.includes("signed"));
   return (
     <>
       <div className="card">
-        <header>
+        <header className={cn({ signed })}>
           <span className="type">{typeEmoji}</span>
           {sectionType}
         </header>
@@ -48,6 +50,9 @@ const PspCard = ({ psp }) => {
           background-color: #f7f7f7;
           text-align: center;
           font-weight: bold;
+        }
+        .signed {
+          background-color: #ffe7e7;
         }
         .card {
           border: 1px solid #422384;
