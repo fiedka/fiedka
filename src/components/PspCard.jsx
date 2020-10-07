@@ -2,12 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const PspCard = ({ psp }) => {
-  const { address, size, section_type, magic, version, info, md5, sizes } = psp;
-
+  const { address, size, sectionType, magic, version, info, md5, sizes } = psp;
+  const typeEmoji =
+    typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY")
+      ? "🔑"
+      : null;
   return (
     <>
       <div className="card">
-        <header>{section_type}</header>
+        <header>
+          <span className="type">{typeEmoji}</span>
+          {sectionType}
+        </header>
         {(magic || version) && (
           <div className="flex-around">
             <span>{magic && `magic: ${magic}`}</span>
@@ -49,6 +55,9 @@ const PspCard = ({ psp }) => {
           padding: 4px;
           min-width: 200px;
           width: 23%;
+        }
+        .type {
+          margin-right: 16px;
         }
         .flex-around {
           display: flex;
