@@ -5,12 +5,10 @@ import cn from "classnames";
 import { PubKeyContext } from "../context/PubKeyContext";
 
 const getSig = (info) => {
-  if (info.length > 0) {
-    // FIXME: just a quick hack
-    const sig = info.find((i) => i.includes("signed"));
-    if (sig) {
-      return sig.substr(7, 4);
-    }
+  // FIXME: just a quick hack
+  const sig = info.find((i) => i.includes("signed"));
+  if (sig) {
+    return sig.substr(7, 4);
   }
 };
 
@@ -18,6 +16,7 @@ const PspCard = ({ psp }) => {
   const pubKeyContext = useContext(PubKeyContext);
   const [contextPubKey, setContextPubKey] = pubKeyContext;
   const { address, size, sectionType, magic, version, info, md5, sizes } = psp;
+
   const isKey =
     typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY");
   const pubKey = isKey ? magic : null; // for some reason, the magic number is the public key
@@ -32,12 +31,27 @@ const PspCard = ({ psp }) => {
   const signed = typeof sig === "string";
   const selected = contextPubKey && sig === contextPubKey;
 
+  const infoEmoji = [];
+  if (info.find((i) => i.includes("compressed"))) {
+    infoEmoji.push("📦");
+  }
+  if (info.find((i) => i.includes("verified"))) {
+    infoEmoji.push("✅");
+  }
+  if (info.find((i) => i.includes("encrypted"))) {
+    infoEmoji.push("🔐");
+  }
+  if (info.find((i) => i.includes("legacy"))) {
+    infoEmoji.push("🏚️");
+  }
+
   return (
     <>
       <div className={cn("card", { selected })}>
         <header onClick={setPubKey} className={cn({ signed })}>
-          <span className="type">{typeEmoji}</span>
-          {sectionType}
+          <span>{typeEmoji}</span>
+          <span className="type">{sectionType}</span>
+          <span>{infoEmoji}</span>
         </header>
         {(magic || version) && (
           <div className="flex-around">
@@ -88,7 +102,7 @@ const PspCard = ({ psp }) => {
           width: 23%;
         }
         .type {
-          margin-right: 16px;
+          margin: 0 16px;
         }
         .flex-around {
           display: flex;
