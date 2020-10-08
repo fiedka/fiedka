@@ -1,18 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
+import { PubKeyContext } from "../context/PubKeyContext";
+
+const getSig = (info) => {
+  if (info.length > 0) {
+    // FIXME: just a quick hack
+    const sig = info.find((i) => i.includes("signed"));
+    if (sig) {
+      return sig.substr(7, 4);
+    }
+  }
+};
+
 const PspCard = ({ psp }) => {
+  const pubKeyContext = useContext(PubKeyContext);
+  const [contextPubKey, setContextPubKey] = pubKeyContext;
   const { address, size, sectionType, magic, version, info, md5, sizes } = psp;
-  const typeEmoji =
-    typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY")
-      ? "🔑"
-      : null;
-  const signed = info.length > 0 && info.find((i) => i.includes("signed"));
+  const isKey =
+    typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY");
+  const pubKey = isKey ? magic : null; // for some reason, the magic number is the public key
+  const typeEmoji = isKey ? "🔑" : null;
+  const setPubKey = () => {
+    if (isKey) {
+      setContextPubKey(pubKey);
+    }
+  };
+
+  const sig = getSig(info);
+  const signed = typeof sig === "string";
+  const selected = contextPubKey && sig === contextPubKey;
+
   return (
     <>
-      <div className="card">
-        <header className={cn({ signed })}>
+      <div className={cn("card", { selected })}>
+        <header onClick={setPubKey} className={cn({ signed })}>
           <span className="type">{typeEmoji}</span>
           {sectionType}
         </header>
@@ -50,6 +73,9 @@ const PspCard = ({ psp }) => {
           background-color: #f7f7f7;
           text-align: center;
           font-weight: bold;
+        }
+        .selected {
+          background-color: #e7ffe7;
         }
         .signed {
           background-color: #ffe7e7;
