@@ -1,35 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const getClassName = (e) => {
-  switch (e) {
-    case "#":
-      return "b";
-    case "0":
-      return "g";
-    case ".":
-    default:
-      return "r";
-  }
-};
-
 const Cell = ({ e }) => {
-  const className = getClassName(e);
   return (
     <>
-      <td className={className}></td>
+      <td className={e}></td>
       <style jsx>
         {`
           td {
             height: 8px;
           }
-          .r {
+          .used {
             background-color: #ee0000;
           }
-          .g {
+          .full {
             background-color: #00ee00;
           }
-          .b {
+          .zero {
             background-color: #0000ee;
           }
         `}
@@ -41,14 +28,36 @@ Cell.propTypes = {
   e: PropTypes.string,
 };
 
-const FlashUsage = ({ data }) => {
-  const rows = data.map((d, i) => {
-    const cols = d.split("").map((e, j) => <Cell key={j} e={e} />);
+const FlashUsage = ({ usage }) => {
+  const { layout, blocks, zero, full, used } = usage;
+  const rows = layout.map(({ entries }, i) => {
+    const cols = entries.map((e, j) => <Cell key={j} e={e} />);
     return <tr key={i}>{cols}</tr>;
   });
   return (
     <>
-      <div>red: `0xff`, green: `0x00`, blue: used</div>
+      <table>
+        <tr>
+          <th>blocks</th>
+          <td>{blocks}</td>
+        </tr>
+        <tr>
+          <th>
+            zero (blue, <pre>0x00</pre>)
+          </th>
+          <td>{zero}</td>
+        </tr>
+        <tr>
+          <th>
+            full (green, <pre>0xff</pre>)
+          </th>
+          <td>{full}</td>
+        </tr>
+        <tr>
+          <th>used (red)</th>
+          <td>{used}</td>
+        </tr>
+      </table>
       <table>
         <tbody>{rows}</tbody>
       </table>
@@ -56,6 +65,16 @@ const FlashUsage = ({ data }) => {
         table {
           width: 320px;
           padding: 0;
+          font-family: sans-serif;
+        }
+        th {
+          text-align: left;
+        }
+        td {
+          padding-right: 32px;
+        }
+        pre {
+          display: inline;
         }
       `}</style>
     </>
@@ -63,7 +82,7 @@ const FlashUsage = ({ data }) => {
 };
 
 FlashUsage.propTypes = {
-  data: PropTypes.array,
+  usage: PropTypes.object,
 };
 
 export default FlashUsage;

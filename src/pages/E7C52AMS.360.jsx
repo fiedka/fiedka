@@ -1,12 +1,10 @@
 import React from "react";
 
 import fixture from "../fixtures/E7C52AMS.360.json";
-import usage from "../fixtures/A3MSTX_3.60.fmap_usage.json";
+import usage from "../fixtures/E7C52AMS.360.fmap_usage.json";
 import { GUIDProvider } from "../context/GUIDContext";
 import Volumes from "../components/Volumes";
 import FlashUsage from "../components/FlashUsage";
-
-const usageData = Object.values(usage.data);
 
 const Page = () => {
   const volumes = fixture.Elements.filter(
@@ -21,11 +19,10 @@ const Page = () => {
             <Volumes volumes={volumes} />
           </GUIDProvider>
         </div>
-        {/*
         <aside>
           <h2>Flash Usage</h2>
-          <FlashUsage data={usageData} />
-      </aside>*/}
+          <FlashUsage usage={usage} />
+        </aside>
       </div>
       <style jsx>{`
         .layout {

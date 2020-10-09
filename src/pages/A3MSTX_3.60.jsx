@@ -6,8 +6,6 @@ import { GUIDProvider } from "../context/GUIDContext";
 import Volumes from "../components/Volumes";
 import FlashUsage from "../components/FlashUsage";
 
-const usageData = Object.values(usage.data);
-
 const Page = () => {
   const volumes = fixture.Elements.filter(
     (e) => e.Type === "*uefi.FirmwareVolume"
@@ -23,7 +21,7 @@ const Page = () => {
         </div>
         <aside>
           <h2>Flash Usage</h2>
-          <FlashUsage data={usageData} />
+          <FlashUsage usage={usage} />
         </aside>
       </div>
       <style jsx>{`
