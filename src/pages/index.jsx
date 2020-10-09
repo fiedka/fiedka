@@ -38,6 +38,14 @@ const Page = () => {
               <a className="psp">E7C52AMS.360 PSP</a>
             </Link>
           </li>
+          <li>
+            <Link href="/MZ92-FS0_R16_F01">
+              <a>MZ92-FS0_R16_F01</a>
+            </Link>
+            <Link href="/MZ92-FS0_R16_F01.psp">
+              <a className="psp">MZ92-FS0_R16_F01 PSP</a>
+            </Link>
+          </li>
         </ul>
       </menu>
       <style jsx>{`

@@ -1,0 +1,1149 @@
+[
+  {
+    "directory": 0,
+    "address": 1138688,
+    "directoryType": "PSP",
+    "magic": "$PSP",
+    "secondaryAddress": 3846144,
+    "entries": [
+      {
+        "index": 0,
+        "address": 1139712,
+        "size": 1088,
+        "sectionType": "AMD_PUBLIC_KEY~0x0",
+        "magic": "E600",
+        "version": "",
+        "info": [],
+        "md5": "BC5D"
+      },
+      {
+        "index": 1,
+        "address": 3847168,
+        "size": 83008,
+        "sectionType": "PSP_FW_BOOT_LOADER~0x1",
+        "magic": "$PS1",
+        "version": "0.C.0.79",
+        "info": [
+          "signed(E600)",
+          "verified"
+        ],
+        "md5": "55A4",
+        "sizes": {
+          "signed": 82240,
+          "uncompressed": 0,
+          "packed": 83008
+        }
+      },
+      {
+        "index": 2,
+        "address": 1140992,
+        "size": 83008,
+        "sectionType": "PSP_FW_RECOVERY_BOOT_LOADER~0x3",
+        "magic": "$PS1",
+        "version": "FF.C.0.79",
+        "info": [
+          "signed(E600)",
+          "verified"
+        ],
+        "md5": "D3E6",
+        "sizes": {
+          "signed": 82240,
+          "uncompressed": 0,
+          "packed": 83008
+        }
+      },
+      {
+        "index": 3,
+        "address": 1224192,
+        "size": 118288,
+        "sectionType": "SMU_OFFCHIP_FW~0x8",
+        "magic": "$PS1",
+        "version": "0.24.64.0",
+        "info": [
+          "compressed",
+          "signed(F014)",
+          "verified"
+        ],
+        "md5": "864C",
+        "sizes": {
+          "signed": 262144,
+          "uncompressed": 262144,
+          "packed": 118288
+        }
+      },
+      {
+        "index": 4,
+        "address": 1342720,
+        "size": 1600,
+        "sectionType": "OEM_PSP_FW_PUBLIC_KEY~0xa",
+        "magic": "1DC2",
+        "version": "",
+        "info": [],
+        "md5": "3A3F"
+      },
+      {
+        "index": 5,
+        "address": 1,
+        "size": 0,
+        "sectionType": "SOFT_FUSE_CHAIN_01~0xb",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "D41D"
+      },
+      {
+        "index": 6,
+        "address": 1344512,
+        "size": 1056,
+        "sectionType": "SMU_OFF_CHIP_FW_2~0x12",
+        "magic": "$PS1",
+        "version": "0.24.64.0",
+        "info": [
+          "compressed",
+          "signed(F014)",
+          "verified"
+        ],
+        "md5": "2A23",
+        "sizes": {
+          "signed": 262144,
+          "uncompressed": 262144,
+          "packed": 1056
+        }
+      },
+      {
+        "index": 7,
+        "address": 1345792,
+        "size": 14912,
+        "sectionType": "DEBUG_UNLOCK~0x13",
+        "magic": "$PS1",
+        "version": "0.C.0.79",
+        "info": [
+          "signed(EA74)"
+        ],
+        "md5": "B074",
+        "sizes": {
+          "signed": 14144,
+          "uncompressed": 0,
+          "packed": 14912
+        }
+      },
+      {
+        "index": 8,
+        "address": 1360896,
+        "size": 16,
+        "sectionType": "WRAPPED_IKEK~0x21",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "9FD8"
+      },
+      {
+        "index": 9,
+        "address": 1363968,
+        "size": 4096,
+        "sectionType": "TOKEN_UNLOCK~0x22",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "6AE5"
+      },
+      {
+        "index": 10,
+        "address": 1368064,
+        "size": 13040,
+        "sectionType": "SEC_GASKET~0x24",
+        "magic": "$PS1",
+        "version": "11.0.1.5F",
+        "info": [
+          "compressed",
+          "signed(6E84)",
+          "verified"
+        ],
+        "md5": "C243",
+        "sizes": {
+          "signed": 34752,
+          "uncompressed": 34752,
+          "packed": 13040
+        }
+      },
+      {
+        "index": 11,
+        "address": 1381120,
+        "size": 53040,
+        "sectionType": "0x2a",
+        "magic": "$PS1",
+        "version": "0.24.64.0",
+        "info": [
+          "compressed",
+          "signed(F014)",
+          "verified"
+        ],
+        "md5": "F86D",
+        "sizes": {
+          "signed": 262144,
+          "uncompressed": 262144,
+          "packed": 53040
+        }
+      },
+      {
+        "index": 12,
+        "address": 1434368,
+        "size": 928,
+        "sectionType": "ABL0~0x30",
+        "magic": "",
+        "version": "0.0.0.0",
+        "info": [
+          "signed(1DC2)",
+          "verified"
+        ],
+        "md5": "62E3",
+        "sizes": {
+          "signed": 160,
+          "uncompressed": 160,
+          "packed": 928
+        }
+      },
+      {
+        "index": 13,
+        "address": 3846144,
+        "size": 1024,
+        "sectionType": "!PL2_SECONDARY_DIRECTORY~0x40",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "2FB4"
+      },
+      {
+        "index": 14,
+        "address": 1971712,
+        "size": 5296,
+        "sectionType": "FW_GEC~0x42",
+        "magic": "",
+        "version": "0.30.4.19",
+        "info": [
+          "compressed",
+          "signed(60FD)",
+          "verified"
+        ],
+        "md5": "6B92",
+        "sizes": {
+          "signed": 16592,
+          "uncompressed": 16592,
+          "packed": 5296
+        }
+      },
+      {
+        "index": 15,
+        "address": 1977088,
+        "size": 572588518,
+        "sectionType": "FW_XHCI~0x43",
+        "magic": "",
+        "version": "0.0.0.0",
+        "info": [
+          "legacy Header"
+        ],
+        "md5": "D41D",
+        "sizes": {
+          "signed": 572588262,
+          "uncompressed": 0,
+          "packed": 0
+        }
+      },
+      {
+        "index": 16,
+        "address": 1978880,
+        "size": 572588518,
+        "sectionType": "0x4e",
+        "magic": "",
+        "version": "0.0.0.0",
+        "info": [
+          "legacy Header"
+        ],
+        "md5": "D41D",
+        "sizes": {
+          "signed": 572588262,
+          "uncompressed": 0,
+          "packed": 0
+        }
+      }
+    ]
+  },
+  {
+    "directory": 1,
+    "address": 3846144,
+    "directoryType": "secondary",
+    "magic": "$PL2",
+    "entries": [
+      {
+        "index": 0,
+        "address": 3847168,
+        "size": 83008,
+        "sectionType": "PSP_FW_BOOT_LOADER~0x1",
+        "magic": "$PS1",
+        "version": "0.C.0.79",
+        "info": [
+          "signed(E600)",
+          "verified"
+        ],
+        "md5": "55A4",
+        "sizes": {
+          "signed": 82240,
+          "uncompressed": 0,
+          "packed": 83008
+        }
+      },
+      {
+        "index": 1,
+        "address": 3978240,
+        "size": 118288,
+        "sectionType": "SMU_OFFCHIP_FW~0x8",
+        "magic": "$PS1",
+        "version": "0.24.64.0",
+        "info": [
+          "compressed",
+          "signed(F014)",
+          "verified"
+        ],
+        "md5": "864C",
+        "sizes": {
+          "signed": 262144,
+          "uncompressed": 262144,
+          "packed": 118288
+        }
+      },
+      {
+        "index": 2,
+        "address": 4096768,
+        "size": 1600,
+        "sectionType": "SEC_DBG_PUBLIC_KEY~0x9",
+        "magic": "3A13",
+        "version": "",
+        "info": [],
+        "md5": "77F8"
+      },
+      {
+        "index": 3,
+        "address": 4098560,
+        "size": 1600,
+        "sectionType": "OEM_PSP_FW_PUBLIC_KEY~0xa",
+        "magic": "1DC2",
+        "version": "",
+        "info": [],
+        "md5": "3A3F"
+      },
+      {
+        "index": 4,
+        "address": 1,
+        "size": 0,
+        "sectionType": "SOFT_FUSE_CHAIN_01~0xb",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "D41D"
+      },
+      {
+        "index": 5,
+        "address": 4100352,
+        "size": 1056,
+        "sectionType": "SMU_OFF_CHIP_FW_2~0x12",
+        "magic": "$PS1",
+        "version": "0.24.64.0",
+        "info": [
+          "compressed",
+          "signed(F014)",
+          "verified"
+        ],
+        "md5": "2A23",
+        "sizes": {
+          "signed": 262144,
+          "uncompressed": 262144,
+          "packed": 1056
+        }
+      },
+      {
+        "index": 6,
+        "address": 4101632,
+        "size": 14912,
+        "sectionType": "DEBUG_UNLOCK~0x13",
+        "magic": "$PS1",
+        "version": "0.C.0.79",
+        "info": [
+          "signed(EA74)"
+        ],
+        "md5": "B074",
+        "sizes": {
+          "signed": 14144,
+          "uncompressed": 0,
+          "packed": 14912
+        }
+      },
+      {
+        "index": 7,
+        "address": 4116736,
+        "size": 16,
+        "sectionType": "WRAPPED_IKEK~0x21",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "9FD8"
+      },
+      {
+        "index": 8,
+        "address": 4120576,
+        "size": 4096,
+        "sectionType": "TOKEN_UNLOCK~0x22",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "6AE5"
+      },
+      {
+        "index": 9,
+        "address": 4124672,
+        "size": 13040,
+        "sectionType": "SEC_GASKET~0x24",
+        "magic": "$PS1",
+        "version": "11.0.1.5F",
+        "info": [
+          "compressed",
+          "signed(6E84)",
+          "verified"
+        ],
+        "md5": "C243",
+        "sizes": {
+          "signed": 34752,
+          "uncompressed": 34752,
+          "packed": 13040
+        }
+      },
+      {
+        "index": 10,
+        "address": 4137728,
+        "size": 53040,
+        "sectionType": "0x2a",
+        "magic": "$PS1",
+        "version": "0.24.64.0",
+        "info": [
+          "compressed",
+          "signed(F014)",
+          "verified"
+        ],
+        "md5": "F86D",
+        "sizes": {
+          "signed": 262144,
+          "uncompressed": 262144,
+          "packed": 53040
+        }
+      },
+      {
+        "index": 11,
+        "address": 4190976,
+        "size": 928,
+        "sectionType": "ABL0~0x30",
+        "magic": "",
+        "version": "0.0.0.0",
+        "info": [
+          "signed(1DC2)",
+          "verified"
+        ],
+        "md5": "62E3",
+        "sizes": {
+          "signed": 160,
+          "uncompressed": 160,
+          "packed": 928
+        }
+      },
+      {
+        "index": 12,
+        "address": 4730880,
+        "size": 32768,
+        "sectionType": "!PSP_ENCRYPTED_NV_DATA~0x38",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "3DF7"
+      },
+      {
+        "index": 13,
+        "address": 4763648,
+        "size": 40256,
+        "sectionType": "!SEV_APP~0x39",
+        "magic": "$PS1",
+        "version": "1.0.16.11",
+        "info": [
+          "signed(EA74)",
+          "verified"
+        ],
+        "md5": "5346",
+        "sizes": {
+          "signed": 39488,
+          "uncompressed": 0,
+          "packed": 40256
+        }
+      },
+      {
+        "index": 14,
+        "address": 4804096,
+        "size": 5296,
+        "sectionType": "FW_GEC~0x42",
+        "magic": "",
+        "version": "0.30.4.19",
+        "info": [
+          "compressed",
+          "signed(60FD)",
+          "verified"
+        ],
+        "md5": "6B92",
+        "sizes": {
+          "signed": 16592,
+          "uncompressed": 16592,
+          "packed": 5296
+        }
+      },
+      {
+        "index": 15,
+        "address": 4809472,
+        "size": 572588518,
+        "sectionType": "FW_XHCI~0x43",
+        "magic": "",
+        "version": "0.0.0.0",
+        "info": [
+          "legacy Header"
+        ],
+        "md5": "D41D",
+        "sizes": {
+          "signed": 572588262,
+          "uncompressed": 0,
+          "packed": 0
+        }
+      },
+      {
+        "index": 16,
+        "address": 4811264,
+        "size": 572588518,
+        "sectionType": "0x4e",
+        "magic": "",
+        "version": "0.0.0.0",
+        "info": [
+          "legacy Header"
+        ],
+        "md5": "D41D",
+        "sizes": {
+          "signed": 572588262,
+          "uncompressed": 0,
+          "packed": 0
+        }
+      }
+    ]
+  },
+  {
+    "directory": 2,
+    "address": 2252800,
+    "directoryType": "BIOS",
+    "magic": "$BHD",
+    "secondaryAddress": 4894720,
+    "entries": [
+      {
+        "index": 0,
+        "address": 2256896,
+        "size": 8192,
+        "sectionType": "0x68",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "993A"
+      },
+      {
+        "index": 1,
+        "address": 0,
+        "size": 0,
+        "sectionType": "FW_GEC~0x61",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "D41D"
+      },
+      {
+        "index": 2,
+        "address": 14352384,
+        "size": 2424832,
+        "sectionType": "!UEFI-IMAGE~0x30062",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "EB00"
+      },
+      {
+        "index": 3,
+        "address": 2265088,
+        "size": 18832,
+        "sectionType": "0x1100064",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "504F",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 18832
+        }
+      },
+      {
+        "index": 4,
+        "address": 2284032,
+        "size": 1120,
+        "sectionType": "0x1100065",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "172C",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1120
+        }
+      },
+      {
+        "index": 5,
+        "address": 2285312,
+        "size": 19536,
+        "sectionType": "0x1200064",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "4A69",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 19536
+        }
+      },
+      {
+        "index": 6,
+        "address": 2305024,
+        "size": 1152,
+        "sectionType": "0x1200065",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "5C6B",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1152
+        }
+      },
+      {
+        "index": 7,
+        "address": 2306304,
+        "size": 22832,
+        "sectionType": "0x1300064",
+        "magic": "0x05",
+        "version": "0.0.10.4",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "C31B",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 22832
+        }
+      },
+      {
+        "index": 8,
+        "address": 2329344,
+        "size": 1152,
+        "sectionType": "0x1300065",
+        "magic": "0x05",
+        "version": "0.0.10.4",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "3718",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1152
+        }
+      },
+      {
+        "index": 9,
+        "address": 2330624,
+        "size": 19424,
+        "sectionType": "0x1400064",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "5C78",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 19424
+        }
+      },
+      {
+        "index": 10,
+        "address": 2350080,
+        "size": 1088,
+        "sectionType": "0x1400065",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "D6AB",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1088
+        }
+      },
+      {
+        "index": 11,
+        "address": 2351360,
+        "size": 20080,
+        "sectionType": "0x1500064",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "1381",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 20080
+        }
+      },
+      {
+        "index": 12,
+        "address": 2371584,
+        "size": 1104,
+        "sectionType": "0x1500065",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "2D16",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1104
+        }
+      },
+      {
+        "index": 13,
+        "address": 2372864,
+        "size": 20672,
+        "sectionType": "0x1600064",
+        "magic": "0x05",
+        "version": "0.0.10.4",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "EA1B",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 20672
+        }
+      },
+      {
+        "index": 14,
+        "address": 2393600,
+        "size": 1040,
+        "sectionType": "0x1600065",
+        "magic": "0x05",
+        "version": "0.0.10.4",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "CC88",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1040
+        }
+      },
+      {
+        "index": 15,
+        "address": 4894720,
+        "size": 1024,
+        "sectionType": "!BL2_SECONDARY_DIRECTORY~0x70",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "1558"
+      }
+    ]
+  },
+  {
+    "directory": 3,
+    "address": 4894720,
+    "directoryType": "secondary",
+    "magic": "$BL2",
+    "entries": [
+      {
+        "index": 0,
+        "address": 4898816,
+        "size": 8192,
+        "sectionType": "0x68",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "993A"
+      },
+      {
+        "index": 1,
+        "address": 4907008,
+        "size": 576,
+        "sectionType": "0x800068",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "7D84"
+      },
+      {
+        "index": 2,
+        "address": 4911104,
+        "size": 256,
+        "sectionType": "0x900068",
+        "magic": "",
+        "version": "0.0.0.0",
+        "info": [
+          "legacy Header"
+        ],
+        "md5": "D41D",
+        "sizes": {
+          "signed": 0,
+          "uncompressed": 0,
+          "packed": 0
+        }
+      },
+      {
+        "index": 3,
+        "address": 4915200,
+        "size": 4096,
+        "sectionType": "FW_IMC~0x60",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "202E"
+      },
+      {
+        "index": 4,
+        "address": 4919296,
+        "size": 4096,
+        "sectionType": "0x100060",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "50B0"
+      },
+      {
+        "index": 5,
+        "address": 0,
+        "size": 0,
+        "sectionType": "FW_GEC~0x61",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "D41D"
+      },
+      {
+        "index": 6,
+        "address": 14352384,
+        "size": 2424832,
+        "sectionType": "!UEFI-IMAGE~0x30062",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "EB00"
+      },
+      {
+        "index": 7,
+        "address": 4923392,
+        "size": 18832,
+        "sectionType": "0x1100064",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "504F",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 18832
+        }
+      },
+      {
+        "index": 8,
+        "address": 4942336,
+        "size": 1120,
+        "sectionType": "0x1100065",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "172C",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1120
+        }
+      },
+      {
+        "index": 9,
+        "address": 4943616,
+        "size": 19536,
+        "sectionType": "0x1200064",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "4A69",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 19536
+        }
+      },
+      {
+        "index": 10,
+        "address": 4963328,
+        "size": 1152,
+        "sectionType": "0x1200065",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "5C6B",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1152
+        }
+      },
+      {
+        "index": 11,
+        "address": 4964608,
+        "size": 22832,
+        "sectionType": "0x1300064",
+        "magic": "0x05",
+        "version": "0.0.10.4",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "C31B",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 22832
+        }
+      },
+      {
+        "index": 12,
+        "address": 4987648,
+        "size": 1152,
+        "sectionType": "0x1300065",
+        "magic": "0x05",
+        "version": "0.0.10.4",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "3718",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1152
+        }
+      },
+      {
+        "index": 13,
+        "address": 4988928,
+        "size": 19424,
+        "sectionType": "0x1400064",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "5C78",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 19424
+        }
+      },
+      {
+        "index": 14,
+        "address": 5008384,
+        "size": 1088,
+        "sectionType": "0x1400065",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "D6AB",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1088
+        }
+      },
+      {
+        "index": 15,
+        "address": 5009664,
+        "size": 20080,
+        "sectionType": "0x1500064",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "1381",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 20080
+        }
+      },
+      {
+        "index": 16,
+        "address": 5029888,
+        "size": 1104,
+        "sectionType": "0x1500065",
+        "magic": "0x05",
+        "version": "0.0.10.1",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "2D16",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1104
+        }
+      },
+      {
+        "index": 17,
+        "address": 5031168,
+        "size": 20672,
+        "sectionType": "0x1600064",
+        "magic": "0x05",
+        "version": "0.0.10.4",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "EA1B",
+        "sizes": {
+          "signed": 32800,
+          "uncompressed": 32800,
+          "packed": 20672
+        }
+      },
+      {
+        "index": 18,
+        "address": 5051904,
+        "size": 1040,
+        "sectionType": "0x1600065",
+        "magic": "0x05",
+        "version": "0.0.10.4",
+        "info": [
+          "compressed",
+          "signed(CC0D)",
+          "verified"
+        ],
+        "md5": "CC88",
+        "sizes": {
+          "signed": 16416,
+          "uncompressed": 16416,
+          "packed": 1040
+        }
+      },
+      {
+        "index": 19,
+        "address": 5053184,
+        "size": 3200,
+        "sectionType": "0x66",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "5E78"
+      },
+      {
+        "index": 20,
+        "address": 5056512,
+        "size": 3200,
+        "sectionType": "0x100066",
+        "magic": "",
+        "version": "",
+        "info": [],
+        "md5": "5F07"
+      }
+    ]
+  }
+]
