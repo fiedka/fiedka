@@ -1,10 +1,19 @@
 import React from "react";
 import Link from "next/link";
+import { Palette } from "../util/colors";
+
+const about = `
+  This is an attempt to visualize firmware images. Currently supported are JSON
+  outputs from utk, flashmap and PSPTool.
+
+  The following images' names are from the respective vendors.
+`;
 
 const Page = () => {
   return (
     <>
       <h1>UTK web</h1>
+      {about}
       <menu>
         <ul>
           <li>
@@ -48,6 +57,10 @@ const Page = () => {
           </li>
         </ul>
       </menu>
+      <h3>Color Palette</h3>
+      This color palette is used for visualization and just printed here for
+      reference.
+      <Palette />
       <style jsx>{`
         .psp {
           margin-left: 12px;

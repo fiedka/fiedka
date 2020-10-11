@@ -1,3 +1,5 @@
+import React from "react";
+
 // see https://personal.sron.nl/~pault/#fig:scheme_rainbow_discrete_all
 // and https://personal.sron.nl/~pault/data/tol_colors.py
 
@@ -34,3 +36,29 @@ const discreteRainbowPalette = [
 ];
 
 export default discreteRainbowPalette;
+
+export const Palette = () => (
+  <div className="flex">
+    {discreteRainbowPalette.map((c, i) => (
+      <div key={c} style={{ backgroundColor: c }} className="color">
+        {i}
+      </div>
+    ))}
+    <style jsx>
+      {`
+        .flex {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .color {
+          font-family: sans-serif;
+          font-size: 10px;
+          margin: 8px 1px;
+          padding-top: 12px;
+          width: 16px;
+          height: 6px;
+        }
+      `}
+    </style>
+  </div>
+);
