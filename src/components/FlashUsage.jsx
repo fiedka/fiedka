@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import colors from "../util/colors";
 
 const FlashUsage = ({ usage }) => {
   const { layout, blocks, zero, full, used } = usage;
@@ -30,7 +31,7 @@ const FlashUsage = ({ usage }) => {
         </tr>
         <tr>
           <th>
-            <div className="full square"></div> full (<pre>0xff</pre>)
+            <div className="full square"></div> free (<pre>0xff</pre>)
           </th>
           <td>{full}</td>
           <td>{percentage(full)}%</td>
@@ -77,13 +78,13 @@ const FlashUsage = ({ usage }) => {
             height: 8px;
           }
           .used {
-            background-color: #ee0000;
+            background-color: ${colors[25]};
           }
           .full {
-            background-color: #00aa90;
+            background-color: ${colors[14]};
           }
           .zero {
-            background-color: #0000ee;
+            background-color: ${colors[9]};
           }
         `}
       </style>
