@@ -24,6 +24,14 @@ https://github.com/tianocore/tianocore.github.io/wiki/):
 ![UEFI boot flow](
 https://raw.githubusercontent.com/tianocore/tianocore.github.io/master/images/PI_Boot_Phases.JPG)
 
+> Is UEFI complicated?
+
+The [UEFI 2.6 spec](
+https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_6.pdf) is
+`2706` pages long. The [ACPI 6.3 Errata A spec](
+https://uefi.org/sites/default/files/resources/ACPI_Spec_6_3_A_Oct_6_2020.pdf)
+comprises `1062` pages.
+
 > Do UEFI images contain more than just the UEFI firmware?
 
 Yes. On Intel platforms, (CS)ME and ethernet adapter firmware is included, and
