@@ -11,11 +11,13 @@ It allows you to investigate UEFI firmware images visually.
 - [x] expand / hide large DXE sections
 - [x] mark GUID, highlighted globally
 - [x] mark any blob card (no further functionality yet)
-- [x] display flash usage as reported by `fmap` (rough start)
+- [x] display flash usage as reported by `fmap` (in a side panel)
+- [x] visualize PSPTool output
+  * sections ("directories") and entries
+  * display indicators for properties like verified, signed, packed etc
 
 ## TODO
 
-- [ ] improve flash usage display
 - [ ] mark region used by a blob when hovering its card
 - [ ] mark BootGuard protected regions
 - [ ] load utk as in-browser back-end through WASM
