@@ -32,6 +32,10 @@ https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_6.pdf) is
 https://uefi.org/sites/default/files/resources/ACPI_Spec_6_3_A_Oct_6_2020.pdf)
 comprises `1062` pages.
 
+> Is there research on UEFI implementations?
+
+Yes. See https://depletionmode.com/uefi-boot.html for a decent introduction.
+
 > Do UEFI images contain more than just the UEFI firmware?
 
 Yes. On Intel platforms, (CS)ME and ethernet adapter firmware is included, and
