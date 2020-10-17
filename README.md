@@ -52,7 +52,7 @@ https://github.com/assafcarlsbad/efi_dxe_emulator
 
 https://labs.sentinelone.com/moving-from-manual-re-of-uefi-modules-to-dynamic-emulation-of-uefi-firmware/
 
-> What is the maximum number of DXE drivers seen in the wild?
+> What is the maximum number of DXE drivers seen on a device in the wild?
 
 AFAIK, close to 1k, nine-hundred-something.
 
