@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
+import colors from "../util/colors";
 import { PubKeyContext } from "../context/PubKeyContext";
+import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
 
 const getSig = (info) => {
   // FIXME: just a quick hack
@@ -13,9 +15,27 @@ const getSig = (info) => {
 };
 
 const PspCard = ({ psp }) => {
+  const [active, setActive] = useState(false);
   const pubKeyContext = useContext(PubKeyContext);
+  const markedEntriesContext = useContext(MarkedEntriesContext);
   const [contextPubKey, setContextPubKey] = pubKeyContext;
   const { address, size, sectionType, magic, version, info, md5, sizes } = psp;
+
+  const entry = { address, length: size };
+  const onSelect = () => {
+    if (!active) {
+      markedEntriesContext.addEntry(entry);
+    } else {
+      markedEntriesContext.removeEntry(entry);
+    }
+    setActive(!active);
+  };
+  const onHover = () => {
+    markedEntriesContext.setHoveredEntry(entry);
+  };
+  const onOut = () => {
+    markedEntriesContext.setHoveredEntry(null);
+  };
 
   const isKey =
     typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY");
@@ -47,7 +67,12 @@ const PspCard = ({ psp }) => {
 
   return (
     <>
-      <div className={cn("card", { selected })}>
+      <div
+        className={cn("card", { selected, active })}
+        onClick={onSelect}
+        onMouseOver={onHover}
+        onMouseLeave={onOut}
+      >
         <header onClick={setPubKey} className={cn({ signed })}>
           <span>{typeEmoji}</span>
           <span className="type">{sectionType}</span>
@@ -100,6 +125,12 @@ const PspCard = ({ psp }) => {
           padding: 4px;
           min-width: 200px;
           width: 23%;
+        }
+        .card:hover {
+          background-color: ${colors[2]};
+        }
+        .active {
+          background-color: ${colors[4]};
         }
         .type {
           margin: 0 16px;
