@@ -15,7 +15,7 @@ export const MarkedEntriesProvider = ({ children }) => {
     const entries = markedEntries.filter(
       (entry) => entry.address !== e.address
     );
-    setMarkedEntries([entries]);
+    setMarkedEntries(entries);
   };
 
   return (
