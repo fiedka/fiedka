@@ -55,6 +55,14 @@ const Page = () => {
               <a className="psp">MZ92-FS0_R16_F01 PSP</a>
             </Link>
           </li>
+          <li>
+            <Link href="/B45AS715.BSS">
+              <a>B45AS715.BSS</a>
+            </Link>
+            <Link href="/B45AS715.BSS.psp">
+              <a className="psp">B45AS715.BSS PSP</a>
+            </Link>
+          </li>
         </ul>
       </menu>
       <h3>Color Palette</h3>
