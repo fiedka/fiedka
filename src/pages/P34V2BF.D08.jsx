@@ -1,12 +1,10 @@
 import React from "react";
 
 import fixture from "../fixtures/P34V2BF.D08.json";
-// import usage from "../fixtures/A3MSTX_3.60.fmap_usage.json";
+import usage from "../fixtures/P34V2BF.D08.fmap_usage.json";
 import { GUIDProvider } from "../context/GUIDContext";
 import Volumes from "../components/Volumes";
-// import FlashUsage from "../components/FlashUsage";
-
-// const usageData = Object.values(usage.data);
+import FlashUsage from "../components/FlashUsage";
 
 const Page = () => {
   const uefiRegion = fixture.Regions.find((r) => r.Type === "*uefi.BIOSRegion");
@@ -22,19 +20,18 @@ const Page = () => {
             <Volumes volumes={volumes} />
           </GUIDProvider>
         </div>
-        {/*
         <aside>
-          <h2>Flash Usage</h2>
-          <FlashUsage data={usageData} />
+          <FlashUsage usage={usage} />
         </aside>
-        */}
       </div>
       <style jsx>{`
         .layout {
           display: flex;
         }
         aside {
-          float: left;
+          position: sticky;
+          top: 0;
+          height: 100vh;
         }
       `}</style>
     </>

@@ -44,7 +44,8 @@ const FlashUsage = ({ usage }) => {
   const size = (x) => Math.round((x / 256) * 100) / 100;
 
   return (
-    <>
+    <div className="flash-usage">
+      <h2>Flash Usage</h2>
       <table className="legend">
         <tr>
           <th>blocks</th>
@@ -77,11 +78,20 @@ const FlashUsage = ({ usage }) => {
           <td>{size(used)}M</td>
         </tr>
       </table>
-      <table>
-        <tbody>{rows}</tbody>
-      </table>
+      {/* https://stackoverflow.com/questions/41421512/why-does-flex-box-work-with-a-div-but-not-a-table */}
+      <div className="flashmap">
+        <table>
+          <tbody>{rows}</tbody>
+        </table>
+      </div>
       <style jsx>
         {`
+          .flash-usage {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            max-height: 100%;
+          }
           table {
             width: 420px;
             margin: 5px 0;
@@ -93,6 +103,11 @@ const FlashUsage = ({ usage }) => {
           }
           .legend td {
             padding-right: 32px;
+          }
+          .flashmap {
+            flex-basis: fit-content;
+            flex-shrink: 1;
+            overflow-y: scroll;
           }
           pre {
             display: inline;
@@ -136,7 +151,7 @@ const FlashUsage = ({ usage }) => {
           }
         `}
       </style>
-    </>
+    </div>
   );
 };
 

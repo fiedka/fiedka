@@ -20,7 +20,6 @@ const Page = () => {
             </div>
           </PubKeyProvider>
           <aside>
-            <h2>Flash Usage</h2>
             <FlashUsage usage={usage} />
           </aside>
         </div>
@@ -30,7 +29,9 @@ const Page = () => {
           display: flex;
         }
         aside {
-          float: left;
+          position: sticky;
+          top: 0;
+          height: 100vh;
         }
       `}</style>
     </>

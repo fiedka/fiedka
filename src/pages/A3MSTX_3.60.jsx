@@ -20,7 +20,6 @@ const Page = () => {
           </GUIDProvider>
         </div>
         <aside>
-          <h2>Flash Usage</h2>
           <FlashUsage usage={usage} />
         </aside>
       </div>
