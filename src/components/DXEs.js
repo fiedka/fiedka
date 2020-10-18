@@ -20,7 +20,16 @@ const DXEs = ({ dxes, open = false }) => {
           const guid = getGuidFromDxe(d);
           const name = getName(d);
           const depEx = getDepEx(d);
-          return <DXE key={guid} guid={guid} name={name} depEx={depEx} />;
+          return (
+            <DXE
+              key={guid}
+              guid={guid}
+              name={name}
+              offset={100000}
+              length={14}
+              depEx={depEx}
+            />
+          );
         })}
       </ul>
       <style jsx>{`

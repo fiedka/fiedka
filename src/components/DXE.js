@@ -3,19 +3,42 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 
 import { GUIDContext } from "../context/GUIDContext";
+import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
 import DepEx from "./DepEx";
 
-const DXE = ({ guid, name, depEx }) => {
+const DXE = ({ guid, name, offset, length, depEx }) => {
   const [active, setActive] = useState(false);
   const guidContext = useContext(GUIDContext);
+  const markedEntriesContext = useContext(MarkedEntriesContext);
   const [contextGuid] = guidContext;
   const className = classnames("guid", {
     selected: contextGuid === guid,
   });
+
+  const entry = { offset, length };
+  const onSelect = () => {
+    if (!active) {
+      markedEntriesContext.addEntry(entry);
+    } else {
+      markedEntriesContext.removeEntry(entry);
+    }
+    setActive(!active);
+  };
+  const onHover = () => {
+    markedEntriesContext.setHoveredEntry(entry);
+  };
+  const onOut = () => {
+    markedEntriesContext.setHoveredEntry(null);
+  };
+
   return (
     <>
-      <li className={classnames({ activeBorder: active })}>
-        <button onClick={() => setActive(!active)}>
+      <li
+        onMouseOver={onHover}
+        onMouseLeave={onOut}
+        className={classnames({ activeBorder: active })}
+      >
+        <button onClick={onSelect}>
           <div className="name">{name}</div>
           <div className={className}>{guid}</div>
         </button>
@@ -58,6 +81,8 @@ const DXE = ({ guid, name, depEx }) => {
 DXE.propTypes = {
   guid: PropTypes.string,
   name: PropTypes.string,
+  offset: PropTypes.number,
+  length: PropTypes.number,
   depEx: PropTypes.array,
 };
 
