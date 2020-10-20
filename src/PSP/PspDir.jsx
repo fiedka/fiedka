@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PspCard from "../components/PspCard";
+import PspCard from "./PspCard";
 
 const hexify = (a) => a.toString(16);
 

@@ -30,7 +30,16 @@ const FlashUsage = ({ usage }) => {
       const block = parseInt(address) / 4096; // FIXME: not necessary *here*
       const hovered = hoveredEntry && isMarked(hoveredBlocks, block, j);
       const marked = isMarked(markedBlocks, block, j);
-      return <td key={j} className={cn(e, { hovered, marked })}></td>;
+      return (
+        <td
+          key={j}
+          className={cn(e, {
+            hovered: hovered && !marked,
+            marked: marked && !hovered,
+            "hovered-marked": hovered && marked,
+          })}
+        ></td>
+      );
     });
     return (
       <tr key={i}>
@@ -137,6 +146,9 @@ const FlashUsage = ({ usage }) => {
             background-color: ${colors[9]};
           }
           .marked {
+            background-color: ${colors[6]};
+          }
+          .hovered-marked {
             background-color: ${colors[4]};
           }
           .hovered {

@@ -40,12 +40,13 @@ const PspCard = ({ psp }) => {
   const isKey =
     typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY");
   const pubKey = isKey ? magic : null; // for some reason, the magic number is the public key
-  const typeEmoji = isKey ? "🔑" : null;
-  const setPubKey = () => {
+  const setPubKey = (e) => {
+    e.stopPropagation();
     if (isKey) {
       setContextPubKey(pubKey);
     }
   };
+  const typeEmoji = isKey ? <span onClick={setPubKey}>🔑</span> : null;
 
   const sig = getSig(info);
   const signed = typeof sig === "string";
@@ -68,79 +69,122 @@ const PspCard = ({ psp }) => {
   return (
     <>
       <div
-        className={cn("card", { selected, active })}
+        className={cn("card", { active })}
         onClick={onSelect}
         onMouseOver={onHover}
         onMouseLeave={onOut}
       >
-        <header onClick={setPubKey} className={cn({ signed })}>
-          <span>{typeEmoji}</span>
+        <header
+          className={cn({
+            selected: signed && selected,
+            signed: signed && !selected,
+          })}
+        >
+          <span className="emoji">{typeEmoji}</span>
           <span className="type">{sectionType}</span>
-          <span>{infoEmoji}</span>
+          <span className="emoji">{infoEmoji}</span>
         </header>
-        {(magic || version) && (
-          <div className="flex-around">
-            <span>{magic && `magic: ${magic}`}</span>
-            <span>{version && `version ${version}`}</span>
-          </div>
-        )}
-        <div className="flex-around">
-          <span>address: {address}</span>
-          <span>size: {size}</span>
-          <span>hash: {md5}</span>
-        </div>
-        {info.length > 0 && (
-          <div>
-            {info.map((i, k) => (
-              <span className="info" key={k}>
-                {k > 0 && "- "}
+        <main>
+          <table>
+            <tbody>
+              <tr>
+                <th>address</th>
+                <td>0x{address.toString(16)}</td>
+              </tr>
+              <tr>
+                <th>size</th>
+                <td>{size}</td>
+              </tr>
+              <tr>
+                <th>hash</th>
+                <td>{md5}</td>
+              </tr>
+              {sizes && (
+                <>
+                  <tr>
+                    <th>signed</th>
+                    <td>{sizes.signed}</td>
+                  </tr>
+                  <tr>
+                    <th>uncompressed</th>
+                    <td>{sizes.uncompressed}</td>
+                  </tr>
+                  <tr>
+                    <th>packed</th>
+                    <td>{sizes.packed}</td>
+                  </tr>
+                </>
+              )}
+            </tbody>
+          </table>
+          <span className="extra">
+            {version && <div className="info">version {version}</div>}
+            {magic && <div className="info">magic: {magic}</div>}
+            {info.map((i) => (
+              <div className="info" key={i}>
                 {i}
-              </span>
+              </div>
             ))}
-          </div>
-        )}
-        {sizes && (
-          <div className="flex-around">
-            <span>signed: {sizes.signed}</span>
-            <span>uncompressed: {sizes.uncompressed}</span>
-            <span>packed: {sizes.packed}</span>
-          </div>
-        )}
+          </span>
+        </main>
       </div>
       <style jsx>{`
         header {
-          background-color: #f7f7f7;
+          display: flex;
+          justify-content: space-between;
+          padding: 2px 1px;
+          background-color: ${colors[0]};
           text-align: center;
           font-weight: bold;
+          cursor: pointer;
+        }
+        main {
+          flex: 1;
+          display: flex;
+          justify-content: space-between;
+          padding: 3px;
+          font-family: sans-serif;
+          background-color: #eee;
+          cursor: pointer;
         }
         .selected {
-          background-color: #e7ffe7;
+          background-color: ${colors[20]};
         }
         .signed {
-          background-color: #ffe7e7;
+          background-color: ${colors[18]};
         }
         .card {
+          display: flex;
+          flex-direction: column;
           border: 1px solid #422384;
           margin: 10px 1%;
           padding: 4px;
-          min-width: 200px;
-          width: 23%;
+          min-width: 350px;
+          width: 48%;
         }
         .card:hover {
           background-color: ${colors[2]};
         }
-        .active {
+        .card.active:hover {
           background-color: ${colors[4]};
         }
-        .type {
-          margin: 0 16px;
+        .active {
+          background-color: ${colors[6]};
         }
-        .flex-around {
+        .type {
+          background-color: #f7f7f7;
+          padding: 0 2px;
+        }
+        .emoji {
+          background-color: #f7f7f7;
+          margin: 0 1px;
+        }
+        .extra {
           display: flex;
-          justify-content: space-around;
+          flex-direction: column;
+          margin: 3px 15px;
         }
         .info {
-          color: #303030;
           margin: 2px;
         }
       `}</style>
