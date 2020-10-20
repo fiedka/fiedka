@@ -8,7 +8,7 @@ const Volumes = ({ volumes }) => {
   const guidContext = useContext(GUIDContext);
   const [contextGuid, setContextGuid] = guidContext;
   return (
-    <>
+    <div>
       <header>
         <button onClick={() => setContextGuid(null)}>Clear GUID</button>
         ----{contextGuid}----
@@ -29,7 +29,7 @@ const Volumes = ({ volumes }) => {
           top: 0;
         }
       `}</style>
-    </>
+    </div>
   );
 };
 

@@ -5,6 +5,7 @@ import usage from "../fixtures/B45AS715.BSS.fmap_usage.json";
 import { GUIDProvider } from "../context/GUIDContext";
 import Volumes from "../components/Volumes";
 import FlashUsage from "../components/FlashUsage";
+import Layout from "../components/Layout";
 
 const Page = () => {
   const volumes = fixture.Elements.filter(
@@ -12,26 +13,11 @@ const Page = () => {
   );
 
   return (
-    <>
-      <div className="layout">
-        <div>
-          <GUIDProvider>
-            <Volumes volumes={volumes} />
-          </GUIDProvider>
-        </div>
-        <aside>
-          <FlashUsage usage={usage} />
-        </aside>
-      </div>
-      <style jsx>{`
-        .layout {
-          display: flex;
-        }
-        aside {
-          float: left;
-        }
-      `}</style>
-    </>
+    <Layout sidepane={<FlashUsage usage={usage} />}>
+      <GUIDProvider>
+        <Volumes volumes={volumes} />
+      </GUIDProvider>
+    </Layout>
   );
 };
 
