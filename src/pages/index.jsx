@@ -2,18 +2,24 @@ import React from "react";
 import Link from "next/link";
 import { Palette } from "../util/colors";
 
-const about = `
-  This is an attempt to visualize firmware images. Currently supported are JSON
-  outputs from utk, flashmap and PSPTool.
-
-  The following images' names are from the respective vendors.
-`;
-
 const Page = () => {
   return (
     <>
       <h1>UTK web</h1>
-      {about}
+      <p>
+        This app is an attempt to visualize firmware images, which is useful for
+        development, debugging, security research and similar purposes.
+        <br />
+        Currently supported are JSON outputs from Fiano&apos;s utk and fmap as
+        well as PSPTool.
+      </p>
+      For more information, see the{" "}
+      <Link href="/about.html">
+        <a>about</a>
+      </Link>{" "}
+      page.
+      <h3>Explore</h3>
+      The following firmware images&apos; names are from the respective vendors.
       <menu>
         <ul>
           <li>
