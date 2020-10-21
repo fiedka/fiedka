@@ -59,7 +59,7 @@ const PspCard = ({ psp }) => {
     infoEmoji.push(<Tooltip tip="verified">✅</Tooltip>);
   }
   if (signed && !verified) {
-    infoEmoji.push(<Tooltip tip="unverified">!!</Tooltip>);
+    infoEmoji.push(<Tooltip tip="unverified">⚠️</Tooltip>);
   }
   if (info.find((i) => i.includes("encrypted"))) {
     infoEmoji.push(<Tooltip tip="encrypted">🔐</Tooltip>);
