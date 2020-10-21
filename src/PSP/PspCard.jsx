@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import cn from "classnames";
 
 import colors from "../util/colors";
+import Tooltip from "../components/Tooltip";
 import { PubKeyContext } from "../context/PubKeyContext";
 import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
 
-const getSig = (info) => {
-  // FIXME: just a quick hack
+const getSigKey = (info) => {
   const sig = info.find((i) => i.includes("signed"));
+  // FIXME: just a quick hack; work on PSPTool to output the key directly
   if (sig) {
     return sig.substr(7, 4);
   }
@@ -48,22 +49,26 @@ const PspCard = ({ psp }) => {
   };
   const typeEmoji = isKey ? <span onClick={setPubKey}>🔑</span> : null;
 
-  const sig = getSig(info);
-  const signed = typeof sig === "string";
-  const selected = contextPubKey && sig === contextPubKey;
+  const sigKey = getSigKey(info);
+  const signed = typeof sigKey === "string";
+  const selected = contextPubKey && sigKey === contextPubKey;
+  const verified = info.find((i) => i.includes("verified"));
 
   const infoEmoji = [];
-  if (info.find((i) => i.includes("compressed"))) {
-    infoEmoji.push("📦");
+  if (verified) {
+    infoEmoji.push(<Tooltip tip="verified">✅</Tooltip>);
   }
-  if (info.find((i) => i.includes("verified"))) {
-    infoEmoji.push("✅");
+  if (signed && !verified) {
+    infoEmoji.push(<Tooltip tip="unverified">!!</Tooltip>);
   }
   if (info.find((i) => i.includes("encrypted"))) {
-    infoEmoji.push("🔐");
+    infoEmoji.push(<Tooltip tip="encrypted">🔐</Tooltip>);
+  }
+  if (info.find((i) => i.includes("compressed"))) {
+    infoEmoji.push(<Tooltip tip="compressed">📦</Tooltip>);
   }
   if (info.find((i) => i.includes("legacy"))) {
-    infoEmoji.push("🏚️");
+    infoEmoji.push(<Tooltip tip="legacy header">🏚️</Tooltip>);
   }
 
   return (
@@ -120,11 +125,7 @@ const PspCard = ({ psp }) => {
           <span className="extra">
             {version && <div className="info">version {version}</div>}
             {magic && <div className="info">magic: {magic}</div>}
-            {info.map((i) => (
-              <div className="info" key={i}>
-                {i}
-              </div>
-            ))}
+            {sigKey && <div className="info">signature: {sigKey}</div>}
           </span>
         </main>
       </div>
