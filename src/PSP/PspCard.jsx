@@ -56,19 +56,39 @@ const PspCard = ({ psp }) => {
 
   const infoEmoji = [];
   if (verified) {
-    infoEmoji.push(<Tooltip tip="verified">✅</Tooltip>);
+    infoEmoji.push(
+      <Tooltip key="verified" tip="verified">
+        ✅
+      </Tooltip>
+    );
   }
   if (signed && !verified) {
-    infoEmoji.push(<Tooltip tip="unverified">⚠️</Tooltip>);
+    infoEmoji.push(
+      <Tooltip key="verified" tip="unverified">
+        ⚠️
+      </Tooltip>
+    );
   }
   if (info.find((i) => i.includes("encrypted"))) {
-    infoEmoji.push(<Tooltip tip="encrypted">🔐</Tooltip>);
+    infoEmoji.push(
+      <Tooltip key="verified" tip="encrypted">
+        🔐
+      </Tooltip>
+    );
   }
   if (info.find((i) => i.includes("compressed"))) {
-    infoEmoji.push(<Tooltip tip="compressed">📦</Tooltip>);
+    infoEmoji.push(
+      <Tooltip key="verified" tip="compressed">
+        📦
+      </Tooltip>
+    );
   }
   if (info.find((i) => i.includes("legacy"))) {
-    infoEmoji.push(<Tooltip tip="legacy header">🏚️</Tooltip>);
+    infoEmoji.push(
+      <Tooltip key="verified" tip="legacy header">
+        🏚️
+      </Tooltip>
+    );
   }
 
   return (
