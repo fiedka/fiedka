@@ -18,6 +18,7 @@ const Tooltip = ({ children, tip }) => {
             bottom: 16px;
             visibility: hidden;
             background-color: #fff;
+            border: 1px solid #444;
             padding: 3px;
             z-index: 1;
           }
@@ -31,8 +32,8 @@ const Tooltip = ({ children, tip }) => {
 };
 
 Tooltip.propTypes = {
-  children: PropTypes.element,
-  tip: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  tip: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 export default Tooltip;
