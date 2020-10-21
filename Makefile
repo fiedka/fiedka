@@ -20,5 +20,5 @@ bundle:
 
 .PHONY: clean
 clean:
-	rm public/about.html
-	rm -rf $(DIST_DIR)
+	rm -rf public/about.html
+	rm -rf "$(DIST_DIR)"
