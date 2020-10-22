@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import cn from "classnames";
+
 import PspCard from "./PspCard";
 
 const hexify = (a) => a.toString(16);
 
 const PspDir = ({ dir }) => {
+  const [expand, setExpand] = useState(true);
+  const toggleExpand = () => setExpand(!expand);
   return (
     <>
-      <div className="flex-around directory">
+      <div className="flex-around directory" onClick={toggleExpand}>
         <h3>
           <span>{`type: ${dir.directoryType}`}</span>
           <span>{`magic: ${dir.magic}`}</span>
           <span>{`address: 0x${hexify(dir.address)}`}</span>
         </h3>
-        <div className="psps">
+        <div className={cn("psps", { expand })}>
           {dir.entries.map((p) => (
-            <PspCard psp={p} key={p.index} />
+            <PspCard key={p.index} psp={p} open={expand} />
           ))}
         </div>
       </div>
@@ -39,6 +43,10 @@ const PspDir = ({ dir }) => {
         .psps {
           display: flex;
           flex-wrap: wrap;
+          padding-bottom: 10px;
+        }
+        .psps.expand {
+          padding: 0;
         }
       `}</style>
     </>

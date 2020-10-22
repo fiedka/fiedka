@@ -15,7 +15,7 @@ const getSigKey = (info) => {
   }
 };
 
-const PspCard = ({ psp }) => {
+const PspCard = ({ psp, open = true }) => {
   const [active, setActive] = useState(false);
   const pubKeyContext = useContext(PubKeyContext);
   const markedEntriesContext = useContext(MarkedEntriesContext);
@@ -94,7 +94,7 @@ const PspCard = ({ psp }) => {
   return (
     <>
       <div
-        className={cn("card", { active })}
+        className={cn("card", { active, open })}
         onClick={onSelect}
         onMouseOver={onHover}
         onMouseLeave={onOut}
@@ -159,11 +159,18 @@ const PspCard = ({ psp }) => {
           font-weight: bold;
           cursor: pointer;
         }
-        main {
-          flex: 1;
-          display: flex;
-          justify-content: space-between;
+        .open main {
+          max-height: 400px;
           padding: 3px;
+        }
+        main {
+          overflow: hidden;
+          max-height: 0;
+          transition: max-height 0.2s ease-in, padding 0.2s ease;
+          padding: 0;
+          display: flex;
+          flex: 1;
+          justify-content: space-between;
           font-family: sans-serif;
           background-color: #eee;
           cursor: pointer;
@@ -174,11 +181,14 @@ const PspCard = ({ psp }) => {
         .signed {
           background-color: ${colors[18]};
         }
+        .card.open {
+          margin: 10px 1%;
+        }
         .card {
           display: flex;
           flex-direction: column;
           border: 1px solid #422384;
-          margin: 10px 1%;
+          margin: 10px 1% 0;
           padding: 4px;
           min-width: 350px;
           width: 48%;
@@ -215,6 +225,7 @@ const PspCard = ({ psp }) => {
 
 PspCard.propTypes = {
   psp: PropTypes.object,
+  open: PropTypes.bool,
 };
 
 export default PspCard;
