@@ -33,6 +33,8 @@ const PspDir = ({ dir }) => {
           display: flex;
           flex-direction: column;
           background-color: #dffcdf;
+          margin: 10px 3px;
+          padding: 3px;
         }
         .psps {
           display: flex;
