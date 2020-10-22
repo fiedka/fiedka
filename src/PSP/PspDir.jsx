@@ -11,8 +11,8 @@ const PspDir = ({ dir }) => {
   const toggleExpand = () => setExpand(!expand);
   return (
     <>
-      <div className="flex-around directory" onClick={toggleExpand}>
-        <h3>
+      <div className="flex-around directory">
+        <h3 onClick={toggleExpand}>
           <span>{`type: ${dir.directoryType}`}</span>
           <span>{`magic: ${dir.magic}`}</span>
           <span>{`address: 0x${hexify(dir.address)}`}</span>
