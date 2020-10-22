@@ -56,36 +56,38 @@ const FlashUsage = ({ usage }) => {
     <div className="flash-usage">
       <h2>Flash Usage</h2>
       <table className="legend">
-        <tr>
-          <th>blocks</th>
-          <td>{blocks}</td>
-          <td>100%</td>
-          <td>{size(blocks)}M</td>
-        </tr>
-        <tr>
-          <th>
-            <div className="zero square"></div> zero (<pre>0x00</pre>)
-          </th>
-          <td>{zero}</td>
-          <td>{percentage(zero)}%</td>
-          <td>{size(zero)}M</td>
-        </tr>
-        <tr>
-          <th>
-            <div className="full square"></div> free (<pre>0xff</pre>)
-          </th>
-          <td>{full}</td>
-          <td>{percentage(full)}%</td>
-          <td>{size(full)}M</td>
-        </tr>
-        <tr>
-          <th>
-            <div className="used square"></div> used
-          </th>
-          <td>{used}</td>
-          <td>{percentage(used)}%</td>
-          <td>{size(used)}M</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>blocks</th>
+            <td>{blocks}</td>
+            <td>100%</td>
+            <td>{size(blocks)}M</td>
+          </tr>
+          <tr>
+            <th>
+              <div className="zero square"></div> zero (<pre>0x00</pre>)
+            </th>
+            <td>{zero}</td>
+            <td>{percentage(zero)}%</td>
+            <td>{size(zero)}M</td>
+          </tr>
+          <tr>
+            <th>
+              <div className="full square"></div> free (<pre>0xff</pre>)
+            </th>
+            <td>{full}</td>
+            <td>{percentage(full)}%</td>
+            <td>{size(full)}M</td>
+          </tr>
+          <tr>
+            <th>
+              <div className="used square"></div> used
+            </th>
+            <td>{used}</td>
+            <td>{percentage(used)}%</td>
+            <td>{size(used)}M</td>
+          </tr>
+        </tbody>
       </table>
       {/* https://stackoverflow.com/questions/41421512/why-does-flex-box-work-with-a-div-but-not-a-table */}
       <div className="flashmap">
