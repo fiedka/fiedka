@@ -2,8 +2,13 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
-import colors from "../util/colors";
 import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
+
+export const UsedBlock = () => <div className="block block-used"></div>;
+
+export const FullBlock = () => <div className="block block-full"></div>;
+
+export const ZeroBlock = () => <div className="block block-zero"></div>;
 
 // TODO
 const isMarked = (markedBlocks, block, offset) =>
@@ -33,10 +38,10 @@ const FlashUsage = ({ usage }) => {
       return (
         <td
           key={j}
-          className={cn(e, {
-            hovered: hovered && !marked,
-            marked: marked && !hovered,
-            "hovered-marked": hovered && marked,
+          className={cn(`block-${e}`, {
+            "block-hovered": hovered && !marked,
+            "block-marked": marked && !hovered,
+            "block-hovered-marked": hovered && marked,
           })}
         ></td>
       );
@@ -65,7 +70,7 @@ const FlashUsage = ({ usage }) => {
           </tr>
           <tr>
             <th>
-              <div className="zero square"></div> zero (<pre>0x00</pre>)
+              <ZeroBlock /> zero (<pre>0x00</pre>)
             </th>
             <td>{zero}</td>
             <td>{percentage(zero)}%</td>
@@ -73,7 +78,7 @@ const FlashUsage = ({ usage }) => {
           </tr>
           <tr>
             <th>
-              <div className="full square"></div> free (<pre>0xff</pre>)
+              <FullBlock /> free (<pre>0xff</pre>)
             </th>
             <td>{full}</td>
             <td>{percentage(full)}%</td>
@@ -81,7 +86,7 @@ const FlashUsage = ({ usage }) => {
           </tr>
           <tr>
             <th>
-              <div className="used square"></div> used
+              <UsedBlock /> used
             </th>
             <td>{used}</td>
             <td>{percentage(used)}%</td>
@@ -123,11 +128,6 @@ const FlashUsage = ({ usage }) => {
           pre {
             display: inline;
           }
-          .square {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-          }
         `}
       </style>
       <style jsx global>
@@ -137,24 +137,6 @@ const FlashUsage = ({ usage }) => {
             height: 8px;
             padding: 0;
             overflow: hidden;
-          }
-          .used {
-            background-color: ${colors[25]};
-          }
-          .full {
-            background-color: ${colors[14]};
-          }
-          .zero {
-            background-color: ${colors[9]};
-          }
-          .marked {
-            background-color: ${colors[6]};
-          }
-          .hovered-marked {
-            background-color: ${colors[4]};
-          }
-          .hovered {
-            background-color: ${colors[2]};
           }
           .address {
             font-family: monospace;
