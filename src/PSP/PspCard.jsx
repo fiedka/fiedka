@@ -4,6 +4,7 @@ import cn from "classnames";
 
 import colors from "../util/colors";
 import Tooltip from "../components/Tooltip";
+import { UsedBlock } from "../components/FlashUsage";
 import { PubKeyContext } from "../context/PubKeyContext";
 import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
 
@@ -91,6 +92,33 @@ const PspCard = ({ psp, open = true }) => {
     );
   }
 
+  const blockSize = 4096;
+  const maxBlockCount = 42;
+  const blockCount = 1 + Math.floor(size / blockSize);
+  const blockDisplay = Math.min(maxBlockCount, blockCount);
+  const blocks = (
+    <>
+      <h4>blocks used: {blockCount}</h4>
+      <div className="blocks">
+        {Array.from({ length: blockDisplay }, (_, i) => (
+          <UsedBlock key={i} />
+        ))}
+        {blockCount > maxBlockCount && "…"}
+      </div>
+      <style jsx>{`
+        h4 {
+          margin: 3px 0;
+        }
+        .blocks {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 120px;
+          line-height: 8px;
+        }
+      `}</style>
+    </>
+  );
+
   return (
     <>
       <div
@@ -146,6 +174,7 @@ const PspCard = ({ psp, open = true }) => {
             {version && <div className="info">version {version}</div>}
             {magic && <div className="info">magic: {magic}</div>}
             {sigKey && <div className="info">signature: {sigKey}</div>}
+            <div className="info">{blocks}</div>
           </span>
         </main>
       </div>
@@ -213,7 +242,8 @@ const PspCard = ({ psp, open = true }) => {
         .extra {
           display: flex;
           flex-direction: column;
-          margin: 3px 15px;
+          width: 50%;
+          padding: 3px 15px;
         }
         .info {
           margin: 2px;
