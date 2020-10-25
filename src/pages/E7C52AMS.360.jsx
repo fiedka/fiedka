@@ -1,7 +1,7 @@
 import React from "react";
 
 import fixture from "../fixtures/E7C52AMS.360.json";
-import usage from "../fixtures/E7C52AMS.360.fmap_usage.json";
+import usage from "../fixtures/E7C52AMS.360.fmap.json";
 import { GUIDProvider } from "../context/GUIDContext";
 import Volumes from "../components/Volumes";
 import FlashUsage from "../components/FlashUsage";

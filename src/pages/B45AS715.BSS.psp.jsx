@@ -1,7 +1,7 @@
 import React from "react";
 
 import pspDirs from "../fixtures/B45AS715.BSS.psp.json";
-import usage from "../fixtures/B45AS715.BSS.fmap_usage.json";
+import usage from "../fixtures/B45AS715.BSS.fmap.json";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
 import FlashUsage from "../components/FlashUsage";
 import Layout from "../components/Layout";

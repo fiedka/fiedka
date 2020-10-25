@@ -1,7 +1,7 @@
 import React from "react";
 
 import pspDirs from "../fixtures/MZ92-FS0_R16_F01.psp.json";
-import usage from "../fixtures/MZ92-FS0_R16_F01.fmap_usage.json";
+import usage from "../fixtures/MZ92-FS0_R16_F01.fmap.json";
 import { PubKeyProvider } from "../context/PubKeyContext";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
 import FlashUsage from "../components/FlashUsage";

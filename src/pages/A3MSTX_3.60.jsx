@@ -1,7 +1,7 @@
 import React from "react";
 
 import fixture from "../fixtures/A3MSTX_3.60.json";
-import usage from "../fixtures/A3MSTX_3.60.fmap_usage.json";
+import usage from "../fixtures/A3MSTX_3.60.fmap.json";
 import { GUIDProvider } from "../context/GUIDContext";
 import Volumes from "../components/Volumes";
 import FlashUsage from "../components/FlashUsage";

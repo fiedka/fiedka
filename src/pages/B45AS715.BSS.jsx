@@ -1,7 +1,7 @@
 import React from "react";
 
 import fixture from "../fixtures/B45AS715.BSS.json";
-import usage from "../fixtures/B45AS715.BSS.fmap_usage.json";
+import usage from "../fixtures/B45AS715.BSS.fmap.json";
 import { GUIDProvider } from "../context/GUIDContext";
 import Volumes from "../components/Volumes";
 import FlashUsage from "../components/FlashUsage";

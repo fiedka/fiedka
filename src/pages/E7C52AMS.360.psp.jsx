@@ -1,7 +1,7 @@
 import React from "react";
 
 import pspDirs from "../fixtures/E7C52AMS.360.psp.json";
-import usage from "../fixtures/E7C52AMS.360.fmap_usage.json";
+import usage from "../fixtures/E7C52AMS.360.fmap.json";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
 import FlashUsage from "../components/FlashUsage";
 import Layout from "../components/Layout";
