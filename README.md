@@ -5,6 +5,85 @@ This is a web tool rendering JSON output from
 
 It allows you to investigate UEFI firmware images visually.
 
+## Usage
+
+Currently, there are the following types of pages (views):
+
+- UEFI explorer
+- PSP explorer
+
+See also [TODO](#todo) and [Features](#features).
+
+### Running utk-web
+
+You need to have a [Node.js](https://nodejs.org/) runtime and `npm` installed.
+Find them in your respective OS distribution and install them through your
+package manager, e.g., `yay -S nodejs npm`.
+
+#### Installing dependencies
+
+The project depends on a handful of packages from the npm registry. Run the
+following to install them or update when pulling the utk-wek repository:
+
+`npm install`
+
+#### Running utk-web
+
+`npm start`
+
+Then open [http://localhost:3000](http://localhost:3000) in a web browser.
+
+#### Build static pages for deployment
+
+`npm run build`
+
+This will generate a directory `out/` which you can put on a web server under
+the path `/utk-web` for static serving. The configuration file `next.config.js`
+determines that path. You can adjust it or remove the path according to your
+setup.
+
+### Generating Fixtures
+
+To generate the fixtures for the respective view, you need to have the following
+CLI tools installed:
+
+- [Fiano](https://github.com/linuxboot/fiano)'s `utk` and `fmap`
+- [PSPTool](https://github.com/pspreverse/psptool)
+
+By convention, the fixtures need to have specific names. Here is how to generate
+them for a given firmware image. `FIRMWARE_IMAGE` be the path to the image file
+and `FIRMWARE_IMAGE_NAME` the name for it to use in utk-web:
+
+- `utk "${FIRMWARE_IMAGE}" json > "src/fixtures/${FIRMWARE_IMAGE_NAME}.json"`
+- `fmap jusage "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.fmap.json"`
+- `psptool --json "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.psp.json"`
+
+#### WIP
+
+The following are not yet supported by upstream nor utk-web, but planned:
+
+- [MFT CLI](https://github.com/Mimoja/MFT-AnalyserV2) from MFT Analyser v2
+- [uefi-firmware-parser](https://github.com/theopolis/uefi-firmware-parser)
+
+You would do the following (given the subcommands/switches will not change):
+
+- `mftcli "${FIRMWARE_IMAGE}" json > "src/fixtures/${FIRMWARE_IMAGE_NAME}.mft.json"`
+- `uefi-firmware-parser --brute --json "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.ufp.json"`
+
+### Creating Pages
+
+There are templates for the available kinds of pages in `src/templates/`. Simply
+copy them to `src/pages/${FIRMWARE_IMAGE_NAME}*.jsx`, replace the placeholders
+with the paths to the respective fixtures, and add links to the pages to the
+`src/pages/index.jsx` page to be able to navigate to them from the root page.
+
+For convenience, there is a script: Run `./genpages.sh ${FIRMWARE_IMAGE_NAME}`,
+supplying the name of your firmware image as the argument, to generate the
+respective pages from the templates. However, you still need to manually add the
+links to `src/pages/index.jsx`.
+
+TODO: script to generate fixtures, autogenerate pages from fixtures
+
 ## FAQ
 
 > Is there demand?
