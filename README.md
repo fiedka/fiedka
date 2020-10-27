@@ -156,6 +156,7 @@ AFAIK, close to 1k, nine-hundred-something.
 ## Features
 
 - [x] display used firmware volumes (FVs) as sections
+- [x] flattened UEFI sections
 - [x] expand / hide large DXE sections
 - [x] mark GUID, highlighted globally
 - [x] mark any blob card (no further functionality yet)
@@ -163,13 +164,14 @@ AFAIK, close to 1k, nine-hundred-something.
 - [x] visualize PSPTool output
   * sections ("directories") and entries
   * display indicators for properties like verified, signed, packed etc
+- [x] mark region used by a blob when hovering its card
 
 ## TODO
 
-- [ ] mark region used by a blob when hovering its card
 - [ ] mark BootGuard protected regions
 - [ ] load utk as in-browser back-end through WASM
 - [ ] load fmap as in-browser back-end through WASM
+- [ ] load mftcli as in-browser back-end through WASM
 - [ ] load UEFITool CLI tools as in-browser back-end through WASM
 
 ## Development / Contribution

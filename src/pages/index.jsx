@@ -23,6 +23,14 @@ const Page = () => {
       <menu>
         <ul>
           <li>
+            <Link href="/ovmf-202005.utk">
+              <a>OVMF 202005 utk</a>
+            </Link>
+            <Link href="/ovmf-202005.ufp">
+              <a className="psp">OVMF 202005 uefi-firmware-parser</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/A3MSTX_3.50">
               <a>A3MSTX_3.50</a>
             </Link>
@@ -33,6 +41,9 @@ const Page = () => {
             </Link>
             <Link href="/A3MSTX_3.60.psp">
               <a className="psp">A3MSTX_3.60 PSP</a>
+            </Link>
+            <Link href="/A3MSTX_3.60.ufp">
+              <a className="psp">A3MSTX_3.60 uefi-firmware-parser</a>
             </Link>
           </li>
           <li>
@@ -59,6 +70,9 @@ const Page = () => {
             </Link>
             <Link href="/MZ92-FS0_R16_F01.psp">
               <a className="psp">MZ92-FS0_R16_F01 PSP</a>
+            </Link>
+            <Link href="/MZ92-FS0_R16_F01.ufp">
+              <a className="psp">MZ92-FS0_R16_F01 uefi-firmware-parser</a>
             </Link>
           </li>
           <li>
