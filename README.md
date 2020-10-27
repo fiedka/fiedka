@@ -90,10 +90,14 @@ TODO: script to generate fixtures, autogenerate pages from fixtures
 
 Yes.
 
-- https://www.reddit.com/r/Amd/comments/7fr6ml/amd_secure_processor_or_platform_security/
-- https://thinksystem.lenovofiles.com/help/index.jsp?topic=%2F7X01%2Fobservable_problems.html
-- https://www.dell.com/community/PowerEdge-Hardware-General/Exception-during-the-UEFI-preboot-environment/td-p/7400227
-- https://software.intel.com/content/www/us/en/develop/documentation/system-debug-legacy-user-guide/top/common-debugger-tasks/debugging-uefi-bios/debugging-in-the-dxe-phase.html
+- [https://www.reddit.com/r/Amd/comments/7fr6ml/amd_secure_processor_or_platform_security/](
+https://www.reddit.com/r/Amd/comments/7fr6ml/amd_secure_processor_or_platform_security/)
+- [https://thinksystem.lenovofiles.com/help/index.jsp?topic=%2F7X01%2Fobservable_problems.html](
+https://thinksystem.lenovofiles.com/help/index.jsp?topic=%2F7X01%2Fobservable_problems.html)
+- [https://www.dell.com/community/PowerEdge-Hardware-General/Exception-during-the-UEFI-preboot-environment/td-p/7400227](
+https://www.dell.com/community/PowerEdge-Hardware-General/Exception-during-the-UEFI-preboot-environment/td-p/7400227)
+- [https://software.intel.com/content/www/us/en/develop/documentation/system-debug-legacy-user-guide/top/common-debugger-tasks/debugging-uefi-bios/debugging-in-the-dxe-phase.html](
+https://software.intel.com/content/www/us/en/develop/documentation/system-debug-legacy-user-guide/top/common-debugger-tasks/debugging-uefi-bios/debugging-in-the-dxe-phase.html)
 
 > How does UEFI work?
 
@@ -113,7 +117,8 @@ comprises `1062` pages.
 
 > Is there research on UEFI implementations?
 
-Yes. See https://depletionmode.com/uefi-boot.html for a decent introduction.
+Yes. See [https://depletionmode.com/uefi-boot.html](
+https://depletionmode.com/uefi-boot.html) for a decent introduction.
 
 > Do UEFI images contain more than just the UEFI firmware?
 
@@ -125,11 +130,12 @@ from `PSPTool`. Depending on OEMs and boards, EC firmware may also be included.
 
 Sort of.
 
-https://github.com/gdbinit/efi_dxe_emulator
-
-https://github.com/assafcarlsbad/efi_dxe_emulator
-
-https://labs.sentinelone.com/moving-from-manual-re-of-uefi-modules-to-dynamic-emulation-of-uefi-firmware/
+- [https://github.com/gdbinit/efi_dxe_emulator](
+https://github.com/gdbinit/efi_dxe_emulator)
+- [https://github.com/assafcarlsbad/efi_dxe_emulator](
+https://github.com/assafcarlsbad/efi_dxe_emulator)
+- [https://labs.sentinelone.com/moving-from-manual-re-of-uefi-modules-to-dynamic-emulation-of-uefi-firmware/](
+https://labs.sentinelone.com/moving-from-manual-re-of-uefi-modules-to-dynamic-emulation-of-uefi-firmware/)
 
 > What is the maximum number of DXE drivers seen on a device in the wild?
 
