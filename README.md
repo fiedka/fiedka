@@ -1,4 +1,4 @@
-# UTK Web
+# UTK Web ⚙️
 
 This is a web tool rendering JSON output from
 [Fiano's](https://github.com/linuxboot/fiano) `utk` utility.
