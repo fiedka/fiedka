@@ -126,6 +126,11 @@ Yes. On Intel platforms, (CS)ME and ethernet adapter firmware is included, and
 likewise, PSP firmware on AMD platforms. This tool can already visualize output
 from `PSPTool`. Depending on OEMs and boards, EC firmware may also be included.
 
+> How can the behavior of the binaries be analyzed?
+
+There are a few projects with a focus on binary analysis, such as [efiXplorer](
+https://github.com/binarly-io/efiXplorer), an IDA plugin.
+
 > Can DXE drivers be analyzed at runtime?
 
 Sort of.
