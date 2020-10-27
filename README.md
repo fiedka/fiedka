@@ -23,7 +23,7 @@ package manager, e.g., `yay -S nodejs npm`.
 #### Installing dependencies
 
 The project depends on a handful of packages from the npm registry. Run the
-following to install them or update when pulling the utk-wek repository:
+following to install them or update when pulling the utk-web repository:
 
 `npm install`
 
