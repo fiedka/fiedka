@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
-import colors from "../util/colors";
 import Tooltip from "../components/Tooltip";
 import Blocks from "../components/Blocks";
+import Entry from "../components/Entry";
 import { PubKeyContext } from "../context/PubKeyContext";
-import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
+import colors from "../util/colors";
 
 const getSigKey = (info) => {
   const sig = info.find((i) => i.includes("signed"));
@@ -17,27 +17,11 @@ const getSigKey = (info) => {
 };
 
 const PspCard = ({ psp, open = true }) => {
-  const [active, setActive] = useState(false);
   const pubKeyContext = useContext(PubKeyContext);
-  const markedEntriesContext = useContext(MarkedEntriesContext);
   const [contextPubKey, setContextPubKey] = pubKeyContext;
   const { address, size, sectionType, magic, version, info, md5, sizes } = psp;
 
   const entry = { address, length: size };
-  const onSelect = () => {
-    if (!active) {
-      markedEntriesContext.addEntry(entry);
-    } else {
-      markedEntriesContext.removeEntry(entry);
-    }
-    setActive(!active);
-  };
-  const onHover = () => {
-    markedEntriesContext.setHoveredEntry(entry);
-  };
-  const onOut = () => {
-    markedEntriesContext.setHoveredEntry(null);
-  };
 
   const isKey =
     typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY");
@@ -92,25 +76,45 @@ const PspCard = ({ psp, open = true }) => {
     );
   }
 
+  const header = (
+    <div
+      className={cn("header", {
+        selected: signed && selected,
+        signed: signed && !selected,
+      })}
+    >
+      <span className="emoji">{typeEmoji}</span>
+      <span className="type">{sectionType}</span>
+      <span className="emoji">{infoEmoji}</span>
+      <style jsx>{`
+        .header {
+          display: flex;
+          justify-content: space-between;
+          padding: 2px 1px;
+          cursor: pointer;
+        }
+        .selected {
+          background-color: ${colors[20]};
+        }
+        .signed {
+          background-color: ${colors[18]};
+        }
+        .type {
+          background-color: #f7f7f7;
+          padding: 0 2px;
+        }
+        .emoji {
+          background-color: #f7f7f7;
+          margin: 0 1px;
+        }
+      `}</style>
+    </div>
+  );
+
   return (
     <>
-      <div
-        className={cn("card", { active, open })}
-        onClick={onSelect}
-        onMouseOver={onHover}
-        onMouseLeave={onOut}
-      >
-        <header
-          className={cn({
-            selected: signed && selected,
-            signed: signed && !selected,
-          })}
-        >
-          <span className="emoji">{typeEmoji}</span>
-          <span className="type">{sectionType}</span>
-          <span className="emoji">{infoEmoji}</span>
-        </header>
-        <main>
+      <Entry header={header} open={open} entry={entry}>
+        <div className="flex">
           <table>
             <tbody>
               <tr>
@@ -151,69 +155,9 @@ const PspCard = ({ psp, open = true }) => {
               <Blocks size={size} />
             </div>
           </span>
-        </main>
-      </div>
+        </div>
+      </Entry>
       <style jsx>{`
-        header {
-          display: flex;
-          justify-content: space-between;
-          padding: 2px 1px;
-          background-color: ${colors[0]};
-          text-align: center;
-          font-weight: bold;
-          cursor: pointer;
-        }
-        .open main {
-          max-height: 400px;
-          padding: 3px;
-        }
-        main {
-          overflow: hidden;
-          max-height: 0;
-          transition: max-height 0.2s ease-in, padding 0.2s ease;
-          padding: 0;
-          display: flex;
-          flex: 1;
-          justify-content: space-between;
-          font-family: sans-serif;
-          background-color: #eee;
-          cursor: pointer;
-        }
-        .selected {
-          background-color: ${colors[20]};
-        }
-        .signed {
-          background-color: ${colors[18]};
-        }
-        .card.open {
-          margin: 10px 1%;
-        }
-        .card {
-          display: flex;
-          flex-direction: column;
-          border: 1px solid #422384;
-          margin: 10px 1% 0;
-          padding: 4px;
-          min-width: 350px;
-          width: 48%;
-        }
-        .card:hover {
-          background-color: ${colors[2]};
-        }
-        .card.active:hover {
-          background-color: ${colors[4]};
-        }
-        .active {
-          background-color: ${colors[6]};
-        }
-        .type {
-          background-color: #f7f7f7;
-          padding: 0 2px;
-        }
-        .emoji {
-          background-color: #f7f7f7;
-          margin: 0 1px;
-        }
         .extra {
           display: flex;
           flex-direction: column;
@@ -222,6 +166,10 @@ const PspCard = ({ psp, open = true }) => {
         }
         .info {
           margin: 2px;
+        }
+        .flex {
+          display: flex;
+          justify-content: space-between;
         }
       `}</style>
     </>
