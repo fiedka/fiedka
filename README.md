@@ -114,11 +114,18 @@ https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_6.pdf) is
 `2706` pages long. The [ACPI 6.3 Errata A spec](
 https://uefi.org/sites/default/files/resources/ACPI_Spec_6_3_A_Oct_6_2020.pdf)
 comprises `1062` pages.
+The [Platform Initialization spec](https://uefi.org/sites/default/files/resources/PI_Spec_1_7_A_final_May1.pdf
+) consists of `1541` pages.
 
 > Is there research on UEFI implementations?
 
 Yes. See [https://depletionmode.com/uefi-boot.html](
 https://depletionmode.com/uefi-boot.html) for a decent introduction.
+
+> How are UEFI images created?
+
+See [https://edk2-docs.gitbook.io/edk-ii-build-specification/2_design_discussion/22_uefipi_firmware_images
+](https://edk2-docs.gitbook.io/edk-ii-build-specification/2_design_discussion/22_uefipi_firmware_images).
 
 > Do UEFI images contain more than just the UEFI firmware?
 
