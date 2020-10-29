@@ -8,6 +8,11 @@ import colors from "../util/colors";
 const Entry = ({ open = true, entry, header, children }) => {
   const [active, setActive] = useState(false);
   const markedEntriesContext = useContext(MarkedEntriesContext);
+  const [expand, setExpand] = useState(open);
+  const toggleExpand = (e) => {
+    e.stopPropagation();
+    setExpand(!expand);
+  };
 
   const onSelect = () => {
     if (!active) {
@@ -27,12 +32,12 @@ const Entry = ({ open = true, entry, header, children }) => {
   return (
     <>
       <div
-        className={cn("card", { active, open })}
+        className={cn("card", { active, open: open || expand })}
         onClick={onSelect}
         onMouseOver={onHover}
         onMouseLeave={onOut}
       >
-        <header>{header}</header>
+        <header onClick={toggleExpand}>{header}</header>
         <main>{children}</main>
       </div>
       <style jsx>{`
