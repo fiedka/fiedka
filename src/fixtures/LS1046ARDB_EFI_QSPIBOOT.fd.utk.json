@@ -1,0 +1,3559 @@
+{
+	"Elements": [
+		{
+			"Type": "*uefi.FirmwareVolume",
+			"Value": {
+				"FileSystemGUID": {
+					"GUID": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+				},
+				"Length": 1048576,
+				"Signature": 1213613663,
+				"Attributes": 524031,
+				"HeaderLen": 72,
+				"Checksum": 57931,
+				"ExtHeaderOffset": 0,
+				"Revision": 2,
+				"Blocks": [
+					{
+						"Count": 1048576,
+						"Size": 1
+					}
+				],
+				"FVName": {
+					"GUID": "00000000-0000-0000-0000-000000000000"
+				},
+				"ExtHeaderSize": 0,
+				"Files": [
+					{
+						"Header": {
+							"GUID": {
+								"GUID": "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF"
+							},
+							"Type": 240,
+							"Attributes": 0,
+							"State": 248
+						},
+						"Type": "EFI_FV_FILETYPE_FFS_PAD",
+						"ExtractPath": "",
+						"DataOffset": 24
+					},
+					{
+						"Header": {
+							"GUID": {
+								"GUID": "D959E387-7B91-452C-90E0-A1DBAC90DDB8"
+							},
+							"Type": 3,
+							"Attributes": 16,
+							"State": 248
+						},
+						"Type": "EFI_FV_FILETYPE_SECURITY_CORE",
+						"Sections": [
+							{
+								"Header": {
+									"Type": 25
+								},
+								"Type": "EFI_SECTION_RAW",
+								"ExtractPath": ""
+							},
+							{
+								"Header": {
+									"Type": 18
+								},
+								"Type": "EFI_SECTION_TE",
+								"ExtractPath": ""
+							}
+						],
+						"ExtractPath": "",
+						"DataOffset": 24
+					},
+					{
+						"Header": {
+							"GUID": {
+								"GUID": "C1C1E1A2-3879-4B5E-9DD1-3DF2CE60D8EC"
+							},
+							"Type": 11,
+							"Attributes": 0,
+							"State": 248
+						},
+						"Type": "EFI_FV_FILETYPE_FIRMWARE_VOLUME_IMAGE",
+						"Sections": [
+							{
+								"Header": {
+									"Type": 2
+								},
+								"Type": "EFI_SECTION_GUID_DEFINED",
+								"ExtractPath": "",
+								"TypeSpecific": {
+									"Type": 2,
+									"Header": {
+										"GUID": {
+											"GUID": "EE4E5898-3914-4259-9D6E-DC7BD79403CF"
+										},
+										"DataOffset": 24,
+										"Attributes": 1,
+										"Compression": "LZMA"
+									}
+								},
+								"Encapsulated": [
+									{
+										"Type": "*uefi.Section",
+										"Value": {
+											"Header": {
+												"Type": 25
+											},
+											"Type": "EFI_SECTION_RAW",
+											"ExtractPath": ""
+										}
+									},
+									{
+										"Type": "*uefi.Section",
+										"Value": {
+											"Header": {
+												"Type": 23
+											},
+											"Type": "EFI_SECTION_FIRMWARE_VOLUME_IMAGE",
+											"ExtractPath": "",
+											"Encapsulated": [
+												{
+													"Type": "*uefi.FirmwareVolume",
+													"Value": {
+														"FileSystemGUID": {
+															"GUID": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+														},
+														"Length": 6838640,
+														"Signature": 1213613663,
+														"Attributes": 261887,
+														"HeaderLen": 72,
+														"Checksum": 17087,
+														"ExtHeaderOffset": 96,
+														"Revision": 2,
+														"Blocks": [
+															{
+																"Count": 6838640,
+																"Size": 1
+															}
+														],
+														"FVName": {
+															"GUID": "1037C42B-8452-4C41-AAC7-41E6C31468DA"
+														},
+														"ExtHeaderSize": 20,
+														"Files": [
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "D6A2CB7F-6A18-4E2F-B43B-9920A733700A"
+																	},
+																	"Type": 5,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DXE_CORE",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "DxeCore"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "80CF7257-87AB-47F9-A3FE-D50B76D89541"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 25
+																		},
+																		"Type": "EFI_SECTION_RAW",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "TRUE"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "PcdDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "B8D9777E-D72A-451F-9BDB-BAFB52A68415"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "ArmCpuDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "25462CDA-221F-47DF-AC1D-259CFAA4E326"
+																	},
+																	"Type": 2,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_FREEFORM",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 25
+																		},
+																		"Type": "EFI_SECTION_RAW",
+																		"ExtractPath": ""
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "FC097B3C-2EBD-4A75-A3DA-121DCAB365CC"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "DtPlatformDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "5145643E-B84F-4033-86E4-15E9DAB163FB"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SpiBusDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "93E34C7E-B50E-11DF-9223-2443DFD72085"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "26BACCB1-6F42-11D4-BCE7-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SpiNorFlashDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "36E3193B-0D0F-4C4D-AF9B-F8338284FCEF"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "7EBB920D-1AAF-46D9-B2AF-541E1DCE148B"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SpiConfigurationDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "889788DC-5FDE-4DD8-A77D-8FFF110D53D3"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "7EBB920D-1AAF-46D9-B2AF-541E1DCE148B"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Qspi"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "B601F8C4-43B7-4784-95B1-F4226CB40CEE"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "RuntimeDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "DE371F7C-DEC4-4D21-ADF1-593ABCC15882"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "26BACCB1-6F42-11D4-BCE7-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "ArmGicDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "49EA041E-6752-42CA-B0B1-7344FE2546B7"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "2890B3EA-053D-1643-AD0C-D64808DA3FF1"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "ArmTimerDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "0358B544-EC65-4339-89CD-CAD60A3DD787"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "WatchDogDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "F80697E9-7FD6-4665-8646-88E33EF71DFC"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SecurityStubDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "42857F0A-13F2-4B21-8A23-53D3F714B840"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "6441F818-6362-4E44-B570-7DBA31DD2453"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "CapsuleRuntimeDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "348C4D62-BFBD-4882-9ECE-C80BB1C4783B"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "HiiDatabase"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "AD608272-D07F-4964-801E-7BD3B7888652"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "1E5668E2-8481-11D4-BCF1-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "6441F818-6362-4E44-B570-7DBA31DD2453"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "MonotonicCounterRuntimeDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "CBD2E4D5-7068-4FF5-B462-9822B4AD8D60"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "D1A86E3F-0707-4C35-83CD-DC2C29C891A3"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "VariableRuntimeDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "FE5CEA76-4F72-49E8-986F-2CD899DFFE5D"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "8F644FA9-E850-4DB1-9CE2-0B44698E8DA4"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "B7DFB4E1-052F-449F-87BE-9818FC91B733"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "FaultTolerantWriteDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "4B28E4C7-FF36-4E10-93CF-A82159E777C5"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "ResetSystemRuntimeDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "5F2927BA-1B04-4D5F-8BEF-2B50C635D1E7"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "I2cDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "B336F62D-4135-4A55-AE4E-4971BBF0885D"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "CD72881F-45B5-4FEB-98C8-313DA8117462"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "RealTimeClock"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "51CCF399-4FDF-4E55-A45B-E123F84D456A"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "ConPlatformDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "408EDCEC-CF6D-477C-A5A8-B4844E3DE281"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "ConSplitterDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "CCCB0C28-4B24-11D5-9A5A-0090273FC14D"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "GraphicsConsoleDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "9E863906-A40F-4875-977F-5B93FF237FC6"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "TerminalDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "D3987D4B-971A-435F-8CAF-4967EB627241"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SerialDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "4C6E0267-C77D-410D-8100-1495911A989D"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "MetronomeDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "6696936D-3637-467C-87CB-14EA8248948C"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SimpleTextInOutSerial"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "7BFF18D7-9AAE-434B-9C06-F10A7E157EAC"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "PciCpuIo2Dxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "128FB770-5E79-4176-9E51-9BB268A17DD1"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "AD61F191-AE5F-4C0E-B9FA-E869D288C64F"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "26BACCB2-6F42-11D4-BCE7-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "26BACCB1-6F42-11D4-BCE7-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "PciHostBridgeDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "93B80004-9FB3-11D4-9A3A-0090273FC14D"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "PciBusDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "A2F436EA-A127-4EF8-957C-8048606FF670"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SnpDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "A210F973-229D-4F4D-AA37-9895E6C9EABA"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "DpcDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "025BBFC7-E6A9-4B8B-82AD-6815A1AEAF4A"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "MnpDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "E4F61863-FE2C-4B56-A8F4-08519BC439DF"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 25
+																		},
+																		"Type": "EFI_SECTION_RAW",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "VlanConfigDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "529D3F93-E8E9-4E73-B1E1-BDF6A9D50113"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "ArpDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "94734718-0BBC-47FB-96A5-EE7A5AE6A2AD"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Dhcp4Dxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "9FB1A1F3-3B71-4324-B39A-745CBB015FFF"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 25
+																		},
+																		"Type": "EFI_SECTION_RAW",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Ip4Dxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "DC3641B8-2FA8-4ED3-BC1F-F9962A03454B"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Mtftp4Dxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "6D6963AB-906D-4A65-A7CA-BD40E5D6AF2B"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Udp4Dxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "3B1DEAB5-C75D-442E-9238-8E2FFB62B0BB"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "UefiPxe4BcDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "4579B72D-7EC4-4DD4-8486-083C86B182A7"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 25
+																		},
+																		"Type": "EFI_SECTION_RAW",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "IScsi4Dxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "6D6963AB-906D-4A65-A7CA-BD40E5D6AF4D"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Tcp4Dxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "BB801A52-C90F-4EDE-91B2-82520888CBC3"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "LanIntelE1000Dxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "A487A478-51EF-48AA-8794-7BEE2A0562F1"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "0FD96974-23AA-4CDC-B9CB-98D17750322A"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "EF9FC172-A1B2-4693-B327-6D32FC416042"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "587E72D7-CC50-4F79-8209-CA291FC1A10F"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "tftpDynamicCommand"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "361F3B5C-4974-4158-9FD8-9CB70291F6E1"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "665E3FF6-46CC-11D4-9A38-0090273FC14D"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "26BACCB1-6F42-11D4-BCE7-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "26BACCB2-6F42-11D4-BCE7-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "1DA97072-BDDC-4B30-99F1-72A0B56FFF2A"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "27CFAC87-46CC-11D4-9A38-0090273FC14D"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "27CFAC88-46CC-11D4-9A38-0090273FC14D"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "B7DFB4E1-052F-449F-87BE-9818FC91B733"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "A46423E3-4617-49F1-B9FF-D1BFA9115839"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "26BACCB3-6F42-11D4-BCE7-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "6441F818-6362-4E44-B570-7DBA31DD2453"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "1E5668E2-8481-11D4-BCF1-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "665E3FF5-46CC-11D4-9A38-0090273FC14D"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Dpaa1EthernetDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "5E523CB4-D397-4986-87BD-A6DD8B22F455"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "AtaAtapiPassThruDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "19DF145A-B1D4-453F-8507-38816676D7F6"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "AtaBusDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "0167CCC4-D0F7-4F21-A3EF-9E64B7CDCE8B"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "ScsiBus"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "0A66E322-3740-4CCE-AD62-BD172CECCA35"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "ScsiDisk"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "820C59BB-274C-43B2-83EA-DAC673035A59"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SataController"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "71FD84CD-353B-464D-B7A4-6EA7B96995CB"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "NonDiscoverablePciDeviceDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "021722D8-522B-4079-852A-FE44C2C13F49"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SataInit"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "2FB92EFA-2EE0-4BAE-9EB6-7464125E1EF7"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "UhciDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "BDFE430E-8F2A-4DB0-9991-6F856594777E"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "EhciDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "B7F50E91-A759-412C-ADE4-DCD03E7F7C28"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "XhciDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "240612B7-A063-11D4-9A3A-0090273FC14D"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "UsbBusDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "9FB4B4A7-42C0-4BCD-8540-9BCC6711F83E"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "UsbMassStorageDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "196E7C2A-37B2-4B85-8683-718588952449"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "7EBB920D-1AAF-46D9-B2AF-541E1DCE148B"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "UsbHcdDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "CD3BAFB6-50FB-4FE8-8E4E-AB74D2C1A600"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "EnglishDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "6B38F7B4-AD98-40E9-9093-ACA2B5A253C4"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "DiskIoDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "1FA1F39E-FEFF-4AAE-BD7B-38A070A3B609"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "PartitionDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "5B60CCFD-1011-4BCF-B7D1-BB99CA96A603"
+																	},
+																	"Type": 6,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_PEIM",
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "961578FE-B6B7-44C3-AF35-6BC705CD2B1F"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Fat"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "7948A4CA-2F2E-41CA-90A2-D4420CECBBCF"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "26BACCB1-6F42-11D4-BCE7-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "MmcHostDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "B6F44CC0-9E45-11DF-BE21-0002A5D5C51B"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "MmcDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "AEFC0A47-599C-4F50-B5ED-40C4E541DC5B"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "RngDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "DA2406B3-FEEB-455B-AF1F-C45E34888524"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "NandFlash"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "7C04A583-9E3E-4F1C-AD65-E05268D0B4D1"
+																	},
+																	"Type": 9,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_APPLICATION",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Shell"
+																	},
+																	{
+																		"Header": {
+																			"Type": 25
+																		},
+																		"Type": "EFI_SECTION_RAW",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "9B680FCE-AD6B-4F3A-B60B-F59899003443"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "DevicePathDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "E660EA85-058E-4B55-A54B-F02F83A24707"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "EF9FC172-A1B2-4693-B327-6D32FC416042"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "587E72D7-CC50-4F79-8209-CA291FC1A10F"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "A770C357-B693-4E6D-A6CF-D21C728E550B"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "0FD96974-23AA-4CDC-B9CB-98D17750322A"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 25
+																		},
+																		"Type": "EFI_SECTION_RAW",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "DisplayEngine"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "EBF342FE-B1D3-4EF8-957C-8048606FF671"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "EF9FC172-A1B2-4693-B327-6D32FC416042"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "587E72D7-CC50-4F79-8209-CA291FC1A10F"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "0FD96974-23AA-4CDC-B9CB-98D17750322A"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "SetupBrowser"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "6D33944A-EC75-4855-A54D-809C75241F6C"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "0FD96974-23AA-4CDC-B9CB-98D17750322A"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "EF9FC172-A1B2-4693-B327-6D32FC416042"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "587E72D7-CC50-4F79-8209-CA291FC1A10F"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "BdsDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "462CAA21-7614-4503-836E-8AB6F4662331"
+																	},
+																	"Type": 9,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_APPLICATION",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "UiApp"
+																	},
+																	{
+																		"Header": {
+																			"Type": 25
+																		},
+																		"Type": "EFI_SECTION_RAW",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															},
+															{
+																"Header": {
+																	"GUID": {
+																		"GUID": "2EDC85DB-24C9-4B69-8EDD-2DC9BA03904F"
+																	},
+																	"Type": 7,
+																	"Attributes": 0,
+																	"State": 248
+																},
+																"Type": "EFI_FV_FILETYPE_DRIVER",
+																"Sections": [
+																	{
+																		"Header": {
+																			"Type": 19
+																		},
+																		"Type": "EFI_SECTION_DXE_DEPEX",
+																		"ExtractPath": "",
+																		"DepEx": [
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "13A3F0F6-264A-3EF0-F2E0-DEC512342F34"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "1E5668E2-8481-11D4-BCF1-0080C73C8881"
+																				}
+																			},
+																			{
+																				"OpCode": "PUSH",
+																				"GUID": {
+																					"GUID": "6441F818-6362-4E44-B570-7DBA31DD2453"
+																				}
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "AND"
+																			},
+																			{
+																				"OpCode": "END"
+																			}
+																		]
+																	},
+																	{
+																		"Header": {
+																			"Type": 16
+																		},
+																		"Type": "EFI_SECTION_PE32",
+																		"ExtractPath": ""
+																	},
+																	{
+																		"Header": {
+																			"Type": 21
+																		},
+																		"Type": "EFI_SECTION_USER_INTERFACE",
+																		"ExtractPath": "",
+																		"Name": "Dpaa1EthernetDxe"
+																	}
+																],
+																"ExtractPath": "",
+																"DataOffset": 24
+															}
+														],
+														"DataOffset": 120,
+														"FVOffset": 0,
+														"ExtractPath": "",
+														"Resizable": true
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						],
+						"ExtractPath": "",
+						"DataOffset": 24
+					}
+				],
+				"DataOffset": 72,
+				"FVOffset": 0,
+				"ExtractPath": "",
+				"Resizable": false
+			}
+		}
+	],
+	"ExtractPath": "",
+	"Length": 1048576,
+	"FRegion": null,
+	"RegionType": 0
+}

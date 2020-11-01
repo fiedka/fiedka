@@ -1,0 +1,37 @@
+{
+	"Elements": [
+		{
+			"Type": "*uefi.FirmwareVolume",
+			"Value": {
+				"FileSystemGUID": {
+					"GUID": "FFF12B8D-7696-4C8B-A985-2747075B4F50"
+				},
+				"Length": 786432,
+				"Signature": 1213613663,
+				"Attributes": 3638,
+				"HeaderLen": 72,
+				"Checksum": 62970,
+				"ExtHeaderOffset": 0,
+				"Revision": 2,
+				"Blocks": [
+					{
+						"Count": 1024,
+						"Size": 131072
+					}
+				],
+				"FVName": {
+					"GUID": "00000000-0000-0000-0000-000000000000"
+				},
+				"ExtHeaderSize": 0,
+				"DataOffset": 72,
+				"FVOffset": 0,
+				"ExtractPath": "",
+				"Resizable": false
+			}
+		}
+	],
+	"ExtractPath": "",
+	"Length": 786432,
+	"FRegion": null,
+	"RegionType": 0
+}

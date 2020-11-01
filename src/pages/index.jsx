@@ -28,7 +28,39 @@ const Page = () => {
               <a>OVMF 202005 utk</a>
             </Link>
             <Link href="/ovmf-202005.ufp">
-              <a className="psp">OVMF 202005 uefi-firmware-parser</a>
+              <a>OVMF 202005 uefi-firmware-parser</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/LS1043ARDB_EFI_NORBOOT.fd.utk">
+              <a>LS1043ARDB_EFI_NORBOOT utk</a>
+            </Link>
+            <Link href="/LS1043ARDB_EFI_NORBOOT.fd.ufp">
+              <a>LS1043ARDB_EFI_NORBOOT ufp</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/LS1046ARDB_EFI_QSPIBOOT.fd.utk">
+              <a>LS1046ARDB_EFI_QSPIBOOT utk</a>
+            </Link>
+            <Link href="/LS1046ARDB_EFI_QSPIBOOT.fd.ufp">
+              <a>LS1046ARDB_EFI_QSPIBOOT ufp</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/LS2088ARDB_EFI_NORBOOT.fd.utk">
+              <a>LS2088ARDB_EFI_NORBOOT utk</a>
+            </Link>
+            <Link href="/LS2088ARDB_EFI_NORBOOT.fd.ufp">
+              <a>LS2088ARDB_EFI_NORBOOT ufp</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/LX2160ARDB_EFI_NORBOOT.fd.utk">
+              <a>LX2160ARDB_EFI_NORBOOT utk</a>
+            </Link>
+            <Link href="/LX2160ARDB_EFI_NORBOOT.fd.ufp">
+              <a>LX2160ARDB_EFI_NORBOOT ufp</a>
             </Link>
           </li>
           <li>
@@ -36,7 +68,7 @@ const Page = () => {
               <a>A3MSTX_3.50 utk</a>
             </Link>
             <Link href="/A3MSTX_3.50.ufp">
-              <a className="psp">A3MSTX_3.50 ufp</a>
+              <a>A3MSTX_3.50 ufp</a>
             </Link>
           </li>
           <li>
@@ -44,10 +76,10 @@ const Page = () => {
               <a>A3MSTX_3.60 utk</a>
             </Link>
             <Link href="/A3MSTX_3.60.ufp">
-              <a className="psp">A3MSTX_3.60 ufp</a>
+              <a>A3MSTX_3.60 ufp</a>
             </Link>
             <Link href="/A3MSTX_3.60.psp">
-              <a className="psp">A3MSTX_3.60 PSP</a>
+              <a>A3MSTX_3.60 PSP</a>
             </Link>
           </li>
           <li>
@@ -55,7 +87,7 @@ const Page = () => {
               <a>Y520-15IKBN utk</a>
             </Link>
             <Link href="/Y520-15IKBN.ufp">
-              <a className="psp">Y520-15IKBN ufp</a>
+              <a>Y520-15IKBN ufp</a>
             </Link>
           </li>
           <li>
@@ -63,7 +95,7 @@ const Page = () => {
               <a>P34V2BF.D08 utk</a>
             </Link>
             <Link href="/P34V2BF.D08.ufp">
-              <a className="psp">P34V2BF.D08 ufp</a>
+              <a>P34V2BF.D08 ufp</a>
             </Link>
           </li>
           <li>
@@ -71,10 +103,10 @@ const Page = () => {
               <a>E7C52AMS.360 utk</a>
             </Link>
             <Link href="/E7C52AMS.360.ufp">
-              <a className="psp">E7C52AMS.360 ufp</a>
+              <a>E7C52AMS.360 ufp</a>
             </Link>
             <Link href="/E7C52AMS.360.psp">
-              <a className="psp">E7C52AMS.360 PSP</a>
+              <a>E7C52AMS.360 PSP</a>
             </Link>
           </li>
           <li>
@@ -82,10 +114,10 @@ const Page = () => {
               <a>MZ92-FS0_R16_F01 utk</a>
             </Link>
             <Link href="/MZ92-FS0_R16_F01.ufp">
-              <a className="psp">MZ92-FS0_R16_F01 ufp</a>
+              <a>MZ92-FS0_R16_F01 ufp</a>
             </Link>
             <Link href="/MZ92-FS0_R16_F01.psp">
-              <a className="psp">MZ92-FS0_R16_F01 PSP</a>
+              <a>MZ92-FS0_R16_F01 PSP</a>
             </Link>
           </li>
           <li>
@@ -93,10 +125,10 @@ const Page = () => {
               <a>B45AS715.BSS utk</a>
             </Link>
             <Link href="/B45AS715.BSS.ufp">
-              <a className="psp">B45AS715.BSS ufp</a>
+              <a>B45AS715.BSS ufp</a>
             </Link>
             <Link href="/B45AS715.BSS.psp">
-              <a className="psp">B45AS715.BSS PSP</a>
+              <a>B45AS715.BSS PSP</a>
             </Link>
           </li>
         </ul>
@@ -106,7 +138,7 @@ const Page = () => {
       reference.
       <Palette />
       <style jsx>{`
-        .psp {
+        li a:nth-child(n + 2) {
           margin-left: 12px;
         }
       `}</style>

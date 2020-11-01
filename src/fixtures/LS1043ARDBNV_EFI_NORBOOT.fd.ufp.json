@@ -1,0 +1,16 @@
+[
+  {
+    "guid": "fff12b8d-7696-4c8b-a985-2747075b4f50",
+    "attributes": 3638,
+    "revision": 2,
+    "checksum": 63938,
+    "size": 786432,
+    "blocks": [
+      {
+        "size": 56,
+        "length": 131072
+      }
+    ],
+    "ffs": []
+  }
+]

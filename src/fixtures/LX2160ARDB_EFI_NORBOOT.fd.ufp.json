@@ -1,0 +1,3332 @@
+{
+  "regions": [
+    {
+      "type": "bios",
+      "data": {
+        "firmwareVolumes": [
+          {
+            "guid": "8c8ce578-8a3d-4f1c-9935-896185c32dd3",
+            "nameGuid": "14000060-0000-0000-0000-000000000000",
+            "attributes": 524031,
+            "revision": 2,
+            "checksum": 57899,
+            "size": 2097152,
+            "blocks": [
+              {
+                "size": 2097152,
+                "length": 1
+              }
+            ],
+            "ffs": [
+              {
+                "guid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+                "name": null,
+                "type": 240,
+                "attributes": 0,
+                "state": 7,
+                "size": 32,
+                "fileType": "ffs padding",
+                "sections": [],
+                "blobs": []
+              },
+              {
+                "guid": "d959e387-7b91-452c-90e0-a1dbac90ddb8",
+                "name": null,
+                "type": 3,
+                "attributes": 16,
+                "state": 7,
+                "size": 58936,
+                "fileType": "security core",
+                "sections": [
+                  {
+                    "type": 25,
+                    "name": null,
+                    "size": 28,
+                    "sectionType": "Raw",
+                    "data": null
+                  },
+                  {
+                    "type": 18,
+                    "name": null,
+                    "size": 58884,
+                    "sectionType": "Terse executable (TE)",
+                    "data": null
+                  }
+                ],
+                "blobs": []
+              },
+              {
+                "guid": "9e21fd93-9c72-4c15-8c4b-e77f1db2d792",
+                "name": null,
+                "type": 11,
+                "attributes": 0,
+                "state": 7,
+                "size": 1008467,
+                "fileType": "firmware volume image",
+                "sections": [
+                  {
+                    "type": 2,
+                    "name": null,
+                    "size": 1008443,
+                    "sectionType": "Guid Defined",
+                    "data": {
+                      "guid": "ee4e5898-3914-4259-9d6e-dc7bd79403cf",
+                      "offset": 24,
+                      "attributes": 1,
+                      "authStatus": "PROCESSING_REQUIRED",
+                      "subsections": [
+                        {
+                          "type": 25,
+                          "name": null,
+                          "size": 4,
+                          "sectionType": "Raw",
+                          "data": null
+                        },
+                        {
+                          "type": 23,
+                          "name": null,
+                          "size": 7144292,
+                          "sectionType": "Firmware volume image",
+                          "data": {
+                            "guid": "8c8ce578-8a3d-4f1c-9935-896185c32dd3",
+                            "nameGuid": "1037c42b-8452-4c41-aac7-41e6c31468da",
+                            "attributes": 261887,
+                            "revision": 2,
+                            "checksum": 61141,
+                            "size": 7144288,
+                            "blocks": [
+                              {
+                                "size": 7144288,
+                                "length": 1
+                              }
+                            ],
+                            "ffs": [
+                              {
+                                "guid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+                                "name": null,
+                                "type": 240,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 44,
+                                "fileType": "ffs padding",
+                                "sections": [],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "d6a2cb7f-6a18-4e2f-b43b-9920a733700a",
+                                "name": null,
+                                "type": 5,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 182320,
+                                "fileType": "dxe core",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 182276,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "DxeCore",
+                                    "size": 20,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "80cf7257-87ab-47f9-a3fe-d50b76d89541",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 37466,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 324,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 6,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "TRUE"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 37092,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "PcdDxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "b8d9777e-d72a-451f-9bdb-bafb52a68415",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 45132,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 45060,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "ArmCpuDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "25462cda-221f-47df-ac1d-259cfaa4e326",
+                                "name": null,
+                                "type": 2,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 20948,
+                                "fileType": "freeform",
+                                "sections": [
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 20924,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "fc097b3c-2ebd-4a75-a3da-121dcab365cc",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 34004,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 33924,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "DtPlatformDxe",
+                                    "size": 32,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "7e374e25-8e01-4fee-87f2-390c23c606cd",
+                                "name": null,
+                                "type": 2,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 13964,
+                                "fileType": "freeform",
+                                "sections": [
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 324,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 484,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 516,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 4228,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 1604,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 292,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 292,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 6200,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "2e4914f5-20b3-493d-8296-6be46d8548d8",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 27350,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 27300,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "LX2160Icid",
+                                    "size": 26,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "9622e42c-8e38-4a08-9e8f-54f784652f6b",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 43698,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 43620,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "AcpiTableDxe",
+                                    "size": 30,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "cb933912-df8f-4305-b1f9-7b44fa11395c",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 19522,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "ffe06bdd-6107-46a6-7bb2-5a9c7ec5275c"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 19428,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "AcpiPlatform",
+                                    "size": 30,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "5145643e-b84f-4033-86e4-15e9dab163fb",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262220,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SpiBusDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "93e34c7e-b50e-11df-9223-2443dfd72085",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262246,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "26baccb1-6f42-11d4-bce7-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SpiNorFlashDxe",
+                                    "size": 34,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "36e3193b-0d0f-4c4d-af9b-f8338284fcef",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 26512,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "7ebb920d-1aaf-46d9-b2af-541e1dce148b"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 26404,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SpiConfigurationDxe",
+                                    "size": 44,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "e248c411-0043-43bb-8514-758c3dfc302c",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262226,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "7ebb920d-1aaf-46d9-b2af-541e1dce148b"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "Fspi",
+                                    "size": 14,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "b601f8c4-43b7-4784-95b1-f4226cb40cee",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262222,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "RuntimeDxe",
+                                    "size": 26,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "de371f7c-dec4-4d21-adf1-593abcc15882",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 24924,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "26baccb1-6f42-11d4-bce7-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 24836,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "ArmGicDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "49ea041e-6752-42ca-b0b1-7344fe2546b7",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 18944,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "2890b3ea-053d-1643-ad0c-d64808da3ff1"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 18852,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "ArmTimerDxe",
+                                    "size": 28,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "0619f5c2-4858-4caa-a86a-73a21a18df6b",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 18638,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "32898322-2da1-474a-baaa-f3f7cf569470"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 18532,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "GenericWatchdogDxe",
+                                    "size": 42,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "f80697e9-7fd6-4665-8646-88e33ef71dfc",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 39768,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 39684,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SecurityStubDxe",
+                                    "size": 36,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "42857f0a-13f2-4b21-8a23-53d3f714b840",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262252,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "6441f818-6362-4e44-b570-7dba31dd2453"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "CapsuleRuntimeDxe",
+                                    "size": 40,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "348c4d62-bfbd-4882-9ece-c80bb1c4783b",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 129424,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 129348,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "HiiDatabase",
+                                    "size": 28,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "ad608272-d07f-4964-801e-7bd3b7888652",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262290,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 58,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "1e5668e2-8481-11d4-bcf1-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "6441f818-6362-4e44-b570-7dba31dd2453"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "MonotonicCounterRuntimeDxe",
+                                    "size": 58,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "cbd2e4d5-7068-4ff5-b462-9822b4ad8d60",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262254,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "d1a86e3f-0707-4c35-83cd-dc2c29c891a3"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "VariableRuntimeDxe",
+                                    "size": 42,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "fe5cea76-4f72-49e8-986f-2cd899dffe5d",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 35176,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 58,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "8f644fa9-e850-4db1-9ce2-0b44698e8da4"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "b7dfb4e1-052f-449f-87be-9818fc91b733"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 35044,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "FaultTolerantWriteDxe",
+                                    "size": 48,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "4b28e4c7-ff36-4e10-93cf-a82159e777c5",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262244,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "ResetSystemRuntimeDxe",
+                                    "size": 48,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "5f2927ba-1b04-4d5f-8bef-2b50c635d1e7",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262214,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "I2cDxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "b336f62d-4135-4a55-ae4e-4971bbf0885d",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 262244,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "cd72881f-45b5-4feb-98c8-313da8117462"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 262148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "RealTimeClock",
+                                    "size": 32,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "51ccf399-4fdf-4e55-a45b-e123f84d456a",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 29118,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 29060,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "ConPlatformDxe",
+                                    "size": 34,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "408edcec-cf6d-477c-a5a8-b4844e3de281",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 45310,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 45252,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "ConSplitterDxe",
+                                    "size": 34,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "cccb0c28-4b24-11d5-9a5a-0090273fc14d",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 39078,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 39012,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "GraphicsConsoleDxe",
+                                    "size": 42,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "9e863906-a40f-4875-977f-5b93ff237fc6",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 47640,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 47588,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "TerminalDxe",
+                                    "size": 28,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "d3987d4b-971a-435f-8caf-4967eb627241",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 18764,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 18692,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SerialDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "4c6e0267-c77d-410d-8100-1495911a989d",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 17362,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 17284,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "MetronomeDxe",
+                                    "size": 30,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "6696936d-3637-467c-87cb-14ea8248948c",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 20196,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 20100,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SimpleTextInOutSerial",
+                                    "size": 48,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "7bff18d7-9aae-434b-9c06-f10a7e157eac",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 19506,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 19428,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "PciCpuIo2Dxe",
+                                    "size": 30,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "128fb770-5e79-4176-9e51-9bb268a17dd1",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 76014,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 76,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "ad61f191-ae5f-4c0e-b9fa-e869d288c64f"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "26baccb2-6f42-11d4-bce7-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "26baccb1-6f42-11d4-bce7-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 75876,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "PciHostBridgeDxe",
+                                    "size": 38,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "93b80004-9fb3-11d4-9a3a-0090273fc14d",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 91700,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 91652,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "PciBusDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "a2f436ea-a127-4ef8-957c-8048606ff670",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 41838,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 41796,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SnpDxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "a210f973-229d-4f4d-aa37-9895e6c9eaba",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 19654,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 19588,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "DpcDxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "025bbfc7-e6a9-4b8b-82ad-6815a1aeaf4a",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 61422,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 61380,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "MnpDxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "e4f61863-fe2c-4b56-a8f4-08519bc439df",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 43408,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 52,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 43300,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "VlanConfigDxe",
+                                    "size": 32,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "529d3f93-e8e9-4e73-b1e1-bdf6a9d50113",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 39342,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 39300,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "ArpDxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "94734718-0bbc-47fb-96a5-ee7a5ae6a2ad",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 59474,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 59428,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "Dhcp4Dxe",
+                                    "size": 22,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "9fb1a1f3-3b71-4324-b39a-745cbb015fff",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 98626,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 52,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 98532,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "Ip4Dxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "dc3641b8-2fa8-4ed3-bc1f-f9962a03454b",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 52820,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 52772,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "Mtftp4Dxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "6d6963ab-906d-4a65-a7ca-bd40e5d6af2b",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 53008,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 52964,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "Udp4Dxe",
+                                    "size": 20,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "3b1deab5-c75d-442e-9238-8e2ffb62b0bb",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 55324,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 55268,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "UefiPxe4BcDxe",
+                                    "size": 32,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "4579b72d-7ec4-4dd4-8486-083c86b182a7",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 90280,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 52,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 90180,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "IScsi4Dxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "6d6963ab-906d-4a65-a7ca-bd40e5d6af4d",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 88720,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 88676,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "Tcp4Dxe",
+                                    "size": 20,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "bb801a52-c90f-4ede-91b2-82520888cbc3",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 122082,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 122020,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "LanIntelE1000Dxe",
+                                    "size": 38,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "71fd84cd-353b-464d-b7a4-6ea7b96995cb",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 30936,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 30852,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "NonDiscoverablePciDeviceDxe",
+                                    "size": 60,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "1a03496a-5bd0-43d8-ae19-a56ead3623be",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 138718,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 220,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "1e5668e2-8481-11d4-bcf1-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "6441f818-6362-4e44-b570-7dba31dd2453"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "665e3ff6-46cc-11d4-9a38-0090273fc14d"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "26baccb1-6f42-11d4-bce7-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "26baccb2-6f42-11d4-bce7-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "1da97072-bddc-4b30-99f1-72a0b56fff2a"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "27cfac87-46cc-11d4-9a38-0090273fc14d"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "27cfac88-46cc-11d4-9a38-0090273fc14d"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "b7dfb4e1-052f-449f-87be-9818fc91b733"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "a46423e3-4617-49f1-b9ff-d1bfa9115839"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "26baccb3-6f42-11d4-bce7-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "665e3ff5-46cc-11d4-9a38-0090273fc14d"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 138436,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "Dpaa2EthernetDxe",
+                                    "size": 38,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "a487a478-51ef-48aa-8794-7bee2a0562f1",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 57106,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 76,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "0fd96974-23aa-4cdc-b9cb-98d17750322a"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "ef9fc172-a1b2-4693-b327-6d32fc416042"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "587e72d7-cc50-4f79-8209-ca291fc1a10f"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 56964,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "tftpDynamicCommand",
+                                    "size": 42,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "5e523cb4-d397-4986-87bd-a6dd8b22f455",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 55624,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 55556,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "AtaAtapiPassThruDxe",
+                                    "size": 44,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "19df145a-b1d4-453f-8507-38816676d7f6",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 40084,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 40036,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "AtaBusDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "0167ccc4-d0f7-4f21-a3ef-9e64b7cdce8b",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 31248,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 31204,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "ScsiBus",
+                                    "size": 20,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "0a66e322-3740-4cce-ad62-bd172cecca35",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 54194,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 54148,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "ScsiDisk",
+                                    "size": 22,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "820c59bb-274c-43b2-83ea-dac673035a59",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 25342,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 25284,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SataController",
+                                    "size": 34,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "021722d8-522b-4079-852a-fe44c2c13f49",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 22090,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 22020,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SataInit",
+                                    "size": 22,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "f9d88642-0737-49bc-81b5-6889cd57d9ea",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 29996,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 29924,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SmbiosDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "813659d0-f2c0-4d5a-8e01-c135fd5fd726",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 17772,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "03583ff6-cb36-4940-947e-b9b39f4afaf7"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 17668,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SmbiosPlatformDxe",
+                                    "size": 40,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "2fb92efa-2ee0-4bae-9eb6-7464125e1ef7",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 45616,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 45572,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "UhciDxe",
+                                    "size": 20,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "bdfe430e-8f2a-4db0-9991-6f856594777e",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 53680,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 53636,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "EhciDxe",
+                                    "size": 20,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "b7f50e91-a759-412c-ade4-dcd03e7f7c28",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 70896,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 70852,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "XhciDxe",
+                                    "size": 20,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "240612b7-a063-11d4-9a3a-0090273fc14d",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 54868,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 54820,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "UsbBusDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "9fb4b4a7-42c0-4bcd-8540-9bcc6711f83e",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 38148,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 38084,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "UsbMassStorageDxe",
+                                    "size": 40,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "196e7c2a-37b2-4b85-8683-718588952449",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 28572,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "7ebb920d-1aaf-46d9-b2af-541e1dce148b"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 28484,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "UsbHcdDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "cd3bafb6-50fb-4fe8-8e4e-ab74d2c1a600",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 19126,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 19076,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "EnglishDxe",
+                                    "size": 26,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "6b38f7b4-ad98-40e9-9093-aca2b5a253c4",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 31508,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 31460,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "DiskIoDxe",
+                                    "size": 24,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "1fa1f39e-feff-4aae-bd7b-38a070a3b609",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 39130,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 39076,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "PartitionDxe",
+                                    "size": 30,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "5b60ccfd-1011-4bcf-b7d1-bb99ca96a603",
+                                "name": null,
+                                "type": 6,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 26762,
+                                "fileType": "pei module",
+                                "sections": [
+                                  {
+                                    "type": 27,
+                                    "name": null,
+                                    "size": 58,
+                                    "sectionType": "PEI dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "f894643d-c449-42d1-8ea8-85bdd8c65bde"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "17ee496a-d8e4-4b9a-94d1-ce8272300850"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "01f34d25-4de2-23ad-3ff3-36353ff323f1"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 26660,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "FatPei",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "961578fe-b6b7-44c3-af35-6bc705cd2b1f",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 54632,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 54596,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "Fat",
+                                    "size": 12,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "7948a4ca-2f2e-41ca-90a2-d4420cecbbcf",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 40862,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 40,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "26baccb1-6f42-11d4-bce7-0080c73c8881"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 40772,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "MmcHostDxe",
+                                    "size": 26,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "b6f44cc0-9e45-11df-be21-0002a5d5c51b",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 44934,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 44868,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "MmcDxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "aefc0a47-599c-4f50-b5ed-40c4e541dc5b",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 19238,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 19172,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "RngDxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "7c04a583-9e3e-4f1c-ad65-e05268d0b4d1",
+                                "name": null,
+                                "type": 9,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 939016,
+                                "fileType": "application",
+                                "sections": [
+                                  {
+                                    "type": 21,
+                                    "name": "Shell",
+                                    "size": 16,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 28,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 938948,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "9b680fce-ad6b-4f3a-b60b-f59899003443",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 55540,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 22,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 55460,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "DevicePathDxe",
+                                    "size": 32,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "e660ea85-058e-4b55-a54b-f02f83a24707",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 92568,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 94,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "ef9fc172-a1b2-4693-b327-6d32fc416042"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "587e72d7-cc50-4f79-8209-ca291fc1a10f"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "a770c357-b693-4e6d-a6cf-d21c728e550b"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "0fd96974-23aa-4cdc-b9cb-98d17750322a"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 28,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 92388,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "DisplayEngine",
+                                    "size": 32,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "ebf342fe-b1d3-4ef8-957c-8048606ff671",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 113286,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 76,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "ef9fc172-a1b2-4693-b327-6d32fc416042"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "587e72d7-cc50-4f79-8209-ca291fc1a10f"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "0fd96974-23aa-4cdc-b9cb-98d17750322a"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 113156,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "SetupBrowser",
+                                    "size": 30,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "6d33944a-ec75-4855-a54d-809c75241f6c",
+                                "name": null,
+                                "type": 7,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 115098,
+                                "fileType": "driver",
+                                "sections": [
+                                  {
+                                    "type": 19,
+                                    "name": null,
+                                    "size": 76,
+                                    "sectionType": "DXE dependency expression",
+                                    "data": [
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "13a3f0f6-264a-3ef0-f2e0-dec512342f34"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "0fd96974-23aa-4cdc-b9cb-98d17750322a"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "ef9fc172-a1b2-4693-b327-6d32fc416042"
+                                      },
+                                      {
+                                        "op": "PUSH",
+                                        "name": null,
+                                        "guid": "587e72d7-cc50-4f79-8209-ca291fc1a10f"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "AND"
+                                      },
+                                      {
+                                        "op": "END"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 114980,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 21,
+                                    "name": "BdsDxe",
+                                    "size": 18,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              },
+                              {
+                                "guid": "462caa21-7614-4503-836e-8ab6f4662331",
+                                "name": null,
+                                "type": 9,
+                                "attributes": 0,
+                                "state": 7,
+                                "size": 186464,
+                                "fileType": "application",
+                                "sections": [
+                                  {
+                                    "type": 21,
+                                    "name": "UiApp",
+                                    "size": 16,
+                                    "sectionType": "User interface name",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 25,
+                                    "name": null,
+                                    "size": 52,
+                                    "sectionType": "Raw",
+                                    "data": null
+                                  },
+                                  {
+                                    "type": 16,
+                                    "name": null,
+                                    "size": 186372,
+                                    "sectionType": "PE32 image",
+                                    "data": null
+                                  }
+                                ],
+                                "blobs": []
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "blobs": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
