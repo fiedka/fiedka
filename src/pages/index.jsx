@@ -131,6 +131,22 @@ const Page = () => {
               <a>B45AS715.BSS PSP</a>
             </Link>
           </li>
+          <li>
+            <Link href="/T480s-0AN2200.FL1-N22ET65P.utk">
+              <a>T480s-N22ET65P utk</a>
+            </Link>
+            <Link href="/T480s-0AN2200.FL1-N22ET65P.ufp">
+              <a>T480s-N22ET65P ufp</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/T480s-0AN2200.FL1-N22ET65W.utk">
+              <a>T480s-N22ET65W utk</a>
+            </Link>
+            <Link href="/T480s-0AN2200.FL1-N22ET65W.ufp">
+              <a>T480s-N22ET65W ufp</a>
+            </Link>
+          </li>
         </ul>
       </menu>
       <h3>Color Palette</h3>

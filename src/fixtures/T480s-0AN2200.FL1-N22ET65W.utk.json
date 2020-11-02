@@ -1,0 +1,96 @@
+{
+  "Elements": [
+    {
+      "Type": "*uefi.BIOSPadding",
+      "Value": {
+        "Offset": 0,
+        "ExtractPath": ""
+      }
+    },
+    {
+      "Type": "*uefi.FirmwareVolume",
+      "Value": {
+        "FileSystemGUID": {
+          "GUID": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+        },
+        "Length": 9008736,
+        "Signature": 1213613663,
+        "Attributes": 327423,
+        "HeaderLen": 72,
+        "Checksum": 2204,
+        "ExtHeaderOffset": 96,
+        "Revision": 2,
+        "Blocks": [
+          {
+            "Count": 9008736,
+            "Size": 1
+          }
+        ],
+        "FVName": {
+          "GUID": "9CE95FD9-6E19-40E7-9A8F-EBAD7F78E0C5"
+        },
+        "ExtHeaderSize": 592,
+        "Files": [
+          {
+            "Header": {
+              "GUID": {
+                "GUID": "6C60EE00-C316-4C95-A684-CDC7E7033311"
+              },
+              "Type": 1,
+              "Attributes": 0,
+              "State": 248
+            },
+            "Type": "EFI_FV_FILETYPE_RAW",
+            "ExtractPath": "",
+            "DataOffset": 24
+          },
+          {
+            "Header": {
+              "GUID": {
+                "GUID": "C8AB0F4E-26FE-40F1-9579-EA8D30D503A4"
+              },
+              "Type": 7,
+              "Attributes": 0,
+              "State": 248
+            },
+            "Type": "EFI_FV_FILETYPE_DRIVER",
+            "Sections": [
+              {
+                "Header": {
+                  "Type": 16
+                },
+                "Type": "EFI_SECTION_PE32",
+                "ExtractPath": ""
+              },
+              {
+                "Header": {
+                  "Type": 21
+                },
+                "Type": "EFI_SECTION_USER_INTERFACE",
+                "ExtractPath": "",
+                "Name": "SystemFlashUpdateDriverDxe"
+              }
+            ],
+            "ExtractPath": "",
+            "DataOffset": 24
+          }
+        ],
+        "DataOffset": 688,
+        "FVOffset": 80,
+        "ExtractPath": "",
+        "Resizable": false
+      }
+    },
+    {
+      "Type": "*uefi.BIOSPadding",
+      "Value": {
+        "Offset": 9008816,
+        "ExtractPath": ""
+      }
+    }
+  ],
+  "ExtractPath": "",
+  "Length": 9455008,
+  "FRegion": null,
+  "RegionType": 0
+}
