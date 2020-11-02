@@ -1,7 +1,7 @@
 import React from "react";
 
-import fixture from "../fixtures/ovmf-202005.utk.json";
-import usage from "../fixtures/ovmf-202005.fmap.json";
+import fixture from "../fixtures/P34V2BF.D08.utk.json";
+import usage from "../fixtures/P34V2BF.D08.fmap.json";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
 import { GUIDProvider } from "../context/GUIDContext";
 import Volumes from "../components/Volumes";
@@ -9,8 +9,9 @@ import FlashUsage from "../components/FlashUsage";
 import Layout from "../components/Layout";
 import { transform } from "../util/utk";
 
+const uefiRegion = fixture.Regions.find((r) => r.Type === "*uefi.BIOSRegion");
 const volumes = transform(
-  fixture.Elements.filter((e) => e.Type === "*uefi.FirmwareVolume")
+  uefiRegion.Value.Elements.filter((e) => e.Type === "*uefi.FirmwareVolume")
 );
 
 const Page = () => {

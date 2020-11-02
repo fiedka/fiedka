@@ -20,6 +20,7 @@ const Page = () => {
       page.
       <h3>Explore</h3>
       The following firmware images&apos; names are from the respective vendors.
+      ufp is short for uefi-firmware-parser, utk (UEFI toolkit) part of Fiano.
       <menu>
         <ul>
           <li>
@@ -31,53 +32,68 @@ const Page = () => {
             </Link>
           </li>
           <li>
-            <Link href="/A3MSTX_3.50">
-              <a>A3MSTX_3.50</a>
+            <Link href="/A3MSTX_3.50.utk">
+              <a>A3MSTX_3.50 utk</a>
+            </Link>
+            <Link href="/A3MSTX_3.50.ufp">
+              <a className="psp">A3MSTX_3.50 ufp</a>
             </Link>
           </li>
           <li>
-            <Link href="/A3MSTX_3.60">
-              <a>A3MSTX_3.60</a>
+            <Link href="/A3MSTX_3.60.utk">
+              <a>A3MSTX_3.60 utk</a>
+            </Link>
+            <Link href="/A3MSTX_3.60.ufp">
+              <a className="psp">A3MSTX_3.60 ufp</a>
             </Link>
             <Link href="/A3MSTX_3.60.psp">
               <a className="psp">A3MSTX_3.60 PSP</a>
             </Link>
-            <Link href="/A3MSTX_3.60.ufp">
-              <a className="psp">A3MSTX_3.60 uefi-firmware-parser</a>
+          </li>
+          <li>
+            <Link href="/Y520-15IKBN.utk">
+              <a>Y520-15IKBN utk</a>
+            </Link>
+            <Link href="/Y520-15IKBN.ufp">
+              <a className="psp">Y520-15IKBN ufp</a>
             </Link>
           </li>
           <li>
-            <Link href="/Y520-15IKBN">
-              <a>Y520-15IKBN</a>
+            <Link href="/P34V2BF.D08.utk">
+              <a>P34V2BF.D08 utk</a>
+            </Link>
+            <Link href="/P34V2BF.D08.ufp">
+              <a className="psp">P34V2BF.D08 ufp</a>
             </Link>
           </li>
           <li>
-            <Link href="/P34V2BF.D08">
-              <a>P34V2BF.D08</a>
+            <Link href="/E7C52AMS.360.utk">
+              <a>E7C52AMS.360 utk</a>
             </Link>
-          </li>
-          <li>
-            <Link href="/E7C52AMS.360">
-              <a>E7C52AMS.360</a>
+            <Link href="/E7C52AMS.360.ufp">
+              <a className="psp">E7C52AMS.360 ufp</a>
             </Link>
             <Link href="/E7C52AMS.360.psp">
               <a className="psp">E7C52AMS.360 PSP</a>
             </Link>
           </li>
           <li>
-            <Link href="/MZ92-FS0_R16_F01">
-              <a>MZ92-FS0_R16_F01</a>
+            <Link href="/MZ92-FS0_R16_F01.utk">
+              <a>MZ92-FS0_R16_F01 utk</a>
+            </Link>
+            <Link href="/MZ92-FS0_R16_F01.ufp">
+              <a className="psp">MZ92-FS0_R16_F01 ufp</a>
             </Link>
             <Link href="/MZ92-FS0_R16_F01.psp">
               <a className="psp">MZ92-FS0_R16_F01 PSP</a>
             </Link>
-            <Link href="/MZ92-FS0_R16_F01.ufp">
-              <a className="psp">MZ92-FS0_R16_F01 uefi-firmware-parser</a>
-            </Link>
           </li>
           <li>
-            <Link href="/B45AS715.BSS">
-              <a>B45AS715.BSS</a>
+            <Link href="/B45AS715.BSS.utk">
+              <a>B45AS715.BSS utk</a>
+            </Link>
+            <Link href="/B45AS715.BSS.ufp">
+              <a className="psp">B45AS715.BSS ufp</a>
             </Link>
             <Link href="/B45AS715.BSS.psp">
               <a className="psp">B45AS715.BSS PSP</a>

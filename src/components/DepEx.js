@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
-import { getGuidFromDepEx } from "../util/dxe-helpers";
+import { getGuidFromDepEx } from "../util/utk";
 import { GUIDContext } from "../context/GUIDContext";
 
 const DepEx = ({ depEx }) => {
@@ -16,7 +16,8 @@ const DepEx = ({ depEx }) => {
         {depEx
           .filter((d) => !!getGuidFromDepEx(d))
           .map((d, i) => {
-            const guid = getGuidFromDepEx(d);
+            const guid = getGuidFromDepEx(d).toUpperCase();
+            const op = d.op;
             const className = classnames("guid", {
               selected: contextGuid === guid,
             });
@@ -26,7 +27,7 @@ const DepEx = ({ depEx }) => {
                 key={i}
                 onClick={() => setContextGuid(guid)}
               >
-                &gt; {guid}
+                &gt; {guid} {op}
               </div>
             );
           })}

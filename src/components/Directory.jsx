@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
-const Directory = ({ headline, files, renderFile }) => {
+const Directory = forwardRef(function Directory(
+  { headline, files, renderFile },
+  ref
+) {
   const [expand, setExpand] = useState(true);
   const toggleExpand = () => setExpand(!expand);
   return (
     <>
-      <div className="directory">
+      <div ref={ref} className="directory">
         <h3 onClick={toggleExpand}>
           {headline}
           <span>{files.length} files</span>
@@ -40,7 +43,7 @@ const Directory = ({ headline, files, renderFile }) => {
       `}</style>
     </>
   );
-};
+});
 
 Directory.propTypes = {
   headline: PropTypes.node,

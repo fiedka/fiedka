@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }) {
       <style jsx global>{`
         html {
           box-sizing: border-box;
+          scroll-behavior: smooth;
         }
         body {
           background-color: #dedede;

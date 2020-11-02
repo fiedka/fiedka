@@ -1,7 +1,7 @@
 import React from "react";
 
-import fixture from "../fixtures/ovmf-202005.utk.json";
-import usage from "../fixtures/ovmf-202005.fmap.json";
+import fixture from "../fixtures/MZ92-FS0_R16_F01.utk.json";
+import usage from "../fixtures/MZ92-FS0_R16_F01.fmap.json";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
 import { GUIDProvider } from "../context/GUIDContext";
 import Volumes from "../components/Volumes";

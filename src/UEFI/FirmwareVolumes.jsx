@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
+import React, { createRef } from "react";
 import PropTypes from "prop-types";
 import { Boop } from "@coalmines/indui";
-import FV from "../UEFI/FV";
+import FV from "./FV";
 
 const jumpToTop = () => window.scrollTo(0, 2);
 
-const FirmwareVolumes = ({ volumes: fvs }) => {
-  const vols = fvs.map((v) => ({ ...v, ref: useRef(null) }));
+const FirmwareVolumes = ({ fvs }) => {
+  const vols = fvs.map((v) => ({ ...v, ref: createRef(null) }));
   const jumpToFV = (guid) => {
     const vol = vols.find((v) => v.guid === guid);
     if (vol) {
@@ -55,7 +55,7 @@ const FirmwareVolumes = ({ volumes: fvs }) => {
 };
 
 FirmwareVolumes.propTypes = {
-  volumes: PropTypes.array,
+  fvs: PropTypes.array,
 };
 
 export default FirmwareVolumes;
