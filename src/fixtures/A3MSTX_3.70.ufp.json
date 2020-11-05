@@ -180,13 +180,13 @@
                 "type": 11,
                 "attributes": 0,
                 "state": 7,
-                "size": 3678519,
+                "size": 3678798,
                 "fileType": "firmware volume image",
                 "sections": [
                   {
                     "type": 2,
                     "name": null,
-                    "size": 3678495,
+                    "size": 3678774,
                     "sectionType": "Guid Defined",
                     "data": {
                       "guid": "ee4e5898-3914-4259-9d6e-dc7bd79403cf",
@@ -352,7 +352,7 @@
                                 "type": 7,
                                 "attributes": 0,
                                 "state": 7,
-                                "size": 71438,
+                                "size": 70062,
                                 "fileType": "driver",
                                 "sections": [
                                   {
@@ -374,7 +374,7 @@
                                   {
                                     "type": 16,
                                     "name": null,
-                                    "size": 71364,
+                                    "size": 69988,
                                     "sectionType": "PE32 image",
                                     "data": null
                                   },
@@ -2944,7 +2944,7 @@
                                 "type": 7,
                                 "attributes": 0,
                                 "state": 7,
-                                "size": 36174,
+                                "size": 36206,
                                 "fileType": "driver",
                                 "sections": [
                                   {
@@ -2998,7 +2998,7 @@
                                   {
                                     "type": 16,
                                     "name": null,
-                                    "size": 36004,
+                                    "size": 36036,
                                     "sectionType": "PE32 image",
                                     "data": null
                                   },
@@ -3594,7 +3594,7 @@
                                 "type": 7,
                                 "attributes": 0,
                                 "state": 7,
-                                "size": 21890,
+                                "size": 21858,
                                 "fileType": "driver",
                                 "sections": [
                                   {
@@ -3656,7 +3656,7 @@
                                   {
                                     "type": 16,
                                     "name": null,
-                                    "size": 21700,
+                                    "size": 21668,
                                     "sectionType": "PE32 image",
                                     "data": null
                                   },
@@ -4129,7 +4129,7 @@
                                 "type": 7,
                                 "attributes": 0,
                                 "state": 7,
-                                "size": 39902,
+                                "size": 39870,
                                 "fileType": "driver",
                                 "sections": [
                                   {
@@ -4175,7 +4175,7 @@
                                   {
                                     "type": 16,
                                     "name": null,
-                                    "size": 39748,
+                                    "size": 39716,
                                     "sectionType": "PE32 image",
                                     "data": null
                                   },
@@ -6913,7 +6913,7 @@
                                 "type": 7,
                                 "attributes": 0,
                                 "state": 7,
-                                "size": 488314,
+                                "size": 488346,
                                 "fileType": "driver",
                                 "sections": [
                                   {
@@ -6967,7 +6967,7 @@
                                   {
                                     "type": 16,
                                     "name": null,
-                                    "size": 488164,
+                                    "size": 488196,
                                     "sectionType": "PE32 image",
                                     "data": null
                                   },
@@ -7466,7 +7466,7 @@
                                 "type": 7,
                                 "attributes": 0,
                                 "state": 7,
-                                "size": 6006,
+                                "size": 6166,
                                 "fileType": "driver",
                                 "sections": [
                                   {
@@ -7488,7 +7488,7 @@
                                   {
                                     "type": 16,
                                     "name": null,
-                                    "size": 5892,
+                                    "size": 6052,
                                     "sectionType": "PE32 image",
                                     "data": null
                                   },
@@ -12499,13 +12499,13 @@
                                 "type": 7,
                                 "attributes": 0,
                                 "state": 7,
-                                "size": 1324798,
+                                "size": 1324830,
                                 "fileType": "driver",
                                 "sections": [
                                   {
                                     "type": 16,
                                     "name": null,
-                                    "size": 1324740,
+                                    "size": 1324772,
                                     "sectionType": "PE32 image",
                                     "data": null
                                   },
@@ -21227,13 +21227,13 @@
                                 "type": 7,
                                 "attributes": 0,
                                 "state": 7,
-                                "size": 302797,
+                                "size": 302753,
                                 "fileType": "driver",
                                 "sections": [
                                   {
                                     "type": 2,
                                     "name": null,
-                                    "size": 302773,
+                                    "size": 302729,
                                     "sectionType": "Guid Defined",
                                     "data": {
                                       "guid": "ee4e5898-3914-4259-9d6e-dc7bd79403cf",
@@ -26755,13 +26755,13 @@
                                 "type": 2,
                                 "attributes": 0,
                                 "state": 7,
-                                "size": 305413,
+                                "size": 305473,
                                 "fileType": "freeform",
                                 "sections": [
                                   {
                                     "type": 2,
                                     "name": null,
-                                    "size": 305389,
+                                    "size": 305449,
                                     "sectionType": "Guid Defined",
                                     "data": {
                                       "guid": "ee4e5898-3914-4259-9d6e-dc7bd79403cf",
@@ -27550,13 +27550,13 @@
                 "type": 11,
                 "attributes": 0,
                 "state": 7,
-                "size": 37536,
+                "size": 37546,
                 "fileType": "firmware volume image",
                 "sections": [
                   {
                     "type": 2,
                     "name": null,
-                    "size": 37512,
+                    "size": 37522,
                     "sectionType": "Guid Defined",
                     "data": {
                       "guid": "ee4e5898-3914-4259-9d6e-dc7bd79403cf",
@@ -28698,7 +28698,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 3850,
+                "size": 3882,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -28744,7 +28744,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 3716,
+                    "size": 3748,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -28958,7 +28958,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 3994,
+                "size": 4026,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -29012,7 +29012,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 3844,
+                    "size": 3876,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -29039,7 +29039,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 3850,
+                "size": 3914,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -29069,7 +29069,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 3748,
+                    "size": 3812,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -29308,7 +29308,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 26082,
+                "size": 26050,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -29346,7 +29346,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 25956,
+                    "size": 25924,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -29632,7 +29632,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 16718,
+                "size": 16686,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -29686,7 +29686,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 16548,
+                    "size": 16516,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -29778,7 +29778,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 16334,
+                "size": 16302,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -29832,7 +29832,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 16164,
+                    "size": 16132,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -29859,7 +29859,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 18834,
+                "size": 18802,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -29905,7 +29905,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 18692,
+                    "size": 18660,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -30086,7 +30086,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 16094,
+                "size": 16030,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -30132,7 +30132,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 15948,
+                    "size": 15884,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -30305,7 +30305,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 280922,
+                "size": 280890,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -30375,7 +30375,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 280724,
+                    "size": 280692,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -30459,7 +30459,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 6910,
+                "size": 6878,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -30497,7 +30497,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 6764,
+                    "size": 6732,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -30881,7 +30881,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 17662,
+                "size": 17534,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -30935,7 +30935,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 17492,
+                    "size": 17364,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -31035,7 +31035,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 82166,
+                "size": 82446,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -31073,7 +31073,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 82028,
+                    "size": 82308,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -31100,7 +31100,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 20934,
+                "size": 20870,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -31146,7 +31146,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 20780,
+                    "size": 20716,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -31173,7 +31173,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 20230,
+                "size": 20198,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -31219,7 +31219,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 20076,
+                    "size": 20044,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -31246,7 +31246,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 45574,
+                "size": 45822,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -31316,7 +31316,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 45364,
+                    "size": 45612,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -31343,7 +31343,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 45846,
+                "size": 46118,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -31413,7 +31413,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 45636,
+                    "size": 45908,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -31521,7 +31521,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 58742,
+                "size": 58758,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -31551,7 +31551,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 58628,
+                    "size": 58644,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -32212,7 +32212,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 16710,
+                "size": 16678,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -32250,7 +32250,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 16580,
+                    "size": 16548,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -32277,7 +32277,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 12962,
+                "size": 12898,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -32299,7 +32299,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 12868,
+                    "size": 12804,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -32326,7 +32326,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 11938,
+                "size": 11906,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -32348,7 +32348,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 11844,
+                    "size": 11812,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -32432,7 +32432,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 5718,
+                "size": 5686,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -32470,7 +32470,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 5572,
+                    "size": 5540,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -32643,7 +32643,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 6050,
+                "size": 6018,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -32681,7 +32681,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 5924,
+                    "size": 5892,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -33952,7 +33952,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 622,
+                "size": 1982,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -33982,7 +33982,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 516,
+                    "size": 1876,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -34512,7 +34512,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 24274,
+                "size": 24242,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -34550,7 +34550,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 24132,
+                    "size": 24100,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -34822,7 +34822,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 3806,
+                "size": 3774,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -34844,7 +34844,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 3716,
+                    "size": 3684,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -34871,7 +34871,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 31082,
+                "size": 31081,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -34909,7 +34909,7 @@
                   {
                     "type": 2,
                     "name": null,
-                    "size": 30998,
+                    "size": 30997,
                     "sectionType": "Guid Defined",
                     "data": {
                       "guid": "ee4e5898-3914-4259-9d6e-dc7bd79403cf",
@@ -35590,7 +35590,7 @@
                 "type": 6,
                 "attributes": 0,
                 "state": 7,
-                "size": 2286,
+                "size": 2254,
                 "fileType": "pei module",
                 "sections": [
                   {
@@ -35652,7 +35652,7 @@
                   {
                     "type": 18,
                     "name": null,
-                    "size": 2116,
+                    "size": 2084,
                     "sectionType": "Terse executable (TE)",
                     "data": null
                   },
@@ -35679,7 +35679,7 @@
                 "type": 240,
                 "attributes": 0,
                 "state": 7,
-                "size": 1784864,
+                "size": 1783328,
                 "fileType": "ffs padding",
                 "sections": [],
                 "blobs": []
