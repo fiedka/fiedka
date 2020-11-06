@@ -2,6 +2,8 @@
 
 This is a web tool rendering [UEFI](https://uefi.org/) firmware images visually.
 
+![utk-web screenshot](docs/img/utk-web.png)
+
 ## Usage
 
 Currently, there are the following types of pages (views):
@@ -96,6 +98,12 @@ https://www.dell.com/community/PowerEdge-Hardware-General/Exception-during-the-U
 - [https://software.intel.com/content/www/us/en/develop/documentation/system-debug-legacy-user-guide/top/common-debugger-tasks/debugging-uefi-bios/debugging-in-the-dxe-phase.html](
 https://software.intel.com/content/www/us/en/develop/documentation/system-debug-legacy-user-guide/top/common-debugger-tasks/debugging-uefi-bios/debugging-in-the-dxe-phase.html)
 
+> Are there similar GUI tools?
+
+There are proprietary, closed source, non-public tools limited to few platforms,
+which are licensed by IBVs for OEMs under contract, such as AMI's [Aptio
+Utilities](https://ami.com/ami_downloads/Aptio_Utilities_Data_Sheet.pdf).
+
 > How does UEFI work?
 
 Here's a picture of the boot flow [from the TianoCore/EDK2 wiki](
@@ -134,10 +142,27 @@ Yes. On Intel platforms, (CS)ME and ethernet adapter firmware is included, and
 likewise, PSP firmware on AMD platforms. This tool can already visualize output
 from `PSPTool`. Depending on OEMs and boards, EC firmware may also be included.
 
+> What is a typical UEFI firmware layout?
+
+Full firmware images consist of regions. Intel uses the IFD (Intel Flash
+Descriptor), while AMD has FET (Firmware Entry Table) at the highest level. The
+PI specification further partiotions UEFI regions into [Firmware Volumes (FVs)](
+https://edk2-docs.gitbook.io/edk-ii-minimum-platform-specification/appendix_a_full_maps/a1_firmware_volume_layout),
+which can be compared to directories in common file systems like FAT. Similarly,
+PSP and ME have their own formats again, hence different tools are needed.
+
 > How can the behavior of the binaries be analyzed?
 
 There are a few projects with a focus on binary analysis, such as [efiXplorer](
 https://github.com/binarly-io/efiXplorer), an IDA plugin.
+
+Static analysis is possible to a certain degree, given that UEFI images contain
+many binary pieces. Especially dependencies in UEFI are [hard to evaluate](
+https://sudonull.com/post/253-Static-analysis-BIOS-UEFI-or-how-to-get-Dependency-Graph).
+For this reason, utk-web for now only prints out [DepEx declaration sections](
+https://edk2-docs.gitbook.io/edk-ii-inf-specification/2_inf_overview/215_-depex-_section),
+but you can select their GUIDs to see other occurences. Find more details in the 
+[DepEx FAQ](https://github.com/tianocore/tianocore.github.io/wiki/Depex-FAQ).
 
 > Can DXE drivers be analyzed at runtime?
 

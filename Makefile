@@ -9,6 +9,7 @@ dist: static
 .PHONY: static
 static:
 	pandoc --template="$(PANDOC_TEMPLATE)" --toc -o public/about.html README.md
+	cp -r docs public/
 
 .PHONY: prepare
 prepare:
@@ -20,5 +21,5 @@ bundle:
 
 .PHONY: clean
 clean:
-	rm -rf public/about.html
+	rm -rf public/*
 	rm -rf "$(DIST_DIR)"
