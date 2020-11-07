@@ -20,13 +20,8 @@ const FV = forwardRef(function FV(
     <Directory
       headline={headline}
       files={files}
-      renderFile={(file, open) => (
-        <File
-          key={file.guid}
-          file={file}
-          open={open}
-          onJumpToVolume={onJumpToFV}
-        />
+      renderFile={(file, open, key) => (
+        <File key={key} file={file} open={open} onJumpToVolume={onJumpToFV} />
       )}
       ref={ref}
     />
