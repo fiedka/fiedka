@@ -1,32 +1,44 @@
 import React from "react";
+import { Tabs } from "@coalmines/indui";
 
-import fixture from "../fixtures/MZ92-FS0_R16_F01.ufp.json";
+import ufpFixture from "../fixtures/MZ92-FS0_R16_F01.ufp.json";
+import utkFixture from "../fixtures/MZ92-FS0_R16_F01.utk.json";
+import pspFixture from "../fixtures/MZ92-FS0_R16_F01.psp.json";
 import usage from "../fixtures/MZ92-FS0_R16_F01.fmap.json";
+import { transform as ufpTransform } from "../util/ufp";
+import { transform as utkTransform } from "../util/utk";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
 import { GUIDProvider } from "../context/GUIDContext";
-import FirmwareVolume from "../UEFI/FV";
-import FlashUsage from "../components/FlashUsage";
 import Layout from "../components/Layout";
-import { transform } from "../util/ufp";
+import FlashUsage from "../components/FlashUsage";
+import FirmwareVolumes from "../UEFI/FirmwareVolumes";
+import PSPImage from "../PSP/PspImage";
 
-const fvs = transform(fixture);
+const utkVolumes = utkTransform(
+  utkFixture.Elements.filter((e) => e.Type === "*uefi.FirmwareVolume")
+);
+
+const uefi = ufpFixture.regions.find((r) => r.type === "bios");
+const ufpVolumes = ufpTransform(uefi.data.firmwareVolumes);
 
 const Page = () => {
-  const volumes = fvs.map(({ guid, parentGuid, size, checksum, ffs }) => (
-    <FirmwareVolume
-      key={checksum}
-      guid={guid}
-      parentGuid={parentGuid}
-      size={size}
-      ffs={ffs}
-    />
-  ));
+  const ufp = <FirmwareVolumes fvs={ufpVolumes} />;
+  const utk = <FirmwareVolumes fvs={utkVolumes} />;
+  const psp = <PSPImage directories={pspFixture} />;
 
   return (
     <MarkedEntriesProvider>
       <Layout sidepane={<FlashUsage usage={usage} />}>
         <GUIDProvider>
-          <div>{volumes}</div>
+          <div>
+            <Tabs
+              menu={[
+                { id: "ufp", body: ufp, label: "uefi-firmware-parser" },
+                { id: "utk", body: utk, label: "utk" },
+                { id: "psp", body: psp, label: "psp" },
+              ]}
+            />
+          </div>
         </GUIDProvider>
       </Layout>
     </MarkedEntriesProvider>
