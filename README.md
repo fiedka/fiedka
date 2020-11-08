@@ -57,6 +57,10 @@ and `FIRMWARE_IMAGE_NAME` the name for it to use in utk-web:
 - `fmap jusage "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.fmap.json"`
 - `psptool --json "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.psp.json"`
 
+For convenience, there is a script: Run `./genfixtures.sh ${FIRMWARE_IMAGE}`,
+supplying the path to your firmware image as the argument, to generate the
+respective fixtures from the image file.
+
 #### WIP
 
 The following are not yet supported by upstream nor utk-web, but planned:
@@ -81,7 +85,7 @@ supplying the name of your firmware image as the argument, to generate the
 respective pages from the templates. However, you still need to manually add the
 links to `src/pages/index.jsx`.
 
-TODO: script to generate fixtures, autogenerate pages from fixtures
+TODO: autogenerate pages from fixtures
 
 ## FAQ
 
