@@ -8,7 +8,10 @@ dist: static
 
 .PHONY: static
 static:
-	pandoc --template="$(PANDOC_TEMPLATE)" --toc -o public/about.html README.md
+	pandoc \
+		--template="$(PANDOC_TEMPLATE)" \
+		--metadata title="About utk-web" \
+		--toc -o public/about.html README.md
 	cp -r docs public/
 
 .PHONY: prepare
