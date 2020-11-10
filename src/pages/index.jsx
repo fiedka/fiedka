@@ -121,6 +121,16 @@ const Page = () => {
             </Link>
           </li>
           <li>
+            <Link href="/PRIME-X370-PRO-ASUS-5220.CAP.uefi">
+              <a>PRIME-X370-PRO-ASUS-5220.CAP uefi</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/P11C-C-ASUS-4L-4001.CAP.ufp">
+              <a>P11C-C-ASUS-4L-4001.CAP ufp</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/B45AS715.BSS.utk">
               <a>B45AS715.BSS utk</a>
             </Link>
