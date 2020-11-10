@@ -1,9 +1,6 @@
 # UTK Web ⚙️
 
-This is a web tool rendering JSON output from
-[Fiano's](https://github.com/linuxboot/fiano) `utk` utility.
-
-It allows you to investigate UEFI firmware images visually.
+This is a web tool rendering [UEFI](https://uefi.org/) firmware images visually.
 
 ## Usage
 
@@ -122,6 +119,10 @@ The [Platform Initialization spec](https://uefi.org/sites/default/files/resource
 Yes. See [https://depletionmode.com/uefi-boot.html](
 https://depletionmode.com/uefi-boot.html) for a decent introduction.
 
+SentinelLabs have started a decent [blog post series](
+https://labs.sentinelone.com/moving-from-common-sense-knowledge-about-uefi-to-actually-dumping-uefi-firmware/)
+on the practical side of interfacing with firmware on real hardware.
+
 > How are UEFI images created?
 
 See [https://edk2-docs.gitbook.io/edk-ii-build-specification/2_design_discussion/22_uefipi_firmware_images
@@ -156,15 +157,17 @@ AFAIK, close to 1k, nine-hundred-something.
 ## Features
 
 - [x] display used firmware volumes (FVs) as sections
+- [x] [uefi-firmware-parser](https://github.com/theopolis/uefi-firmware-parser)
+      support
 - [x] flattened UEFI sections
-- [x] expand / hide large DXE sections
+- [x] expand / shrink large sections
 - [x] mark GUID, highlighted globally
 - [x] mark any blob card (no further functionality yet)
 - [x] display flash usage as reported by `fmap` (in a side panel)
 - [x] visualize PSPTool output
   * sections ("directories") and entries
   * display indicators for properties like verified, signed, packed etc
-- [x] mark region used by a blob when hovering its card
+  * mark blocks used by an entry when hovering its card
 
 ## TODO
 
@@ -176,8 +179,9 @@ AFAIK, close to 1k, nine-hundred-something.
 
 ## Development / Contribution
 
-This project is based on the Next.js application framework. It contains a few
-widgets (UI components) to render UEFI data structures. If you would like to
-contribute, have ideas, etc, please feel free to create issues on GitHub and/or
+This project is based on the [Next.js](https://nextjs.org/) application
+framework. It contains a few widgets (UI components) to render UEFI data
+structures. If you would like to contribute, have ideas, etc, please feel free
+to create issues [on GitHub](https://github.com/orangecms/utk-web/) and/or open
 pull requests. Any form of contribution is highly appreciated. As this tool is
 meant to be a GUI (by now :)), usability feedback is very important and welcome.
