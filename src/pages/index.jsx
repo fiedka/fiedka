@@ -157,6 +157,11 @@ const Page = () => {
               <a>T480s-N22ET65W ufp</a>
             </Link>
           </li>
+          <li>
+            <Link href="/jetson-agx-xavier.uefi">
+              <a>Jetson AGX Xavier UEFI</a>
+            </Link>
+          </li>
         </ul>
       </menu>
       <h3>Color Palette</h3>
