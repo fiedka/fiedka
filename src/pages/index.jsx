@@ -158,6 +158,11 @@ const Page = () => {
             </Link>
           </li>
           <li>
+            <Link href="/T14Gen1_20UD-R1BET58W.ufp">
+              <a>T14 Gen1 20UD-R1BET58W</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/jetson-agx-xavier.uefi">
               <a>Jetson AGX Xavier UEFI</a>
             </Link>
