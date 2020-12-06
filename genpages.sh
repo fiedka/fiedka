@@ -32,6 +32,6 @@ case $2 in
   *)
     echo "Generating ${FIRMWARE_IMAGE}"
     sed "s#{FIRMWARE_IMAGE}#${FIRMWARE_IMAGE}#" \
-      src/templates/utk.tmpl > src/pages/"${FIRMWARE_IMAGE}.jsx"
+      src/templates/utk.tmpl > src/pages/"${FIRMWARE_IMAGE}.utk.jsx"
     ;;
 esac
