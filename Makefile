@@ -8,6 +8,7 @@ dist: static
 
 .PHONY: static
 static:
+	mkdir -p public
 	pandoc \
 		--template="$(PANDOC_TEMPLATE)" \
 		--metadata title="About utk-web" \
