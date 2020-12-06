@@ -43,6 +43,7 @@ const PspImage = ({ directories }) => {
           top: 0;
           display: flex;
           justify-content: space-between;
+          z-index: 20;
         }
       `}</style>
     </PubKeyProvider>
