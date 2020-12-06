@@ -30,12 +30,16 @@ export const getName = (file) => {
  * get depdency expression section
  */
 export const getDepEx = (file) => {
-  const section = file.sections.find(({ Type }) =>
+  // not every file has sections
+  if (!file.Sections) {
+    return [];
+  }
+  const section = file.Sections.find(({ Type }) =>
     EFI_SECTIONS_DEPEX.includes(Type)
   );
   // not every file has dependencies
   if (!section) {
-    return null;
+    return [];
   }
   return section.DepEx.map((d) => {
     const known = knownDepex.find((k) => k.guid === getGuidFromDepEx(d));
@@ -87,6 +91,7 @@ export const transformFiles = (files = []) =>
     const { Type: fileType, Sections: sections } = file;
     const name = getName(file);
     const guid = getGuidFromFile(file);
+    const depEx = getDepEx(file);
     const childFvs = [];
     if (file.Type === FILE_TYPE_FV_IMAGE) {
       const fvs = getFvsFromFile(file);
@@ -99,6 +104,7 @@ export const transformFiles = (files = []) =>
       childFvs,
       name,
       fileType,
+      depEx,
       sections: sections || [],
     };
   });

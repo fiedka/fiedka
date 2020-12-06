@@ -20,7 +20,6 @@ const SECTIONS_DEPEX = [
 
 export const FILE_TYPE_FV_IMAGE = "firmware volume image";
 
-// TODO: this should be done in transforms at read / build time
 export const getDepEx = (file) => {
   const depex = file.sections.find((f) =>
     SECTIONS_DEPEX.includes(f.sectionType)
@@ -76,6 +75,7 @@ export const flatten = (fvs) =>
 export const transformFiles = (files) => {
   return files.map((f) => {
     const name = f.name || getName(f);
+    const depEx = getDepEx(f);
     // Keep reference to child for quick navigation
     const childFvs = [];
     f.sections
@@ -90,7 +90,7 @@ export const transformFiles = (files) => {
             }
           });
       });
-    return { ...f, name, childFvs };
+    return { ...f, name, childFvs, depEx };
   });
 };
 

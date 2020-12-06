@@ -5,9 +5,6 @@ import { Boop } from "@coalmines/indui";
 import Blocks from "../components/Blocks";
 import Entry from "../components/Entry";
 import DepEx from "./DepEx";
-// TODO: this should be done in transforms at read / build time
-import { getDepEx as getUfpDepEx } from "../util/ufp";
-import { getDepEx as getUtkDepEx } from "../util/utk";
 
 // TODO: Handle multiple FVs? Is it possible?
 export const getFviGuid = (file) => {
@@ -18,9 +15,7 @@ export const getFviGuid = (file) => {
 };
 
 const File = ({ file, open, onJumpToVolume }) => {
-  const { guid, name, size, fileType } = file;
-  const depEx =
-    (file.sections && (getUfpDepEx(file) || getUtkDepEx(file))) || [];
+  const { guid, name, size, fileType, depEx } = file;
   const headline = name || guid.toUpperCase();
   const header = (
     <div className="header">
