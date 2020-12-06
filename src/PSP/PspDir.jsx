@@ -1,12 +1,12 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 import PspCard from "./PspCard";
 import Directory from "../components/Directory";
 
-const hexify = (a) => a.toString(16);
+export const hexify = (a) => a.toString(16);
 
-const PspDir = ({ dir }) => {
+const PspDir = forwardRef(function PspDir({ dir }, ref) {
   const headline = (
     <>
       <span>{`type: ${dir.directoryType}`}</span>
@@ -19,9 +19,10 @@ const PspDir = ({ dir }) => {
       headline={headline}
       files={dir.entries}
       renderFile={(p, open) => <PspCard key={p.index} psp={p} open={open} />}
+      ref={ref}
     />
   );
-};
+});
 
 PspDir.propTypes = {
   dir: PropTypes.object,
