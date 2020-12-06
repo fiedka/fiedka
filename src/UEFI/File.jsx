@@ -4,7 +4,7 @@ import { Boop } from "@coalmines/indui";
 
 import Blocks from "../components/Blocks";
 import Entry from "../components/Entry";
-import DepEx from "../components/DepEx";
+import DepEx from "./DepEx";
 // TODO: this should be done in transforms at read / build time
 import { getDepEx as getUfpDepEx } from "../util/ufp";
 import { getDepEx as getUtkDepEx } from "../util/utk";
