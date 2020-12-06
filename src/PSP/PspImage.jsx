@@ -6,6 +6,18 @@ import { PubKeyProvider } from "../context/PubKeyContext";
 
 const jumpToTop = () => window.scrollTo(0, 2);
 
+/**
+ * Discard duplicate directories based on address
+ *
+ * PSP images may include two data structures for legacy and v2 headers. The
+ * entries are the same otherwise, so this is redundant for display.
+ */
+const filterUniqueAddress = (dirs) =>
+  dirs.reduce(
+    (a, c) => (a.find((d) => d.address === c.address) ? a : [...a, c]),
+    []
+  );
+
 const PspImage = ({ directories }) => {
   const dirs = directories.map((v) => ({ ...v, ref: createRef(null) }));
   const jumpToDir = (address) => {
@@ -22,7 +34,7 @@ const PspImage = ({ directories }) => {
         <header>
           <span>
             Jump to Dir
-            {dirs.map(({ address }, i) => (
+            {filterUniqueAddress(dirs).map(({ address }, i) => (
               <Boop key={i} onClick={() => jumpToDir(address)}>
                 0x{hexify(address)}
               </Boop>
