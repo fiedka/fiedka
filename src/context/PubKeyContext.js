@@ -14,5 +14,5 @@ export const PubKeyProvider = ({ children }) => {
 };
 
 PubKeyProvider.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.node,
 };

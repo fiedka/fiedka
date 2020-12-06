@@ -34,5 +34,5 @@ export const MarkedEntriesProvider = ({ children }) => {
 };
 
 MarkedEntriesProvider.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.node,
 };
