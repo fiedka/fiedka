@@ -48,6 +48,7 @@ CLI tools installed:
 
 - [Fiano](https://github.com/linuxboot/fiano)'s `utk` and `fmap`
 - [PSPTool](https://github.com/pspreverse/psptool)
+- [uefi-firmware-parser](https://github.com/theopolis/uefi-firmware-parser)
 
 By convention, the fixtures need to have specific names. Here is how to generate
 them for a given firmware image. `FIRMWARE_IMAGE` be the path to the image file
@@ -56,6 +57,7 @@ and `FIRMWARE_IMAGE_NAME` the name for it to use in utk-web:
 - `utk "${FIRMWARE_IMAGE}" json > "src/fixtures/${FIRMWARE_IMAGE_NAME}.json"`
 - `fmap jusage "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.fmap.json"`
 - `psptool --json "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.psp.json"`
+- `uefi-firmware-parser --brute --json "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.ufp.json"`
 
 For convenience, there is a script: Run `./genfixtures.sh ${FIRMWARE_IMAGE}`,
 supplying the path to your firmware image as the argument, to generate the
@@ -66,17 +68,15 @@ respective fixtures from the image file.
 The following are not yet supported by upstream nor utk-web, but planned:
 
 - [MFT CLI](https://github.com/Mimoja/MFT-AnalyserV2) from MFT Analyser v2
-- [uefi-firmware-parser](https://github.com/theopolis/uefi-firmware-parser)
 
 You would do the following (given the subcommands/switches will not change):
 
 - `mftcli "${FIRMWARE_IMAGE}" json > "src/fixtures/${FIRMWARE_IMAGE_NAME}.mft.json"`
-- `uefi-firmware-parser --brute --json "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.ufp.json"`
 
 ### Creating Pages
 
 There are templates for the available kinds of pages in `src/templates/`. Simply
-copy them to `src/pages/${FIRMWARE_IMAGE_NAME}*.jsx`, replace the placeholders
+copy them to `src/pages/${FIRMWARE_IMAGE_NAME}.*.jsx`, replace the placeholders
 with the paths to the respective fixtures, and add links to the pages to the
 `src/pages/index.jsx` page to be able to navigate to them from the root page.
 
