@@ -1,0 +1,3 @@
+[submodule "src/efiXplorer"]
+	path = src/efiXplorer
+	url = https://github.com/binarly-io/efiXplorer
