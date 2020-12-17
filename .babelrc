@@ -7,10 +7,8 @@
         "next/babel"
       ]
     },
-    "development": {
-      "presets": [
-        "next/babel"
-      ]
-    }
-  }
+  },
+  "presets": [
+    "next/babel"
+  ]
 }
