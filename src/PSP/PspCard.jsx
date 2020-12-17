@@ -81,6 +81,7 @@ const PspCard = ({ psp, open = true }) => {
       className={cn("header", {
         selected: signed && selected,
         signed: signed && !selected,
+        "signed-verified": signed && verified && !selected,
       })}
     >
       <span className="emoji">{typeEmoji}</span>
@@ -92,12 +93,16 @@ const PspCard = ({ psp, open = true }) => {
           justify-content: space-between;
           padding: 2px 1px;
           cursor: pointer;
+          background-color: #4223;
         }
         .selected {
           background-color: ${colors[20]};
         }
         .signed {
           background-color: ${colors[18]};
+        }
+        .signed-verified {
+          background-color: #acab;
         }
         .type {
           background-color: #f7f7f7;
