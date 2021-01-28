@@ -47,31 +47,24 @@ To generate the fixtures for the respective view, you need to have the following
 CLI tools installed:
 
 - [Fiano](https://github.com/linuxboot/fiano)'s `utk` and `fmap`
-- [PSPTool](https://github.com/pspreverse/psptool)
 - [uefi-firmware-parser](https://github.com/theopolis/uefi-firmware-parser)
+- [PSPTool](https://github.com/pspreverse/psptool)
+- [MFT CLI](https://github.com/Mimoja/MFT-AnalyserV2) from MFT Analyser v2
+  (not yet upstream, see https://github.com/orangecms/MFT-AnalyserV2/tree/json)
 
 By convention, the fixtures need to have specific names. Here is how to generate
 them for a given firmware image. `FIRMWARE_IMAGE` be the path to the image file
 and `FIRMWARE_IMAGE_NAME` the name for it to use in utk-web:
 
-- `utk "${FIRMWARE_IMAGE}" json > "src/fixtures/${FIRMWARE_IMAGE_NAME}.json"`
 - `fmap jusage "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.fmap.json"`
-- `psptool --json "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.psp.json"`
+- `utk "${FIRMWARE_IMAGE}" json > "src/fixtures/${FIRMWARE_IMAGE_NAME}.json"`
 - `uefi-firmware-parser --brute --json "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.ufp.json"`
+- `psptool --json "${FIRMWARE_IMAGE}" > "src/fixtures/${FIRMWARE_IMAGE_NAME}.psp.json"`
+- `mftcli "${FIRMWARE_IMAGE}" json > "src/fixtures/${FIRMWARE_IMAGE_NAME}.mft.json"`
 
 For convenience, there is a script: Run `./genfixtures.sh ${FIRMWARE_IMAGE}`,
 supplying the path to your firmware image as the argument, to generate the
 respective fixtures from the image file.
-
-#### WIP
-
-The following are not yet supported by upstream nor utk-web, but planned:
-
-- [MFT CLI](https://github.com/Mimoja/MFT-AnalyserV2) from MFT Analyser v2
-
-You would do the following (given the subcommands/switches will not change):
-
-- `mftcli "${FIRMWARE_IMAGE}" json > "src/fixtures/${FIRMWARE_IMAGE_NAME}.mft.json"`
 
 ### Creating Pages
 
@@ -85,7 +78,10 @@ supplying the name of your firmware image as the argument, to generate the
 respective pages from the templates. However, you still need to manually add the
 links to `src/pages/index.jsx`.
 
-TODO: autogenerate pages from fixtures
+#### TODOs
+
+- [ ] autogenerate pages from fixtures
+- [ ] generate pages for MFT fixtures
 
 ## FAQ
 
@@ -193,10 +189,12 @@ AFAIK, close to 1k, nine-hundred-something.
 - [x] mark GUID, highlighted globally
 - [x] mark any blob card (no further functionality yet)
 - [x] display flash usage as reported by `fmap` (in a side panel)
-- [x] visualize PSPTool output
+- [x] visualize PSP images
   * sections ("directories") and entries
   * display indicators for properties like verified, signed, packed etc
   * mark blocks used by an entry when hovering its card
+- [x] PSPTool support
+- [x] MFT support
 
 ## TODO
 
