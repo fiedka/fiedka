@@ -12,6 +12,7 @@ const PspDir = forwardRef(function PspDir({ dir }, ref) {
       <span>{`type: ${dir.directoryType}`}</span>
       <span>{`magic: ${dir.magic}`}</span>
       <span>{`address: 0x${hexify(dir.address)}`}</span>
+      {dir.checksum && <span>{`checksum: ${hexify(dir.checksum)}`}</span>}
     </>
   );
   return (
