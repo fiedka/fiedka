@@ -1,4 +1,4 @@
-import React, { createRef } from "react";
+import React, { createRef, useState } from "react";
 import PropTypes from "prop-types";
 import PspDir, { hexify } from "../PSP/PspDir";
 import { Boop } from "@coalmines/indui";
@@ -18,7 +18,23 @@ const filterUniqueAddress = (dirs) =>
     []
   );
 
+const filterDir = (dir, filter) => {
+  if (!filter) {
+    return dir;
+  }
+  const f = filter.toLowerCase();
+  // sectionType can be an array, so stringify first
+  return {
+    ...dir,
+    entries: dir.entries.filter(
+      (e) =>
+        e.sectionType && JSON.stringify(e.sectionType).toLowerCase().match(f)
+    ),
+  };
+};
+
 const PspImage = ({ directories }) => {
+  const [filter, setFilter] = useState("");
   const dirs = directories.map((v) => ({ ...v, ref: createRef(null) }));
   const jumpToDir = (address) => {
     const dir = dirs.find((d) => d.address === address);
@@ -28,6 +44,7 @@ const PspImage = ({ directories }) => {
       window.scrollTo(0, pos - 72);
     }
   };
+  const onChange = (e) => setFilter(e.target.value);
   return (
     <PubKeyProvider>
       <div>
@@ -40,11 +57,12 @@ const PspImage = ({ directories }) => {
               </Boop>
             ))}
           </span>
+          <input placeholder="filter" onChange={onChange} />
           <Boop onClick={jumpToTop}>^</Boop>
         </header>
         <section>
           {dirs.map((d) => (
-            <PspDir key={d.directory} dir={d} ref={d.ref} />
+            <PspDir key={d.directory} dir={filterDir(d, filter)} ref={d.ref} />
           ))}
         </section>
       </div>
@@ -56,6 +74,9 @@ const PspImage = ({ directories }) => {
           display: flex;
           justify-content: space-between;
           z-index: 20;
+        }
+        input {
+          height: 32px;
         }
       `}</style>
     </PubKeyProvider>
