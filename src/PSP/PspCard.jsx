@@ -28,6 +28,27 @@ const getMeta = (meta) => {
   return { signature, sigFingerprint, encFingerprint };
 };
 
+const Extra = ({ label, data }) =>
+  data ? (
+    <>
+      <tr>
+        <th>{label}</th>
+        <td>{data}</td>
+      </tr>
+      <style jsx>{`
+        th {
+          text-align: left;
+          padding-left: 0;
+        }
+      `}</style>
+    </>
+  ) : null;
+
+Extra.propTypes = {
+  label: PropTypes.string,
+  data: PropTypes.string,
+};
+
 const PspCard = ({ psp, open = true }) => {
   const pubKeyContext = useContext(PubKeyContext);
   const [contextPubKey, setContextPubKey] = pubKeyContext;
@@ -176,13 +197,15 @@ const PspCard = ({ psp, open = true }) => {
             </tbody>
           </table>
           <span className="extra">
-            {version && <div className="info">version {version}</div>}
-            {magic && <div className="info">magic: {magic}</div>}
-            {signature && <div className="info">signature: {signature}</div>}
-            {sigKey && <div className="info">signing key: {sigKey}</div>}
-            {encFingerprint && (
-              <div className="info">encryption key: {encFingerprint}</div>
-            )}
+            <table>
+              <tbody>
+                <Extra data={version} label="version" />
+                <Extra data={magic} label="magic" />
+                <Extra data={signature} label="signature" />
+                <Extra data={sigKey} label="signing key" />
+                <Extra data={encFingerprint} label="encryption key" />
+              </tbody>
+            </table>
             <div className="info">
               <Blocks size={size} />
             </div>
