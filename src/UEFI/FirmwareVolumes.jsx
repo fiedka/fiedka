@@ -1,11 +1,25 @@
-import React, { createRef } from "react";
+import React, { createRef, useState } from "react";
 import PropTypes from "prop-types";
 import { Boop } from "@coalmines/indui";
 import FV from "./FV";
 
 const jumpToTop = () => window.scrollTo(0, 2);
 
+const matches = (filters, val) =>
+  val && filters.some((f) => val.toLowerCase().match(f));
+
+const filterFfs = (files, filter) => {
+  if (!filter) {
+    return files;
+  }
+  const filters = filter.toLowerCase().split(" ");
+  return files.filter(
+    ({ name, guid }) => matches(filters, name) || matches(filters, guid)
+  );
+};
+
 const FirmwareVolumes = ({ fvs }) => {
+  const [filter, setFilter] = useState("");
   const vols = fvs.map((v) => ({ ...v, ref: createRef(null) }));
   const jumpToFV = (guid) => {
     const vol = vols.find((v) => v.guid === guid);
@@ -15,6 +29,7 @@ const FirmwareVolumes = ({ fvs }) => {
       window.scrollTo(0, pos - 32);
     }
   };
+  const onChange = (e) => setFilter(e.target.value);
   return (
     <>
       <header>
@@ -26,6 +41,7 @@ const FirmwareVolumes = ({ fvs }) => {
             </Boop>
           ))}
         </span>
+        <input placeholder="filter" onChange={onChange} />
         <Boop onClick={jumpToTop}>^</Boop>
       </header>
       <section>
@@ -35,7 +51,7 @@ const FirmwareVolumes = ({ fvs }) => {
             guid={guid}
             parentGuid={parentGuid}
             size={size}
-            ffs={files}
+            ffs={filterFfs(files, filter)}
             ref={ref}
             onJumpToFV={jumpToFV}
           />
@@ -48,6 +64,9 @@ const FirmwareVolumes = ({ fvs }) => {
           top: 0;
           display: flex;
           justify-content: space-between;
+        }
+        input {
+          height: 32px;
         }
       `}</style>
     </>
