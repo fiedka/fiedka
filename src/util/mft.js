@@ -50,6 +50,16 @@ export const amdFw = (FW) => {
   });
 };
 
+const getEntryType = (TypeInfo, Comment) => {
+  if (TypeInfo) {
+    if (TypeInfo.Name && TypeInfo.Name.match("GEC")) {
+      return "Gigabit Ethernet Controller";
+    }
+    return TypeInfo.Name || TypeInfo.Comment;
+  }
+  return Comment;
+};
+
 export const transformEntry = (e) => {
   const {
     DirectoryEntry,
@@ -96,11 +106,12 @@ export const transformEntry = (e) => {
   const { Location: address, Size: size, Destination } = DirectoryEntry;
   const destinationAddress =
     Destination !== 0x10000000000000000 ? Destination : null;
+  const sectionType = getEntryType(TypeInfo, Comment);
   return {
     address,
     destinationAddress,
     size,
-    sectionType: (TypeInfo && (TypeInfo.Name || TypeInfo.Comment)) || Comment,
+    sectionType,
     info,
     version,
     meta,
