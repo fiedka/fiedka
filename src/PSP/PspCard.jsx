@@ -8,6 +8,8 @@ import Entry from "../components/Entry";
 import { PubKeyContext } from "../context/PubKeyContext";
 import colors from "../util/colors";
 
+export const hexify = (a) => a && `0x${a.toString(16)}`;
+
 const getSigKey = (info) => {
   const sig = info.find((i) => i.includes("signed"));
   // FIXME: just a quick hack; work on PSPTool to output the full key directly
@@ -54,6 +56,7 @@ const PspCard = ({ psp, open = true }) => {
   const [contextPubKey, setContextPubKey] = pubKeyContext;
   const {
     address,
+    destinationAddress,
     size,
     sectionType,
     magic,
@@ -119,6 +122,13 @@ const PspCard = ({ psp, open = true }) => {
       </Tooltip>
     );
   }
+  if (destinationAddress) {
+    infoEmoji.push(
+      <Tooltip key="boot" tip="boot entry">
+        🥾
+      </Tooltip>
+    );
+  }
 
   const header = (
     <div
@@ -169,6 +179,10 @@ const PspCard = ({ psp, open = true }) => {
               <tr>
                 <th>address</th>
                 <td>0x{address.toString(16)}</td>
+              </tr>
+              <tr>
+                <th>destination</th>
+                <td>{hexify(destinationAddress)}</td>
               </tr>
               <tr>
                 <th>hash</th>

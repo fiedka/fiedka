@@ -93,9 +93,12 @@ export const transformEntry = (e) => {
       uncompressed: FullSize || null,
     };
   }
-  const { Location: address, Size: size } = DirectoryEntry;
+  const { Location: address, Size: size, Destination } = DirectoryEntry;
+  const destinationAddress =
+    Destination !== 0x10000000000000000 ? Destination : null;
   return {
     address,
+    destinationAddress,
     size,
     sectionType: (TypeInfo && (TypeInfo.Name || TypeInfo.Comment)) || Comment,
     info,
