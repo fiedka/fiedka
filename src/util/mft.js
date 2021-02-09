@@ -103,7 +103,10 @@ export const transformEntry = (e) => {
       uncompressed: FullSize || null,
     };
   }
-  const { Location: address, Size: size, Destination } = DirectoryEntry;
+  const { Location, Size, Destination } = DirectoryEntry;
+  // FIXME: should be `mappedAddress`, retain `location`?
+  const address = Location > 0xff000000 ? Location - 0xff000000 : Location;
+  const size = Size < 2 ** 24 ? Size : 0; // workaround for wrong huge sizes
   const destinationAddress =
     Destination !== 0x10000000000000000 ? Destination : null;
   const sectionType = getEntryType(TypeInfo, Comment);
