@@ -1,7 +1,7 @@
 import React, { createRef, useState } from "react";
 import PropTypes from "prop-types";
 import PspDir, { hexify } from "../PSP/PspDir";
-import { Boop } from "@coalmines/indui";
+import { Boop, Input, TextLine } from "@coalmines/indui";
 import { PubKeyProvider } from "../context/PubKeyContext";
 
 const jumpToTop = () => window.scrollTo(0, 2);
@@ -44,21 +44,32 @@ const PspImage = ({ directories }) => {
       window.scrollTo(0, pos - 72);
     }
   };
-  const onChange = (e) => setFilter(e.target.value);
   return (
     <PubKeyProvider>
       <div>
         <header>
-          <span>
-            Jump to Dir
-            {filterUniqueAddress(dirs).map(({ address }, i) => (
-              <Boop key={i} onClick={() => jumpToDir(address)}>
+          <span className="header-entry">
+            <TextLine label="jump">to dir</TextLine>
+          </span>
+          {filterUniqueAddress(dirs).map(({ address }, i) => (
+            <span key={i} className="header-entry">
+              <Boop small onClick={() => jumpToDir(address)}>
                 0x{hexify(address)}
               </Boop>
-            ))}
+            </span>
+          ))}
+          <span className="header-entry">
+            <Input
+              label="filter entries"
+              placeholder="enter substring"
+              onEdit={setFilter}
+            />
           </span>
-          <input placeholder="filter" onChange={onChange} />
-          <Boop onClick={jumpToTop}>^</Boop>
+          <span className="header-entry">
+            <Boop small onClick={jumpToTop}>
+              ^
+            </Boop>
+          </span>
         </header>
         <section>
           {dirs.map((d) => (
@@ -72,8 +83,16 @@ const PspImage = ({ directories }) => {
           position: sticky;
           top: 0;
           display: flex;
-          justify-content: space-between;
+          flex-wrap: wrap;
+          justify-content: flex-end;
           z-index: 20;
+          padding: 2px 10px;
+        }
+        .header-entry:nth-of-type(1) {
+          flex: 1;
+        }
+        .header-entry {
+          margin-top: 10px;
         }
         input {
           height: 32px;
