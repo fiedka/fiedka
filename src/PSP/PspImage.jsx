@@ -86,12 +86,18 @@ const PspImage = ({ directories }) => {
           flex-wrap: wrap;
           justify-content: flex-end;
           z-index: 20;
-          padding: 2px 10px;
+          padding: 4px 10px;
         }
         .header-entry:nth-of-type(1) {
-          flex: 1;
+          flex: 1 1 auto;
+          flex-direction: column;
+        }
+        .header-entry:nth-last-of-type(2) {
+          flex: 1 1 auto;
+          flex-direction: column;
         }
         .header-entry {
+          display: flex;
           margin-top: 10px;
         }
         input {
