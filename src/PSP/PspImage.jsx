@@ -106,9 +106,6 @@ const PspImage = ({ directories }) => {
           display: flex;
           margin: 10px 4px 0;
         }
-        input {
-          height: 32px;
-        }
       `}</style>
     </PubKeyProvider>
   );

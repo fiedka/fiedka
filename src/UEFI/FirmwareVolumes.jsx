@@ -1,6 +1,6 @@
 import React, { createRef, useState } from "react";
 import PropTypes from "prop-types";
-import { Boop } from "@coalmines/indui";
+import { Boop, Button, Input, TextLine } from "@coalmines/indui";
 import FV from "./FV";
 
 const jumpToTop = () => window.scrollTo(0, 2);
@@ -20,6 +20,7 @@ const filterFfs = (files, filter) => {
 
 const FirmwareVolumes = ({ fvs }) => {
   const [filter, setFilter] = useState("");
+  const [active, setActive] = useState(null);
   const vols = fvs.map((v) => ({ ...v, ref: createRef(null) }));
   const jumpToFV = (guid) => {
     const vol = vols.find((v) => v.guid === guid);
@@ -27,22 +28,38 @@ const FirmwareVolumes = ({ fvs }) => {
       const pos = vol.ref.current.offsetTop;
       // leave some space for the sticky bar
       window.scrollTo(0, pos - 32);
+      setActive(guid);
     }
   };
-  const onChange = (e) => setFilter(e.target.value);
   return (
     <>
       <header>
-        <span>
-          Jump to FV
-          {vols.map(({ guid }, i) => (
-            <Boop key={i} onClick={() => jumpToFV(guid)}>
-              {guid.substr(0, 4).toUpperCase()}
-            </Boop>
-          ))}
+        <span className="header-entry">
+          <TextLine label="jump">to FV</TextLine>
         </span>
-        <input placeholder="filter" onChange={onChange} />
-        <Boop onClick={jumpToTop}>^</Boop>
+        {vols.map(({ guid }, i) => (
+          <span key={i} className="header-entry">
+            <Button
+              active={guid === active}
+              small
+              onClick={() => jumpToFV(guid)}
+            >
+              {guid.substr(0, 4).toUpperCase()}
+            </Button>
+          </span>
+        ))}
+        <span className="header-entry">
+          <Input
+            label="filter entries"
+            placeholder="GUID or name substring"
+            onEdit={setFilter}
+          />
+        </span>
+        <span className="header-entry">
+          <Boop small onClick={jumpToTop}>
+            ^
+          </Boop>
+        </span>
       </header>
       <section>
         {vols.map(({ guid, parentGuid, size, files, ref }, i) => (
@@ -59,14 +76,26 @@ const FirmwareVolumes = ({ fvs }) => {
       </section>
       <style jsx>{`
         header {
-          background: #f0f0f0;
+          background: #fcfcfc;
           position: sticky;
           top: 0;
           display: flex;
-          justify-content: space-between;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          z-index: 20;
+          padding: 2px;
         }
-        input {
-          height: 32px;
+        .header-entry:nth-of-type(1) {
+          flex: 1 1 auto;
+          flex-direction: column;
+        }
+        .header-entry:nth-last-of-type(2) {
+          flex: 1 1 auto;
+          flex-direction: column;
+        }
+        .header-entry {
+          display: flex;
+          margin: 10px 4px 0;
         }
       `}</style>
     </>
