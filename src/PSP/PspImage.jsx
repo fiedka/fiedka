@@ -1,7 +1,7 @@
 import React, { createRef, useState } from "react";
 import PropTypes from "prop-types";
 import PspDir, { hexify } from "../PSP/PspDir";
-import { Boop, Input, TextLine } from "@coalmines/indui";
+import { Boop, Button, Input, TextLine } from "@coalmines/indui";
 import { PubKeyProvider } from "../context/PubKeyContext";
 
 const jumpToTop = () => window.scrollTo(0, 2);
@@ -35,6 +35,7 @@ const filterDir = (dir, filter) => {
 
 const PspImage = ({ directories }) => {
   const [filter, setFilter] = useState("");
+  const [active, setActive] = useState(null);
   const dirs = directories.map((v) => ({ ...v, ref: createRef(null) }));
   const jumpToDir = (address) => {
     const dir = dirs.find((d) => d.address === address);
@@ -42,6 +43,7 @@ const PspImage = ({ directories }) => {
       const pos = dir.ref.current.offsetTop;
       // leave some space for the sticky bar
       window.scrollTo(0, pos - 72);
+      setActive(address);
     }
   };
   return (
@@ -51,11 +53,15 @@ const PspImage = ({ directories }) => {
           <span className="header-entry">
             <TextLine label="jump">to dir</TextLine>
           </span>
-          {filterUniqueAddress(dirs).map(({ address }, i) => (
-            <span key={i} className="header-entry">
-              <Boop small onClick={() => jumpToDir(address)}>
+          {filterUniqueAddress(dirs).map(({ address }) => (
+            <span key={address} className="header-entry">
+              <Button
+                active={address === active}
+                small
+                onClick={() => jumpToDir(address)}
+              >
                 0x{hexify(address)}
-              </Boop>
+              </Button>
             </span>
           ))}
           <span className="header-entry">
@@ -79,14 +85,14 @@ const PspImage = ({ directories }) => {
       </div>
       <style jsx>{`
         header {
-          background: #f0f0f0;
+          background: #fcfcfc;
           position: sticky;
           top: 0;
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-end;
           z-index: 20;
-          padding: 4px 10px;
+          padding: 2px;
         }
         .header-entry:nth-of-type(1) {
           flex: 1 1 auto;
@@ -98,7 +104,7 @@ const PspImage = ({ directories }) => {
         }
         .header-entry {
           display: flex;
-          margin-top: 10px;
+          margin: 10px 4px 0;
         }
         input {
           height: 32px;
