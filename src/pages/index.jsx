@@ -82,10 +82,18 @@ const Page = () => {
               <a>A3MSTX_3.60 PSP</a>
             </Link>
             <Link href="/A3MSTX_3.60.mft">
-              <a>A3MSTX_3.60 PSP</a>
+              <a>A3MSTX_3.60 MFT</a>
             </Link>
             <Link href="/A3MSTX_3.60.all">
               <a>A3MSTX_3.60 all</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/A3MSTX_3.60S.ufp">
+              <a>A3MSTX_3.60S ufp</a>
+            </Link>
+            <Link href="/A3MSTX_3.60S.mft">
+              <a>A3MSTX_3.60S MFT</a>
             </Link>
           </li>
           <li>
