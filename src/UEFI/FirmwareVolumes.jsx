@@ -57,7 +57,7 @@ const FirmwareVolumes = ({ fvs }) => {
         </span>
         <span className="header-entry">
           <Boop small onClick={jumpToTop}>
-            ^
+            👆
           </Boop>
         </span>
       </header>

@@ -73,7 +73,7 @@ const PspImage = ({ directories }) => {
           </span>
           <span className="header-entry">
             <Boop small onClick={jumpToTop}>
-              ^
+              👆
             </Boop>
           </span>
         </header>
