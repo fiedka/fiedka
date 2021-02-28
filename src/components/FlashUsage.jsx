@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
+import { Boop } from "@coalmines/indui";
 
 import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
 
@@ -23,6 +24,7 @@ const getMarkedBlocks = ({ address, length }) => {
 };
 
 const FlashUsage = ({ usage }) => {
+  const [collapsed, setCollapsed] = useState(false);
   const markedEntriesContext = useContext(MarkedEntriesContext);
   const { hoveredEntry, markedEntries } = markedEntriesContext;
   const hoveredBlocks = (hoveredEntry && getMarkedBlocks(hoveredEntry)) || [];
@@ -56,11 +58,15 @@ const FlashUsage = ({ usage }) => {
 
   const percentage = (x) => Math.round((x / blocks) * 10000) / 100;
   const size = (x) => Math.round((x / 256) * 100) / 100;
+  const toggle = () => setCollapsed(!collapsed);
 
   return (
-    <div className="flash-usage">
-      <h2>Flash Usage</h2>
-      <table className="legend">
+    <div className={cn("flash-usage", { collapsed })}>
+      <div className="close">
+        <Boop onClick={toggle}>{collapsed ? "👈" : "👉"}</Boop>
+      </div>
+      <h2 className={cn({ hidden: collapsed })}>Flash Usage</h2>
+      <table className={cn("legend", { hidden: collapsed })}>
         <tbody>
           <tr>
             <th>blocks</th>
@@ -95,7 +101,7 @@ const FlashUsage = ({ usage }) => {
         </tbody>
       </table>
       {/* https://stackoverflow.com/questions/41421512/why-does-flex-box-work-with-a-div-but-not-a-table */}
-      <div className="flashmap">
+      <div className={cn("flashmap", { hidden: collapsed })}>
         <table>
           <tbody>{rows}</tbody>
         </table>
@@ -106,7 +112,23 @@ const FlashUsage = ({ usage }) => {
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
-            max-height: 100%;
+            height: 100%;
+            width: 460px;
+            padding: 2px 10px;
+            position: relative;
+            transition: width 0.3s ease-in-out;
+            overflow: hidden;
+          }
+          .collapsed {
+            width: 60px;
+          }
+          .hidden {
+            display: none;
+          }
+          .close {
+            position: absolute;
+            top: 2px;
+            right: 10px;
           }
           table {
             width: 420px;
