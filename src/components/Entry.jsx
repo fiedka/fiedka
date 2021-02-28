@@ -42,7 +42,7 @@ const Entry = ({ open = true, entry, header, children }) => {
           margin: 10px 1% 0;
           padding: 4px;
           min-width: 350px;
-          width: 48%;
+          flex: 1;
         }
         .card.open {
           margin: 10px 1%;
