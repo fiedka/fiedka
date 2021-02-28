@@ -113,6 +113,31 @@ const Page = () => {
             </Link>
           </li>
           <li>
+            <Link href="/X370-Pro4_6.30_real.all">
+              <a>X370-Pro4_6.30_real all</a>
+            </Link>
+            <Link href="/X370-Pro4_6.30_real.ufp">
+              <a>X370-Pro4_6.30_real ufp</a>
+            </Link>
+            <Link href="/X370-Pro4_6.30_real.utk">
+              <a>X370-Pro4_6.30_real utk</a>
+            </Link>
+            <Link href="/X370-Pro4_6.30_real.psp">
+              <a>X370-Pro4_6.30_real PSP</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/X574I2T1.00.utk">
+              <a>X574I2T1.00</a>
+            </Link>
+            <Link href="/X574I2T1.00.uefi">
+              <a>X574I2T1.00 uefi</a>
+            </Link>
+            <Link href="/X574I2T1.00.psp">
+              <a>X574I2T1.00 PSP</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/Y520-15IKBN.utk">
               <a>Y520-15IKBN utk</a>
             </Link>
