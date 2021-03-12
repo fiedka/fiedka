@@ -89,11 +89,27 @@ const Page = () => {
             </Link>
           </li>
           <li>
+            <Link href="/A3MSTX_3.60K.ufp">
+              <a>A3MSTX_3.60K ufp</a>
+            </Link>
+            <Link href="/A3MSTX_3.60K.psp">
+              <a>A3MSTX_3.60K PSP</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/A3MSTX_3.60S.ufp">
               <a>A3MSTX_3.60S ufp</a>
             </Link>
             <Link href="/A3MSTX_3.60S.mft">
               <a>A3MSTX_3.60S MFT</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/A320M-HDV_R4.0.ufp">
+              <a>A320M-HDV_R4.0 ufp</a>
+            </Link>
+            <Link href="/A320M-HDV_R4.0.psp">
+              <a>A320M-HDV_R4.0 PSP</a>
             </Link>
           </li>
           <li>
