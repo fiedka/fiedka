@@ -176,6 +176,22 @@ const Page = () => {
             </Link>
           </li>
           <li>
+            <Link href="/E7C37AMS.HC0.uefi">
+              <a>E7C37AMS.HC0 uefi</a>
+            </Link>
+            <Link href="/E7C37AMS.HC0.psp">
+              <a>E7C37AMS.HC0 PSP</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/E7C37AMS.HD1.uefi">
+              <a>E7C37AMS.HD1 uefi</a>
+            </Link>
+            <Link href="/E7C37AMS.HD1.psp">
+              <a>E7C37AMS.HD1 PSP</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/PRIME-X370-PRO-ASUS-5220.CAP.uefi">
               <a>PRIME-X370-PRO-ASUS-5220.CAP uefi</a>
             </Link>
