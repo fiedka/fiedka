@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }) {
           scroll-behavior: smooth;
         }
         body {
+          margin: 0;
           background-color: #dedede;
           font-size: 12px;
         }
