@@ -184,6 +184,11 @@ const Page = () => {
             </Link>
           </li>
           <li>
+            <Link href="/E7C37AMS.orig.ufp">
+              <a>E7C37AMS original ufp</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/E7C37AMS.HD1.uefi">
               <a>E7C37AMS.HD1 uefi</a>
             </Link>
