@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import "../_utils";
 import colors from "../util/colors";
 
 export default function App({ Component, pageProps }) {
