@@ -197,6 +197,14 @@ const Page = () => {
             </Link>
           </li>
           <li>
+            <Link href="/ROG-CROSSHAIR-VII-HERO-WIFI-ASUS-4301.uefi">
+              <a>ROG-CROSSHAIR-VII-HERO-WIFI-ASUS-4301 uefi</a>
+            </Link>
+            <Link href="/ROG-CROSSHAIR-VII-HERO-WIFI-ASUS-4301.psp">
+              <a>ROG-CROSSHAIR-VII-HERO-WIFI-ASUS-4301 PSP</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/PRIME-X370-PRO-ASUS-5220.CAP.uefi">
               <a>PRIME-X370-PRO-ASUS-5220.CAP uefi</a>
             </Link>
