@@ -60,7 +60,7 @@ export const getGuidFromDepEx = (depEx) =>
 export const getFvsFromFile = (f) => {
   const fvs = [];
   const gdef = f.Sections.find((s) => s.Type === EFI_SECTION_GUID);
-  if (gdef) {
+  if (gdef && gdef.Encapsulated) {
     gdef.Encapsulated.forEach((e) => {
       if (e.Value.Type === EFI_SECTION_FVI) {
         e.Value.Encapsulated.forEach((fv) => fvs.push(fv));
