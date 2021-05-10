@@ -19,7 +19,9 @@ const PspDir = forwardRef(function PspDir({ dir }, ref) {
     <Directory
       headline={headline}
       files={dir.entries}
-      renderFile={(p, open) => <PspCard key={p.index} psp={p} open={open} />}
+      renderFile={(p, open, i) => (
+        <PspCard key={p.index || i} psp={p} open={open} />
+      )}
       ref={ref}
     />
   );
