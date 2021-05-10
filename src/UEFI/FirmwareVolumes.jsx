@@ -51,6 +51,7 @@ const FirmwareVolumes = ({ fvs }) => {
         <span className="header-entry">
           <Input
             label="filter entries"
+            type="search"
             placeholder="GUID or name substring"
             onEdit={setFilter}
           />

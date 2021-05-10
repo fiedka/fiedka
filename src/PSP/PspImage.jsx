@@ -69,6 +69,7 @@ const PspImage = ({ directories }) => {
           <span className="header-entry">
             <Input
               label="filter entries"
+              type="search"
               placeholder="enter substring"
               onEdit={setFilter}
             />
