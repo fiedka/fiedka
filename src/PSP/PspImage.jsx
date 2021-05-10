@@ -46,6 +46,8 @@ const PspImage = ({ directories }) => {
       setActive(address);
     }
   };
+  // NOTE: directories appear multiple times for different PSP versions.
+  // TODO: Should we provide different views for each PSP version?
   return (
     <PubKeyProvider>
       <div>
@@ -78,8 +80,12 @@ const PspImage = ({ directories }) => {
           </span>
         </header>
         <section>
-          {dirs.map((d) => (
-            <PspDir key={d.directory} dir={filterDir(d, filter)} ref={d.ref} />
+          {dirs.map((d, i) => (
+            <PspDir
+              key={`${d.address}_${i}`}
+              dir={filterDir(d, filter)}
+              ref={d.ref}
+            />
           ))}
         </section>
       </div>
