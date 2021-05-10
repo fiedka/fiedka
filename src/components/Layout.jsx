@@ -12,6 +12,7 @@ const Layout = ({ children, sidepane }) => (
       aside {
         position: sticky;
         top: 0;
+        min-height: 0;
         height: 100vh;
       }
     `}</style>
