@@ -64,6 +64,14 @@ const Page = () => {
             </Link>
           </li>
           <li>
+            <Link href="/UDOO-BOLT-C4000000.108.utk">
+              <a>UDOO-BOLT-C4000000.108 utk</a>
+            </Link>
+            <Link href="/UDOO-BOLT-C4000000.108.ufp">
+              <a>UDOO-BOLT-C4000000.108 ufp</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/A3MSTX_3.50.utk">
               <a>A3MSTX_3.50 utk</a>
             </Link>
