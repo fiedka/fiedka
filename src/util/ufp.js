@@ -44,12 +44,20 @@ export const flatten = (fvs) =>
     // Volume 3, section 2.1.2
     // and https://edk2-docs.gitbook.io/edk-ii-build-specification/2_design_discussion/22_uefipi_firmware_images
     // An FFS may contain Firmware Volume Images (FVIs).
+    if (!cur.ffs) {
+      console.warn("FV without FFS encountered");
+      return [];
+    }
     cur.ffs
       .filter(({ fileType }) => fileType === FILE_FVI)
       .forEach((fvi) => {
         // An FVI contains sections. A section contains an optional "data"
         // object, as defined by uefi-firmware-parser, containig subsections.
         // TODO: flatten in uefi-firmware-parser, get rid of extra .data nesting
+        if (!fvi.sections) {
+          console.warn("FVI without sections encountered");
+          return [];
+        }
         fvi.sections
           .filter((s) => s.data && s.data.subsections)
           .forEach((s) => {
