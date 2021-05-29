@@ -205,6 +205,14 @@ const Page = () => {
             </Link>
           </li>
           <li>
+            <Link href="/ROG-STRIX-X570-E-GAMING.uefi">
+              <a>S76 ROG-STRIX-X570-E-GAMING uefi</a>
+            </Link>
+            <Link href="/ROG-STRIX-X570-E-GAMING.psp">
+              <a>S76 ROG-STRIX-X570-E-GAMING psp</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/ROG-CROSSHAIR-VII-HERO-WIFI-ASUS-4301.uefi">
               <a>ROG-CROSSHAIR-VII-HERO-WIFI-ASUS-4301 uefi</a>
             </Link>
