@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import { Boop } from "@coalmines/indui";
+import { Boop, Infobar } from "@coalmines/indui";
 
 import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
 
@@ -63,9 +63,9 @@ const FlashUsage = ({ usage }) => {
   return (
     <div className={cn("flash-usage", { collapsed })}>
       <div className="close">
+        {!collapsed && <Infobar>Flash Usage</Infobar>}
         <Boop onClick={toggle}>{collapsed ? "👈" : "👉"}</Boop>
       </div>
-      <h2 className={cn({ hidden: collapsed })}>Flash Usage</h2>
       <table className={cn("legend", { hidden: collapsed })}>
         <tbody>
           <tr>
@@ -126,9 +126,9 @@ const FlashUsage = ({ usage }) => {
             display: none;
           }
           .close {
-            position: absolute;
-            top: 2px;
-            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           }
           table {
             width: 420px;
