@@ -14,7 +14,7 @@ const utkVolumes = utkTransform(
 );
 
 const Page = () => {
-  const utk = <FirmwareVolumes fvs={utkVolumes} />;
+  const utk = <FirmwareVolumes fvs={utkVolumes} name="A3MSTX_3.60 utk" />;
   return (
     <MarkedEntriesProvider>
       <Layout sidepane={<FlashUsage usage={usage} />}>

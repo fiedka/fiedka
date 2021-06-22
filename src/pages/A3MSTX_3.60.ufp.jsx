@@ -13,7 +13,7 @@ const uefi = ufpFixture.regions.find((r) => r.type === "bios");
 const ufpVolumes = ufpTransform(uefi.data.firmwareVolumes);
 
 const Page = () => {
-  const ufp = <FirmwareVolumes fvs={ufpVolumes} />;
+  const ufp = <FirmwareVolumes fvs={ufpVolumes} name="A3MSTX_3.60 ufp" />;
 
   return (
     <MarkedEntriesProvider>

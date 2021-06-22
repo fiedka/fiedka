@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <MarkedEntriesProvider>
       <Layout sidepane={<FlashUsage usage={usage} />}>
-        <PSPImage directories={pspDirs} />
+        <PSPImage directories={pspDirs} name="A3MSTX_3.60 PSPTool" />
       </Layout>
     </MarkedEntriesProvider>
   );
