@@ -7,17 +7,13 @@ import Directory from "../components/Directory";
 export const hexify = (a) => a.toString(16);
 
 const PspDir = forwardRef(function PspDir({ dir }, ref) {
-  const headline = (
-    <>
-      <span>{`type: ${dir.directoryType}`}</span>
-      <span>{`magic: ${dir.magic}`}</span>
-      <span>{`address: 0x${hexify(dir.address)}`}</span>
-      {dir.checksum && <span>{`checksum: ${hexify(dir.checksum)}`}</span>}
-    </>
-  );
+  const name = `0x${hexify(dir.address)}`;
+  const cs = dir.checksum ? `, checksum: ${hexify(dir.checksum)}` : "";
+  const meta = `${dir.directoryType} (${dir.magic})${cs}`;
   return (
     <Directory
-      headline={headline}
+      name={name}
+      meta={meta}
       files={dir.entries}
       renderFile={(p, open, i) => (
         <PspCard key={p.index || i} psp={p} open={open} />

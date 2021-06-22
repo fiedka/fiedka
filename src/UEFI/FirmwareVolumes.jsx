@@ -18,7 +18,7 @@ const filterFfs = (files, filter) => {
   );
 };
 
-const FirmwareVolumes = ({ fvs }) => {
+const FirmwareVolumes = ({ fvs, name }) => {
   const [filter, setFilter] = useState("");
   const [active, setActive] = useState(null);
   const vols = fvs.map((v) => ({ ...v, ref: createRef(null) }));
@@ -35,7 +35,9 @@ const FirmwareVolumes = ({ fvs }) => {
     <>
       <header>
         <span className="header-entry">
-          <TextLine label="jump">to FV</TextLine>
+          <TextLine label="UEFI">
+            <h2>{name || "unknown rev"}</h2>
+          </TextLine>
         </span>
         {vols.map(({ guid }, i) => (
           <span key={i} className="header-entry">
@@ -105,6 +107,7 @@ const FirmwareVolumes = ({ fvs }) => {
 
 FirmwareVolumes.propTypes = {
   fvs: PropTypes.array,
+  name: PropTypes.string,
 };
 
 export default FirmwareVolumes;

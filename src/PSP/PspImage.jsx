@@ -33,7 +33,7 @@ const filterDir = (dir, filter) => {
   };
 };
 
-const PspImage = ({ directories }) => {
+const PspImage = ({ directories, name }) => {
   const [filter, setFilter] = useState("");
   const [active, setActive] = useState(null);
   const dirs = directories.map((v) => ({ ...v, ref: createRef(null) }));
@@ -53,7 +53,9 @@ const PspImage = ({ directories }) => {
       <div>
         <header>
           <span className="header-entry">
-            <TextLine label="jump">to dir</TextLine>
+            <TextLine label="PSP">
+              <h2>{name}</h2>
+            </TextLine>
           </span>
           {filterUniqueAddress(dirs).map(({ address }) => (
             <span key={address} className="header-entry">
@@ -120,6 +122,7 @@ const PspImage = ({ directories }) => {
 
 PspImage.propTypes = {
   directories: PropTypes.array,
+  name: PropTypes.string,
 };
 
 export default PspImage;

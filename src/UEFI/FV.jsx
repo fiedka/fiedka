@@ -5,20 +5,17 @@ import File from "./File";
 import Directory from "../components/Directory";
 
 const FV = forwardRef(function FV(
-  { guid, parentGuid, size, ffs, onJumpToFV },
+  { guid, parentGuid: pGuid, size, ffs, onJumpToFV },
   ref
 ) {
-  const headline = (
-    <>
-      <span>{guid.toUpperCase()}</span>
-      {parentGuid && <span>({parentGuid.toUpperCase()})</span>}
-      size: {size}
-    </>
-  );
+  const name = `${guid}${pGuid ? ` (${pGuid})` : ""}`.toUpperCase();
+  const meta = `${size} bytes`;
   const files = ffs || [];
   return (
     <Directory
-      headline={headline}
+      name={name}
+      meta={meta}
+      size={size}
       files={files}
       renderFile={(file, open, key) => (
         <File key={key} file={file} open={open} onJumpToVolume={onJumpToFV} />

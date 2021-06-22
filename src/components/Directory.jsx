@@ -1,36 +1,35 @@
 import React, { forwardRef, useState } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
+import { TextLine } from "@coalmines/indui";
 
 const Directory = forwardRef(function Directory(
-  { headline, files, renderFile },
+  { name, meta, files, renderFile },
   ref
 ) {
   const [expand, setExpand] = useState(true);
   const toggleExpand = () => setExpand(!expand);
+
   return (
     <>
       <div ref={ref} className="directory">
-        <h3 onClick={toggleExpand}>
-          {headline}
-          <span>{files.length} files</span>
-        </h3>
+        <div onClick={toggleExpand} className="meta">
+          <TextLine label={`${meta}, ${files.length} files`}>
+            <h3>{name}</h3>
+          </TextLine>
+        </div>
         <div className={cn("files", { expand })}>
           {files.map((f, i) => renderFile(f, expand, i))}
         </div>
       </div>
       <style jsx>{`
         .directory {
-          border: 1px dashed #800020;
-          padding: 0 3px;
-          margin: 5px 5px 8px;
+          margin: 16px 3px;
         }
-        h3 {
+        .meta {
+          cursor: pointer;
           display: flex;
-          justify-content: space-around;
-          background-color: #dffcdf;
-          margin: 10px 8px;
-          padding: 3px;
+          flex-direction: column;
         }
         .files {
           display: flex;
@@ -46,7 +45,8 @@ const Directory = forwardRef(function Directory(
 });
 
 Directory.propTypes = {
-  headline: PropTypes.node,
+  name: PropTypes.string,
+  meta: PropTypes.string,
   files: PropTypes.array,
   renderFile: PropTypes.func,
 };
