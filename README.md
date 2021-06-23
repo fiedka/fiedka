@@ -32,6 +32,22 @@ following to install them or update when pulling the utk-web repository:
 
 Then open [http://localhost:3000](http://localhost:3000) in a web browser.
 
+#### Running utk-web in Docker
+
+If want to avoid npm here is how to use Docker container. Build Docker image:
+
+```
+docker build -t orangecms/utk-web .
+```
+
+Then run:
+
+```
+docker run -p 3000:3000 orangecms/utk-web
+```
+
+Then open [http://localhost:3000](http://localhost:3000) in a web browser.
+
 #### Build static pages for deployment
 
 `npm run build`
