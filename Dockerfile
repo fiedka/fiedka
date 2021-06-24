@@ -1,4 +1,4 @@
-FROM node:lts-buster-slim
+FROM node:lts-alpine
 
 WORKDIR /usr/src/app
 COPY package*.json ./
