@@ -19,6 +19,13 @@ You need to have a [Node.js](https://nodejs.org/) runtime and `npm` installed.
 Find them in your respective OS distribution and install them through your
 package manager, e.g., `yay -S nodejs npm`.
 
+Before proceeding please initialize and checkout submodules:
+
+```
+git submodule update --init --checkout
+```
+
+
 #### Installing dependencies
 
 The project depends on a handful of packages from the npm registry. Run the
@@ -34,7 +41,8 @@ Then open [http://localhost:3000](http://localhost:3000) in a web browser.
 
 #### Running utk-web in Docker
 
-If want to avoid npm here is how to use Docker container. Build Docker image:
+If want to avoid running npm on your host directly, you can build a Docker
+image:
 
 ```
 docker build -t orangecms/utk-web .
