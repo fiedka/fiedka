@@ -24,6 +24,11 @@ const Page = () => {
       <menu>
         <ul>
           <li>
+            <Link href="/4700S-C06.uefi">
+              <a>4700S C06 UEFI</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/ovmf-202005.utk">
               <a>OVMF 202005 utk</a>
             </Link>
