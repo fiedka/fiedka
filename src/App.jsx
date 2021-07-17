@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useFilePicker } from 'use-file-picker';
 import wasm from './main.go';
+import UEFIImage from './UEFIImage';
 
 const { add, fmap, utka, raiseError, someValue } = wasm;
 
@@ -98,7 +99,7 @@ const Fmap = () => {
         Select file
       </button>
       {error && <pre>Error: {JSON.stringify(error, null, 2)}</pre>}
-      <pre>{JSON.stringify(utkRes, null, 2)}</pre>
+      {utkRes && <UEFIImage data={utkRes} />}
       {data && <LayoutBlocks layout={data.layout} />}
     </div>
   );

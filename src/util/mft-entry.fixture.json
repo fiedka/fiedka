@@ -1,0 +1,59 @@
+{
+  "DirectoryEntry": {
+   "Type": 8,
+   "Size": 132160,
+   "Location": 4283481344,
+   "Reserved": 0,
+   "Unknown": null
+  },
+  "Header": {
+    "Unknown00": [ 0, 82, 30, 0, 0, 82, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    "ID": 0,
+    "SizeSigned": 261888,
+    "IsEncrypted": 0,
+    "Unknown1C": 0,
+    "EncFingerprint": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    "IsSigned": 1,
+    "Unknown34": 0,
+    "SigFingerprint": [
+      96, 187, 166, 126, 26, 67, 76, 107, 152, 7, 188, 141, 253, 180, 31, 64
+    ],
+    "IsCompressed": 1,
+    "Unknown4C": 0,
+    "FullSize": 261888,
+    "Unknown54": 131644,
+    "Unknown58": [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+    "Version": [ 0, 0, 0, 0 ],
+    "Unknown64": 0,
+    "Unknown68": 0,
+    "SizePacked": 132160,
+    "Unknown70": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0
+    ],
+    "Unknown80": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    ],
+    "Unknown90": 0,
+    "Unknown94": 0,
+    "Unknown98": 0,
+    "Unknown9C": 0,
+    "UnknownA0": 0,
+    "UnknownA4": 0,
+    "UnknownA8": 0,
+    "UnknownAC": 0,
+    "UnknownB0": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    ]
+  },
+  "Raw": "",
+  "Signature": "u0HtTfJRfGXd+AXJis3msTTtg90ju9iNTN3Lps5nw2E1lom0prrlMQT8IPvhnoFCIWCYdc5L59VLUb+kSqcVv9TcMmbRrqcDWLKrzfiR32MjtxEr0BLlFY0MY4JlO8spP742LawenIHIgyeQwd0LSijRKUnxUk1KQ/ySpkUWo0rab0MoKjClTI54gIvNn+75Mw9foQV6ScrlMCTO44/8dQ9xQlyWuD7EijFuzhX7KCV/mqq/Sw6pNbDmIKXfd1kEI4AraFBLBqKcNj8NJEspB0QFUn3uccYJzZ6eBleV6q0MQz62aRszlIqxkBHCDmxM3t+jyXEMj/cHpXTwbwrI3g==",
+  "Comment": null,
+  "TypeInfo": {
+   "Name": "SMU_OFFCHIP_FW",
+   "Comment": "Primary SMU Image"
+  },
+  "Version": "0.0.0.0"
+}
