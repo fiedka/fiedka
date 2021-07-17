@@ -1,5 +1,3 @@
-// import knownDepex from "../../depex/depex.json";
-
 const EFI_SECTION_FVI = "EFI_SECTION_FIRMWARE_VOLUME_IMAGE";
 const EFI_SECTION_GUID = "EFI_SECTION_GUID_DEFINED";
 const EFI_SECTION_USER_INTERFACE = "EFI_SECTION_USER_INTERFACE";
@@ -26,8 +24,6 @@ export const getName = (file) => {
   return section && section.Name;
 };
 
-const knownDepex = [];
-
 /**
  * get depdency expression section
  */
@@ -43,13 +39,17 @@ export const getDepEx = (file) => {
   if (!section) {
     return [];
   }
+  return section.DepEx;
+  // TODO: move depex here
+  /*
   return section.DepEx.map((d) => {
     const known = knownDepex.find((k) => k.guid === getGuidFromDepEx(d));
     if (known) {
-      return "known"; // TODO: name
+      return known.name;
     }
     return d;
   });
+  */
 };
 
 export const getGuidFromFv = (fv) => fv.Value.FVName.GUID;
