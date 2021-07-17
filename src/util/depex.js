@@ -1,4 +1,4 @@
-// import guids from "../efiXplorer/guids/guids.json";
+import guids from "../efiXplorer/guids/guids.json";
 
 export const hexify = (i, n) => i.toString(16).padStart(n, "0");
 
@@ -19,10 +19,7 @@ export const hexifyGuidArray = (guids) => {
   return `${g1h}-${g2h}-${g3h}-${g4h}-${g5h}`.toUpperCase();
 };
 
-export const efiGuids = [];
-/*
 export const efiGuids = Object.entries(guids).map((e) => ({
   guid: hexifyGuidArray(e[1]),
   name: e[0],
 }));
-*/
