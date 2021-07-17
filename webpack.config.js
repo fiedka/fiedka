@@ -6,12 +6,15 @@ const htmlPlugin = new HtmlWebPackPlugin({
   filename: "./index.html"
 });
 
+const ASSET_PATH = "/utk-web2/";
+
 module.exports = {
   entry: "./src/index.jsx",
   mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: ASSET_PATH,
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
