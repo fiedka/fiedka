@@ -99,7 +99,7 @@ const Fmap = () => {
         Select file
       </button>
       {error && <pre>Error: {JSON.stringify(error, null, 2)}</pre>}
-      {utkRes && <UEFIImage data={utkRes} />}
+      {utkRes && <UEFIImage data={utkRes} name={plainFiles[0].name} />}
       {data && <LayoutBlocks layout={data.layout} />}
     </div>
   );

@@ -12,33 +12,31 @@ const DepEx = ({ depEx }) => {
   const guidContext = useContext(GUIDContext);
   const [contextGuid, setContextGuid] = guidContext;
   return (
-    <>
-      <div className="depex">
-        <div className="headline">DepEx</div>
-        {depEx
-          .filter((d) => !!getGuidFromDepEx(d))
-          .map((d, i) => {
-            const guid = getGuidFromDepEx(d).toUpperCase();
-            const op = d.op;
-            const known = efiGuids.find((g) => g.guid === guid);
-            const className = classnames("guid-entry", {
-              selected: contextGuid === guid,
-            });
-            const gClassName = classnames("guid", { known });
-            return (
-              <div
-                className={className}
-                key={i}
-                onClick={() => setContextGuid(guid)}
-              >
-                &gt; <span className="op">{op}</span>
-                <span className={gClassName}>
-                  {(known && known.name) || guid}
-                </span>
-              </div>
-            );
-          })}
-      </div>
+    <div className="depex">
+      <div className="headline">DepEx</div>
+      {depEx
+        .filter((d) => !!getGuidFromDepEx(d))
+        .map((d, i) => {
+          const guid = getGuidFromDepEx(d).toUpperCase();
+          const op = d.op;
+          const known = efiGuids.find((g) => g.guid === guid);
+          const className = classnames("guid-entry", {
+            selected: contextGuid === guid,
+          });
+          const gClassName = classnames("guid", { known });
+          return (
+            <div
+              className={className}
+              key={i}
+              onClick={() => setContextGuid(guid)}
+            >
+              &gt; <span className="op">{op}</span>
+              <span className={gClassName}>
+                {(known && known.name) || guid}
+              </span>
+            </div>
+          );
+        })}
       <style jsx>{`
         .depex {
           background-color: #f0fcfd;
@@ -78,7 +76,7 @@ const DepEx = ({ depEx }) => {
           color: inherit;
         }
       `}</style>
-    </>
+    </div>
   );
 };
 

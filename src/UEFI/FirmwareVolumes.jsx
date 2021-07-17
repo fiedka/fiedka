@@ -32,8 +32,8 @@ const FirmwareVolumes = ({ fvs, name }) => {
     }
   };
   return (
-    <>
-      <header>
+    <div>
+      <header className="uefi">
         <span className="header-entry">
           <TextLine label="UEFI">
             <h2>{name || "unknown rev"}</h2>
@@ -78,14 +78,14 @@ const FirmwareVolumes = ({ fvs, name }) => {
         ))}
       </section>
       <style jsx>{`
-        header {
+        header.uefi {
           background: #fcfcfc;
           position: sticky;
           top: 0;
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-end;
-          z-index: 20;
+          z-index: 200;
           padding: 2px;
         }
         .header-entry:nth-of-type(1) {
@@ -101,7 +101,7 @@ const FirmwareVolumes = ({ fvs, name }) => {
           margin: 10px 4px 0;
         }
       `}</style>
-    </>
+    </div>
   );
 };
 

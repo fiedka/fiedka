@@ -10,7 +10,7 @@ const Blocks = ({ size }) => {
   const blockCount = 1 + Math.floor(size / blockSize);
   const blockDisplay = Math.min(maxBlockCount, blockCount);
   return (
-    <>
+    <div>
       <h4>blocks used: {blockCount}</h4>
       <div className="blocks">
         {Array.from({ length: blockDisplay }, (_, i) => (
@@ -29,7 +29,7 @@ const Blocks = ({ size }) => {
           line-height: 8px;
         }
       `}</style>
-    </>
+    </div>
   );
 };
 

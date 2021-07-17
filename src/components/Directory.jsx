@@ -11,16 +11,14 @@ const Directory = forwardRef(function Directory(
   const toggleExpand = () => setExpand(!expand);
 
   return (
-    <>
-      <div ref={ref} className="directory">
-        <div onClick={toggleExpand} className="meta">
-          <TextLine label={`${meta}, ${files.length} files`}>
-            <h3>{name}</h3>
-          </TextLine>
-        </div>
-        <div className={cn("files", { expand })}>
-          {files.map((f, i) => renderFile(f, expand, i))}
-        </div>
+    <div ref={ref} className="directory">
+      <div onClick={toggleExpand} className="meta">
+        <TextLine label={`${meta}, ${files.length} files`}>
+          <h3>{name}</h3>
+        </TextLine>
+      </div>
+      <div className={cn("files", { expand })}>
+        {files.map((f, i) => renderFile(f, expand, i))}
       </div>
       <style jsx>{`
         .directory {
@@ -40,7 +38,7 @@ const Directory = forwardRef(function Directory(
           padding: 0;
         }
       `}</style>
-    </>
+    </div>
   );
 });
 
