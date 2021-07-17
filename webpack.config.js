@@ -33,7 +33,7 @@ module.exports = {
         test: /\.go/,
         use: [
           {
-            loader: path.join(__dirname, "..", "..", "dist", "index.js")
+            loader: "golang-wasm-async-loader2",
           }
         ]
       },
