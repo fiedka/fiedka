@@ -1,0 +1,11 @@
+# dependency managers
+node_modules
+pkg
+
+# cache
+.next
+
+# build artifacts
+out
+dist
+public/
