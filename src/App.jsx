@@ -2,38 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useFilePicker } from 'use-file-picker';
 import wasm from './main.go';
 import UEFIImage from './UEFIImage';
+import colors from "./util/colors";
 
 const { add, fmap, utka, raiseError, someValue } = wasm;
 
-const entryToEmoji = (e) => {
-  switch (e) {
-    case "zero": return "😶";
-    case "full": return "🆓";
-    case "used":
-    default:
-      return "📦";
-  }
-};
-
-const LayoutBlocks = ({ layout }) => (
-  <table>
-    <tbody>
-      {layout.map(({ address, entries }) => (
-        <tr key={address}>
-          <td>{address}</td>
-          {entries.map((e, i) => (
-            <td key={i}>{entryToEmoji(e)}</td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-);
-
-const Fmap = () => {
+const Analyze = () => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  const [utkRes, setUtkRes] = useState(null);
   const [
       openFileSelector,
 			{ filesContent, loading, errors, plainFiles, clear }
@@ -47,22 +22,16 @@ const Fmap = () => {
       // readFilesContent: false, // ignores file content
   });
 
-  const utkAnalyze = async(indata, size) => {
+  const analyze = async(indata, size) => {
     try {
-      const parsed = await utka(indata, size);
-      setUtkRes(JSON.parse(parsed));
-    } catch (e) {
-      console.error(e);
-      setError(error.concat(e.message));
-    }
-  }
-
-  const getFmap = async(indata, size) => {
-    const encoded = await fmap(indata, size);
-    try {
-      const flashMap = JSON.parse(encoded);
-      // console.info({ flashMap });
-      setData(flashMap);
+      const [utkParsed, flashMap] = await Promise.all([
+        utka(indata, size),
+        fmap(indata, size),
+      ]);
+      setData({
+        utk: JSON.parse(utkParsed),
+        fmap: JSON.parse(flashMap),
+      });
     } catch (e) {
       console.error(e);
       setError(error.concat(e.message));
@@ -71,46 +40,84 @@ const Fmap = () => {
 
 	useEffect(() => {
     if (filesContent.length) {
-      utkAnalyze(
-        new Uint8Array(filesContent[0].content),
-        filesContent[0].content.byteLength
-      );
+      const f = filesContent[0].content;
+      analyze(new Uint8Array(f), f.byteLength);
     }
   }, [filesContent]);
 
   if (errors.length) {
     return (
       <div>
-        <button onClick={() => openFileSelector()}>Something went wrong, retry! </button>
+        <h2>Something went wrong, retry?</h2>
+        <button onClick={() => openFileSelector()}>
+          Pick a file
+        </button>
       </div>
     );
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><h2>Analyzing...</h2></div>;
   }
 
   return (
     <div style={{ fontSize: 9 }}>
-      {plainFiles && plainFiles.length > 0 &&
-        <h2>{plainFiles[0].name}</h2>
-      }
-      <button onClick={() => openFileSelector()}>
-        Select file
-      </button>
+      <button onClick={() => openFileSelector()}>Select file</button>
       {error && <pre>Error: {JSON.stringify(error, null, 2)}</pre>}
-      {utkRes && <UEFIImage data={utkRes} name={plainFiles[0].name} />}
-      {data && <LayoutBlocks layout={data.layout} />}
+      {data && (
+        <UEFIImage data={data.utk} fmap={data.fmap} name={plainFiles[0].name} />
+      )}
     </div>
   );
 };
 
 const App = () => (
-  <div style={{ fontSize: 11 }}>
+  <div>
     <h1>
       utk-web - analyze a firmware image
     </h1>
-    <Fmap />
+    <Analyze />
+    <style jsx global>{`
+      html {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background-color: #dedede;
+        font-size: 12px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+      .block {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+      }
+    `}</style>
+    <style jsx global>{`
+      .block-used {
+        background-color: ${colors[25]};
+      }
+      .block-full {
+        background-color: ${colors[14]};
+      }
+      .block-zero {
+        background-color: ${colors[9]};
+      }
+      .block-marked {
+        background-color: ${colors[6]};
+      }
+      .block-hovered-marked {
+        background-color: ${colors[4]};
+      }
+      .block-hovered {
+        background-color: ${colors[2]};
+      }
+    `}</style>
   </div>
 );
 

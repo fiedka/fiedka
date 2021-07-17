@@ -1,12 +1,22 @@
 # utk-web
 
-## Adding Go dependencies
+## UEFI
+
+### Obtain Test Images
+
+See [rerage's nightly OVMF builds](https://retrage.github.io/edk2-nightly/).
+
+Download `RELEASEX64_OVMF.fd`.
+
+## Development
+
+### Adding Go dependencies
 
 ```sh
 GOOS=js GOARCH=wasm go get github.com/...
 ```
 
-## Running
+### Running
 
 ```
 GOPATH=`pwd` GOROOT=/usr/lib/go npm start

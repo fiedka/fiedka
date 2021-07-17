@@ -7,15 +7,14 @@ import Layout from "./components/Layout";
 import FlashUsage from "./components/FlashUsage";
 import FirmwareVolumes from "./UEFI/FirmwareVolumes";
 
-//      <Layout sidepane={<FlashUsage usage={usage} />}>
-const UEFIImage = ({ data, name }) => {
+const UEFIImage = ({ data, fmap, name }) => {
   const fvs = utkTransform(
     data.Elements.filter((e) => e.Type === "*uefi.FirmwareVolume")
   );
 
   return (
     <MarkedEntriesProvider>
-      <Layout>
+      <Layout sidepane={<FlashUsage usage={fmap} />}>
         <GUIDProvider>
           <FirmwareVolumes fvs={fvs} name={name} />
         </GUIDProvider>
