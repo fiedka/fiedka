@@ -1,66 +1,116 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useFilePicker } from 'use-file-picker';
 import wasm from './main.go';
-import NumberInput from './NumberInput';
 
-const { add, raiseError, someValue } = wasm;
+const { add, fmap, utka, raiseError, someValue } = wasm;
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
+const entryToEmoji = (e) => {
+  switch (e) {
+    case "zero": return "😶";
+    case "full": return "🆓";
+    case "used":
+    default:
+      return "📦";
+  }
+};
 
-        this.state = {
-            value: [0, 0],
-            result: '0',
-            error: undefined
-        };
-    }
+const LayoutBlocks = ({ layout }) => (
+  <table>
+    <tbody>
+      {layout.map(({ address, entries }) => (
+        <tr key={address}>
+          <td>{address}</td>
+          {entries.map((e, i) => (
+            <td key={i}>{entryToEmoji(e)}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
 
-    async componentWillMount() {
-      let value = await someValue();
-      this.setState({
-        someValue: value
-      });
-    }
+const Fmap = () => {
+  const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+  const [utkRes, setUtkRes] = useState(null);
+  const [
+      openFileSelector,
+			{ filesContent, loading, errors, plainFiles, clear }
+  ] = useFilePicker({
+      multiple: true,
+      readAs: "ArrayBuffer",
+      // accept: ['.bin', '.rom'],
+      limitFilesConfig: { min: 1, max: 1 },
+      // minFileSize: 1, // in megabytes
+      maxFileSize: 65,
+      // readFilesContent: false, // ignores file content
+  });
 
-    async updateValue(index, value) {
-        let newValues = this.state.value.slice();
-        newValues[index] = value
-        let result = await add(...newValues);
-        this.setState({ value: newValues, result });
-    }
-
-    async raiseError() {
-      try {
-        let _ = await raiseError();
-      } catch (e) {
-        this.setState({
-          error: e
-        });
-      }
-    }
-
-    render() {
-        return (
-            <div>
-                <p>Enter a number in the box below, on change it will add all the numbers together. Click the button to add more input boxes.</p>
-                {this.state.value.map((value, index) =>
-                    <NumberInput key={index} value={value} onChange={i => this.updateValue(index, i)} />
-                )}
-                <button type="button" onClick={() => this.setState({ value: [...this.state.value, 0]})}>More inputs!</button>
-                <p>Value now is {this.state.result}</p>
-                <div>
-                  <p>Click this button to simulate an error: <button type="button" onClick={() => this.raiseError()}>Make error!</button></p>
-                  {this.state.error ? <div>
-                      <p style={{ color: '#f00' }}>{this.state.error}</p>
-                      <button type="button" onClick={() => this.setState({ error: undefined })}>Dismiss</button>
-                    </div> : null }
-                </div>
-                <div>
-                  <p>Here's a static value: {this.state.someValue}</p>
-                </div>
-            </div>
-        );
+  const utkAnalyze = async(indata, size) => {
+    try {
+      const parsed = await utka(indata, size);
+      setUtkRes(JSON.parse(parsed));
+    } catch (e) {
+      console.error(e);
+      setError(error.concat(e.message));
     }
   }
+
+  const getFmap = async(indata, size) => {
+    const encoded = await fmap(indata, size);
+    try {
+      const flashMap = JSON.parse(encoded);
+      // console.info({ flashMap });
+      setData(flashMap);
+    } catch (e) {
+      console.error(e);
+      setError(error.concat(e.message));
+    }
+  }
+
+	useEffect(() => {
+    if (filesContent.length) {
+      utkAnalyze(
+        new Uint8Array(filesContent[0].content),
+        filesContent[0].content.byteLength
+      );
+    }
+  }, [filesContent]);
+
+  if (errors.length) {
+    return (
+      <div>
+        <button onClick={() => openFileSelector()}>Something went wrong, retry! </button>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div style={{ fontSize: 9 }}>
+      {plainFiles && plainFiles.length > 0 &&
+        <h2>{plainFiles[0].name}</h2>
+      }
+      <button onClick={() => openFileSelector()}>
+        Select file
+      </button>
+      {error && <pre>Error: {JSON.stringify(error, null, 2)}</pre>}
+      <pre>{JSON.stringify(utkRes, null, 2)}</pre>
+      {data && <LayoutBlocks layout={data.layout} />}
+    </div>
+  );
+};
+
+const App = () => (
+  <div style={{ fontSize: 11 }}>
+    <h1>
+      utk-web - analyze a firmware image
+    </h1>
+    <Fmap />
+  </div>
+);
 
 export default App;
