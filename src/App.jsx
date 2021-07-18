@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { useFilePicker } from 'use-file-picker';
-import wasm from './main.go';
-import UEFIImage from './UEFIImage';
+import React, { useEffect, useState } from "react";
+import { useFilePicker } from "use-file-picker";
+import wasm from "./main.go";
+import UEFIImage from "./UEFIImage";
 import colors from "./util/colors";
 
-const { add, fmap, utka, raiseError, someValue } = wasm;
+const { fmap, utka } = wasm;
 
 const Analyze = () => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  const [
-      openFileSelector,
-			{ filesContent, loading, errors, plainFiles, clear }
-  ] = useFilePicker({
+  const [openFileSelector, { filesContent, loading, errors, plainFiles }] =
+    useFilePicker({
       multiple: true,
       readAs: "ArrayBuffer",
       // accept: ['.bin', '.rom'],
@@ -20,9 +18,10 @@ const Analyze = () => {
       // minFileSize: 1, // in megabytes
       maxFileSize: 65,
       // readFilesContent: false, // ignores file content
-  });
+    });
 
-  const analyze = async(indata, size) => {
+  const analyze = async (indata, size) => {
+    setData(null);
     try {
       const [utkParsed, flashMap] = await Promise.all([
         utka(indata, size),
@@ -36,9 +35,9 @@ const Analyze = () => {
       console.error(e);
       setError(error.concat(e.message));
     }
-  }
+  };
 
-	useEffect(() => {
+  useEffect(() => {
     if (filesContent.length) {
       const f = filesContent[0].content;
       analyze(new Uint8Array(f), f.byteLength);
@@ -49,33 +48,33 @@ const Analyze = () => {
     return (
       <div>
         <h2>Something went wrong, retry?</h2>
-        <button onClick={() => openFileSelector()}>
-          Pick a file
-        </button>
+        <button onClick={() => openFileSelector()}>Pick a file</button>
       </div>
     );
   }
 
   if (loading) {
-    return <div><h2>Analyzing...</h2></div>;
+    return (
+      <div>
+        <h2>Analyzing...</h2>
+      </div>
+    );
   }
+
+  const fileName = plainFiles.length > 0 ? plainFiles[0].name : "";
 
   return (
     <div style={{ fontSize: 9 }}>
       <button onClick={() => openFileSelector()}>Select file</button>
       {error && <pre>Error: {JSON.stringify(error, null, 2)}</pre>}
-      {data && (
-        <UEFIImage data={data.utk} fmap={data.fmap} name={plainFiles[0].name} />
-      )}
+      {data && <UEFIImage data={data.utk} fmap={data.fmap} name={fileName} />}
     </div>
   );
 };
 
 const App = () => (
   <div>
-    <h1>
-      utk-web - analyze a firmware image
-    </h1>
+    <h1>utk-web - analyze a firmware image</h1>
     <Analyze />
     <style jsx global>{`
       html {
