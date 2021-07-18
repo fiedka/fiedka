@@ -22,6 +22,7 @@ const Analyze = () => {
 
   const analyze = async (indata, size) => {
     setData(null);
+    setError(null);
     try {
       const [utkParsed, flashMap] = await Promise.all([
         utka(indata, size),
@@ -33,7 +34,7 @@ const Analyze = () => {
       });
     } catch (e) {
       console.error(e);
-      setError(error.concat(e.message));
+      setError((errors || []).concat(e));
     }
   };
 
@@ -43,15 +44,6 @@ const Analyze = () => {
       analyze(new Uint8Array(f), f.byteLength);
     }
   }, [filesContent]);
-
-  if (errors.length) {
-    return (
-      <div>
-        <h2>Something went wrong, retry?</h2>
-        <button onClick={() => openFileSelector()}>Pick a file</button>
-      </div>
-    );
-  }
 
   if (loading) {
     return (
