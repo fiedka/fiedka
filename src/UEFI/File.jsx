@@ -38,6 +38,7 @@ const File = ({ file, open, onJumpToVolume }) => {
         .guid {
           background-color: #f7f7f7;
           padding: 0 2px;
+          color: #000;
         }
         .emoji {
           background-color: #f7f7f7;
