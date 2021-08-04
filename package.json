@@ -34,8 +34,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "start": "GOPATH=$(pwd) GOROOT=/usr/lib/go webpack-dev-server",
+    "build": "GOPATH=$(pwd) GOROOT=/usr/lib/go webpack"
   },
   "keywords": [],
   "author": "",
