@@ -1,0 +1,110 @@
+[
+  {
+    "EventNum": 1,
+    "PCRIndex": 0,
+    "EventType": "EV_S_CRTM_VERSION",
+    "DigestCount": 2,
+    "Digests": [
+      {
+        "AlgorithmId": "sha1",
+        "Digest": "1489f923c4dca729178b3e3233458550d8dddf29"
+      },
+      {
+        "AlgorithmId": "sha256",
+        "Digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+      }
+    ],
+    "EventSize": 2,
+    "Event": "0000"
+  },
+  {
+    "EventNum": 2,
+    "PCRIndex": 0,
+    "EventType": "EV_EFI_PLATFORM_FIRMWARE_BLOB",
+    "DigestCount": 2,
+    "Digests": [
+      {
+        "AlgorithmId": "sha1",
+        "Digest": "3f32b9a5c407bccf010934da6b80dda4cd160bb5"
+      },
+      {
+        "AlgorithmId": "sha256",
+        "Digest": "a6dfbab05de8afdef2eb5e075b56f277fff9cd752d40f1a2360ea0e082159666"
+      }
+    ],
+    "EventSize": 16,
+    "Event": {
+      "BlobBase": 8519680,
+      "BlobLength": 917504
+    }
+  },
+  {
+    "EventNum": 3,
+    "PCRIndex": 0,
+    "EventType": "EV_EFI_PLATFORM_FIRMWARE_BLOB",
+    "DigestCount": 2,
+    "Digests": [
+      {
+        "AlgorithmId": "sha1",
+        "Digest": "5178d24da0e0124f8100089f24725eb0ca865cca"
+      },
+      {
+        "AlgorithmId": "sha256",
+        "Digest": "362cc6af7cc330ab3c10696edec503fc4341524711c31a509f2c9c2204365436"
+      }
+    ],
+    "EventSize": 16,
+    "Event": {
+      "BlobBase": 9437184,
+      "BlobLength": 11534336
+    }
+  },
+  {
+    "EventNum": 10,
+    "PCRIndex": 2,
+    "EventType": "EV_EFI_BOOT_SERVICES_DRIVER",
+    "DigestCount": 2,
+    "Digests": [
+      {
+        "AlgorithmId": "sha1",
+        "Digest": "3cab2aa673fc6a7f6e1765a82c04be90b110507f"
+      },
+      {
+        "AlgorithmId": "sha256",
+        "Digest": "58c91e43a3a34c0784008712501dbfa44841ff67e6ec0db178d929bd40d3958f"
+      }
+    ],
+    "EventSize": 78,
+    "Event": {
+      "ImageLocationInMemory": 1059090456,
+      "ImageLengthInMemory": 216520,
+      "ImageLinkTimeAddress": 0,
+      "LengthOfDevicePath": 46,
+      "DevicePath": "02010c00d041030a0000000001010600000204081800000000000064010000000000ffb10400000000007fff0400"
+    }
+  },
+  {
+    "EventNum": 27,
+    "PCRIndex": 4,
+    "EventType": "EV_EFI_BOOT_SERVICES_APPLICATION",
+    "DigestCount": 2,
+    "Digests": [
+      {
+        "AlgorithmId": "sha1",
+        "Digest": "42ee27c5f05ba7b377905f1d54611f214b4b8185"
+      },
+      {
+        "AlgorithmId": "sha256",
+        "Digest": "ec1899aefaad2092e8f736ebd1964f23089fb1ca73f0f873e9304dc071843c91"
+      }
+    ],
+    "EventSize": 118,
+    "Event": {
+      "ImageLocationInMemory": 1024581656,
+      "ImageLengthInMemory": 19242912,
+      "ImageLinkTimeAddress": 0,
+      "LengthOfDevicePath": 86,
+      "DevicePath": "02010c00d041030a00000000010106000002030b2500525400123456000000000000000000000000000000000000000000000000000001030c1b0000000000000000000000000000000000000000000000007fff0400"
+    }
+  }
+]
