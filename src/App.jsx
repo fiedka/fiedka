@@ -3,6 +3,11 @@ import { useFilePicker } from "use-file-picker";
 import wasm from "./main.go";
 import UEFIImage from "./UEFIImage";
 import colors from "./util/colors";
+import tpmLog from "./TPM/data.json";
+import tpmLog2 from "./TPM/tpmlog2.json";
+import TPMLog from "./TPM/Log.jsx";
+
+const tpmLog1 = { events: tpmLog };
 
 const { fmap, utka } = wasm;
 
@@ -68,6 +73,11 @@ const App = () => (
   <div>
     <h1>utk-web - analyze a firmware image</h1>
     <Analyze />
+    <h2>TPM log demo</h2>
+    <div className="flex">
+      <TPMLog log={tpmLog1} />
+      <TPMLog log={tpmLog2} />
+    </div>
     <style jsx global>{`
       html {
         box-sizing: border-box;
