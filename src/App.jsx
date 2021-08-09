@@ -5,9 +5,17 @@ import UEFIImage from "./UEFIImage";
 import colors from "./util/colors";
 import tpmLog from "./TPM/data.json";
 import tpmLog2 from "./TPM/tpmlog2.json";
-import TPMLog from "./TPM/Log.jsx";
+import eventlog from "./TPM/eventlog.json";
+import TPMLog, { transform } from "./TPM/Log.jsx";
 
-const tpmLog1 = { events: tpmLog };
+const tpmLog12 = {
+  events: eventlog.PcrList.map(({ digest, type, data: event }, id) => ({
+    id,
+    type,
+    event,
+    digests: [{ algorithm: "sha1", digest }],
+  })),
+};
 
 const { fmap, utka } = wasm;
 
@@ -75,8 +83,20 @@ const App = () => (
     <Analyze />
     <h2>TPM log demo</h2>
     <div className="flex">
-      <TPMLog log={tpmLog1} />
-      <TPMLog log={tpmLog2} />
+      <div>
+        <h3>TPM 1.2 sample (tpm2_eventlog)</h3>
+        <TPMLog events={transform(tpmLog2.events)} />
+      </div>
+      <div>
+        <h3>TPM 1.2 sample (tpmtool)</h3>
+        <TPMLog events={tpmLog12.events} />
+      </div>
+    </div>
+    <div className="flex">
+      <div>
+        <h3>TPM 2.0 sample (tpm2_eventlog)</h3>
+        <TPMLog events={transform(tpmLog)} />
+      </div>
     </div>
     <style jsx global>{`
       html {

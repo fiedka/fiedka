@@ -22,8 +22,8 @@ const transformDigests = (digests = []) =>
     digest: d.Digest,
   }));
 
-const transform = (log = []) =>
-  log.map((l) => ({
+export const transform = (events = []) =>
+  events.map((l) => ({
     id: l.EventNum,
     PCRIndex: l.PCRIndex,
     type: l.EventType,
@@ -62,7 +62,7 @@ const Digests = ({ digests = [] }) => {
 };
 
 const Entry = ({ data }) => (
-  <div>
+  <div className="entry">
     <h2>
       <Type type={data.type} />
     </h2>
@@ -81,7 +81,7 @@ const Entry = ({ data }) => (
         margin: -6px -6px 4px;
         padding: 2px;
       }
-      h3 {
+      .entry h3 {
         font-size: 14px;
         margin: 2px 6px;
       }
@@ -93,33 +93,35 @@ const Entry = ({ data }) => (
   </div>
 );
 
-const TPMLog = ({ log }) => {
-  const entries = transform(log.events);
+const TPMLog = ({ events = [] }) => {
   return (
-    <ul className="log">
-      {entries.map((e) => (
-        <li key={e.id}>
-          <Entry data={e} />
-        </li>
-      ))}
-      <style jsx>{`
-        ul {
-          list-style: none;
-          font-size: 10px;
-          font-family: sans-serif;
-          word-wrap: wrap;
-        }
-        ul.log {
-          overflow-y: scroll;
-          width: 640px;
-          max-height: 600px;
-        }
-        li {
-          border: 1px solid blue;
-          padding: 8px;
-        }
-      `}</style>
-    </ul>
+    <>
+      <h4>#entries: {events.length}</h4>
+      <ul className="log">
+        {events.map((e) => (
+          <li key={e.id}>
+            <Entry data={e} />
+          </li>
+        ))}
+        <style jsx>{`
+          ul {
+            list-style: none;
+            font-size: 10px;
+            font-family: sans-serif;
+            word-wrap: wrap;
+          }
+          ul.log {
+            overflow-y: scroll;
+            width: 580px;
+            max-height: 600px;
+          }
+          li {
+            border: 1px solid blue;
+            padding: 8px;
+          }
+        `}</style>
+      </ul>
+    </>
   );
 };
 
