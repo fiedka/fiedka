@@ -13,7 +13,7 @@ const eventTypes = {
 };
 
 const Type = ({ type }) => {
-  return eventTypes[type];
+  return eventTypes[type] || type;
 };
 
 const transformDigests = (digests = []) =>
@@ -49,7 +49,7 @@ const Digests = ({ digests = [] }) => {
     <ul>
       {digests.map(({ algorithm, digest }) => (
         <li key={algorithm}>
-          {algorithm}: <span className="mono">{digest}</span>
+          {algorithm}: <span className="mono">{digest || "--"}</span>
         </li>
       ))}
       <style jsx>{`

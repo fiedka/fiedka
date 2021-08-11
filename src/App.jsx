@@ -6,10 +6,20 @@ import colors from "./util/colors";
 import tpmLog from "./TPM/data.json";
 import tpmLog2 from "./TPM/tpmlog2.json";
 import eventlog from "./TPM/eventlog.json";
+import eventlog2 from "./TPM/t14-tpm20.json";
 import TPMLog, { transform } from "./TPM/Log.jsx";
 
 const tpmLog12 = {
   events: eventlog.PcrList.map(({ digest, type, data: event }, id) => ({
+    id,
+    type,
+    event,
+    digests: [{ algorithm: "sha1", digest }],
+  })),
+};
+
+const tpmLog20 = {
+  events: eventlog2.PcrList.map(({ digest, type, data: event }, id) => ({
     id,
     type,
     event,
@@ -96,6 +106,10 @@ const App = () => (
       <div>
         <h3>TPM 2.0 sample (tpm2_eventlog)</h3>
         <TPMLog events={transform(tpmLog)} />
+      </div>
+      <div>
+        <h3>TPM 2.0 sample (tpmtool)</h3>
+        <TPMLog events={tpmLog20.events} />
       </div>
     </div>
     <style jsx global>{`

@@ -1,0 +1,225 @@
+{
+  "Firmware": "BIOS",
+  "PcrList": [
+    {
+      "data": "Spec ID Event03\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0002\u0002\u0000\u0000\u0000\u0004\u0000\u0014\u0000\u000b\u0000 \u0000\u0000",
+      "digest": "0000000000000000000000000000000000000000",
+      "type": "EV_NO_ACTION"
+    },
+    {
+      "data": "R\u00001\u0000B\u0000E\u0000T\u00006\u00000\u0000W",
+      "digests": "{}",
+      "type": "EV_S_CRTM_VERSION"
+    },
+    {
+      "data": "Blob address - 0x163577856 - with size - 1048576b",
+      "digests": "{}",
+      "type": "EV_EFI_PLATFORM_FIRMWARE_BLOB"
+    },
+    {
+      "data": "ACPI DATA",
+      "digests": "{}",
+      "type": "EV_POST_CODE"
+    },
+    {
+      "data": "ACPI DATA",
+      "digests": "{}",
+      "type": "EV_POST_CODE"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - SecureBoot",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - PK",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - KEK",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
+    },
+    {
+      "data": "Variable - d719b2cb-3d3a-4596-bca3-dad00e67656f - db",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
+    },
+    {
+      "data": "Variable - d719b2cb-3d3a-4596-bca3-dad00e67656f - dbx",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
+    },
+    {
+      "data": "00000000",
+      "digests": "{}",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "data": "Image loaded at address 0x3135033368 with 456864b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_DRIVER"
+    },
+    {
+      "data": "Image loaded at address 0x3135479832 with 8640b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_DRIVER"
+    },
+    {
+      "data": "Image loaded at address 0x3135402008 with 40960b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_DRIVER"
+    },
+    {
+      "data": "Image loaded at address 0x3134586904 with 11136b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_DRIVER"
+    },
+    {
+      "data": "Image loaded at address 0x3134550040 with 7168b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_DRIVER"
+    },
+    {
+      "data": "Image loaded at address 0x3134550040 with 6656b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_DRIVER"
+    },
+    {
+      "data": "Image loaded at address 0x3112050712 with 153600b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_DRIVER"
+    },
+    {
+      "data": "Variable - 2a4dc6b7-41f5-45dd-6fb4-2dd334c1cf65 - LenovoConfig",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
+    },
+    {
+      "data": "Variable - 2a4dc6b7-41f5-45dd-6fb4-2dd334c1cf65 - LenovoRuntimeConfig",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
+    },
+    {
+      "data": "Variable - a2c1808f-d4f-4cc9-19a6-d1e641d39d49 - LenovoSecurityConfig",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
+    },
+    {
+      "data": "Image loaded at address 0x3114692632 with 72200b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_APPLICATION"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - BootOrder",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0001",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot001B",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0000",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0017",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0018",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0019",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot001A",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot001C",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0002",
+      "digests": "{}",
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Calling EFI Application from Boot Option",
+      "digests": "{}",
+      "type": "EV_EFI_ACTION"
+    },
+    {
+      "data": "00000000",
+      "digests": "{}",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "data": "00000000",
+      "digests": "{}",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "data": "00000000",
+      "digests": "{}",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "data": "00000000",
+      "digests": "{}",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "data": "00000000",
+      "digests": "{}",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "data": "00000000",
+      "digests": "{}",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "data": "00000000",
+      "digests": "{}",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "data": "Disk Guid - 00000000-67B7-639A-092D-264A93A06013",
+      "digests": "{}",
+      "type": "EV_EFI_GPT_EVENT"
+    },
+    {
+      "data": "Image loaded at address 0x3114672152 with 93531b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_APPLICATION"
+    },
+    {
+      "data": "Image loaded at address 0x3093037080 with 6300224b",
+      "digests": "{}",
+      "type": "EV_EFI_BOOT_SERVICES_APPLICATION"
+    },
+    {
+      "data": "i\u0000n\u0000i\u0000t\u0000r\u0000d\u0000=\u0000\\\u0000e\u0000f\u0000i\u0000\\\u0000n\u0000i\u0000x\u0000o\u0000s\u0000\\\u0000y\u0000a\u0000q\u0000s\u0000n\u0000y\u0000y\u0000p\u00004\u0000y\u00007\u0000r\u0000w\u0000v\u0000r\u00002\u0000v\u0000x\u0000w\u0000k\u0000z\u00005\u00009\u00005\u0000b\u00000\u00008\u00003\u00001\u0000n\u0000x\u0000q\u0000-\u0000i\u0000n\u0000i\u0000t\u0000r\u0000d\u0000-\u0000l\u0000i\u0000n\u0000u\u0000x\u0000-\u00005\u0000.\u00001\u00002\u0000.\u00001\u00001\u0000-\u0000i\u0000n\u0000i\u0000t\u0000r\u0000d\u0000.\u0000e\u0000f\u0000i\u0000 \u0000i\u0000n\u0000i\u0000t\u0000=\u0000/\u0000n\u0000i\u0000x\u0000/\u0000s\u0000t\u0000o\u0000r\u0000e\u0000/\u0000v\u0000d\u00002\u0000w\u0000d\u00006\u00006\u0000c\u0000k\u00008\u0000k\u0000c\u00006\u00007\u00008\u0000h\u0000m\u0000a\u00002\u00002\u00008\u0000s\u0000j\u00007\u0000h\u0000l\u0000f\u0000f\u0000w\u0000h\u00009\u0000d\u0000-\u0000n\u0000i\u0000x\u0000o\u0000s\u0000-\u0000s\u0000y\u0000s\u0000t\u0000e\u0000m\u0000-\u0000b\u0000e\u0000v\u0000u\u0000p\u0000a\u0000d\u0000-\u00002\u00001\u0000.\u00001\u00001\u0000p\u0000r\u0000e\u00002\u00009\u00007\u00000\u00009\u00008\u0000.\u00007\u0000e\u00005\u00006\u00007\u0000a\u00003\u0000d\u00000\u00009\u00002\u0000/\u0000i\u0000n\u0000i\u0000t\u0000 \u0000l\u0000o\u0000g\u0000l\u0000e\u0000v\u0000e\u0000l\u0000=\u00004",
+      "digests": "{}",
+      "type": "EV_IPL"
+    }
+  ]
+}
