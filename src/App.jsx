@@ -14,17 +14,19 @@ const tpmLog12 = {
     id,
     type,
     event,
-    digests: [{ algorithm: "sha1", digest }],
+    digests: [{ algorithm: "SHA1", digest }],
   })),
 };
 
 const tpmLog20 = {
-  events: eventlog2.PcrList.map(({ digest, type, data: event }, id) => ({
-    id,
-    type,
-    event,
-    digests: [{ algorithm: "sha1", digest }],
-  })),
+  events: eventlog2.PcrList.map(
+    ({ digest, digests, type, data: event }, id) => ({
+      id,
+      type,
+      event,
+      digests: digest ? [{ algorithm: "SHA1", digest }] : digests,
+    })
+  ),
 };
 
 const { fmap, utka } = wasm;
