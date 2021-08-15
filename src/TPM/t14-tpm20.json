@@ -7,218 +7,591 @@
       "type": "EV_NO_ACTION"
     },
     {
-      "data": "R\u00001\u0000B\u0000E\u0000T\u00006\u00000\u0000W",
-      "digests": "{}",
+      "data": "R\u00001\u0000B\u0000E\u0000T\u00005\u00006\u0000W",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "8b847eb75863fb9ecec661e6f38505764148e2bc"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "ad5c3ccdc988c9aca64864f9fce562d1249b704d9337df4b5b9a8190c47c0177"
+        }
+      ],
       "type": "EV_S_CRTM_VERSION"
     },
     {
       "data": "Blob address - 0x163577856 - with size - 1048576b",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "feb2f32e85eb2a925096ad45bd2d7bfde4c8a1d6"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "59325cb81703a4573afc4371dd6334c78e441ccda04c691c12cc3a1a79be8592"
+        }
+      ],
       "type": "EV_EFI_PLATFORM_FIRMWARE_BLOB"
     },
     {
       "data": "ACPI DATA",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "93f036585df0f35892ecdadea15102dee732aa01"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "19390ffa7cff0c83ab03cda06b0a6c155a4c1fdd90c48261883f6831014a419b"
+        }
+      ],
       "type": "EV_POST_CODE"
     },
     {
       "data": "ACPI DATA",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "b0469aa139a98ebeae9693588554bab11e19724c"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "1efad6adef14bd2607d26be9cdf8dbc7d26a6f2db9452d685ec64e0dc8c60d35"
+        }
+      ],
       "type": "EV_POST_CODE"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - SecureBoot",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "57cd4dc19442475aa82743484f3b1caa88e142b8"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "115aa827dbccfb44d216ad9ecfda56bdea620b860a94bed5b7a27bba1c4d02d8"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - PK",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "a27021942411bdc6ef106a5f68e4072a0119ba83"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "ddd2fe434fee03440d49850277556d148b75d7cafdc4dc59e8a67cccecad1a3e"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - KEK",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "ce3d0af3a5f41161737512f1a0740944fa0f3b92"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "c543bc14765ea95e341bb81b0ace82e83af7097c68ee852369385307374c905c"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
     },
     {
       "data": "Variable - d719b2cb-3d3a-4596-bca3-dad00e67656f - db",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "a992df26af065284c18b692443edddd99c3563fe"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "cdf53749823511cebc367d45d8c7f2387852c765869901ea91ca1fd15c31e38c"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
     },
     {
       "data": "Variable - d719b2cb-3d3a-4596-bca3-dad00e67656f - dbx",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "e6b4c4b8b1cd5609d9e1c2f9c2db9c9a3deb6269"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "8bc595afe91665472bf77eb8874bea431442530e0b1c993d48c0a3ffd307befb"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
     },
     {
       "data": "00000000",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
       "type": "EV_SEPARATOR"
     },
     {
-      "data": "Image loaded at address 0x3135033368 with 456864b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3135025176 with 456896b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "83b213259e11b62c3e6bee98b378d112dd421f26"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "3a9c9a1170e9a55843cddc7f49ba834ec6015b78cb039133ab0766b676e9c1f4"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_DRIVER"
     },
     {
-      "data": "Image loaded at address 0x3135479832 with 8640b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3135471640 with 8672b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "e67e45ed14d277f029d4312a98c96bae3e27353b"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "90fcf7a5f3a9d8e6c7e8bd0aa873ea1d4d5ca37e111b5865f9e115b27f5d5d2e"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_DRIVER"
     },
     {
-      "data": "Image loaded at address 0x3135402008 with 40960b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3135393816 with 40960b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "99ef4867295d2863726577758c41d47e3bfae49b"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "acdc11e1fb193365e3b43ecfacb21fefe7a45d245ce6c630585fa71ad3bc4e25"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_DRIVER"
     },
     {
-      "data": "Image loaded at address 0x3134586904 with 11136b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3133866008 with 11168b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "a9c6afdb8b70d548419034785f58abb435190175"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "e316d531e458d486d3cb4383e75d4f24edd1b2d5d20e2bd970414b037ab0f1f4"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_DRIVER"
     },
     {
-      "data": "Image loaded at address 0x3134550040 with 7168b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3133698072 with 7168b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "73cfe85748cd06c7c0a504aa2eb2585ebbb9fd55"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "19cc75fefd561cdacfec78e38cf93bfbd3bbff96f94c6525f7e8c9622630f8d8"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_DRIVER"
     },
     {
-      "data": "Image loaded at address 0x3134550040 with 6656b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3133698072 with 6656b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "ef7080de913b867dd031be1851403fe429c67410"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "c8110f9617396e847ecbdd1afa786bfd7325c1649499314eb355899848b24568"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_DRIVER"
     },
     {
-      "data": "Image loaded at address 0x3112050712 with 153600b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3124322328 with 153088b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "b3bbf93f4b78f957a2e6b03782a1d2fcd6066f7e"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "ebc860710c66c166310e8353470b7de49bd0d5aa02ea3164c4b7baf4c79f2199"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_DRIVER"
     },
     {
       "data": "Variable - 2a4dc6b7-41f5-45dd-6fb4-2dd334c1cf65 - LenovoConfig",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "992bdc0988c5aad582fdaaf250ac3a5fb733ddeb"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "11edec9765a620b6dad20f003d802fb69813a3b627e7651992de1ece88eaadd4"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
     },
     {
       "data": "Variable - 2a4dc6b7-41f5-45dd-6fb4-2dd334c1cf65 - LenovoRuntimeConfig",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "b5b588f2959618a196b2438414b7f176480a5810"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "799b2fcb67f975822755d2dfb194e969921377f7c9a55a97e90a98d61a2a4590"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
     },
     {
       "data": "Variable - a2c1808f-d4f-4cc9-19a6-d1e641d39d49 - LenovoSecurityConfig",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "59eebb57bf46ec993e4d89ff428d4d290ba6addd"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "eeb2bf716e5fd4b4d171e0d92bc3235ed7fba6f43eab51a1ca11789330c289f5"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_DRIVER_CONFIG"
     },
     {
-      "data": "Image loaded at address 0x3114692632 with 72200b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3123298328 with 72200b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "817c6e2863bc7b6ef6e3521d87d72badd01e94c7"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "81231bccdd15c4d25016651fe7d331152c9259f366bd32f01d866e9fe67fae91"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_APPLICATION"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - BootOrder",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "95f83bc6b5ddab60895213d5bfd2a760620cbd46"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "d7d73e472dc3d02706883ac066ab3494e648a3f6d8a9d273d6b8ff0400d7c290"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_BOOT"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0001",
-      "digests": "{}",
-      "type": "EV_EFI_VARIABLE_BOOT"
-    },
-    {
-      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot001B",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "77de7b7ed4649cf79d1a8f8be795f9631abe1d66"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "21ec567a77d3132d373ac5b968677d4f5f4e1dde5dec4523ce04d0d7f1b3aa62"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_BOOT"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0000",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "cb75622fe907d0b4c624cfffbaf10df8354f6350"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "9938be554045788e87759cc523486bc1da479ed0f5a308baada84884992511e6"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_BOOT"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0017",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "ec4b1f83fbda09ab3de1376dd7f03855b5520118"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "ddbd73e828890ac9ed369b619ee13efb1e0fed33d30d40cdbe02e79cf89db246"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_BOOT"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0018",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "4d54ce74c3653266f2ac1c6b1689ac219404be12"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "7ffd8b7c1280ddfb82ae599446bf40376745955bba173bd12ca32e189b1de153"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_BOOT"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0019",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "9e2627436648f2b1d1394f09bdd95afbadb8c617"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "d4856aa3fcca0b7be0f37419bcefc81b9f7ab51238e28789a70a10c63df67a20"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_BOOT"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot001A",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "f668bdf866b9874291ed739f2ff4cadf5496580a"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "c1ec3feef26af28e73fecfaf76d4f1c9f99eadfbeb016a9375e6a3b4b5a8c5d5"
+        }
+      ],
+      "type": "EV_EFI_VARIABLE_BOOT"
+    },
+    {
+      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot001B",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "18d7016aa3800417378fce85eaa11267916e1453"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "c1ef380c5009d8dc85fd35ff60c80137536b32d10f3f71427ebf691a1d84ad48"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_BOOT"
     },
     {
       "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot001C",
-      "digests": "{}",
-      "type": "EV_EFI_VARIABLE_BOOT"
-    },
-    {
-      "data": "Variable - 8be4df61-93ca-11d2-daa-00e098032b8c - Boot0002",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "26c902f207a432228ccd068a74dee0f8816fef28"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "693630072deb6bee3f65f0b57be818557a053833f66eba359bcadcc32085abd4"
+        }
+      ],
       "type": "EV_EFI_VARIABLE_BOOT"
     },
     {
       "data": "Calling EFI Application from Boot Option",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "cd0fdb4531a6ec41be2753ba042637d6e5f7f256"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "3d6772b4f84ed47595d72a2c4c5ffd15f5bb72c7507fe26f2aaee2c69d5633ba"
+        }
+      ],
       "type": "EV_EFI_ACTION"
     },
     {
       "data": "00000000",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
       "type": "EV_SEPARATOR"
     },
     {
       "data": "00000000",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
       "type": "EV_SEPARATOR"
     },
     {
       "data": "00000000",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
       "type": "EV_SEPARATOR"
     },
     {
       "data": "00000000",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
       "type": "EV_SEPARATOR"
     },
     {
       "data": "00000000",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
       "type": "EV_SEPARATOR"
     },
     {
       "data": "00000000",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
       "type": "EV_SEPARATOR"
     },
     {
       "data": "00000000",
-      "digests": "{}",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
       "type": "EV_SEPARATOR"
     },
     {
-      "data": "Disk Guid - 00000000-67B7-639A-092D-264A93A06013",
-      "digests": "{}",
+      "data": "Disk Guid - 00000000-C5D3-98AD-A5D0-0844A28DF096",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "fdf06fbb281efabfe317ec56061b24798cda4c9d"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "8d38c857cff8ff0b5e94abe94366f84dcdcd7e9cbbd0c6d67e26e69fd4b4dfdd"
+        }
+      ],
       "type": "EV_EFI_GPT_EVENT"
     },
     {
-      "data": "Image loaded at address 0x3114672152 with 93531b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3123249176 with 93054b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "f19f8e338af1998bf933b5fbe28a80c1dc0c34fd"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "7c1a8614c3e3d6a5b6c2897ea4e94c8092c658b6d16a7459fa038526f25f4cc3"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_APPLICATION"
     },
     {
-      "data": "Image loaded at address 0x3093037080 with 6300224b",
-      "digests": "{}",
+      "data": "Image loaded at address 0x3093762072 with 9605120b",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "2eb9a7daab81bbd9bfe258662e2b18b790714b6d"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "7ae77c55430d6140e976a244de37241bbdbe46b67605f620df2b0683ee3b9ef9"
+        }
+      ],
       "type": "EV_EFI_BOOT_SERVICES_APPLICATION"
     },
     {
-      "data": "i\u0000n\u0000i\u0000t\u0000r\u0000d\u0000=\u0000\\\u0000e\u0000f\u0000i\u0000\\\u0000n\u0000i\u0000x\u0000o\u0000s\u0000\\\u0000y\u0000a\u0000q\u0000s\u0000n\u0000y\u0000y\u0000p\u00004\u0000y\u00007\u0000r\u0000w\u0000v\u0000r\u00002\u0000v\u0000x\u0000w\u0000k\u0000z\u00005\u00009\u00005\u0000b\u00000\u00008\u00003\u00001\u0000n\u0000x\u0000q\u0000-\u0000i\u0000n\u0000i\u0000t\u0000r\u0000d\u0000-\u0000l\u0000i\u0000n\u0000u\u0000x\u0000-\u00005\u0000.\u00001\u00002\u0000.\u00001\u00001\u0000-\u0000i\u0000n\u0000i\u0000t\u0000r\u0000d\u0000.\u0000e\u0000f\u0000i\u0000 \u0000i\u0000n\u0000i\u0000t\u0000=\u0000/\u0000n\u0000i\u0000x\u0000/\u0000s\u0000t\u0000o\u0000r\u0000e\u0000/\u0000v\u0000d\u00002\u0000w\u0000d\u00006\u00006\u0000c\u0000k\u00008\u0000k\u0000c\u00006\u00007\u00008\u0000h\u0000m\u0000a\u00002\u00002\u00008\u0000s\u0000j\u00007\u0000h\u0000l\u0000f\u0000f\u0000w\u0000h\u00009\u0000d\u0000-\u0000n\u0000i\u0000x\u0000o\u0000s\u0000-\u0000s\u0000y\u0000s\u0000t\u0000e\u0000m\u0000-\u0000b\u0000e\u0000v\u0000u\u0000p\u0000a\u0000d\u0000-\u00002\u00001\u0000.\u00001\u00001\u0000p\u0000r\u0000e\u00002\u00009\u00007\u00000\u00009\u00008\u0000.\u00007\u0000e\u00005\u00006\u00007\u0000a\u00003\u0000d\u00000\u00009\u00002\u0000/\u0000i\u0000n\u0000i\u0000t\u0000 \u0000l\u0000o\u0000g\u0000l\u0000e\u0000v\u0000e\u0000l\u0000=\u00004",
-      "digests": "{}",
+      "data": "i\u0000n\u0000i\u0000t\u0000r\u0000d\u0000=\u0000\\\u0000a\u0000m\u0000d\u0000-\u0000u\u0000c\u0000o\u0000d\u0000e\u0000.\u0000i\u0000m\u0000g\u0000 \u0000i\u0000n\u0000i\u0000t\u0000r\u0000d\u0000=\u0000\\\u0000i\u0000n\u0000i\u0000t\u0000r\u0000a\u0000m\u0000f\u0000s\u0000-\u0000l\u0000i\u0000n\u0000u\u0000x\u0000.\u0000i\u0000m\u0000g\u0000 \u0000c\u0000r\u0000y\u0000p\u0000t\u0000d\u0000e\u0000v\u0000i\u0000c\u0000e\u0000=\u0000P\u0000A\u0000R\u0000T\u0000U\u0000U\u0000I\u0000D\u0000=\u00002\u00008\u0000b\u00005\u0000e\u00000\u00006\u0000e\u0000-\u0000f\u0000f\u0000c\u00006\u0000-\u00004\u0000f\u00006\u00004\u0000-\u0000b\u00002\u00002\u00009\u0000-\u00008\u0000a\u0000e\u00002\u0000c\u00000\u00004\u0000b\u00001\u00005\u00008\u0000d\u0000:\u0000s\u0000y\u0000s\u0000t\u0000e\u0000m\u0000:\u0000a\u0000l\u0000l\u0000o\u0000w\u0000-\u0000d\u0000i\u0000s\u0000c\u0000a\u0000r\u0000d\u0000s\u0000 \u0000r\u0000o\u0000o\u0000t\u0000=\u0000/\u0000d\u0000e\u0000v\u0000/\u0000m\u0000a\u0000p\u0000p\u0000e\u0000r\u0000/\u0000s\u0000y\u0000s\u0000t\u0000e\u0000m\u0000 \u0000r\u0000o\u0000o\u0000t\u0000f\u0000l\u0000a\u0000g\u0000s\u0000=\u0000s\u0000u\u0000b\u0000v\u0000o\u0000l\u0000=\u0000r\u0000o\u0000o\u0000t\u0000 \u0000r\u0000w",
+      "digests": [
+        {
+          "algorithm": "SHA1",
+          "digest": "a922b8936ee41a3e8b3d9021297b548f825039a4"
+        },
+        {
+          "algorithm": "SHA256",
+          "digest": "a1baed997ef4131c6df0015bf8e0818bb141f35592747ddc9acdc51be02ed100"
+        }
+      ],
       "type": "EV_IPL"
     }
   ]
