@@ -1,0 +1,65 @@
+{
+  "DirectoryEntry": {
+    "Type": 36,
+    "Size": 6240,
+    "Location": 4280156160,
+    "Reserved": 0,
+    "Unknown": null
+  },
+  "Header": {
+    "Unknown00": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    "ID": 827543588,
+    "SizeSigned": 5728,
+    "IsEncrypted": 1,
+    "Unknown1C": 0,
+    "EncFingerprint": [
+      59, 222, 103, 79, 122, 20, 184, 60, 220, 117, 24, 101, 61, 41, 107, 189
+    ],
+    "IsSigned": 1,
+    "Unknown34": 0,
+    "SigFingerprint": [
+      96, 187, 166, 126, 26, 67, 76, 107, 152, 7, 188, 141, 253, 180, 31, 64
+    ],
+    "IsCompressed": 0,
+    "Unknown4C": 0,
+    "FullSize": 0,
+    "Unknown54": 0,
+    "Unknown58": [
+      0, 0, 0, 0, 0, 0, 0, 0
+    ],
+    "Version": [
+      39, 3, 2, 10
+    ],
+    "Unknown64": 0,
+    "Unknown68": 0,
+    "SizePacked": 6240,
+    "Unknown70": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 0, 0, 0
+    ],
+    "Unknown80": [
+      13, 85, 180, 247, 171, 78, 168, 106, 19, 217, 149, 1, 203, 172, 191, 211
+    ],
+    "Unknown90": 0,
+    "Unknown94": 0,
+    "Unknown98": 0,
+    "Unknown9C": 0,
+    "UnknownA0": 0,
+    "UnknownA4": 0,
+    "UnknownA8": 0,
+    "UnknownAC": 0,
+    "UnknownB0": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    ]
+  },
+  "Raw": "",
+  "Signature": "dYeKockUMYhgjfPMwyR+4KU2Rs1cKsF2xNhP1EDaMho/NJdBfK/Uf1W9BzRWyrkI1LYh71ctYtv/PdNGF/ung6gYqMPzmhQoZleBUYXfycacZieTObvZxEszRIahjyYxCU08+IjbascaTjTc1kC+kCr7Kl2FMFYexDRy0e7MebOesXDiJFVtfp9dEHMiAesccstJTnOL3osLgWiWEWRLyN1UHybm+X63sFwOvnz8NEzpR08Xa+yzCgHYuiPDvU73LiQUQQmqEUnZhEVfrhW4tVRHNBs9UWJf9Hhf4B8unp3JbqHwGRdY4QkLBaPwVtqOr10om9bnvqxZVLT7PCgawg==",
+  "Comment": null,
+  "TypeInfo": {
+    "Name": "",
+    "Comment": ""
+  },
+  "Version": "A.2.3.27"
+}

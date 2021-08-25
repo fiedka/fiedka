@@ -1,0 +1,20 @@
+{
+  "DirectoryEntry": {
+    "Type": 4,
+    "Size": 65536,
+    "Location": 4278743040,
+    "Reserved": 0,
+    "Unknown": null
+  },
+  "Header": null,
+  "Raw": "",
+  "Signature": null,
+  "Comment": [
+    "Not a parsable Entry: All Fields are 0xFF"
+  ],
+  "TypeInfo": {
+    "Name": "PSP_NV_DATA",
+    "Comment": "PSP Data"
+  },
+  "Version": ""
+}
