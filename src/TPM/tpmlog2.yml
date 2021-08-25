@@ -1,0 +1,142 @@
+---
+version: 1
+events:
+- EventNum: 1
+  PCRIndex: 1
+  EventType: EV_EVENT_TAG
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "6b924902de5830a9f242d5726bcddf8235d45a20"
+  EventSize: 28
+  Event: "010000001400000045446edbbd40311a839b99beb390e62c5942c274"
+- EventNum: 2
+  PCRIndex: 2
+  EventType: EV_ACTION
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9dbd87163112e5670378abe4510491259a61f411"
+  EventSize: 21
+  Event: "5374617274204f7074696f6e20524f4d205363616e"
+- EventNum: 3
+  PCRIndex: 2
+  EventType: EV_EVENT_TAG
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f981b2b5ff46ddd041c47daddd2b393cd854626b"
+  EventSize: 32
+  Event: "0700000018000000000000008d6ff846fb33935626bcb36c00bcf0d7ecdeabf6"
+- EventNum: 4
+  PCRIndex: 4
+  EventType: EV_ACTION
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "c1e25c3f6b0dc78d57296aa2870ca6f782ccf80f"
+  EventSize: 15
+  Event: "43616c6c696e6720494e5420313968"
+- EventNum: 5
+  PCRIndex: 0
+  EventType: EV_SEPARATOR
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d9be6524a5f5047db5866813acf3277892a7a30a"
+  EventSize: 0
+- EventNum: 6
+  PCRIndex: 1
+  EventType: EV_SEPARATOR
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d9be6524a5f5047db5866813acf3277892a7a30a"
+  EventSize: 0
+- EventNum: 7
+  PCRIndex: 2
+  EventType: EV_SEPARATOR
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d9be6524a5f5047db5866813acf3277892a7a30a"
+  EventSize: 0
+- EventNum: 8
+  PCRIndex: 3
+  EventType: EV_SEPARATOR
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d9be6524a5f5047db5866813acf3277892a7a30a"
+  EventSize: 0
+- EventNum: 9
+  PCRIndex: 4
+  EventType: EV_SEPARATOR
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d9be6524a5f5047db5866813acf3277892a7a30a"
+  EventSize: 0
+- EventNum: 10
+  PCRIndex: 5
+  EventType: EV_SEPARATOR
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d9be6524a5f5047db5866813acf3277892a7a30a"
+  EventSize: 0
+- EventNum: 11
+  PCRIndex: 6
+  EventType: EV_SEPARATOR
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d9be6524a5f5047db5866813acf3277892a7a30a"
+  EventSize: 0
+- EventNum: 12
+  PCRIndex: 7
+  EventType: EV_SEPARATOR
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d9be6524a5f5047db5866813acf3277892a7a30a"
+  EventSize: 0
+- EventNum: 13
+  PCRIndex: 4
+  EventType: EV_ACTION
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "8cf2fe6c87d4d0b2998a43da630292e6d85ee8b6"
+  EventSize: 28
+  Event: "426f6f74696e67204243562064657669636520383068202848444429"
+- EventNum: 14
+  PCRIndex: 4
+  EventType: EV_IPL
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "0bfcc43c320be7f0dadfc9b803d354252805c22b"
+  EventSize: 3
+  Event:
+    String: |-
+      MBR
+- EventNum: 15
+  PCRIndex: 5
+  EventType: EV_IPL_PARTITION_DATA
+  DigestCount: 1
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "cadec09a25e4e58a65d4bdcf75e98f1d4e21166e"
+  EventSize: 19
+  Event: "4d425220504152544954494f4e5f5441424c45"
+pcrs:
+  sha1:
+    0  : 0x3a3f780f11a4b49969fcaa80cd6e3957c33b2275
+    1  : 0x91b4fd18ffd5c49507422ac7b6ce6411570e6dd2
+    2  : 0x238f6b46414b95b53d0ffc003d36b6c31a0614c2
+    3  : 0x3a3f780f11a4b49969fcaa80cd6e3957c33b2275
+    4  : 0xf6ceac5bf097d267edd59e4b6b4c113ba8cba781
+    5  : 0x94bb692ee8c4e9e90bb41e1ea11db18ad7047ce5
+    6  : 0x3a3f780f11a4b49969fcaa80cd6e3957c33b2275
+    7  : 0x3a3f780f11a4b49969fcaa80cd6e3957c33b2275

@@ -1,0 +1,16 @@
+{
+  "Type": "PSP",
+  "Directories": [
+    {
+      "Header": {
+        "Cookie": [ 36, 80, 83, 80 ],
+        "Checksum": 530628048,
+        "TotalEntries": 18,
+        "Reserved": 2150370817
+      },
+      "Entries": [],
+      "Location": 688128
+    }
+  ],
+  "Raw": null
+}

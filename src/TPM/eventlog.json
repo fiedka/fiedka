@@ -1,0 +1,72 @@
+{
+  "Firmware": "UEFI",
+  "PcrList": [
+    {
+      "data": "Tag ID - 1 - EDn۽@1\u001a\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd,YB\ufffdt",
+      "digest": "6b924902de5830a9f242d5726bcddf8235d45a20",
+      "type": "EV_EVENT_TAG"
+    },
+    {
+      "data": "Start Option ROM Scan",
+      "digest": "9dbd87163112e5670378abe4510491259a61f411",
+      "type": "EV_ACTION"
+    },
+    {
+      "data": "Tag ID - 7 - \u0000\u0000\u0000\u0000\ufffdo\ufffdF\ufffd3\ufffdV\u0026\ufffd\ufffdl\u0000\ufffd\ufffd\ufffd\ufffdޫ\ufffd",
+      "digest": "f981b2b5ff46ddd041c47daddd2b393cd854626b",
+      "type": "EV_EVENT_TAG"
+    },
+    {
+      "data": "Calling INT 19h",
+      "digest": "c1e25c3f6b0dc78d57296aa2870ca6f782ccf80f",
+      "type": "EV_ACTION"
+    },
+    {
+      "digest": "d9be6524a5f5047db5866813acf3277892a7a30a",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "digest": "d9be6524a5f5047db5866813acf3277892a7a30a",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "digest": "d9be6524a5f5047db5866813acf3277892a7a30a",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "digest": "d9be6524a5f5047db5866813acf3277892a7a30a",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "digest": "d9be6524a5f5047db5866813acf3277892a7a30a",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "digest": "d9be6524a5f5047db5866813acf3277892a7a30a",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "digest": "d9be6524a5f5047db5866813acf3277892a7a30a",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "digest": "d9be6524a5f5047db5866813acf3277892a7a30a",
+      "type": "EV_SEPARATOR"
+    },
+    {
+      "data": "Booting BCV device 80h (HDD)",
+      "digest": "8cf2fe6c87d4d0b2998a43da630292e6d85ee8b6",
+      "type": "EV_ACTION"
+    },
+    {
+      "data": "MBR",
+      "digest": "0bfcc43c320be7f0dadfc9b803d354252805c22b",
+      "type": "EV_IPL"
+    },
+    {
+      "data": "MBR PARTITION_TABLE",
+      "digest": "cadec09a25e4e58a65d4bdcf75e98f1d4e21166e",
+      "type": "EV_IPL_PARTITION_DATA"
+    }
+  ]
+}
