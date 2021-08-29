@@ -6,9 +6,9 @@
   "main": ".webpack/main",
   "scripts": {
     "start": "GOPATH=$(pwd) GOROOT=/usr/lib/go electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
+    "package": "GOPATH=$(pwd) GOROOT=/usr/lib/go electron-forge package",
+    "make": "GOPATH=$(pwd) GOROOT=/usr/lib/go electron-forge make",
+    "publish": "GOPATH=$(pwd) GOROOT=/usr/lib/go electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },
   "keywords": [],
@@ -30,7 +30,7 @@
         {
           "name": "@electron-forge/maker-zip",
           "platforms": [
-            "darwin"
+            "linux"
           ]
         },
         {
