@@ -38,7 +38,7 @@ module.exports = [
     test: /\.go/,
     use: [
       {
-        loader: "golang-wasm-async-loader2",
+        loader: "@fiedka/golang-wasm-async-loader",
       },
     ],
   },
