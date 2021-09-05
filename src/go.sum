@@ -2,6 +2,8 @@ github.com/happybeing/webpack-golang-wasm-async-loader/gobridge v0.0.0-202011261
 github.com/happybeing/webpack-golang-wasm-async-loader/gobridge v0.0.0-20201126150039-3d18007626dd/go.mod h1:ADm3WtCtL+5PPYEbcxjz8W/SI0sDzDZLBxgvy2jvNHA=
 github.com/linuxboot/fiano v5.0.0+incompatible h1:DZAZO0z9l35cakTNnkdh+yWRZfzCCJnDHmPAYW/t0No=
 github.com/linuxboot/fiano v5.0.0+incompatible/go.mod h1:IPKmAwYdbidivI8+nWCBO97QkdsiF8OThAHowU8Tvdk=
+github.com/u-root/u-root v7.0.0+incompatible h1:u+KSS04pSxJGI5E7WE4Bs9+Zd75QjFv+REkjy/aoAc8=
+github.com/u-root/u-root v7.0.0+incompatible/go.mod h1:RYkpo8pTHrNjW08opNd/U6p/RJE7K0D8fXO0d47+3YY=
 github.com/ulikunitz/xz v0.5.10 h1:t92gobL9l3HE202wg3rlk19F6X+JOxl9BBrCCMYEYd8=
 github.com/ulikunitz/xz v0.5.10/go.mod h1:nbz6k7qbPmH4IRqmfOplQw/tblSgqTqBwxkY0oWt/14=
 golang.org/x/text v0.3.6 h1:aRYxNxv6iGQlyVaZmk6ZgYEDa+Jg18DxebPSrd6bg1M=
