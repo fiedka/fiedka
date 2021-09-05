@@ -1,4 +1,4 @@
-module utk-web
+module github.com/fiedka/fiedka
 
 go 1.16
 
