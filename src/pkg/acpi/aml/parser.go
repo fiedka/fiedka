@@ -114,11 +114,13 @@ func (p *Parser) ParseAML(tableHandle uint8, tableName string, header *table.SDT
 	// pass to fully resolve the scope directive.
 	p.resolvePasses = 1
 	for ; ; p.resolvePasses++ {
+		kfmt.Fprintln(p.errWriter, "mergeScopeDirectives")
 		mergeRes := p.mergeScopeDirectives(0)
 		if mergeRes == parseResultFailed {
 			return errParsingAML
 		}
 
+		kfmt.Fprintln(p.errWriter, "relocateNamedObjects")
 		relocateRes := p.relocateNamedObjects(0)
 		if relocateRes == parseResultFailed {
 			return errParsingAML
@@ -1098,6 +1100,10 @@ func (p *Parser) mergeScopeDirectives(objIndex uint32) parseResult {
 		nameObj := p.objTree.ObjectAt(obj.firstArgIndex)
 		targetName := nameObj.value.([]byte)
 		targetIndex := p.objTree.Find(obj.parentIndex, targetName)
+		kfmt.Fprintf(p.errWriter, "[targetName: %s, index: 0x%x]\n", targetName, targetIndex)
+		if string(targetName) == "" {
+			return res
+		}
 
 		// If the lookup failed we may need to run a couple more mergeScopeDirectives /
 		// relocateNamedObjects passes to resolve things. If however no objects got
