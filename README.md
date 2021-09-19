@@ -1,0 +1,58 @@
+# Fiedka
+
+This is a work-in-progress version of [Fiedka](https://fiedka.app), based on the
+[utk-web](https://github.com/orangecms/utk-web) prototype with a back-end
+running in [WebAssembly](#webassembly) and written in Go.
+
+## Development
+
+The app is based on Electron.
+
+You need to have a [Node.js](https://nodejs.org/) runtime and `npm` installed.
+Find them in your respective OS distribution and install them through your
+package manager, e.g., `yay -S nodejs npm`.
+
+To install the dependencies, run `npm install`.
+
+For DXE GUIDs, efiXplorer is used as a submodule. Do an initial checkout:
+
+```
+git submodule update --init --checkout
+```
+
+### Adding Go dependencies
+
+```sh
+GOOS=js GOARCH=wasm go get github.com/...
+```
+
+### Running
+
+```
+GOPATH=`pwd` GOROOT=/usr/lib/go npm start
+```
+
+## Releases
+
+Binaries are not yet set up to be published.
+
+## UEFI
+
+### Obtain Test Images
+
+See [retrage's nightly OVMF builds](https://retrage.github.io/edk2-nightly/).
+
+Download `RELEASEX64_OVMF.fd` and load it into utk-web
+using the file picker.
+
+## WebAssembly
+
+- [Research on WebAssembly](https://github.com/sophoslabs/WebAssembly)
+- [Understanding WebAssembly](
+https://www.sophos.com/en-us/medialibrary/PDFs/technical-papers/understanding-web-assembly.pdf)
+- [WASM Tutorial](https://marcoselvatici.github.io/WASM_tutorial/#files)
+
+### WASM issues
+
+- [Most performant way to pass data JS/WASM context](
+https://github.com/WebAssembly/design/issues/1231)
