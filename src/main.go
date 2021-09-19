@@ -12,6 +12,7 @@ import (
 
 	"github.com/happybeing/webpack-golang-wasm-async-loader/gobridge"
 	"github.com/linuxboot/fiano/pkg/uefi"
+	mft "github.com/orangecms/MFT-AnalyserV2"
 )
 
 var global = js.Global()
@@ -62,6 +63,23 @@ func utka(this js.Value, args []js.Value) (interface{}, error) {
 		return nil, err
 	}
 	return res.String(), nil
+}
+
+func mfta(this js.Value, args []js.Value) (interface{}, error) {
+	size := args[1].Int()
+	image := make([]byte, size)
+	js.CopyBytesToGo(image, args[0])
+
+	mft.SetupYara()
+	ana, err := mft.Analyse(image)
+	if err != nil {
+		return nil, err
+	}
+	res, err := json.Marshal(ana)
+	if err != nil {
+		return nil, err
+	}
+	return string(res), nil
 }
 
 func fmap(this js.Value, args []js.Value) (interface{}, error) {
