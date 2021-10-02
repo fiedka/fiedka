@@ -1,8 +1,8 @@
 # Fiedka
 
 This is a work-in-progress version of [Fiedka](https://fiedka.app), based on the
-[utk-web](https://github.com/orangecms/utk-web) prototype with a back-end
-running in [WebAssembly](#webassembly) and written in Go.
+[utk-web](https://github.com/fiedka/fiedka/tree/utk-web) prototype with a
+back-end running in [WebAssembly](#webassembly) and written in Go.
 
 ## Development
 
