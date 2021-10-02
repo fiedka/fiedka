@@ -5,10 +5,10 @@
   "description": "Fiedka the Firmware Editor",
   "main": ".webpack/main",
   "scripts": {
-    "start": "GOPATH=$(pwd) GOROOT=/usr/lib/go electron-forge start",
-    "package": "GOPATH=$(pwd) GOROOT=/usr/lib/go electron-forge package",
-    "make": "GOPATH=$(pwd) GOROOT=/usr/lib/go electron-forge make",
-    "publish": "GOPATH=$(pwd) GOROOT=/usr/lib/go electron-forge publish",
+    "start": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge start",
+    "package": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge package",
+    "make": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge make",
+    "publish": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },
   "keywords": ["App", "Firmware", "x86", "AMD", "Intel", "Editor", "UEFI"],
