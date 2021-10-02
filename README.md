@@ -34,7 +34,8 @@ GOPATH=`pwd` GOROOT=/usr/lib/go npm start
 
 ## Releases
 
-Binaries are not yet set up to be published.
+Binaries for Linux are [published on GitHub](
+https://github.com/fiedka/fiedka/releases).
 
 ## UEFI
 
