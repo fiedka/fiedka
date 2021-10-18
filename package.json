@@ -102,7 +102,7 @@
     "@electron-forge/maker-zip": "^6.0.0-beta.59",
     "@electron-forge/plugin-webpack": "6.0.0-beta.59",
     "@electron-forge/publisher-github": "^6.0.0-beta.61",
-    "@fiedka/golang-wasm-async-loader": "^3.0.2",
+    "@fiedka/golang-wasm-async-loader": "^4.0.0",
     "@storybook/addon-actions": "^6.1.17",
     "@storybook/addons": "^6.1.17",
     "@storybook/react": "^6.1.17",
