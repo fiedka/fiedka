@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button } from '@coalmines/indui';
+import { Button, LoadingAnimation } from "@coalmines/indui";
 import { useFilePicker } from "use-file-picker";
 import wasm from "./main.go";
 import UEFIImage from "./UEFIImage";
@@ -46,19 +46,20 @@ const Analyze = () => {
     }
   }, [filesContent]);
 
-  if (loading) {
-    return (
-      <div>
-        <h2>Analyzing...</h2>
-      </div>
-    );
-  }
-
   const fileName = plainFiles.length > 0 ? plainFiles[0].name : "";
 
   return (
     <div style={{ fontSize: 9 }}>
-      <Button onClick={() => openFileSelector()}>Select file</Button>
+      <Button onClick={() => openFileSelector()}>
+        {loading ? (
+          <>
+            <LoadingAnimation type="gigagampfa">⚙️⚙️</LoadingAnimation>
+            Analyzing...{" "}
+          </>
+        ) : (
+          "Select file"
+        )}
+      </Button>
       {error && <pre>Error: {JSON.stringify(error, null, 2)}</pre>}
       {data && <UEFIImage data={data.utk} fmap={data.fmap} name={fileName} />}
     </div>
