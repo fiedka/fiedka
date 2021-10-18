@@ -12,6 +12,12 @@ import (
 
 	"github.com/happybeing/webpack-golang-wasm-async-loader/gobridge"
 	"github.com/linuxboot/fiano/pkg/uefi"
+	amd "github.com/orangecms/converged-security-suite/pkg/amd/manifest"
+)
+
+const (
+	// This needed a look at the image; how can we fully automate it?
+	mapping = 0xff000000
 )
 
 var global = js.Global()
@@ -65,6 +71,43 @@ func utka(this js.Value, args []js.Value) (interface{}, error) {
 		return nil, err
 	}
 	return res.String(), nil
+}
+
+// Overhead code for amdana
+type dummyFirmware struct {
+	image []byte
+}
+
+func (f dummyFirmware) ImageBytes() []byte {
+	return f.image
+}
+
+func (f dummyFirmware) PhysAddrToOffset(physAddr uint64) uint64 {
+	return physAddr - mapping
+}
+
+func (f dummyFirmware) OffsetToPhysAddr(offset uint64) uint64 {
+	return offset + mapping
+}
+
+// analyze for AMD data structures
+func amdana(this js.Value, args []js.Value) (interface{}, error) {
+	size := args[1].Int()
+	image := make([]byte, size)
+	js.CopyBytesToGo(image, args[0])
+	var amdfw dummyFirmware
+
+	amdfw.image = image
+	fw, err := amd.NewAMDFirmware(amdfw)
+	if err != nil {
+		return nil, err
+	}
+	a := fw.PSPFirmware()
+	j, err := json.MarshalIndent(a, "", "  ")
+	if err != nil {
+		return nil, err
+	}
+	return string(j), nil
 }
 
 func fmap(this js.Value, args []js.Value) (interface{}, error) {
@@ -149,6 +192,7 @@ func main() {
 	gobridge.RegisterCallback("add", add)
 	gobridge.RegisterCallback("fmap", fmap)
 	gobridge.RegisterCallback("utka", utka)
+	gobridge.RegisterCallback("amdana", amdana)
 	gobridge.RegisterCallback("raiseError", err)
 	gobridge.RegisterValue("someValue", "Hello World")
 	gobridge.RegisterValue("numericValue", 123)
