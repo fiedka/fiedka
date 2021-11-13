@@ -24,14 +24,21 @@ const Analyze = () => {
   const analyze = async (indata, size) => {
     setData(null);
     setError(null);
+    // TODO: fmap should never fail, what should we do if it does though?
     try {
-      const [utkParsed, flashMap] = await Promise.all([
-        utka(indata, size),
+      const res = await Promise.allSettled([
         fmap(indata, size),
+        utka(indata, size),
       ]);
       setData({
-        utk: JSON.parse(utkParsed),
-        fmap: JSON.parse(flashMap),
+        fmap: JSON.parse(res[0].value),
+        utk: res[1].status === "fulfilled" ? JSON.parse(res[1].value) : {},
+      });
+      res.forEach((r) => {
+        if (r.status === "rejected") {
+          console.error(r.reason);
+          setError((errors || []).concat([r.reason]));
+        }
       });
     } catch (e) {
       console.error(e);
