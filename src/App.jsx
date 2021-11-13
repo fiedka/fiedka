@@ -67,8 +67,22 @@ const Analyze = () => {
           "Select file"
         )}
       </Button>
-      {error && <pre>Error: {JSON.stringify(error, null, 2)}</pre>}
+      {error && (
+        <p className="error">
+          <h2>Errors</h2>
+          <pre>{JSON.stringify(error, null, 2)}</pre>
+        </p>
+      )}
       {data && <UEFIImage data={data.utk} fmap={data.fmap} name={fileName} />}
+      <style jsx>{`
+        .error {
+          max-width: 420px;
+        }
+        pre {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
+      `}</style>
     </div>
   );
 };
