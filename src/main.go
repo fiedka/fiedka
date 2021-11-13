@@ -53,6 +53,9 @@ func utka(this js.Value, args []js.Value) (interface{}, error) {
 	var cli []string
 	cli = append(cli, "json")
 	parsedRoot, err := uefi.Parse(image)
+	if err != nil {
+		return nil, err
+	}
 	var res bytes.Buffer
 	dummy := &Dummy{
 		W: &res,
