@@ -32,18 +32,16 @@ const getMeta = (meta) => {
 
 const Extra = ({ label, data }) =>
   data ? (
-    <>
-      <tr>
-        <th>{label}</th>
-        <td>{data}</td>
-      </tr>
+    <tr>
+      <th>{label}</th>
+      <td>{data}</td>
       <style jsx>{`
         th {
           text-align: left;
           padding-left: 0;
         }
       `}</style>
-    </>
+    </tr>
   ) : null;
 
 Extra.propTypes = {
@@ -51,39 +49,17 @@ Extra.propTypes = {
   data: PropTypes.string,
 };
 
-const PspCard = ({ psp, open = true }) => {
-  const pubKeyContext = useContext(PubKeyContext);
-  const [contextPubKey, setContextPubKey] = pubKeyContext;
-  const {
-    address,
-    destinationAddress,
-    size,
-    sectionType,
-    magic,
-    version,
-    info,
-    md5,
-    sizes,
-    meta,
-  } = psp;
-
-  const entry = { address, length: size };
-
-  const isKey =
-    typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY");
-  const pubKey = isKey ? magic : null; // for some reason, the magic number is the public key
-  const setPubKey = (e) => {
-    e.stopPropagation();
-    if (isKey) {
-      setContextPubKey(pubKey);
-    }
-  };
-  const typeEmoji = isKey ? <span onClick={setPubKey}>🔑</span> : null;
-
-  const { signature, sigFingerprint, encFingerprint } = getMeta(meta);
-  const sigKey = getSigKey(info) || sigFingerprint; // TODO
+const Header = ({
+  info,
+  selected,
+  sectionType,
+  destinationAddress,
+  setPubKey,
+}) => {
+  const typeEmoji = isKey(sectionType) ? (
+    <span onClick={setPubKey}>🔑</span>
+  ) : null;
   const signed = typeof sigKey === "string";
-  const selected = contextPubKey && sigKey === contextPubKey;
   const verified = info.find((i) => i.includes("verified"));
 
   const infoEmoji = [];
@@ -130,7 +106,7 @@ const PspCard = ({ psp, open = true }) => {
     );
   }
 
-  const header = (
+  return (
     <div
       className={cn("header", {
         selected: signed && selected,
@@ -143,6 +119,7 @@ const PspCard = ({ psp, open = true }) => {
       <span className="emoji">{infoEmoji}</span>
       <style jsx>{`
         .header {
+          width: 100%;
           display: flex;
           justify-content: space-between;
           padding: 2px 1px;
@@ -169,63 +146,113 @@ const PspCard = ({ psp, open = true }) => {
       `}</style>
     </div>
   );
+};
+
+Header.propTypes = {
+  info: PropTypes.array,
+  selected: PropTypes.bool,
+  setPubKey: PropTypes.func,
+  sectionType: PropTypes.string,
+  destinationAddress: PropTypes.number,
+};
+
+const isKey = (sectionType) =>
+  typeof sectionType === "string" && sectionType.includes("PUBLIC_KEY");
+
+const PspCard = ({ psp, open = true }) => {
+  const pubKeyContext = useContext(PubKeyContext);
+  const [contextPubKey, setContextPubKey] = pubKeyContext;
+  const {
+    address,
+    destinationAddress,
+    size,
+    sectionType,
+    magic,
+    version,
+    info,
+    md5,
+    sizes,
+    meta,
+  } = psp;
+
+  const entry = { address, length: size };
+
+  // FIXME: for some reason, the magic number is the public key
+  const pubKey = isKey(sectionType) ? magic : null;
+  const setPubKey = (e) => {
+    e.stopPropagation();
+    if (isKey) {
+      setContextPubKey(pubKey);
+    }
+  };
+  const { signature, sigFingerprint, encFingerprint } = getMeta(meta);
+  const sigKey = getSigKey(info) || sigFingerprint; // TODO
+  const selected = contextPubKey && sigKey === contextPubKey;
+
+  const header = (
+    <Header
+      info={info}
+      selected={selected}
+      sectionType={sectionType}
+      destinationAddress={destinationAddress}
+      setPubKey={setPubKey}
+    />
+  );
 
   return (
-    <>
-      <Entry header={header} open={open} entry={entry}>
-        <div className="flex">
+    <Entry header={header} open={open} entry={entry}>
+      <div className="flex">
+        <table>
+          <tbody>
+            <tr>
+              <th>address</th>
+              <td>0x{address.toString(16)}</td>
+            </tr>
+            <tr>
+              <th>destination</th>
+              <td>{hexify(destinationAddress)}</td>
+            </tr>
+            <tr>
+              <th>hash</th>
+              <td>{md5}</td>
+            </tr>
+            <tr>
+              <th>size</th>
+              <td>{size}</td>
+            </tr>
+            {sizes && (
+              <>
+                <tr>
+                  <th>signed</th>
+                  <td>{sizes.signed}</td>
+                </tr>
+                <tr>
+                  <th>uncompressed</th>
+                  <td>{sizes.uncompressed}</td>
+                </tr>
+                <tr>
+                  <th>packed</th>
+                  <td>{sizes.packed}</td>
+                </tr>
+              </>
+            )}
+          </tbody>
+        </table>
+        <span className="extra">
           <table>
             <tbody>
-              <tr>
-                <th>address</th>
-                <td>0x{address.toString(16)}</td>
-              </tr>
-              <tr>
-                <th>destination</th>
-                <td>{hexify(destinationAddress)}</td>
-              </tr>
-              <tr>
-                <th>hash</th>
-                <td>{md5}</td>
-              </tr>
-              <tr>
-                <th>size</th>
-                <td>{size}</td>
-              </tr>
-              {sizes && (
-                <>
-                  <tr>
-                    <th>signed</th>
-                    <td>{sizes.signed}</td>
-                  </tr>
-                  <tr>
-                    <th>uncompressed</th>
-                    <td>{sizes.uncompressed}</td>
-                  </tr>
-                  <tr>
-                    <th>packed</th>
-                    <td>{sizes.packed}</td>
-                  </tr>
-                </>
-              )}
+              <Extra data={version} label="version" />
+              <Extra data={magic} label="magic" />
+              <Extra data={signature} label="signature" />
+              <Extra data={sigKey} label="signing key" />
+              <Extra data={encFingerprint} label="encryption key" />
             </tbody>
           </table>
-          <span className="extra">
-            <table>
-              <tbody>
-                <Extra data={version} label="version" />
-                <Extra data={magic} label="magic" />
-                <Extra data={signature} label="signature" />
-                <Extra data={sigKey} label="signing key" />
-                <Extra data={encFingerprint} label="encryption key" />
-              </tbody>
-            </table>
-            <div className="info">
-              <Blocks size={size} />
-            </div>
-          </span>
-        </div>
-      </Entry>
+          <div className="info">
+            <Blocks size={size} />
+          </div>
+        </span>
+      </div>
       <style jsx>{`
         .extra {
           display: flex;
@@ -241,7 +268,7 @@ const PspCard = ({ psp, open = true }) => {
           justify-content: space-between;
         }
       `}</style>
-    </>
+    </Entry>
   );
 };
 
