@@ -106,9 +106,15 @@ const Header = ({
     );
   }
 
+  // FIXME: .header width: 100% should not be necessary; setup issue?!
+  // TL;DR of digging through issues: It's hard to figure out the Babel config
+  // subset from the Next.js monorepo which handles styled-jsx correctly.
+  // We probably need to migrate away from styled-jsx. It's caused too much
+  // trouble already, also with @coalmines/indui, and styled-components
+  // offers a sensible alternative.
   return (
     <div
-      className={cn("header", {
+      className={cn("pspcard-header", {
         selected: signed && selected,
         signed: signed && !selected,
         "signed-verified": signed && verified && !selected,
@@ -118,7 +124,7 @@ const Header = ({
       <span className="type">{sectionType}</span>
       <span className="emoji">{infoEmoji}</span>
       <style jsx>{`
-        .header {
+        .pspcard-header {
           width: 100%;
           display: flex;
           justify-content: space-between;
