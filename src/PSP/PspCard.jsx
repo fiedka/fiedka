@@ -218,10 +218,12 @@ const PspCard = ({ psp, open = true }) => {
               <th>destination</th>
               <td>{hexify(destinationAddress)}</td>
             </tr>
-            <tr>
-              <th>hash</th>
-              <td>{md5}</td>
-            </tr>
+            {md5 && (
+              <tr>
+                <th>hash</th>
+                <td>{md5.substr(0, 8)}</td>
+              </tr>
+            )}
             <tr>
               <th>size</th>
               <td>{size}</td>
