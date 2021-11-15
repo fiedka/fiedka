@@ -4,6 +4,10 @@ This is a work-in-progress version of [Fiedka](https://fiedka.app), based on the
 [utk-web](https://github.com/fiedka/fiedka/tree/utk-web) prototype with a
 back-end running in [WebAssembly](#webassembly) and written in Go.
 
+[![Release](
+https://github.com/fiedka/fiedka/actions/workflows/shipit.yml/badge.svg)](
+https://github.com/fiedka/fiedka/actions/workflows/shipit.yml)
+
 ## Development
 
 The app is based on Electron.
