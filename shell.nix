@@ -24,7 +24,7 @@ let
       gtk3
 
       nodejs
-      go
+      go_1_17
       git
       #electron
 
