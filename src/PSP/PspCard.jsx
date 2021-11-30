@@ -207,8 +207,8 @@ const PspCard = ({ psp, open = true }) => {
 
   return (
     <Entry header={header} open={open} entry={entry}>
-      <div className="flex">
-        <table>
+      <div className="pspentry-data">
+        <table className="pspentry-table">
           <tbody>
             <tr>
               <th>address</th>
@@ -262,6 +262,14 @@ const PspCard = ({ psp, open = true }) => {
         </span>
       </div>
       <style jsx>{`
+        .pspentry-data {
+          display: flex;
+          justify-content: space-between;
+          font-size: 11px;
+        }
+        .pspentry-table {
+          width: 50%;
+        }
         .extra {
           display: flex;
           flex-direction: column;
@@ -270,10 +278,6 @@ const PspCard = ({ psp, open = true }) => {
         }
         .info {
           margin: 2px;
-        }
-        .flex {
-          display: flex;
-          justify-content: space-between;
         }
       `}</style>
     </Entry>
