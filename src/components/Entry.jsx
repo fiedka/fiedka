@@ -26,14 +26,14 @@ const Entry = ({ open = true, entry, header, children }) => {
 
   return (
     <div
-      className={cn("card", { active, open })}
+      className={cn("entrycard", { active, open })}
       onMouseOver={onHover}
       onMouseLeave={onOut}
     >
       <header onClick={onSelect}>{header}</header>
       <main>{children}</main>
       <style jsx>{`
-        .card {
+        .entrycard {
           display: flex;
           flex-direction: column;
           border: 1px solid #422384;
@@ -42,13 +42,13 @@ const Entry = ({ open = true, entry, header, children }) => {
           min-width: 350px;
           flex: 1;
         }
-        .card.open {
+        .entrycard.open {
           margin: 10px 1%;
         }
-        .card:hover {
+        .entrycard:hover {
           background-color: ${colors[2]};
         }
-        .card.active:hover {
+        .entrycard.active:hover {
           background-color: ${colors[4]};
         }
         .active {
