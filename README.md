@@ -15,6 +15,7 @@ The app is based on Electron.
 You need to have a [Node.js](https://nodejs.org/) runtime and `npm` installed.
 Find them in your respective OS distribution and install them through your
 package manager, e.g., `yay -S nodejs npm`.
+On NixOS you can get a shell with all dependencies by running `nix-shell`.
 
 To install the dependencies, run `npm install`.
 
