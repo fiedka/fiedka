@@ -38,6 +38,7 @@ let
       libdrm
       libxkbcommon
       alsa-lib
+      shared-mime-info
 
       # Copied from atom
       stdenv.cc.cc zlib glib dbus gtk3 atk pango freetype libgnome-keyring3
@@ -51,5 +52,11 @@ let
       # Not found
     ];
     multiPkgs = null;
+    # Set up path for GTK, otherwise is crashes when using buttons
+    profile = with pkgs; ''
+      export XDG_DATA_DIRS=/usr/share/:${gsettings-desktop-schemas}/share/gsettings-schemas/${gsettings-desktop-schemas.name}:${gtk3}/share/gsettings-schemas/${gtk3.name}:$XDG_DATA_DIRS
+      # TODO: Make sure this works with newer/older versions
+      export GDK_PIXBUF_MODULE_FILE="${librsvg.out}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+    '';
   };
 in fhs.env
