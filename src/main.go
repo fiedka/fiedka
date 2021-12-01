@@ -13,6 +13,7 @@ import (
 	"github.com/happybeing/webpack-golang-wasm-async-loader/gobridge"
 	amd "github.com/linuxboot/fiano/pkg/amd/manifest"
 	"github.com/linuxboot/fiano/pkg/uefi"
+	"github.com/orangecms/cbfs/pkg/cbfs"
 )
 
 const (
@@ -33,6 +34,22 @@ type FlashLayout struct {
 	Full   int        `json:"full"`
 	Zero   int        `json:"zero"`
 	Used   int        `json:"used"`
+}
+
+func cbfsana(this js.Value, args []js.Value) (interface{}, error) {
+	size := args[1].Int()
+	image := make([]byte, size)
+	js.CopyBytesToGo(image, args[0])
+	r := bytes.NewReader(image)
+	parsed, err := cbfs.NewImage(r)
+	if err != nil {
+		return nil, err
+	}
+	j, err := json.Marshal(parsed)
+	if err != nil {
+		return nil, err
+	}
+	return string(j), nil
 }
 
 type Dummy struct {
@@ -192,6 +209,7 @@ func main() {
 	gobridge.RegisterCallback("add", add)
 	gobridge.RegisterCallback("fmap", fmap)
 	gobridge.RegisterCallback("utka", utka)
+	gobridge.RegisterCallback("cbfsana", cbfsana)
 	gobridge.RegisterCallback("amdana", amdana)
 	gobridge.RegisterCallback("raiseError", err)
 	gobridge.RegisterValue("someValue", "Hello World")

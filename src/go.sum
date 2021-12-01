@@ -72,8 +72,6 @@ github.com/klauspost/pgzip v1.2.4/go.mod h1:Ch1tH69qFZu15pkjo5kYi6mth2Zzwzt50oCQ
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515/go.mod h1:+0opPa2QZZtGFBFZlji/RkVcI2GknAs/DXo4wKdlNEc=
 github.com/kr/pty v1.1.8/go.mod h1:O1sed60cT9XZ5uDucP5qwvh+TE3NnUj51EiZO/lmSfw=
-github.com/linuxboot/fiano v1.0.1 h1:/iS8gPYAb54r1AXKlHQrboD99RIxtJ1uC8YXrwMcxq4=
-github.com/linuxboot/fiano v1.0.1/go.mod h1:+841cIzu10fB8BLfwG0we6AJj3KDmf/5IqUENFwOwdM=
 github.com/linuxboot/fiano v1.0.3-0.20211209035654-9a1898c2f083 h1:rw4fyujqhC9/e0NSJtwGsHepJK37qCxV68vLJg60hHs=
 github.com/linuxboot/fiano v1.0.3-0.20211209035654-9a1898c2f083/go.mod h1:g9jlFDMS385xd6A9bnxDJJf67/kb5nyZZBRkN4u9Dxs=
 github.com/magiconair/properties v1.8.0/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czPbwD3XqdrwzmxQ=
@@ -92,6 +90,8 @@ github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd/go.mod h1:6dJ
 github.com/modern-go/reflect2 v1.0.1/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3RllmbCylyMrvgv0=
 github.com/mwitkow/go-conntrack v0.0.0-20161129095857-cc309e4a2223/go.mod h1:qRWi+5nqEBWmkhHvq77mSJWrCKwh8bxhgT7d/eI7P4U=
 github.com/opentracing/opentracing-go v1.0.2/go.mod h1:UkNAQd3GIcIGf0SeVgPpRdFStlNbqXla1AfSYxPUl2o=
+github.com/orangecms/cbfs v0.0.0-20211210004415-84661da23cbe h1:Ze5dvsUlLY8Yl0g0PFIRYjWddO+SVFRNBEhbP3PwQvU=
+github.com/orangecms/cbfs v0.0.0-20211210004415-84661da23cbe/go.mod h1:bAgwpOkxqNa9Ylor61yC7ZgHUDwwFPxGjaIzMbD5hjg=
 github.com/orangecms/go-framebuffer v0.0.0-20200613202404-a0700d90c330/go.mod h1:3Myb/UszJY32F2G7yGkUtcW/ejHpjlGfYLim7cv2uKA=
 github.com/pborman/getopt/v2 v2.1.0/go.mod h1:4NtW75ny4eBw9fO1bhtNdYTlZKYX5/tBLtsOpwKIKd0=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=
