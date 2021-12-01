@@ -9,6 +9,9 @@ import colors from "./util/colors";
 
 const { fmap, utka, amdana } = wasm;
 
+// use this instead of the real utka for testing only amdana
+// const utka = () => Promise.reject("Skipping UEFI analysis");
+
 const Main = ({ data, fileName }) => {
   const { amd, fmap, intel, uefi } = data;
   const menu = [];
@@ -26,6 +29,7 @@ const Main = ({ data, fileName }) => {
       label: "AMD",
     });
   }
+  // TODO: Add Intel ME support
   if (intel) {
     console.info("Intel inside");
   }
@@ -63,7 +67,7 @@ const Analyze = () => {
     try {
       const res = await Promise.allSettled([
         fmap(indata, size),
-        Promise.reject("Skipping UEFI analysis"), // utka(indata, size),
+        utka(indata, size),
         amdana(indata, size),
       ]);
       setData({
