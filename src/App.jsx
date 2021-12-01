@@ -5,7 +5,7 @@ import { useFilePicker } from "use-file-picker";
 import wasm from "./main.go";
 import UEFIImage from "./UEFIImage";
 import AMDImage from "./AMDImage";
-import colors from "./util/colors";
+import { globalStyle, blockStyle } from "./global-style";
 
 const { fmap, utka, amdana } = wasm;
 
@@ -135,47 +135,12 @@ const App = () => (
   <div>
     <h1>Fiedka - analyze a firmware image</h1>
     <Analyze />
-    <style jsx global>{`
-      html {
-        box-sizing: border-box;
-        scroll-behavior: smooth;
-      }
-      body {
-        margin: 0;
-        background-color: #dedede;
-        font-size: 12px;
-      }
-      *,
-      *::before,
-      *::after {
-        box-sizing: inherit;
-      }
-      .block {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-      }
-    `}</style>
-    <style jsx global>{`
-      .block-used {
-        background-color: ${colors[25]};
-      }
-      .block-full {
-        background-color: ${colors[14]};
-      }
-      .block-zero {
-        background-color: ${colors[9]};
-      }
-      .block-marked {
-        background-color: ${colors[6]};
-      }
-      .block-hovered-marked {
-        background-color: ${colors[4]};
-      }
-      .block-hovered {
-        background-color: ${colors[2]};
-      }
-    `}</style>
+    <style jsx global>
+      {globalStyle}
+    </style>
+    <style jsx global>
+      {blockStyle}
+    </style>
   </div>
 );
 
