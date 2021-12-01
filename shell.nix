@@ -22,7 +22,7 @@ let
       stdenv.cc.cc
       xorg.libXft
 
-      # Copied from atom
+      # Copied from atom (because it's also an Electron app)
       dbus
       atk
       at-spi2-atk
