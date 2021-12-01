@@ -1,0 +1,54 @@
+{
+  "Segments": [
+    {
+      "Name": "cbfs master header",
+      "Start": 0,
+      "Size": 32,
+      "Type": "cbfs header"
+    },
+    {
+      "Name": "fallback/romstage",
+      "Start": 128,
+      "Size": 52080,
+      "Type": "TypeLegacyStage",
+      "Compression": ""
+    },
+    {
+      "Name": "cpu_microcode_blob.bin",
+      "Start": 52352,
+      "Size": 194560,
+      "Type": "TypeMicroCode"
+    },
+    {
+      "Name": "fallback/ramstage",
+      "Start": 247040,
+      "Size": 103083,
+      "Type": "TypeLegacyStage",
+      "Compression": "lzma"
+    },
+    {
+      "Name": "config",
+      "Start": 350208,
+      "Size": 470,
+      "Type": "TypeRaw"
+    },
+    {
+      "Name": "revision",
+      "Start": 350720,
+      "Size": 672,
+      "Type": "TypeRaw"
+    },
+    {
+      "Name": "build_info",
+      "Start": 351488,
+      "Size": 93,
+      "Type": "TypeRaw"
+    },
+    {
+      "Name": "spd.bin",
+      "Start": 351680,
+      "Size": 512,
+      "Type": "TypeSPD"
+    }
+  ]
+}

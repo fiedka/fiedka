@@ -1,0 +1,110 @@
+{
+  "Offset": 6619648,
+  "Segments": [
+    {
+      "Name": "cbfs master header",
+      "Start": 0,
+      "Size": 32,
+      "Type": "cbfs header"
+    },
+    {
+      "Name": "fallback/romstage",
+      "Start": 128,
+      "Size": 62736,
+      "Type": "TypeLegacyStage",
+      "Compression": ""
+    },
+    {
+      "Name": "cpu_microcode_blob.bin",
+      "Start": 63040,
+      "Size": 107520,
+      "Type": "TypeMicroCode"
+    },
+    {
+      "Name": "fallback/ramstage",
+      "Start": 170688,
+      "Size": 103760,
+      "Type": "TypeLegacyStage",
+      "Compression": "lzma"
+    },
+    {
+      "Name": "config",
+      "Start": 274560,
+      "Size": 1093,
+      "Type": "TypeRaw"
+    },
+    {
+      "Name": "revision",
+      "Start": 275712,
+      "Size": 672,
+      "Type": "TypeRaw"
+    },
+    {
+      "Name": "spd.bin",
+      "Start": 276480,
+      "Size": 512,
+      "Type": "TypeSPD"
+    },
+    {
+      "Name": "fallback/dsdt.aml",
+      "Start": 277056,
+      "Size": 22812,
+      "Type": "TypeRaw"
+    },
+    {
+      "Name": "vbt.bin",
+      "Start": 299968,
+      "Size": 1290,
+      "Type": "TypeRaw"
+    },
+    {
+      "Name": "",
+      "Start": 301376,
+      "Size": 1112,
+      "Type": "TypeDeleted2"
+    },
+    {
+      "Name": "fspm.bin",
+      "Start": 302528,
+      "Size": 651264,
+      "Type": "TypeFSP"
+    },
+    {
+      "Name": "",
+      "Start": 953856,
+      "Size": 3992,
+      "Type": "TypeDeleted2"
+    },
+    {
+      "Name": "fsps.bin",
+      "Start": 957888,
+      "Size": 269171,
+      "Type": "TypeFSP"
+    },
+    {
+      "Name": "fallback/postcar",
+      "Start": 1227136,
+      "Size": 16080,
+      "Type": "TypeLegacyStage",
+      "Compression": ""
+    },
+    {
+      "Name": "fallback/payload",
+      "Start": 1243328,
+      "Size": 790591,
+      "Type": "TypeSELF"
+    },
+    {
+      "Name": "",
+      "Start": 2033984,
+      "Size": 8074328,
+      "Type": "TypeDeleted2"
+    },
+    {
+      "Name": "bootblock",
+      "Start": 10108352,
+      "Size": 49152,
+      "Type": "TypeBootBlock"
+    }
+  ]
+}
