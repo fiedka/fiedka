@@ -13,6 +13,7 @@ https://github.com/fiedka/fiedka/actions/workflows/shipit.yml)
 The app is based on Electron.
 
 You need to have a [Node.js](https://nodejs.org/) runtime and `npm` installed.
+For the back-end, you need [Go](https://go.dev/) version 1.17 at least.
 Find them in your respective OS distribution and install them through your
 package manager, e.g., `yay -S nodejs npm`.
 On NixOS you can get a shell with all dependencies by running `nix-shell`.
