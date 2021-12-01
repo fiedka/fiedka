@@ -35,7 +35,7 @@ GOOS=js GOARCH=wasm go get github.com/...
 ### Running
 
 ```
-GOPATH=`pwd` GOROOT=/usr/lib/go npm start
+npm start
 ```
 
 ## Releases
