@@ -51,7 +51,7 @@ const PspImage = ({ directories, name }) => {
   return (
     <PubKeyProvider>
       <div>
-        <header>
+        <header className="pspimage-header">
           <span className="header-entry">
             <TextLine label="PSP">
               <h2>{name}</h2>
@@ -93,7 +93,7 @@ const PspImage = ({ directories, name }) => {
         </section>
       </div>
       <style jsx>{`
-        header {
+        header.pspimage-header {
           background: #fcfcfc;
           position: sticky;
           top: 0;
