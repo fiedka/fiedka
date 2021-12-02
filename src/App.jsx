@@ -5,16 +5,25 @@ import { useFilePicker } from "use-file-picker";
 import wasm from "./main.go";
 import UEFIImage from "./UEFIImage";
 import AMDImage from "./AMDImage";
+import CBFSImage from "./CBFSImage";
 import colors from "./util/colors";
 
-const { fmap, utka, amdana } = wasm;
+const { fmap, amdana, cbfsana } = wasm;
 
 // use this instead of the real utka for testing only amdana
-// const utka = () => Promise.reject("Skipping UEFI analysis");
+const utka = () => Promise.reject("Skipping UEFI analysis");
+// const amdana = () => Promise.reject("Skipping AMD/PSP analysis");
 
 const Main = ({ data, fileName }) => {
-  const { amd, fmap, intel, uefi } = data;
+  const { amd, cbfs, fmap, intel, uefi } = data;
   const menu = [];
+  if (cbfs) {
+    menu.push({
+      id: "cbfs",
+      body: <CBFSImage data={cbfs} fmap={fmap} name={fileName} />,
+      label: "CBFS",
+    });
+  }
   if (uefi) {
     menu.push({
       id: "uefi",
@@ -42,6 +51,7 @@ const Main = ({ data, fileName }) => {
 Main.propTypes = {
   data: PropTypes.exact({
     amd: PropTypes.object,
+    cbfs: PropTypes.object,
     fmap: PropTypes.object,
     intel: PropTypes.object,
     uefi: PropTypes.object,
@@ -72,11 +82,13 @@ const Analyze = () => {
         fmap(indata, size),
         utka(indata, size),
         amdana(indata, size),
+        cbfsana(indata, size),
       ]);
       setData({
         fmap: JSON.parse(res[0].value),
         uefi: res[1].status === "fulfilled" ? JSON.parse(res[1].value) : null,
         amd: res[2].status === "fulfilled" ? JSON.parse(res[2].value) : null,
+        cbfs: res[3].status === "fulfilled" ? JSON.parse(res[3].value) : null,
       });
       res.forEach((r) => {
         if (r.status === "rejected" && r.reason) {
