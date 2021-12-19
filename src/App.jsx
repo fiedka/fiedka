@@ -135,7 +135,6 @@ const App = () => (
   <div>
     <h1>Fiedka - analyze a firmware image</h1>
     <Analyze />
-    <h2>TPM log demo</h2>
     <style jsx global>{`
       html {
         box-sizing: border-box;
