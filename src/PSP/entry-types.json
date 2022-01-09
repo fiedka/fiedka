@@ -1,0 +1,592 @@
+{
+  "0": {
+    "name": "AMD_PUBLIC_KEY",
+    "proposedName": "",
+    "comment": "AMD PublicKey"
+  },
+  "1": {
+    "name": "PSP_FW_BOOT_LOADER",
+    "proposedName": "",
+    "comment": "PSP BootLoader"
+  },
+  "10": {
+    "name": "OEM_PSP_FW_PUBLIC_KEY",
+    "proposedName": "",
+    "comment": "Optional OEM Public Key"
+  },
+  "100": {
+    "name": "PMU_FW",
+    "proposedName": "",
+    "comment": ""
+  },
+  "101": {
+    "name": "PMU_FW_DATA",
+    "proposedName": "",
+    "comment": ""
+  },
+  "102": {
+    "name": "MICROCODE",
+    "proposedName": "",
+    "comment": ""
+  },
+  "103": {
+    "name": "MACHINE_CHECK_EXC_DATA",
+    "proposedName": "",
+    "comment": "Machine Check Exception Data"
+  },
+  "104": {
+    "name": "AGESA_PSP_CUSTOM_BLOCK_BAK",
+    "proposedName": "",
+    "comment": ""
+  },
+  "1048672": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "1048676": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "1048677": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "1048678": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "1048680": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "106": {
+    "name": "MP2_FW",
+    "proposedName": "",
+    "comment": ""
+  },
+  "11": {
+    "name": "AMD_SOFT_FUSE_CHAIN_01",
+    "proposedName": "",
+    "comment": "64bit PSP Soft Fuse Chain"
+  },
+  "112": {
+    "name": "BL2_DIR",
+    "proposedName": "BL2_SECONDARY_DIRECTORY",
+    "comment": "BIOS Level 2 Directory"
+  },
+  "115": {
+    "name": "PSP_LOADER_AB",
+    "proposedName": "",
+    "comment": ""
+  },
+  "12": {
+    "name": "PSP_BOOT_TIME_TRUSTLETS",
+    "proposedName": "",
+    "comment": "Trustlets loaded at Boot"
+  },
+  "128": {
+    "name": "OEM_SYS_TA",
+    "proposedName": "",
+    "comment": ""
+  },
+  "129": {
+    "name": "OEM_SYS_TA_SIGKEY",
+    "proposedName": "",
+    "comment": ""
+  },
+  "13": {
+    "name": "PSP_BOOT_TIME_TRUSTLETS_KEY",
+    "proposedName": "",
+    "comment": "Key that signed the Boot-Trustlets"
+  },
+  "16": {
+    "name": "PSP_AGESA_RESUME_FW",
+    "proposedName": "",
+    "comment": "PSP Agesa-Resume-Firmware"
+  },
+  "18": {
+    "name": "SMU_OFF_CHIP_FW_2",
+    "proposedName": "",
+    "comment": "Secondary SMU Image"
+  },
+  "19": {
+    "name": "DEBUG_UNLOCK",
+    "proposedName": "",
+    "comment": "PSP Early Secure Unlock Debug"
+  },
+  "196706": {
+    "name": "",
+    "proposedName": "",
+    "comment": "UEFI PEI Volume"
+  },
+  "2": {
+    "name": "PSP_FW_TRUSTED_OS",
+    "proposedName": "",
+    "comment": "PSP Main Firmware"
+  },
+  "20": {
+    "name": "",
+    "proposedName": "PSP_MCLF_TRUSTLETS",
+    "comment": "Unknown Trustlets"
+  },
+  "2097252": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "2097253": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "2097254": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "26": {
+    "name": "PSP_S3_NV_DATA",
+    "proposedName": "",
+    "comment": "S3 Data Blob"
+  },
+  "264": {
+    "name": "PSP_SMU_FN_FIRMWARE",
+    "proposedName": "",
+    "comment": ""
+  },
+  "274": {
+    "name": "",
+    "proposedName": "SMU_OFF_CHIP_FW_3",
+    "comment": "Tertiary SMUimage"
+  },
+  "280": {
+    "name": "PSP_SMU_FN_FIRMWARE2",
+    "proposedName": "",
+    "comment": ""
+  },
+  "292": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "293": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "3": {
+    "name": "PSP_FW_RECOVERY_BOOT_LOADER",
+    "proposedName": "",
+    "comment": "PSP Recovery Bootloader and Firmware"
+  },
+  "3145828": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "3145829": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "3145830": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "32": {
+    "name": "IP_DISCOVERY",
+    "proposedName": "",
+    "comment": ""
+  },
+  "33": {
+    "name": "WRAPPED_IKEK",
+    "proposedName": "",
+    "comment": ""
+  },
+  "34": {
+    "name": "TOKEN_UNLOCK",
+    "proposedName": "",
+    "comment": ""
+  },
+  "351": {
+    "name": "",
+    "proposedName": "FW_PSP_SMUSCS_2",
+    "comment": "Secondary Software Configuration Settings"
+  },
+  "36": {
+    "name": "SEC_GASKET",
+    "proposedName": "",
+    "comment": ""
+  },
+  "37": {
+    "name": "MP2_FW",
+    "proposedName": "",
+    "comment": ""
+  },
+  "38": {
+    "name": "MP2_FW_PT2",
+    "proposedName": "",
+    "comment": ""
+  },
+  "39": {
+    "name": "USER_MODE_UNIT_TEST",
+    "proposedName": "",
+    "comment": ""
+  },
+  "4": {
+    "name": "PSP_NV_DATA",
+    "proposedName": "",
+    "comment": "PSP Data"
+  },
+  "40": {
+    "name": "DRIVER_ENTRIES",
+    "proposedName": "",
+    "comment": ""
+  },
+  "41": {
+    "name": "KVM_IMAGE",
+    "proposedName": "",
+    "comment": ""
+  },
+  "4194404": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "4194405": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "42": {
+    "name": "MP5_FW",
+    "proposedName": "",
+    "comment": ""
+  },
+  "43": {
+    "name": "EMBEDDED_FW_SIG",
+    "proposedName": "",
+    "comment": ""
+  },
+  "44": {
+    "name": "TEE_WRITEONCE_NVRAM",
+    "proposedName": "",
+    "comment": ""
+  },
+  "45": {
+    "name": "S0I3_DRIVER",
+    "proposedName": "",
+    "comment": "External Chipset PSP Boot Loader"
+  },
+  "46": {
+    "name": "EXT_CHIPSET_MP0_FW",
+    "proposedName": "",
+    "comment": ""
+  },
+  "47": {
+    "name": "EXT_CHIPSET_MP1_FW",
+    "proposedName": "",
+    "comment": ""
+  },
+  "48": {
+    "name": "ABL0",
+    "proposedName": "",
+    "comment": "PSP AGESA Binary 0"
+  },
+  "49": {
+    "name": "ABL1",
+    "proposedName": "",
+    "comment": "PSP AGESA Binary 1"
+  },
+  "5": {
+    "name": "BIOS_PUBLIC_KEY",
+    "proposedName": "",
+    "comment": "BIOS Public Key"
+  },
+  "50": {
+    "name": "ABL2",
+    "proposedName": "",
+    "comment": "PSP AGESA Binary 2"
+  },
+  "51": {
+    "name": "ABL3",
+    "proposedName": "",
+    "comment": "PSP AGESA Binary 3"
+  },
+  "52": {
+    "name": "ABL4",
+    "proposedName": "",
+    "comment": "PSP AGESA Binary 4"
+  },
+  "520": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "53": {
+    "name": "ABL5",
+    "proposedName": "",
+    "comment": "PSP AGESA Binary 5"
+  },
+  "530": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "54": {
+    "name": "ABL6",
+    "proposedName": "",
+    "comment": "PSP AGESA Binary 6"
+  },
+  "548": {
+    "name": "",
+    "proposedName": "",
+    "comment": "Appears to be linked to 124 125 and 225"
+  },
+  "549": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "55": {
+    "name": "ABL7",
+    "proposedName": "",
+    "comment": "PSP AGESA Binary 7"
+  },
+  "56": {
+    "name": "SEV_DATA",
+    "proposedName": "PSP_ENCRYPTED_NV_DATA",
+    "comment": ""
+  },
+  "57": {
+    "name": "SEV_CODE",
+    "proposedName": "SEV_APP",
+    "comment": ""
+  },
+  "58": {
+    "name": "SERIAL_ALLOW_LIST",
+    "proposedName": "",
+    "comment": "Processor Serial Number Allow List"
+  },
+  "59": {
+    "name": "SERDES_MICROCODE",
+    "proposedName": "",
+    "comment": ""
+  },
+  "6": {
+    "name": "BIOS_RTM_FIRMWARE",
+    "proposedName": "",
+    "comment": "BIOS RTM Code (PEI)Volume"
+  },
+  "60": {
+    "name": "VBIOS_PRELOAD",
+    "proposedName": "",
+    "comment": ""
+  },
+  "61": {
+    "name": "WLAN_UMAC",
+    "proposedName": "",
+    "comment": ""
+  },
+  "62": {
+    "name": "WLAN_IMAC",
+    "proposedName": "",
+    "comment": ""
+  },
+  "63": {
+    "name": "WLAN_BLUETOOTH",
+    "proposedName": "",
+    "comment": ""
+  },
+  "64": {
+    "name": "PSP_LVL2_DIR",
+    "proposedName": "PL2_SECONDARY_DIRECTORY",
+    "comment": "PSP Level 2 Directory"
+  },
+  "65": {
+    "name": "EXT_CHIPSET_MP0_BL",
+    "proposedName": "",
+    "comment": "External Chipset MP0 Boot Loader"
+  },
+  "65634": {
+    "name": "",
+    "proposedName": "",
+    "comment": "UEFI Image"
+  },
+  "66": {
+    "name": "DXIO_PHY_SRAM_FW",
+    "proposedName": "",
+    "comment": "DXIO PHY SRAM Firmware"
+  },
+  "67": {
+    "name": "DXIO_PHY_SRAM_FW_PUBKEY",
+    "proposedName": "",
+    "comment": "DXIO PHY SRAM Firmware Public Key"
+  },
+  "68": {
+    "name": "USB_PHY_FW",
+    "proposedName": "",
+    "comment": "USB PHY Firmware"
+  },
+  "69": {
+    "name": "TOS_SEC_POLICY",
+    "proposedName": "",
+    "comment": "Security Policy for tOS"
+  },
+  "7": {
+    "name": "BIOS_RTM_SIGNATURE",
+    "proposedName": "",
+    "comment": "Signed BIOS RTM Hash"
+  },
+  "70": {
+    "name": "EXT_CHIPSET_PSP_BL",
+    "proposedName": "",
+    "comment": "External Chipset PSP Boot Loader"
+  },
+  "71": {
+    "name": "DRTM_TA",
+    "proposedName": "",
+    "comment": ""
+  },
+  "72": {
+    "name": "REC_L2A_PSP_DIR",
+    "proposedName": "",
+    "comment": "Recovery L2A PSP Directory"
+  },
+  "73": {
+    "name": "REC_L2_BIOS_DIR",
+    "proposedName": "",
+    "comment": "Recovery L2 BIOS Directory"
+  },
+  "74": {
+    "name": "REC_L2B_PSP_DIR",
+    "proposedName": "",
+    "comment": "Recovery L2B PSP Directory"
+  },
+  "75": {
+    "name": "",
+    "proposedName": "",
+    "comment": ""
+  },
+  "76": {
+    "name": "EXT_CHIPSET_SECPOL",
+    "proposedName": "",
+    "comment": "External Chipset Security Policy"
+  },
+  "77": {
+    "name": "EXT_CHIPSET_SEC_DBG_UNLOCK",
+    "proposedName": "",
+    "comment": "External Chipset Secure Debug Unlock"
+  },
+  "78": {
+    "name": "PMU_PUBKEY",
+    "proposedName": "",
+    "comment": ""
+  },
+  "79": {
+    "name": "FW_UMC",
+    "proposedName": "",
+    "comment": ""
+  },
+  "8": {
+    "name": "SMU_OFFCHIP_FW",
+    "proposedName": "",
+    "comment": "Primary SMU Image"
+  },
+  "80": {
+    "name": "PSP_BL_PUBKEY_TBL",
+    "proposedName": "",
+    "comment": "PSP Boot Loader Public Keys Table"
+  },
+  "81": {
+    "name": "PSP_TOS_PUBKEY_TBL",
+    "proposedName": "",
+    "comment": "PSP tOS Public Keys Table"
+  },
+  "82": {
+    "name": "OEM_PSP_BL_APP",
+    "proposedName": "",
+    "comment": ""
+  },
+  "83": {
+    "name": "OEM_PSP_BL_APP_PUBKEY",
+    "proposedName": "",
+    "comment": ""
+  },
+  "84": {
+    "name": "PSP_RPMC_NVRAM",
+    "proposedName": "",
+    "comment": ""
+  },
+  "85": {
+    "name": "PSP_BL_ANTIROLLBACK",
+    "proposedName": "",
+    "comment": ""
+  },
+  "86": {
+    "name": "PSP_SEC_OS_ANTIROLLBACK",
+    "proposedName": "",
+    "comment": ""
+  },
+  "87": {
+    "name": "CVIP_CFG_TBL",
+    "proposedName": "",
+    "comment": ""
+  },
+  "88": {
+    "name": "DMCU_ERAM",
+    "proposedName": "",
+    "comment": ""
+  },
+  "89": {
+    "name": "DMCU_ISR",
+    "proposedName": "",
+    "comment": ""
+  },
+  "9": {
+    "name": "AMD_SEC_DBG_PUBLIC_KEY",
+    "proposedName": "",
+    "comment": "Secure Unlock Public Key"
+  },
+  "90": {
+    "name": "MSMU_BIN0",
+    "proposedName": "",
+    "comment": ""
+  },
+  "91": {
+    "name": "MSMU_BIN1",
+    "proposedName": "",
+    "comment": ""
+  },
+  "95": {
+    "name": "FW_PSP_SMUSCS",
+    "proposedName": "",
+    "comment": "Primary Software Configuration Settings"
+  },
+  "96": {
+    "name": "FW_IMC",
+    "proposedName": "",
+    "comment": "AGESA PSP Customization Block"
+  },
+  "97": {
+    "name": "FW_GEC",
+    "proposedName": "",
+    "comment": "AGESA PSP Output Block"
+  },
+  "98": {
+    "name": "FW_XHCI",
+    "proposedName": "",
+    "comment": "BIOS Binary"
+  },
+  "99": {
+    "name": "FW_INVALID",
+    "proposedName": "",
+    "comment": "AGESA PSP Output Block NVRAM"
+  }
+}
