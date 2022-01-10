@@ -29,7 +29,7 @@ git submodule update --init --checkout
 ### Adding Go dependencies
 
 ```sh
-GOOS=js GOARCH=wasm go get github.com/...
+GOOS=js GOARCH=wasm go get github.com/fiedka/fiedka/...
 ```
 
 ### Running
