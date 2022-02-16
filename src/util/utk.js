@@ -102,6 +102,7 @@ export const transformFiles = (files = []) =>
       });
     }
     return {
+      id: guid,
       guid,
       childFvs,
       name,
