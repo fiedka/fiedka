@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "styled-jsx/babel",
+      { "optimizeForSpeed": true, "sourceMaps": true }
+    ]
+  ]
+}
