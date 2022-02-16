@@ -18,7 +18,7 @@ const Directory = forwardRef(function Directory(
         </TextLine>
       </div>
       <div className={cn("files", { expand })}>
-        {files.map((f, i) => renderFile(f, expand, i))}
+        {files.map((f, i) => renderFile(f, expand, `${f.id}${i}`))}
       </div>
       <style jsx>{`
         .directory {
