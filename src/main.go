@@ -14,6 +14,7 @@ import (
 	amd "github.com/linuxboot/fiano/pkg/amd/manifest"
 	"github.com/linuxboot/fiano/pkg/cbfs"
 	"github.com/linuxboot/fiano/pkg/uefi"
+	"github.com/linuxboot/fiano/pkg/visitors"
 )
 
 const (
@@ -52,42 +53,134 @@ func cbfsana(this js.Value, args []js.Value) (interface{}, error) {
 	return string(j), nil
 }
 
-type Dummy struct {
-	W io.Writer
+type fiedkaVisitor struct {
+	Buf *[]byte
+	Res io.Writer
+	W   io.Writer
 }
 
-func (v *Dummy) Run(f uefi.Firmware) error {
+func (v *fiedkaVisitor) Run(f uefi.Firmware) error {
 	return f.Apply(v)
 }
 
-func (v *Dummy) Visit(f uefi.Firmware) error {
+func (v *fiedkaVisitor) Visit(f uefi.Firmware) error {
 	b, err := json.MarshalIndent(f, "", "")
 	if err != nil {
 		return err
 	}
-	fmt.Fprintln(v.W, string(b))
+	fmt.Fprintln(v.Res, string(b))
+	a := &visitors.Assemble{}
+	f.Apply(a)
+	copy(*v.Buf, f.Buf())
 	return nil
+}
+
+type UtkRes struct {
+	Buf []byte
+	Err string
+	Res string
+}
+
+// args: firmware image, image size, replacement binary, replacement size
+func mklb(this js.Value, args []js.Value) (interface{}, error) {
+	image_size := args[1].Int()
+	image := make([]byte, image_size)
+	js.CopyBytesToGo(image, args[0])
+	parsedRoot, err := uefi.Parse(image)
+	if err != nil {
+		return nil, err
+	}
+	kernel_size := args[3].Int()
+	kernel := make([]byte, kernel_size)
+	js.CopyBytesToGo(kernel, args[2])
+	if err != nil {
+		return nil, err
+	}
+	fmt.Printf("Replace BdsDxe with LinuxBoot")
+	pred, err := visitors.FindFilePredicate("BdsDxe")
+	(&visitors.ReplacePE32{
+		Predicate: pred,
+		NewPE32:   kernel,
+	}).Run(parsedRoot)
+	// TODO: reparse
+	dbuf := make([]byte, image_size)
+	var derr bytes.Buffer
+	var dres bytes.Buffer
+	parsedRoot.Apply(&fiedkaVisitor{
+		Buf: &dbuf,
+		W:   &derr,
+		Res: &dres,
+	})
+	res, err := json.Marshal(UtkRes{Err: derr.String(), Res: dres.String(), Buf: dbuf})
+	if err != nil {
+		return nil, err
+	}
+	return string(res), nil
+}
+
+func utkr(this js.Value, args []js.Value) (interface{}, error) {
+	size := args[1].Int()
+	image := make([]byte, size)
+	js.CopyBytesToGo(image, args[0])
+	parsedRoot, err := uefi.Parse(image)
+	if err != nil {
+		return nil, err
+	}
+	guidss := []byte(args[2].String())
+	var guids []string
+	err = json.Unmarshal(guidss, &guids)
+	if err != nil {
+		return nil, err
+	}
+	fmt.Printf("Remove %v", guids)
+	var fargs []string
+	for _, guid := range guids {
+		fargs = append(fargs, "remove", guid)
+	}
+	v, err := visitors.ParseCLI(fargs)
+	if err != nil {
+		return nil, err
+	}
+	err = visitors.ExecuteCLI(parsedRoot, v)
+	if err != nil {
+		return nil, err
+	}
+	// TODO: reparse
+	dbuf := make([]byte, size)
+	var derr bytes.Buffer
+	var dres bytes.Buffer
+	parsedRoot.Apply(&fiedkaVisitor{
+		Buf: &dbuf,
+		W:   &derr,
+		Res: &dres,
+	})
+	res, err := json.Marshal(UtkRes{Err: derr.String(), Res: dres.String(), Buf: dbuf})
+	if err != nil {
+		return nil, err
+	}
+	return string(res), nil
 }
 
 func utka(this js.Value, args []js.Value) (interface{}, error) {
 	size := args[1].Int()
 	image := make([]byte, size)
 	js.CopyBytesToGo(image, args[0])
-	var cli []string
-	cli = append(cli, "json")
 	parsedRoot, err := uefi.Parse(image)
 	if err != nil {
 		return nil, err
 	}
-	var res bytes.Buffer
-	dummy := &Dummy{
-		W: &res,
-	}
-	parsedRoot.Apply(dummy)
+	var derr bytes.Buffer
+	var dres bytes.Buffer
+	var dbuf []byte
+	parsedRoot.Apply(&fiedkaVisitor{
+		Buf: &dbuf,
+		W:   &derr,
+		Res: &dres,
+	})
 	if err != nil {
 		return nil, err
 	}
-	return res.String(), nil
+	return dres.String(), nil
 }
 
 // Overhead code for amdana
@@ -209,6 +302,8 @@ func main() {
 	gobridge.RegisterCallback("add", add)
 	gobridge.RegisterCallback("fmap", fmap)
 	gobridge.RegisterCallback("utka", utka)
+	gobridge.RegisterCallback("utkr", utkr)
+	gobridge.RegisterCallback("mklb", mklb)
 	gobridge.RegisterCallback("cbfsana", cbfsana)
 	gobridge.RegisterCallback("amdana", amdana)
 	gobridge.RegisterCallback("raiseError", err)
