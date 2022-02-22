@@ -66,23 +66,23 @@ export const transformBiosDir = (dir, range) => ({
   entries: dir.Entries.map((e) => transformBiosEntry(e)),
 });
 
-export const transformAmdFw = (css) => {
+export const transformAmdFw = (fw) => {
   const dirs = [];
-  if (css.PSPDirectoryLevel1)
+  if (fw.PSPDirectoryLevel1)
     dirs.push(
-      transformPspDir(css.PSPDirectoryLevel1, css.PSPDirectoryLevel1Range)
+      transformPspDir(fw.PSPDirectoryLevel1, fw.PSPDirectoryLevel1Range)
     );
-  if (css.PSPDirectoryLevel2)
+  if (fw.PSPDirectoryLevel2)
     dirs.push(
-      transformPspDir(css.PSPDirectoryLevel2, css.PSPDirectoryLevel2Range)
+      transformPspDir(fw.PSPDirectoryLevel2, fw.PSPDirectoryLevel2Range)
     );
-  if (css.BIOSDirectoryLevel1)
+  if (fw.BIOSDirectoryLevel1)
     dirs.push(
-      transformBiosDir(css.BIOSDirectoryLevel1, css.BIOSDirectoryLevel1Range)
+      transformBiosDir(fw.BIOSDirectoryLevel1, fw.BIOSDirectoryLevel1Range)
     );
-  if (css.BIOSDirectoryLevel2)
+  if (fw.BIOSDirectoryLevel2)
     dirs.push(
-      transformBiosDir(css.BIOSDirectoryLevel2, css.BIOSDirectoryLevel2Range)
+      transformBiosDir(fw.BIOSDirectoryLevel2, fw.BIOSDirectoryLevel2Range)
     );
   return dirs;
 };
