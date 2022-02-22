@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Boop } from "@coalmines/indui";
 
@@ -6,6 +6,7 @@ import Tooltip from "../components/Tooltip";
 import Blocks from "../components/Blocks";
 import Entry from "../components/Entry";
 import DepEx from "./DepEx";
+import { EditContext } from "./EditContext";
 
 // TODO: Handle multiple FVs? Is it possible?
 export const getFviGuid = (file) => {
@@ -16,11 +17,23 @@ export const getFviGuid = (file) => {
 };
 
 const File = ({ file, open, onJumpToVolume }) => {
+  const { removeFile, removals } = useContext(EditContext);
+  // TODO...
   const { guid, name, size, fileType, depEx } = file;
+
+  const rm = async (e) => {
+    e.stopPropagation();
+    removeFile({ guid, name });
+  };
+
+  const removing = !!removals.find((r) => r.guid === guid);
 
   const typeEmoji =
     fileType === "driver" ? <Tooltip tip="driver">🚗</Tooltip> : null;
-  const infoEmoji = [];
+  const infoEmoji =
+    guid === "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF" ? null : (
+      <button onClick={rm}>{removing ? "🔥" : "🗑️"}</button>
+    );
   const headline = name || guid.toUpperCase();
   const header = (
     <div className="header">
@@ -29,6 +42,7 @@ const File = ({ file, open, onJumpToVolume }) => {
       <span className="emoji">{infoEmoji}</span>
       <style jsx>{`
         .header {
+          font-size: 14px;
           display: flex;
           justify-content: space-between;
           padding: 2px 1px;
@@ -36,6 +50,8 @@ const File = ({ file, open, onJumpToVolume }) => {
           background-color: #4223;
         }
         .guid {
+          display: inline-flex;
+          align-items: center;
           background-color: #f7f7f7;
           padding: 0 2px;
           color: #000;

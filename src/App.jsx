@@ -1,57 +1,37 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { Button, LoadingAnimation, Tabs, TextLine } from "@coalmines/indui";
+import { Button, Divider, Infobar, TextLine } from "@coalmines/indui";
 import { useFilePicker } from "use-file-picker";
 import wasm from "./main.go";
-import UEFIImage from "./UEFIImage";
-import AMDImage from "./AMDImage";
 import { globalStyle, blockStyle } from "./global-style";
+import { UtkContext } from "./context/UtkContext";
+import logo from "./img/art/fiedka.svg";
+import Feedback, { renderFeedback } from "./Analysis/Feedback";
+import Main from "./Analysis/Main";
+import { download } from "./util/download";
+import { getMeta } from "./util/css";
+import FullScreenLoader from "./components/FullScreenLoader";
+import Loader from "./components/Loader";
+import LinuxBoot from "./UEFI/LinuxBoot";
 
-const { fmap, utka, amdana } = wasm;
+const { fmap, cbfsana, utka, utkr, amdana, mklb } = wasm;
 
 // use this instead of the real utka for testing only amdana
 // const utka = () => Promise.reject("Skipping UEFI analysis");
 
-const Main = ({ data, fileName }) => {
-  const { amd, fmap, intel, uefi } = data;
-  const menu = [];
-  if (uefi) {
-    menu.push({
-      id: "uefi",
-      body: <UEFIImage data={uefi} fmap={fmap} name={fileName} />,
-      label: "UEFI",
-    });
-  }
-  if (amd) {
-    menu.push({
-      id: "amd",
-      body: <AMDImage data={amd} fmap={fmap} name={fileName} />,
-      label: "AMD",
-    });
-  }
-  // TODO: Add Intel ME support
-  if (intel) {
-    console.info("Intel inside");
-  }
-  if (!menu.length) {
-    return <TextLine>No firmware detected</TextLine>;
-  }
-  return <Tabs menu={menu} />;
-};
+const getParseFeedback = ({ status: s, reason: r }) =>
+  s === "rejected" && r ? r : null;
+const getParseData = ({ status: s, value: v }) =>
+  s === "fulfilled" ? JSON.parse(v) : null;
 
-Main.propTypes = {
-  data: PropTypes.exact({
-    amd: PropTypes.object,
-    fmap: PropTypes.object,
-    intel: PropTypes.object,
-    uefi: PropTypes.object,
-  }),
-  fileName: PropTypes.string,
-};
+const fullScreenLoader = <FullScreenLoader />;
 
 const Analyze = () => {
   const [error, setError] = useState(null);
+  const [feedback, setFeedback] = useState(null);
+  const [fbuf, setFbuf] = useState(null);
+  const [file, setFile] = useState(null);
   const [data, setData] = useState(null);
+  const [inProgress, setInProgress] = useState(false);
   const [openFileSelector, { filesContent, loading, errors, plainFiles }] =
     useFilePicker({
       multiple: true,
@@ -65,6 +45,7 @@ const Analyze = () => {
 
   const analyze = async (indata, size) => {
     setData(null);
+    setFeedback(null);
     setError(null);
     // TODO: fmap should never fail, what should we do if it does though?
     try {
@@ -72,17 +53,24 @@ const Analyze = () => {
         fmap(indata, size),
         utka(indata, size),
         amdana(indata, size),
+        cbfsana(indata, size),
       ]);
       setData({
-        fmap: JSON.parse(res[0].value),
-        uefi: res[1].status === "fulfilled" ? JSON.parse(res[1].value) : null,
-        amd: res[2].status === "fulfilled" ? JSON.parse(res[2].value) : null,
+        fmap: getParseData(res[0]),
+        uefi: getParseData(res[1]),
+        amd: getParseData(res[2]),
+        cbfs: getParseData(res[3]),
       });
-      res.forEach((r) => {
-        if (r.status === "rejected" && r.reason) {
-          console.error(r.reason);
-          setError((errors || []).concat([r.reason]));
-        }
+      /*
+      console.info({ fmap: getParseData(res[0]) });
+      console.info({ uefi: getParseData(res[1]) });
+      console.info({ amd: getParseData(res[2]) });
+      console.info({ cbfs: getParseData(res[3]) });
+      */
+      setFeedback({
+        uefi: getParseFeedback(res[1]),
+        amd: getParseFeedback(res[2]),
+        cbfs: getParseFeedback(res[3]),
       });
     } catch (e) {
       console.error(e);
@@ -90,9 +78,89 @@ const Analyze = () => {
     }
   };
 
+  const reanalyze = () => {
+    analyze(fbuf, fbuf.byteLength);
+  };
+
+  const save = () => {
+    download(`${fileName}.mod`, fbuf);
+  };
+
+  const remove = async (guids) => {
+    setInProgress(true);
+    setTimeout(async () => {
+      try {
+        const res = await utkr(
+          new Uint8Array(fbuf),
+          fbuf.byteLength,
+          JSON.stringify(guids)
+        );
+        const w = JSON.parse(res);
+        const u = JSON.parse(w.Res);
+        setData({
+          fmap: data.fmap,
+          amd: data.amd,
+          uefi: u,
+        });
+        try {
+          const d = atob(w.Buf);
+          const b = new Uint8Array(d.length);
+          for (let i = 0; i < d.length; i++) {
+            b[i] = d.charCodeAt(i);
+          }
+          setFbuf(b);
+        } catch (e) {
+          console.error("[utk err] buffer could not be unmarshaled", e, w.Buf);
+        }
+      } catch (e) {
+        console.info("[utk err]", e);
+        setError((errors || []).concat(e));
+      } finally {
+        setInProgress(false);
+      }
+    }, 100);
+  };
+
+  const linuxboot = async (kernelFile) => {
+    console.info(`[utk]: replace 'BdsDxe' with kernel from file`);
+    try {
+      const res = await mklb(
+        new Uint8Array(fbuf),
+        fbuf.byteLength,
+        new Uint8Array(kernelFile),
+        kernelFile.byteLength
+      );
+      console.info(`[utk]: replacement done`);
+      const w = JSON.parse(res);
+      const u = JSON.parse(w.Res);
+      setData({
+        fmap: data.fmap,
+        amd: data.amd,
+        uefi: u,
+      });
+      try {
+        const d = atob(w.Buf);
+        const b = new Uint8Array(d.length);
+        for (let i = 0; i < d.length; i++) {
+          b[i] = d.charCodeAt(i);
+        }
+        setFbuf(b);
+      } catch (e) {
+        console.error("[utk err] buffer could not be unmarshaled", e, w.Buf);
+      }
+    } catch (e) {
+      console.info("[utk err]", e);
+      setError((errors || []).concat(e));
+    }
+  };
+
+  const loadImage = () => openFileSelector();
+
   useEffect(() => {
     if (filesContent.length) {
       const f = filesContent[0].content;
+      setFile(f);
+      setFbuf(f);
       analyze(new Uint8Array(f), f.byteLength);
     }
   }, [filesContent]);
@@ -100,31 +168,74 @@ const Analyze = () => {
   const fileName = plainFiles.length > 0 ? plainFiles[0].name : "";
 
   return (
-    <div style={{ fontSize: 9 }}>
-      <Button onClick={() => openFileSelector()}>
-        {loading ? (
-          <>
-            <LoadingAnimation type="gigagampfa">⚙️⚙️</LoadingAnimation>
-            Analyzing...{" "}
-          </>
-        ) : (
-          "Select file"
-        )}
-      </Button>
-      {error && (
-        <p className="error">
-          <h2>Errors</h2>
-          <pre>{JSON.stringify(error, null, 2)}</pre>
-        </p>
+    <div>
+      <menu>
+        <div className="menu-left">
+          <Infobar>analyze a firmware image</Infobar>
+          <Button onClick={loadImage}>
+            {loading ? <Loader>Analyzing...</Loader> : "Select file"}
+          </Button>
+          <Button onClick={reanalyze} disabled={!fbuf}>
+            Reanalyze
+          </Button>
+          <Button onClick={save} disabled={!fbuf}>
+            Save
+          </Button>
+          {file && <LinuxBoot onSelectFile={linuxboot} />}
+        </div>
+        <div className="menu-right">
+          {data && data.amd && (
+            <Feedback label="Outline">
+              <pre>{JSON.stringify(getMeta(data.amd), null, 2)}</pre>
+            </Feedback>
+          )}
+          <Feedback label="Feedback">
+            {renderFeedback(feedback, error)}
+          </Feedback>
+        </div>
+      </menu>
+      {data ? (
+        <>
+          <Divider />
+          <UtkContext.Provider value={{ remove }}>
+            <Main data={data} fileName={fileName} />
+          </UtkContext.Provider>
+        </>
+      ) : (
+        <main>
+          <figure>
+            <img src={logo} />
+            <figcaption>
+              <TextLine>Fiedka the Firmware Editor</TextLine>
+            </figcaption>
+          </figure>
+        </main>
       )}
-      {data && <Main data={data} fileName={fileName} />}
+      {inProgress && fullScreenLoader}
       <style jsx>{`
-        .error {
-          max-width: 420px;
+        menu {
+          display: flex;
+          justify-content: space-between;
         }
-        pre {
-          white-space: pre-wrap;
-          word-wrap: break-word;
+        .menu-left,
+        .menu-right {
+          display: flex;
+          column-gap: 15px;
+          align-items: center;
+        }
+        main,
+        figure {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+        }
+        main {
+          min-height: 400px;
+        }
+        img {
+          width: 200px;
+          margin-bottom: 15px;
         }
       `}</style>
     </div>
@@ -133,13 +244,21 @@ const Analyze = () => {
 
 const App = () => (
   <div>
-    <h1>Fiedka - analyze a firmware image</h1>
     <Analyze />
     <style jsx global>
       {globalStyle}
     </style>
     <style jsx global>
       {blockStyle}
+    </style>
+    <style jsx global>
+      {`
+        pre {
+          min-width: 350px;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
+      `}
     </style>
   </div>
 );
