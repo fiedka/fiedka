@@ -55,6 +55,7 @@ const Entry = ({ open = true, entry, header, children }) => {
           background-color: ${colors[6]};
         }
         header {
+          font-size: 12px;
           font-weight: bold;
           text-align: center;
           background-color: ${colors[0]};
