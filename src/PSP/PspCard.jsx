@@ -106,12 +106,6 @@ const Header = ({
     );
   }
 
-  // FIXME: .header width: 100% should not be necessary; setup issue?!
-  // TL;DR of digging through issues: It's hard to figure out the Babel config
-  // subset from the Next.js monorepo which handles styled-jsx correctly.
-  // We probably need to migrate away from styled-jsx. It's caused too much
-  // trouble already, also with @coalmines/indui, and styled-components
-  // offers a sensible alternative.
   return (
     <div
       className={cn("pspcard-header", {
@@ -125,7 +119,7 @@ const Header = ({
       <span className="emoji">{infoEmoji}</span>
       <style jsx>{`
         .pspcard-header {
-          width: 100%;
+          font-size: 14px;
           display: flex;
           justify-content: space-between;
           padding: 2px 1px;
@@ -142,6 +136,8 @@ const Header = ({
           background-color: #acab;
         }
         .type {
+          display: inline-flex;
+          align-items: center;
           background-color: #f7f7f7;
           padding: 0 2px;
         }
