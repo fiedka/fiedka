@@ -10,6 +10,7 @@ export const globalStyle = css.global`
     margin: 0;
     background-color: #dedede;
     font-size: 12px;
+    font-family: sans-serif;
   }
   *,
   *::before,
