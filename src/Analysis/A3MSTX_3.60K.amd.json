@@ -1,0 +1,407 @@
+{
+    "EmbeddedFirmware": {
+        "Signature": 1437226410,
+        "Reserved1": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            16,
+            2,
+            255,
+            0,
+            128,
+            10,
+            255
+        ],
+        "PSPDirectoryTablePointer": 684032,
+        "BIOSDirectoryTableFamily17hModels00h0FhPointer": 4279664640,
+        "BIOSDirectoryTableFamily17hModels10h1FhPointer": 4280713216,
+        "BIOSDirectoryTableFamily17hModels30h3FhPointer": 0,
+        "Reserved2": 4294967295,
+        "BIOSDirectoryTableFamily17hModels60h3FhPointer": 4294967295,
+        "Reserved3": [
+            255,
+            255,
+            255,
+            255,
+            0,
+            240,
+            102,
+            255,
+            0,
+            240,
+            104,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            5,
+            0,
+            255,
+            255,
+            255,
+            255,
+            255
+        ]
+    },
+    "EmbeddedFirmwareRange": {
+        "Offset": 131072,
+        "Length": 74
+    },
+    "PSPDirectoryLevel1": {
+        "PSPCookie": 1347637284,
+        "Checksum": 530628048,
+        "TotalEntries": 18,
+        "AdditionalInfo": 2150370817,
+        "Entries": [
+            {
+                "Type": 0,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 576,
+                "LocationOrValue": 4278882304
+            },
+            {
+                "Type": 1,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 32768,
+                "LocationOrValue": 4281073664
+            },
+            {
+                "Type": 8,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 81920,
+                "LocationOrValue": 4281106432
+            },
+            {
+                "Type": 3,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 24576,
+                "LocationOrValue": 4278886400
+            },
+            {
+                "Type": 6,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 4096,
+                "LocationOrValue": 4294963200
+            },
+            {
+                "Type": 2,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 147456,
+                "LocationOrValue": 4281188352
+            },
+            {
+                "Type": 4,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 65536,
+                "LocationOrValue": 4278743040
+            },
+            {
+                "Type": 8,
+                "Subprogram": 1,
+                "ROMId": 0,
+                "Size": 81920,
+                "LocationOrValue": 4281335808
+            },
+            {
+                "Type": 9,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 832,
+                "LocationOrValue": 4278910976
+            },
+            {
+                "Type": 11,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 4294967295,
+                "LocationOrValue": 1
+            },
+            {
+                "Type": 13,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 832,
+                "LocationOrValue": 4278915072
+            },
+            {
+                "Type": 16,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 32768,
+                "LocationOrValue": 4281417728
+            },
+            {
+                "Type": 18,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 45056,
+                "LocationOrValue": 4281450496
+            },
+            {
+                "Type": 20,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 131072,
+                "LocationOrValue": 4281495552
+            },
+            {
+                "Type": 18,
+                "Subprogram": 1,
+                "ROMId": 0,
+                "Size": 45056,
+                "LocationOrValue": 4281626624
+            },
+            {
+                "Type": 95,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 4096,
+                "LocationOrValue": 4281671680
+            },
+            {
+                "Type": 95,
+                "Subprogram": 1,
+                "ROMId": 0,
+                "Size": 4096,
+                "LocationOrValue": 4281675776
+            },
+            {
+                "Type": 26,
+                "Subprogram": 0,
+                "ROMId": 0,
+                "Size": 12288,
+                "LocationOrValue": 4281679872
+            }
+        ]
+    },
+    "PSPDirectoryLevel1Range": {
+        "Offset": 688128,
+        "Length": 304
+    },
+    "PSPDirectoryLevel2": null,
+    "PSPDirectoryLevel2Range": {
+        "Offset": 0,
+        "Length": 0
+    },
+    "BIOSDirectoryLevel1": {
+        "BIOSCookie": 1145586212,
+        "Checksum": 3039749916,
+        "TotalEntries": 13,
+        "Reserved": 1056,
+        "Entries": [
+            {
+                "Type": 96,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 1,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 8192,
+                "SourceAddress": 4279668736,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 104,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 1,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 8192,
+                "SourceAddress": 4279676928,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 96,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 0,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 8192,
+                "SourceAddress": 4279685120,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 96,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 2,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 8192,
+                "SourceAddress": 4279693312,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 104,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 0,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 8192,
+                "SourceAddress": 4279701504,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 104,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 2,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 8192,
+                "SourceAddress": 4279709696,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 97,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 0,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 0,
+                "SourceAddress": 0,
+                "DestinationAddress": 169869312
+            },
+            {
+                "Type": 98,
+                "RegionType": 0,
+                "ResetImage": true,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 0,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 3145728,
+                "SourceAddress": 4291821568,
+                "DestinationAddress": 164626432
+            },
+            {
+                "Type": 100,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 1,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 15424,
+                "SourceAddress": 4279717888,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 101,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 1,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 816,
+                "SourceAddress": 4279733504,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 100,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 4,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 17936,
+                "SourceAddress": 4279734528,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 101,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 4,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 800,
+                "SourceAddress": 4279752704,
+                "DestinationAddress": 18446744073709552000
+            },
+            {
+                "Type": 112,
+                "RegionType": 0,
+                "ResetImage": false,
+                "CopyImage": false,
+                "ReadOnly": false,
+                "Compressed": false,
+                "Instance": 0,
+                "Subprogram": 0,
+                "RomID": 0,
+                "Size": 1024,
+                "SourceAddress": 4283236352,
+                "DestinationAddress": 18446744073709552000
+            }
+        ]
+    },
+    "BIOSDirectoryLevel1Range": {
+        "Offset": 1474560,
+        "Length": 328
+    },
+    "BIOSDirectoryLevel2": null,
+    "BIOSDirectoryLevel2Range": {
+        "Offset": 0,
+        "Length": 0
+    }
+}
