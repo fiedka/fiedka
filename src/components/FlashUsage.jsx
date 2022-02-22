@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import { Boop, Infobar } from "@coalmines/indui";
+import { TextLine } from "@coalmines/indui";
+import colors from "../util/colors";
 
 import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
 
@@ -24,7 +25,6 @@ const getMarkedBlocks = ({ address, length }) => {
 };
 
 const FlashUsage = ({ usage }) => {
-  const [collapsed, setCollapsed] = useState(false);
   const markedEntriesContext = useContext(MarkedEntriesContext);
   const { hoveredEntry, markedEntries } = markedEntriesContext;
   const hoveredBlocks = (hoveredEntry && getMarkedBlocks(hoveredEntry)) || [];
@@ -58,15 +58,13 @@ const FlashUsage = ({ usage }) => {
 
   const percentage = (x) => Math.round((x / blocks) * 10000) / 100;
   const size = (x) => Math.round((x / 256) * 100) / 100;
-  const toggle = () => setCollapsed(!collapsed);
 
   return (
-    <div className={cn("flash-usage", { collapsed })}>
+    <div className="flash-usage">
       <div className="close">
-        {!collapsed && <Infobar>Flash Usage</Infobar>}
-        <Boop onClick={toggle}>{collapsed ? "👈" : "👉"}</Boop>
+        <TextLine>Flash Usage</TextLine>
       </div>
-      <table className={cn("legend", { hidden: collapsed })}>
+      <table className="legend">
         <tbody>
           <tr>
             <th>blocks</th>
@@ -101,7 +99,7 @@ const FlashUsage = ({ usage }) => {
         </tbody>
       </table>
       {/* https://stackoverflow.com/questions/41421512/why-does-flex-box-work-with-a-div-but-not-a-table */}
-      <div className={cn("flashmap", { hidden: collapsed })}>
+      <div className="flashmap">
         <table>
           <tbody>{rows}</tbody>
         </table>
@@ -112,18 +110,8 @@ const FlashUsage = ({ usage }) => {
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
-            height: 100%;
-            width: 460px;
             padding: 2px 10px;
-            position: relative;
-            transition: width 0.3s ease-in-out;
-            overflow: hidden;
-          }
-          .collapsed {
-            width: 60px;
-          }
-          .hidden {
-            display: none;
+            background-color: ${colors[0]};
           }
           .close {
             display: flex;
@@ -145,7 +133,7 @@ const FlashUsage = ({ usage }) => {
           .flashmap {
             flex-basis: fit-content;
             flex-shrink: 1;
-            overflow-y: scroll;
+            overflow-x: hidden;
           }
           pre {
             display: inline;

@@ -4,6 +4,7 @@ import { transform as utkTransform } from "./util/utk";
 import { MarkedEntriesProvider } from "./context/MarkedEntriesContext";
 import { GUIDProvider } from "./context/GUIDContext";
 import Layout from "./components/Layout";
+import SidePane from "./components/SidePane";
 import FlashUsage from "./components/FlashUsage";
 import FirmwareVolumes from "./UEFI/FirmwareVolumes";
 
@@ -34,7 +35,13 @@ const UEFIImage = ({ data, fmap, name }) => {
 
   return (
     <MarkedEntriesProvider>
-      <Layout sidepane={<FlashUsage usage={fmap} />}>
+      <Layout
+        sidepane={
+          <SidePane>
+            <FlashUsage usage={fmap} />
+          </SidePane>
+        }
+      >
         <GUIDProvider>
           <FirmwareVolumes fvs={fvs} name={name} />
         </GUIDProvider>
