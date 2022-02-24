@@ -9,6 +9,9 @@ const Layout = ({ children, sidepane }) => (
       .layout {
         display: flex;
       }
+      .layout > :global(*:nth-child(1)) {
+        flex: 1 1 0;
+      }
       aside {
         position: sticky;
         top: 0;
