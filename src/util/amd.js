@@ -1,3 +1,6 @@
+const addrMask = 0x00ffffff;
+const ffffffff = 2 ** 32 - 1;
+
 const transformPspEntry = (e) => {
   const {
     Type: sectionType,
@@ -8,13 +11,16 @@ const transformPspEntry = (e) => {
   } = e;
 
   return {
-    address,
+    address: address & addrMask,
     destinationAddress: 0,
-    size,
+    size: size === ffffffff ? 0 : size,
     sectionType,
     info: [],
     version: "abc",
-    meta: {},
+    meta: {
+      subprogram,
+      romId,
+    },
     sizes: {},
   };
 };
@@ -48,13 +54,16 @@ const transformBiosEntry = (e) => {
   if (ReadOnly) info.push("readOnly");
   if (Compressed) info.push("compressed");
   return {
-    address,
+    address: address & addrMask,
     destinationAddress,
-    size,
+    size: size === ffffffff ? 0 : size,
     sectionType,
     info,
     version: "abc",
-    meta: {},
+    meta: {
+      subprogram,
+      romId,
+    },
     sizes: {},
   };
 };
