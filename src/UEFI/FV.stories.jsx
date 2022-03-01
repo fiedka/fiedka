@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { action } from "@storybook/addon-actions";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
 import { getFVs } from "../util/utk";
@@ -17,6 +18,10 @@ const FirmwareVolume = ({ fv }) => (
     <FV {...fv} ffs={fv.files} onJumpToFV={action("jump to fv")} />
   </MarkedEntriesProvider>
 );
+
+FirmwareVolume.propTypes = {
+  fv: PropTypes.object,
+};
 
 export const emptyVolume = () => <FirmwareVolume fv={fvs[0]} />;
 
