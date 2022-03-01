@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
-import { getFVs } from "../UEFIImage";
+import { getFVs } from "../util/utk";
 import data from "./uefi.json";
 import FV from "./FV";
 

@@ -119,3 +119,25 @@ export const transform = (fvs) =>
     const files = transformFiles(fv.Value.Files);
     return { guid, parentGuid, files };
   });
+
+const getUEFIElements = (data) => {
+  if (data.Regions) {
+    const region = data.Regions.find((r) => r.Type === "*uefi.BIOSRegion");
+    if (region && region.Value) {
+      return region.Value.Elements;
+    }
+  }
+  if (data.Elements) {
+    return data.Elements;
+  }
+  return null;
+};
+
+export const getFVs = (data) => {
+  const elements = getUEFIElements(data);
+  if (elements) {
+    const fvs = elements.filter((e) => e.Type === "*uefi.FirmwareVolume");
+    return transform(fvs);
+  }
+  return [];
+};
