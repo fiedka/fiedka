@@ -36,7 +36,7 @@ const Entry = ({ open = true, entry, header, children }) => {
         .entrycard {
           display: flex;
           flex-direction: column;
-          border: 1px solid #422384;
+          border: 1px solid ${colors[8]};
           margin: 10px 1% 0;
           padding: 4px;
           min-width: 350px;
