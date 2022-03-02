@@ -27,11 +27,12 @@ const transformPspEntry = (e) => {
   };
 };
 
-export const transformPspDir = (dir, range) => ({
+export const transformPspDir = (dir, range, level) => ({
   address: range.Offset,
   checksum: dir.Checksum,
   magic: dir.PSPCookie,
   entries: dir.Entries.map((e) => transformPspEntry(e)),
+  directoryType: `PSP L${level}`,
 });
 
 const transformBiosEntry = (e) => {
@@ -70,31 +71,41 @@ const transformBiosEntry = (e) => {
   };
 };
 
-export const transformBiosDir = (dir, range) => ({
+export const transformBiosDir = (dir, range, level) => ({
   address: range.Offset,
   checksum: dir.Checksum,
   magic: dir.BIOSCookie,
   entries: dir.Entries.map((e) => transformBiosEntry(e)),
+  directoryType: `BIOS L${level}`,
 });
 
+// TODO: Distinguish PSP and BIOS directory generations when Fiano supports it
 export const transformAmdFw = (fw) => {
   const dirs = [];
-  if (fw.PSPDirectoryLevel1)
-    dirs.push(
-      transformPspDir(fw.PSPDirectoryLevel1, fw.PSPDirectoryLevel1Range)
-    );
-  if (fw.PSPDirectoryLevel2)
-    dirs.push(
-      transformPspDir(fw.PSPDirectoryLevel2, fw.PSPDirectoryLevel2Range)
-    );
-  if (fw.BIOSDirectoryLevel1)
-    dirs.push(
-      transformBiosDir(fw.BIOSDirectoryLevel1, fw.BIOSDirectoryLevel1Range)
-    );
-  if (fw.BIOSDirectoryLevel2)
-    dirs.push(
-      transformBiosDir(fw.BIOSDirectoryLevel2, fw.BIOSDirectoryLevel2Range)
-    );
+  fw.PSPDirectories.forEach((d) => {
+    if (d.PSPDirectoryLevel1) {
+      dirs.push(
+        transformPspDir(d.PSPDirectoryLevel1, d.PSPDirectoryLevel1Range, 1)
+      );
+    }
+    if (d.PSPDirectoryLevel2) {
+      dirs.push(
+        transformPspDir(d.PSPDirectoryLevel2, d.PSPDirectoryLevel2Range, 2)
+      );
+    }
+  });
+  fw.BIOSDirectories.forEach((d) => {
+    if (d.BIOSDirectoryLevel1) {
+      dirs.push(
+        transformBiosDir(d.BIOSDirectoryLevel1, d.BIOSDirectoryLevel1Range, 1)
+      );
+    }
+    if (d.BIOSDirectoryLevel2) {
+      dirs.push(
+        transformBiosDir(d.BIOSDirectoryLevel2, d.BIOSDirectoryLevel2Range, 2)
+      );
+    }
+  });
   return dirs;
 };
 
