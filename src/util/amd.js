@@ -1,3 +1,5 @@
+import { hexify, hexifyUnprefixed } from "./hex";
+
 const addrMask = 0x00ffffff;
 const ffffffff = 2 ** 32 - 1;
 
@@ -94,4 +96,39 @@ export const transformAmdFw = (fw) => {
       transformBiosDir(fw.BIOSDirectoryLevel2, fw.BIOSDirectoryLevel2Range)
     );
   return dirs;
+};
+
+export const getMeta = (data) => {
+  const {
+    BIOSDirectoryTableFamily17hModels00h0FhPointer: m00to0f,
+    BIOSDirectoryTableFamily17hModels10h1FhPointer: m10to1f,
+    BIOSDirectoryTableFamily17hModels30h3FhPointer: m30to3f,
+    BIOSDirectoryTableFamily17hModels60h3FhPointer: m60to6f,
+    PSPDirectoryTablePointer: pspModern,
+    PSPLegacyDirectoryTablePointer: pspLegacy,
+    Signature: signature,
+    IMC_FW: imcFw,
+    GBE_FW: gbeFw,
+    XHCI_FW: xhciFw,
+  } = data.EmbeddedFirmware;
+  return {
+    signature: hexifyUnprefixed(signature),
+    imcFw: hexify(imcFw),
+    gbeFw: hexify(gbeFw),
+    xhciFw: hexify(xhciFw),
+    directories: {
+      psp: {
+        modern: hexify(pspModern),
+        legacy: hexify(pspLegacy),
+      },
+      bios: {
+        family17: {
+          m00to0f: hexify(m00to0f),
+          m10to1f: hexify(m10to1f),
+          m30to3f: hexify(m30to3f),
+          m60to6f: hexify(m60to6f),
+        },
+      },
+    },
+  };
 };
