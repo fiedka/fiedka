@@ -580,7 +580,7 @@
     "comment": "AGESA PSP Output Block"
   },
   "98": {
-    "name": "FW_XHCI",
+    "name": "FW_BIOS",
     "proposedName": "",
     "comment": "BIOS Binary"
   },
