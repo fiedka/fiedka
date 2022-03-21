@@ -5,11 +5,13 @@ import UEFIImage from "./UEFIImage";
 import AMDImage from "./AMDImage";
 import CBFSImage from "./CBFSImage";
 import UnknownImage from "./UnknownImage";
+import { getUEFIElements } from "../util/utk";
 
 const Main = ({ data, fileName }) => {
   const { amd, cbfs, fmap, intel, uefi } = data;
+  const uefiElements = uefi && getUEFIElements(uefi);
   const menu = [];
-  if (uefi.length > 0) {
+  if (uefiElements && uefiElements.length > 0) {
     menu.push({
       id: "uefi",
       body: <UEFIImage data={uefi} fmap={fmap} name={fileName} />,
