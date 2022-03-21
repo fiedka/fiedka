@@ -253,6 +253,7 @@ const PspCard = ({ psp, open = true }) => {
           </table>
           <div className="info">
             <Blocks size={size} />
+            {JSON.stringify(meta, 0, 2)}
           </div>
         </span>
       </div>
