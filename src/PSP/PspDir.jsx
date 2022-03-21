@@ -4,11 +4,13 @@ import PropTypes from "prop-types";
 import PspCard from "./PspCard";
 import Directory from "../components/Directory";
 
-export const hexify = (a) => a.toString(16);
+import { hexify, hexifyUnprefixed } from "../util/hex";
 
 const PspDir = forwardRef(function PspDir({ dir }, ref) {
-  const name = `0x${hexify(dir.address)}`;
-  const cs = dir.checksum ? `, checksum: ${hexify(dir.checksum)}` : "";
+  const name = hexify(dir.address);
+  const cs = dir.checksum
+    ? `, checksum: ${hexifyUnprefixed(dir.checksum)}`
+    : "";
   const meta = `${dir.directoryType} (${dir.magic})${cs}`;
   return (
     <Directory

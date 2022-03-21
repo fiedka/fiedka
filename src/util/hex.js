@@ -17,3 +17,9 @@ export const hexToBinArray = (n) =>
     .toString(2)
     .padStart(64, "0")
     .match(/.{1,8}/g);
+
+export const hexify = (a) => a && `0x${a.toString(16)}`;
+
+export const hexifyUnprefixed = (a) => a && a.toString(16);
+
+export const hexifyPadded = (a, n) => a && a.toString(16).padStart(n, "0");

@@ -7,8 +7,7 @@ import Blocks from "../components/Blocks";
 import Entry from "../components/Entry";
 import { PubKeyContext } from "../context/PubKeyContext";
 import colors from "../util/colors";
-
-export const hexify = (a) => a && `0x${a.toString(16)}`;
+import { hexify } from "../util/hex";
 
 const getSigKey = (info) => {
   const sig = info.find((i) => i.includes("signed"));

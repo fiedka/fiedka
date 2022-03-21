@@ -1,8 +1,9 @@
 import React, { createRef, useState } from "react";
 import PropTypes from "prop-types";
-import PspDir, { hexify } from "../PSP/PspDir";
+import PspDir from "../PSP/PspDir";
 import { Boop, Button, Input, TextLine } from "@coalmines/indui";
 import { PubKeyProvider } from "../context/PubKeyContext";
+import { hexify } from "../util/hex";
 
 const jumpToTop = () => window.scrollTo(0, 2);
 
@@ -64,7 +65,7 @@ const PspImage = ({ directories, name }) => {
                 small
                 onClick={() => jumpToDir(address)}
               >
-                0x{hexify(address)}
+                {hexify(address)}
               </Button>
             </span>
           ))}
