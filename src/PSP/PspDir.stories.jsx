@@ -6,7 +6,7 @@ import mftEntryNoName from "../util/mft-entry-no-name.fixture.json";
 import { transformDir } from "../util/mft";
 import t14css from "../util/T14G1AMD_css.json";
 import a300css from "../util/A300_css.json";
-import { transformAmdFw } from "../util/css";
+import { transformAmdFw } from "../util/amd";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext.js";
 import PspDir from "./PspDir";
 
