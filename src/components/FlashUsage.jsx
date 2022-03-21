@@ -32,29 +32,31 @@ const FlashUsage = ({ usage }) => {
     (markedEntries && markedEntries.map((e) => getMarkedBlocks(e)).flat()) ||
     [];
   const { layout, blocks, zero, full, used } = usage;
-  const rows = layout.map(({ address, entries }, i) => {
-    const cols = entries.map((e, j) => {
-      const block = parseInt(address) / 4096; // FIXME: not necessary *here*
-      const hovered = hoveredEntry && isMarked(hoveredBlocks, block, j);
-      const marked = isMarked(markedBlocks, block, j);
-      return (
-        <td
-          key={j}
-          className={cn(`block-${e}`, {
-            "block-hovered": hovered && !marked,
-            "block-marked": marked && !hovered,
-            "block-hovered-marked": hovered && marked,
-          })}
-        ></td>
-      );
-    });
-    return (
-      <tr key={i}>
-        <td className="address">{address}</td>
-        {cols}
-      </tr>
-    );
-  });
+  const rows = layout
+    ? layout.map(({ address, entries }, i) => {
+        const cols = entries.map((e, j) => {
+          const block = parseInt(address) / 4096; // FIXME: not necessary *here*
+          const hovered = hoveredEntry && isMarked(hoveredBlocks, block, j);
+          const marked = isMarked(markedBlocks, block, j);
+          return (
+            <td
+              key={j}
+              className={cn(`block-${e}`, {
+                "block-hovered": hovered && !marked,
+                "block-marked": marked && !hovered,
+                "block-hovered-marked": hovered && marked,
+              })}
+            ></td>
+          );
+        });
+        return (
+          <tr key={i}>
+            <td className="address">{address}</td>
+            {cols}
+          </tr>
+        );
+      })
+    : null;
 
   const percentage = (x) => Math.round((x / blocks) * 10000) / 100;
   const size = (x) => Math.round((x / 256) * 100) / 100;
@@ -99,11 +101,13 @@ const FlashUsage = ({ usage }) => {
         </tbody>
       </table>
       {/* https://stackoverflow.com/questions/41421512/why-does-flex-box-work-with-a-div-but-not-a-table */}
-      <div className="flashmap">
-        <table>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
+      {rows && (
+        <div className="flashmap">
+          <table>
+            <tbody>{rows}</tbody>
+          </table>
+        </div>
+      )}
       <style jsx>
         {`
           .flash-usage {
