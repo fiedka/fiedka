@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Divider } from "@coalmines/indui";
-import { getFVs } from "./util/utk";
-import { MarkedEntriesProvider } from "./context/MarkedEntriesContext";
-import { GUIDProvider } from "./context/GUIDContext";
-import { EditProvider } from "./UEFI/EditContext";
-import Layout from "./components/Layout";
-import SidePane from "./components/SidePane";
-import FlashUsage from "./components/FlashUsage";
-import EditPane from "./UEFI/EditPane";
-import FirmwareVolumes from "./UEFI/FirmwareVolumes";
+import { getFVs } from "../util/utk";
+import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
+import { GUIDProvider } from "../context/GUIDContext";
+import { EditProvider } from "../UEFI/EditContext";
+import Layout from "../components/Layout";
+import SidePane from "../components/SidePane";
+import FlashUsage from "../components/FlashUsage";
+import EditPane from "../UEFI/EditPane";
+import FirmwareVolumes from "../UEFI/FirmwareVolumes";
 
 const UEFIImage = ({ data, fmap, name }) => {
   const fvs = getFVs(data);

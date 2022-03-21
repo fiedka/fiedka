@@ -1,9 +1,9 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import UEFIImage from "./UEFIImage";
-import fmapData from "./components/flashUsage.json";
-import uefiData from "./UEFI/uefi.json";
-import { UtkContext } from "./context/UtkContext";
+import fmapData from "../components/flashUsage.json";
+import uefiData from "../UEFI/uefi.json";
+import { UtkContext } from "../context/UtkContext";
 
 export default {
   title: "UEFI/Image",

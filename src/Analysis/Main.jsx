@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Tabs, TextLine } from "@coalmines/indui";
-import UEFIImage from "../UEFIImage";
-import AMDImage from "../AMDImage";
-import CBFSImage from "../CBFSImage";
+import { Tabs } from "@coalmines/indui";
+import UEFIImage from "./UEFIImage";
+import AMDImage from "./AMDImage";
+import CBFSImage from "./CBFSImage";
+import UnknownImage from "./UnknownImage";
 
 const Main = ({ data, fileName }) => {
   const { amd, cbfs, fmap, intel, uefi } = data;
   const menu = [];
-  if (uefi) {
+  if (uefi && uefi.Regions && uefi.Regions.length > 0) {
     menu.push({
       id: "uefi",
       body: <UEFIImage data={uefi} fmap={fmap} name={fileName} />,
@@ -34,7 +35,11 @@ const Main = ({ data, fileName }) => {
     console.info("Intel inside");
   }
   if (!menu.length) {
-    return <TextLine>No firmware detected</TextLine>;
+    menu.push({
+      id: "unknown",
+      body: <UnknownImage fmap={fmap} name={fileName} />,
+      label: "Unknown",
+    });
   }
   return <Tabs menu={menu} />;
 };

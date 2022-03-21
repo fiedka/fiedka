@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { transformAmdFw } from "./util/amd.js";
-import { MarkedEntriesProvider } from "./context/MarkedEntriesContext";
-import Layout from "./components/Layout";
-import SidePane from "./components/SidePane";
-import FlashUsage from "./components/FlashUsage";
-import PspImage from "./PSP/PspImage";
+import { transformAmdFw } from "../util/amd.js";
+import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
+import Layout from "../components/Layout";
+import SidePane from "../components/SidePane";
+import FlashUsage from "../components/FlashUsage";
+import PspImage from "../PSP/PspImage";
 
 const AMDImage = ({ data, fmap, name }) => {
   const pspDirs = transformAmdFw(data);
