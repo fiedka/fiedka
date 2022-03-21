@@ -9,7 +9,7 @@ import UnknownImage from "./UnknownImage";
 const Main = ({ data, fileName }) => {
   const { amd, cbfs, fmap, intel, uefi } = data;
   const menu = [];
-  if (uefi && uefi.Regions && uefi.Regions.length > 0) {
+  if (uefi.length > 0) {
     menu.push({
       id: "uefi",
       body: <UEFIImage data={uefi} fmap={fmap} name={fileName} />,
