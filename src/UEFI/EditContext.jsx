@@ -6,6 +6,8 @@ export const EditContext = React.createContext({});
 export const EditProvider = ({ children }) => {
   const [removals, setRemovals] = useState([]);
 
+  // TODO: support undoing a single entry
+
   const removeFile = (b) => {
     setRemovals((r) => (r.find(({ guid }) => guid === b.guid) ? r : [...r, b]));
   };
