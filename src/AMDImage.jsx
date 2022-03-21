@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { transformAmdFw } from "./util/css.js";
+import { transformAmdFw } from "./util/amd.js";
 import { MarkedEntriesProvider } from "./context/MarkedEntriesContext";
 import Layout from "./components/Layout";
 import SidePane from "./components/SidePane";
