@@ -120,7 +120,7 @@ export const transform = (fvs) =>
     return { guid, parentGuid, files };
   });
 
-const getUEFIElements = (data) => {
+export const getUEFIElements = (data) => {
   if (data.Regions) {
     const region = data.Regions.find((r) => r.Type === "*uefi.BIOSRegion");
     if (region && region.Value) {
