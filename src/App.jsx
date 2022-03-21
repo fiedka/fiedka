@@ -8,7 +8,7 @@ import logo from "./img/art/fiedka.svg";
 import Feedback, { renderFeedback } from "./Analysis/Feedback";
 import Main from "./Analysis/Main";
 import { download } from "./util/download";
-import { getMeta } from "./util/css";
+import { getMeta } from "./util/amd";
 import FullScreenLoader from "./components/FullScreenLoader";
 import Loader from "./components/Loader";
 import LinuxBoot from "./UEFI/LinuxBoot";
