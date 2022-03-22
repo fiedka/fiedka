@@ -82,10 +82,8 @@ github.com/klauspost/pgzip v1.2.4/go.mod h1:Ch1tH69qFZu15pkjo5kYi6mth2Zzwzt50oCQ
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515/go.mod h1:+0opPa2QZZtGFBFZlji/RkVcI2GknAs/DXo4wKdlNEc=
 github.com/kr/pty v1.1.8/go.mod h1:O1sed60cT9XZ5uDucP5qwvh+TE3NnUj51EiZO/lmSfw=
-github.com/linuxboot/fiano v1.0.3 h1:iYSxRQb9ihEQ0s3dFG1oMeABYMdYwGFfm7sQeBg25io=
-github.com/linuxboot/fiano v1.0.3/go.mod h1:g9jlFDMS385xd6A9bnxDJJf67/kb5nyZZBRkN4u9Dxs=
-github.com/linuxboot/fiano v1.0.5 h1:Hp7NqaHH7EKPQVty5fdADif4ma0Kldk988Rj/mTi6L8=
-github.com/linuxboot/fiano v1.0.5/go.mod h1:lsLW5PqsAN0OvdhI6SBszDwTF16ab8wfVPpewsQBOu8=
+github.com/linuxboot/fiano v1.1.0 h1:/PgOST0Z8CsCHMWkiCjZIcOZ++UdxnA+5YpFfIEKLJw=
+github.com/linuxboot/fiano v1.1.0/go.mod h1:lsLW5PqsAN0OvdhI6SBszDwTF16ab8wfVPpewsQBOu8=
 github.com/magiconair/properties v1.8.0/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czPbwD3XqdrwzmxQ=
 github.com/mattn/go-isatty v0.0.12/go.mod h1:cbi8OIDigv2wuxKPP5vlRcQ1OAZbq2CE4Kysco4FUpU=
 github.com/matttproud/golang_protobuf_extensions v1.0.1/go.mod h1:D8He9yQNgCq6Z5Ld7szi9bcBfOoFv/3dc6xSMkL2PC0=
