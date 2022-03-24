@@ -65,6 +65,14 @@
         [
           "@electron-forge/plugin-webpack",
           {
+            "devServer": {
+              "client": {
+                "overlay": {
+                  "errors": true,
+                  "warnings": false
+                }
+              }
+            },
             "mainConfig": "./webpack.main.config.js",
             "renderer": {
               "config": "./webpack.renderer.config.js",
