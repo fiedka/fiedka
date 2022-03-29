@@ -88,3 +88,6 @@ typings/
 
 # Electron-Forge
 out/
+
+# Go workspace
+go.work

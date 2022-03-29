@@ -38,6 +38,31 @@ GOOS=js GOARCH=wasm go get github.com/...
 npm start
 ```
 
+### Working with a local copy of Fiano
+
+Clone Fiano side by side with Fiedka; i.e., have them like this:
+```
+fiano/
+fiedka/
+```
+
+#### A: Using a Go workspace
+
+This requires Go 1.18. Create this symlink: `ln -s go.workspace go.work`
+That will tell Go tu use `../fiano` instead of `github.com/linuxboot/fiano`.
+
+Note: `go.work` is gitignore so that you cannot accidentally commit it.
+
+#### B: Using a `replace` directive
+
+Add this line to the bottom of `src/go.mod`:
+
+```
+replace github.com/linuxboot/fiano => ../../fiano
+```
+
+Be sure never to have this in a PR to Fiedka. Prefer the workspace method.
+
 ## Releases
 
 Binaries for Linux are [published on GitHub](
