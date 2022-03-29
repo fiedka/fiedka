@@ -49,8 +49,7 @@ https://github.com/fiedka/fiedka/releases).
 
 See [retrage's nightly OVMF builds](https://retrage.github.io/edk2-nightly/).
 
-Download `RELEASEX64_OVMF.fd` and load it into utk-web
-using the file picker.
+Download `RELEASEX64_OVMF.fd` and load it using the file picker.
 
 ## WebAssembly
 
