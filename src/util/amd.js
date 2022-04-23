@@ -27,8 +27,8 @@ const transformPspEntry = (e) => {
   };
 };
 
-export const transformPspDir = (dir, range, level) => ({
-  address: range.Offset,
+export const transformPspDir = (dir, level) => ({
+  address: dir.Range.Offset,
   checksum: dir.Checksum,
   magic: dir.PSPCookie,
   entries: dir.Entries.map((e) => transformPspEntry(e)),
@@ -84,14 +84,10 @@ export const transformAmdFw = (fw) => {
   const dirs = [];
   fw.PSPDirectories.forEach((d) => {
     if (d.PSPDirectoryLevel1) {
-      dirs.push(
-        transformPspDir(d.PSPDirectoryLevel1, d.PSPDirectoryLevel1Range, 1)
-      );
+      dirs.push(transformPspDir(d.PSPDirectoryLevel1, 1));
     }
     if (d.PSPDirectoryLevel2) {
-      dirs.push(
-        transformPspDir(d.PSPDirectoryLevel2, d.PSPDirectoryLevel2Range, 2)
-      );
+      d.PSPDirectoryLevel2.forEach((dir) => dirs.push(transformPspDir(dir, 2)));
     }
   });
   fw.BIOSDirectories.forEach((d) => {
