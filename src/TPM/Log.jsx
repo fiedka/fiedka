@@ -33,14 +33,20 @@ export const transform = (events = []) =>
 
 const TpmEvent = ({ event }) => {
   return (
-    <pre className="event mono">
-      {JSON.stringify(event, 0, 2)}
+    <span className="event mono">
+      {event}
       <style jsx>{`
+        .mono {
+          font-family: monospace;
+        }
         .event {
+          display: inline;
+          max-width: 75%;
           margin-left: 40px;
+          overflow-wrap: break-word;
         }
       `}</style>
-    </pre>
+    </span>
   );
 };
 
