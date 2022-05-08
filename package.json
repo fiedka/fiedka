@@ -119,7 +119,7 @@
     "@vercel/webpack-asset-relocator-loader": "1.6.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.0.0",
-    "electron": "13.2.2",
+    "electron": "^16.2.5",
     "eslint": "^7.20.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jest": "^24.1.3",
