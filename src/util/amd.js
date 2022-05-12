@@ -93,12 +93,12 @@ export const transformAmdFw = (fw) => {
   fw.BIOSDirectories.forEach((d) => {
     if (d.BIOSDirectoryLevel1) {
       dirs.push(
-        transformBiosDir(d.BIOSDirectoryLevel1, d.BIOSDirectoryLevel1Range, 1)
+        transformBiosDir(d.BIOSDirectoryLevel1, d.BIOSDirectoryLevel1.Range, 1)
       );
     }
     if (d.BIOSDirectoryLevel2) {
       dirs.push(
-        transformBiosDir(d.BIOSDirectoryLevel2, d.BIOSDirectoryLevel2Range, 2)
+        transformBiosDir(d.BIOSDirectoryLevel2, d.BIOSDirectoryLevel2.Range, 2)
       );
     }
   });
