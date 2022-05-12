@@ -56,6 +56,11 @@ export const getGuidFromFv = (fv) => fv.Value.FVName.GUID;
 
 export const getGuidFromFile = (file) => file.Header.GUID.GUID;
 
+export const getSizeFromFile = (file) =>
+  file.Header.ExtendedSize || file.Header.Size;
+
+export const getChecksumFromFile = (file) => file.Header.Checksum;
+
 export const getGuidFromDepEx = (depEx) =>
   (depEx.GUID && depEx.GUID.GUID) || depEx.guid; // TODO: add to transform
 
@@ -93,6 +98,8 @@ export const transformFiles = (files = []) =>
     const { Type: fileType, Sections: sections } = file;
     const name = getName(file);
     const guid = getGuidFromFile(file);
+    const size = getSizeFromFile(file);
+    const checksum = getChecksumFromFile(file);
     const depEx = getDepEx(file);
     const childFvs = [];
     if (file.Type === FILE_TYPE_FV_IMAGE) {
@@ -104,6 +111,8 @@ export const transformFiles = (files = []) =>
     return {
       id: guid,
       guid,
+      size,
+      checksum,
       childFvs,
       name,
       fileType,
