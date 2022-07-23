@@ -17,7 +17,7 @@ export const EditProvider = ({ children }) => {
   };
 
   return (
-    <EditContext.Provider value={{ removeFile, clear, removals }}>
+    <EditContext.Provider value={{ removeFile, clear, removals, setRemovals }}>
       {children}
     </EditContext.Provider>
   );

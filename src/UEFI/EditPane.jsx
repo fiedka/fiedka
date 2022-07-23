@@ -1,26 +1,59 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Button, TextLine } from "@coalmines/indui";
+import { useFilePicker } from "use-file-picker";
 import colors from "../util/colors";
+import { downloadJson } from "../util/download";
 import { EditContext } from "./EditContext";
+import schema from "./exportSchema";
 import { UtkContext } from "../context/UtkContext";
 
-// TODO: implement load/save
+export const EditPaneView = ({ removals = [], setRemovals, remove, clear }) => {
+  const [openFileSelector, { filesContent, errors }] = useFilePicker({
+    accept: [".json"],
+    limitFilesConfig: { min: 1, max: 1 },
+    maxFileSize: 1,
+  });
 
-export const EditPaneView = ({ removals, remove, clear }) => {
+  useEffect(() => {
+    if (errors.length) {
+      console.info("load errors", { errors });
+    }
+    if (filesContent.length) {
+      const d = filesContent[0].content;
+      try {
+        const j = JSON.parse(d);
+        const { error, value } = schema.validate(j);
+        if (error) {
+          throw new Error(error);
+        }
+        setRemovals(value.removals);
+      } catch (e) {
+        console.info("load error", { e });
+      }
+    }
+  }, [filesContent]);
+
+  const save = () => {
+    try {
+      // wrap in an object, so that it remains extensible; we will add
+      // other information, such as name, annotations, hashes
+      downloadJson("removals.json", { removals });
+    } catch (e) {
+      console.error("save error", { e });
+    }
+  };
   return (
     <div className="edit-pane">
       <menu>
         <TextLine>DXEs to remove</TextLine>
         <div>
-          {/*
-          <Button small disabled>
+          <Button small onClick={openFileSelector}>
             Load 📁
           </Button>
-          <Button small disabled={!removals.length} disabled>
+          <Button small disabled={!removals.length} onClick={save}>
             Save ⬇️
           </Button>
-          */}
           <Button small disabled={!removals.length} onClick={clear}>
             Clear 🚫
           </Button>
@@ -80,15 +113,16 @@ EditPaneView.propTypes = {
   removals: PropTypes.array,
   remove: PropTypes.func,
   clear: PropTypes.func,
+  setRemovals: PropTypes.func,
 };
 
 const EditPane = () => {
-  const { removals, clear } = useContext(EditContext);
+  const { removals, clear, setRemovals } = useContext(EditContext);
   const { remove: rm } = useContext(UtkContext);
 
   const remove = () => rm(removals.map(({ guid }) => guid));
 
-  return <EditPaneView removals={removals} remove={remove} clear={clear} />;
+  return <EditPaneView {...{ setRemovals, removals, remove, clear }} />;
 };
 
 export default EditPane;
