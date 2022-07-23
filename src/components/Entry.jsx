@@ -68,6 +68,7 @@ const Entry = ({ open = true, entry, header, children }) => {
         main {
           overflow: hidden;
           max-height: 0;
+          height: 100%;
           transition: max-height 0.2s ease-in, padding 0.2s ease;
           padding: 0;
           font-family: sans-serif;

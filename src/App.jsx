@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Button, Divider, Infobar, TextLine } from "@coalmines/indui";
 import { useFilePicker } from "use-file-picker";
 import wasm from "./main.go";
@@ -7,11 +8,14 @@ import { UtkContext } from "./context/UtkContext";
 import logo from "./img/art/fiedka.svg";
 import Feedback, { renderFeedback } from "./Analysis/Feedback";
 import Main from "./Analysis/Main";
-import { downloadU8a } from "./util/download";
-import { getMeta } from "./util/amd";
+import { downloadU8a, downloadJson } from "./util/download";
 import FullScreenLoader from "./components/FullScreenLoader";
 import Loader from "./components/Loader";
 import LinuxBoot from "./UEFI/LinuxBoot";
+import { uefiActions } from "./UEFI/store";
+import { cbfsActions } from "./CBFS/store";
+import { amdActions, selectAmdMeta } from "./PSP/store";
+import { fmapActions } from "./Flash/store";
 
 const { fmap, cbfsana, utka, utkr, amdana, mklb } = wasm;
 
@@ -26,11 +30,13 @@ const getParseData = ({ status: s, value: v }) =>
 const fullScreenLoader = <FullScreenLoader />;
 
 const Analyze = () => {
+  const dispatch = useDispatch();
+  const store = useSelector((s) => s);
+  const amdMeta = useSelector(selectAmdMeta);
   const [error, setError] = useState(null);
   const [feedback, setFeedback] = useState(null);
   const [fbuf, setFbuf] = useState(null);
   const [file, setFile] = useState(null);
-  const [data, setData] = useState(null);
   const [inProgress, setInProgress] = useState(false);
   const [openFileSelector, { filesContent, loading, errors, plainFiles }] =
     useFilePicker({
@@ -42,6 +48,24 @@ const Analyze = () => {
       maxFileSize: 65,
       // readFilesContent: false, // ignores file content
     });
+
+  const setData = (d) => {
+    if (!d) {
+      dispatch(uefiActions.clear());
+      dispatch(amdActions.clear());
+      dispatch(cbfsActions.clear());
+      dispatch(fmapActions.clear());
+      return;
+    }
+    dispatch(uefiActions.init(d.uefi));
+    dispatch(amdActions.init(d.amd));
+    dispatch(cbfsActions.init(d.cbfs));
+    dispatch(fmapActions.init(d.fmap));
+  };
+
+  const saveData = () => {
+    downloadJson("export.json", store);
+  };
 
   const analyze = async (indata, size) => {
     setData(null);
@@ -61,12 +85,6 @@ const Analyze = () => {
         amd: getParseData(res[2]),
         cbfs: getParseData(res[3]),
       });
-      /*
-      console.info({ fmap: getParseData(res[0]) });
-      console.info({ uefi: getParseData(res[1]) });
-      console.info({ amd: getParseData(res[2]) });
-      console.info({ cbfs: getParseData(res[3]) });
-      */
       setFeedback({
         uefi: getParseFeedback(res[1]),
         amd: getParseFeedback(res[2]),
@@ -79,7 +97,7 @@ const Analyze = () => {
   };
 
   const reanalyze = () => {
-    analyze(fbuf, fbuf.byteLength);
+    analyze(new Uint8Array(fbuf), fbuf.byteLength);
   };
 
   const save = () => {
@@ -97,11 +115,7 @@ const Analyze = () => {
         );
         const w = JSON.parse(res);
         const u = JSON.parse(w.Res);
-        setData({
-          fmap: data.fmap,
-          amd: data.amd,
-          uefi: u,
-        });
+        dispatch(uefiActions.init(u));
         try {
           const d = atob(w.Buf);
           const b = new Uint8Array(d.length);
@@ -133,11 +147,7 @@ const Analyze = () => {
       console.info(`[utk]: replacement done`);
       const w = JSON.parse(res);
       const u = JSON.parse(w.Res);
-      setData({
-        fmap: data.fmap,
-        amd: data.amd,
-        uefi: u,
-      });
+      dispatch(uefiActions.init(u));
       try {
         const d = atob(w.Buf);
         const b = new Uint8Array(d.length);
@@ -167,6 +177,9 @@ const Analyze = () => {
 
   const fileName = plainFiles.length > 0 ? plainFiles[0].name : "";
 
+  // FIXME
+  const outline = JSON.stringify(amdMeta, null, 2);
+
   return (
     <div>
       <menu>
@@ -184,9 +197,12 @@ const Analyze = () => {
           {file && <LinuxBoot onSelectFile={linuxboot} />}
         </div>
         <div className="menu-right">
-          {data && data.amd && (
+          <Button onClick={saveData} disabled={!store}>
+            Export
+          </Button>
+          {outline && (
             <Feedback label="Outline">
-              <pre>{JSON.stringify(getMeta(data.amd), null, 2)}</pre>
+              <pre>{outline}</pre>
             </Feedback>
           )}
           <Feedback label="Feedback">
@@ -194,11 +210,11 @@ const Analyze = () => {
           </Feedback>
         </div>
       </menu>
-      {data ? (
+      {fileName ? (
         <>
           <Divider />
           <UtkContext.Provider value={{ remove }}>
-            <Main data={data} fileName={fileName} />
+            <Main fileName={fileName} />
           </UtkContext.Provider>
         </>
       ) : (

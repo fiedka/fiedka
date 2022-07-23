@@ -1,17 +1,24 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { Tabs } from "@coalmines/indui";
 import UEFIImage from "./UEFIImage";
 import AMDImage from "./AMDImage";
 import CBFSImage from "./CBFSImage";
 import UnknownImage from "./UnknownImage";
-import { getUEFIElements } from "../util/utk";
+import { selectUefi } from "../UEFI/store";
+import { selectAmd } from "../PSP/store";
+import { selectCbfs } from "../CBFS/store";
+import { selectFmap } from "../Flash/store";
 
-const Main = ({ data, fileName }) => {
-  const { amd, cbfs, fmap, intel, uefi } = data;
-  const uefiElements = uefi && getUEFIElements(uefi);
+const Main = ({ fileName }) => {
+  const uefi = useSelector(selectUefi);
+  const amd = useSelector(selectAmd);
+  const cbfs = useSelector(selectCbfs);
+  const fmap = useSelector(selectFmap);
+  const intel = null;
   const menu = [];
-  if (uefiElements && uefiElements.length > 0) {
+  if (uefi && uefi.fvs && uefi.fvs.length > 0) {
     menu.push({
       id: "uefi",
       body: <UEFIImage data={uefi} fmap={fmap} name={fileName} />,
@@ -47,13 +54,6 @@ const Main = ({ data, fileName }) => {
 };
 
 Main.propTypes = {
-  data: PropTypes.exact({
-    amd: PropTypes.object,
-    fmap: PropTypes.object,
-    intel: PropTypes.object,
-    uefi: PropTypes.object,
-    cbfs: PropTypes.object,
-  }),
   fileName: PropTypes.string,
 };
 

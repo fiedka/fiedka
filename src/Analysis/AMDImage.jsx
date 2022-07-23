@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { transformAmdFw } from "../util/amd.js";
 import { MarkedEntriesProvider } from "../context/MarkedEntriesContext";
 import Layout from "../components/Layout";
 import SidePane from "../components/SidePane";
@@ -8,7 +7,7 @@ import FlashUsage from "../components/FlashUsage";
 import PspImage from "../PSP/PspImage";
 
 const AMDImage = ({ data, fmap, name }) => {
-  const pspDirs = transformAmdFw(data);
+  const { dirs } = data;
 
   return (
     <MarkedEntriesProvider>
@@ -19,7 +18,7 @@ const AMDImage = ({ data, fmap, name }) => {
           </SidePane>
         }
       >
-        <PspImage directories={pspDirs} name={name} />
+        <PspImage directories={dirs} name={name} />
       </Layout>
     </MarkedEntriesProvider>
   );

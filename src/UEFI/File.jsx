@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Boop } from "@coalmines/indui";
-
 import Tooltip from "../components/Tooltip";
 import Blocks from "../components/Blocks";
 import Entry from "../components/Entry";
@@ -72,8 +71,8 @@ const File = ({ file, open, onJumpToVolume }) => {
   };
   return (
     <Entry open={open} entry={{ address: 0, size }} header={header}>
-      {depEx && depEx.length > 0 && <DepEx depEx={depEx} />}
-      <div className="top">
+      <div className="content">
+        {depEx && depEx.length > 0 && <DepEx depEx={depEx} />}
         {name && <div>guid: {guid.toUpperCase()}</div>}
         <span>type: {fileType}</span>
         <div>size: {size}</div>
@@ -83,7 +82,9 @@ const File = ({ file, open, onJumpToVolume }) => {
         )}
       </div>
       <style jsx>{`
-        .top {
+        .content {
+          position: relative;
+          height: 100%;
         }
       `}</style>
     </Entry>

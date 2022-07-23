@@ -26,6 +26,12 @@ const getMarkedBlocks = ({ address, length }) => {
 
 const FlashUsage = ({ usage }) => {
   const markedEntriesContext = useContext(MarkedEntriesContext);
+
+  // TODO
+  if (!usage) {
+    return "no fmap data";
+  }
+
   const { hoveredEntry, markedEntries } = markedEntriesContext;
   const hoveredBlocks = (hoveredEntry && getMarkedBlocks(hoveredEntry)) || [];
   const markedBlocks =
