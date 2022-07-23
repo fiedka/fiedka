@@ -40,7 +40,7 @@ const Analyze = () => {
   const [inProgress, setInProgress] = useState(false);
   const [openFileSelector, { filesContent, loading, errors, plainFiles }] =
     useFilePicker({
-      multiple: true,
+      multiple: true, // FIXME: remove this, should make it easier
       readAs: "ArrayBuffer",
       // accept: ['.bin', '.rom'],
       limitFilesConfig: { min: 1, max: 1 },
