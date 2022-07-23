@@ -7,7 +7,7 @@ import { UtkContext } from "./context/UtkContext";
 import logo from "./img/art/fiedka.svg";
 import Feedback, { renderFeedback } from "./Analysis/Feedback";
 import Main from "./Analysis/Main";
-import { download } from "./util/download";
+import { downloadU8a } from "./util/download";
 import { getMeta } from "./util/amd";
 import FullScreenLoader from "./components/FullScreenLoader";
 import Loader from "./components/Loader";
@@ -83,7 +83,7 @@ const Analyze = () => {
   };
 
   const save = () => {
-    download(`${fileName}.mod`, fbuf);
+    downloadU8a(`${fileName}.mod`, fbuf);
   };
 
   const remove = async (guids) => {
