@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { Boop } from "@coalmines/indui";
+import { selectAnnotation } from "./store";
 import Tooltip from "../components/Tooltip";
 import Blocks from "../components/Blocks";
 import Entry from "../components/Entry";
@@ -17,17 +19,19 @@ export const getFviGuid = (file) => {
 
 const File = ({ file, open, onJumpToVolume }) => {
   const [annotating, setAnnotating] = useState(false);
-  const [annotation, setAnnotation] = useState("");
-  const { removeFile, removals } = useContext(EditContext);
+  const { annotate, /* annotations, */ removeFile, removals } =
+    useContext(EditContext);
+  const annotation = useSelector(selectAnnotation(file.guid));
   // TODO...
   const { guid, name, size, checksum, fileType, depEx } = file;
+  // const annotation = annotations.find((a) => a.guid === guid)?.annotation || "";
 
   const toggleAnnotate = (e) => {
     e.stopPropagation();
     setAnnotating(!annotating);
   };
 
-  const onAnnotate = (e) => setAnnotation(e.target.value);
+  const onAnnotate = (e) => annotate({ guid, annotation: e.target.value });
 
   const rm = async (e) => {
     e.stopPropagation();
@@ -42,7 +46,7 @@ const File = ({ file, open, onJumpToVolume }) => {
     guid === "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF" ? null : (
       <span>
         <button onClick={toggleAnnotate}>
-          {annotation.length ? "📝" : "🗒️"}
+          {annotation && annotation.length ? "📝" : "🗒️"}
         </button>
         <button onClick={rm}>{removing ? "🔥" : "🗑️"}</button>
       </span>
