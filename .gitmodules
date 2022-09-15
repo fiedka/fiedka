@@ -1,6 +1,7 @@
-[submodule "src/efiXplorer"]
-	path = src/efiXplorer
-	url = https://github.com/binarly-io/efiXplorer
 [submodule "src/img/art"]
 	path = src/img/art
 	url = https://github.com/fiedka/art
+[submodule "src/guiddb"]
+	path = src/guiddb
+	url = https://github.com/binarly-io/guiddb
+	branch = main
