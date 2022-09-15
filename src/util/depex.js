@@ -1,4 +1,4 @@
-import guids from "../efiXplorer/guids/guids.json";
+import guids from "../guiddb/guids.json";
 import { hexifyPadded } from "./hex";
 
 export const hexifyBigE = (i, n) =>
