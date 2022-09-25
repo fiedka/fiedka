@@ -197,6 +197,7 @@ const Analyze = () => {
           {file && <LinuxBoot onSelectFile={linuxboot} />}
         </div>
         <div className="menu-right">
+          <Button>FAUCET 🚰</Button>
           <Button onClick={saveData} disabled={!store}>
             Export ⬇️
           </Button>

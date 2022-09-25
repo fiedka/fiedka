@@ -55,6 +55,7 @@ const File = memo(function File({ file, open, onJumpToVolume }) {
           {annotation && annotation.length ? "📝" : "🗒️"}
         </button>
         <button onClick={rm}>{removing ? "🔥" : "🗑️"}</button>
+        <button>💧</button>
       </span>
     );
   const headline = name || guid.toUpperCase();
