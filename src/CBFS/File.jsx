@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import Blocks from "../components/Blocks";
 import Entry from "../components/Entry";
+import { hexify } from "../util/hex";
 
 const File = ({ data, open }) => {
   const entry = { address: data.Start, length: data.Size };
@@ -42,8 +43,8 @@ const File = ({ data, open }) => {
             <td>{data.Compression || "none"}</td>
           </tr>
           <tr>
-            <th>start</th>
-            <td>{data.Start}</td>
+            <th>address</th>
+            <td>{hexify(data.Start)}</td>
           </tr>
           <tr>
             <th>size</th>
