@@ -24,7 +24,6 @@ const File = ({ file, open, onJumpToVolume }) => {
   const annotation = useSelector(selectAnnotation(file.guid));
   // TODO...
   const { guid, name, size, checksum, fileType, depEx } = file;
-  // const annotation = annotations.find((a) => a.guid === guid)?.annotation || "";
 
   const toggleAnnotate = (e) => {
     e.stopPropagation();
