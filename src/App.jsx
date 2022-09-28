@@ -186,26 +186,26 @@ const Analyze = () => {
         <div className="menu-left">
           <Infobar>analyze a firmware image</Infobar>
           <Button onClick={loadImage}>
-            {loading ? <Loader>Analyzing...</Loader> : "Select file"}
+            {loading ? <Loader>Analyzing...</Loader> : "Select file 📁"}
           </Button>
           <Button onClick={reanalyze} disabled={!fbuf}>
-            Reanalyze
+            Reanalyze 🕵️
           </Button>
           <Button onClick={save} disabled={!fbuf}>
-            Save
+            Save 💾
           </Button>
           {file && <LinuxBoot onSelectFile={linuxboot} />}
         </div>
         <div className="menu-right">
           <Button onClick={saveData} disabled={!store}>
-            Export
+            Export ⬇️
           </Button>
           {outline && (
-            <Feedback label="Outline">
+            <Feedback label="Outline ℹ️">
               <pre>{outline}</pre>
             </Feedback>
           )}
-          <Feedback label="Feedback">
+          <Feedback label="Feedback 🤷">
             {renderFeedback(feedback, error)}
           </Feedback>
         </div>

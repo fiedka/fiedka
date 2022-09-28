@@ -25,7 +25,7 @@ const LinuxBoot = ({ onSelectFile }) => {
 
   return (
     <Button onClick={() => openFileSelector()}>
-      {loading ? <Loader>Reassembling...</Loader> : "LinuxBoot"}
+      {loading ? <Loader>Reassembling...</Loader> : "LinuxBoot 🐧"}
     </Button>
   );
 };
