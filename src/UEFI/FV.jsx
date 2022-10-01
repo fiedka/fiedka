@@ -5,7 +5,7 @@ import File from "./File";
 import Directory from "../components/Directory";
 
 const FV = forwardRef(function FV(
-  { guid, parentGuid: pGuid, size, ffs, onJumpToFV },
+  { guid, parentGuid: pGuid, offset, size, ffs, onJumpToFV },
   ref
 ) {
   const name = `${guid}${pGuid ? ` (${pGuid})` : ""}`.toUpperCase();
@@ -15,6 +15,7 @@ const FV = forwardRef(function FV(
     <Directory
       name={name}
       meta={meta}
+      offset={offset}
       size={size}
       files={files}
       renderFile={(file, open, key) => (
@@ -28,6 +29,7 @@ const FV = forwardRef(function FV(
 FV.propTypes = {
   guid: PropTypes.string,
   parentGuid: PropTypes.string,
+  offset: PropTypes.number,
   size: PropTypes.number,
   ffs: PropTypes.array,
   onJumpToFV: PropTypes.func,

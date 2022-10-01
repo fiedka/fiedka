@@ -65,11 +65,12 @@ const FirmwareVolumes = ({ fvs, name }) => {
         </span>
       </header>
       <section>
-        {vols.map(({ guid, parentGuid, size, files, ref }, i) => (
+        {vols.map(({ guid, parentGuid, offset, size, files, ref }, i) => (
           <FV
             key={i}
             guid={guid}
             parentGuid={parentGuid}
+            offset={offset}
             size={size}
             ffs={filterFfs(files, filter)}
             ref={ref}
