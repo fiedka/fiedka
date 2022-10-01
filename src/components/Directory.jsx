@@ -1,7 +1,8 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useContext, useState } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 import { TextLine } from "@coalmines/indui";
+import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
 import { hexify } from "../util/hex";
 
 const Directory = forwardRef(function Directory(
@@ -9,12 +10,28 @@ const Directory = forwardRef(function Directory(
   ref
 ) {
   const [expand, setExpand] = useState(true);
+  const { setHoveredEntry } = useContext(MarkedEntriesContext);
+
   const toggleExpand = () => setExpand(!expand);
   const offs = typeof offset === "number" ? `@${hexify(offset)}` : null;
+  const entry = { address: offset, length: size };
+
+  const clearEntry = () => {
+    setHoveredEntry(null);
+  };
+
+  const setEntry = () => {
+    setHoveredEntry(entry);
+  };
 
   return (
     <div ref={ref} className="directory">
-      <div onClick={toggleExpand} className="meta">
+      <div
+        onClick={toggleExpand}
+        onMouseOver={setEntry}
+        onMouseOut={clearEntry}
+        className="meta"
+      >
         <TextLine label={`${meta}, ${files.length} files`}>
           <h3>
             {name} {size}
