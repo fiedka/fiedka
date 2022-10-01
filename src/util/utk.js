@@ -126,7 +126,9 @@ export const transform = (fvs) =>
     const guid = getGuidFromFv(fv);
     const parentGuid = fv.parent && getGuidFromFile(fv.parent);
     const files = transformFiles(fv.Value.Files);
-    return { guid, parentGuid, files };
+    const offset = fv.Value.FVOffset;
+    const size = fv.Value.Length;
+    return { guid, parentGuid, offset, size, files };
   });
 
 export const getUEFIElements = (data) => {
