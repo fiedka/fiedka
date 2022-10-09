@@ -1,4 +1,5 @@
 const EFI_SECTION_FVI = "EFI_SECTION_FIRMWARE_VOLUME_IMAGE";
+const EFI_SECTION_COMPRESSION = "EFI_SECTION_COMPRESSION";
 const EFI_SECTION_GUID = "EFI_SECTION_GUID_DEFINED";
 const EFI_SECTION_USER_INTERFACE = "EFI_SECTION_USER_INTERFACE";
 const EFI_SECTION_DXE_DEPEX = "EFI_SECTION_DXE_DEPEX";
@@ -74,6 +75,18 @@ export const getFvsFromFile = (f) => {
       }
     });
   }
+  const comp = f.Sections.find((s) => s.Type === EFI_SECTION_COMPRESSION);
+  console.info("COMPRESSION:", { comp });
+  // TODO
+  /*
+  if (comp && comp.Encapsulated) {
+    comp.Encapsulated.forEach((e) => {
+      if (e.Value.Type === EFI_SECTION_FVI) {
+        e.Value.Encapsulated.forEach((fv) => fvs.push(fv));
+      }
+    });
+  }
+  */
   return fvs;
 };
 
