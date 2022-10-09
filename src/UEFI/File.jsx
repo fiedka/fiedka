@@ -18,7 +18,7 @@ export const getFviGuid = (file) => {
 const File = ({ file, open, onJumpToVolume }) => {
   const { removeFile, removals } = useContext(EditContext);
   // TODO...
-  const { guid, name, size, fileType, depEx } = file;
+  const { guid, name, size, checksum, fileType, depEx } = file;
 
   const rm = async (e) => {
     e.stopPropagation();
@@ -76,6 +76,7 @@ const File = ({ file, open, onJumpToVolume }) => {
         {name && <div>guid: {guid.toUpperCase()}</div>}
         <span>type: {fileType}</span>
         <div>size: {size}</div>
+        <div>checksum: {JSON.stringify(checksum)}</div>
         <Blocks size={size} />
         {file.childFvs.length > 0 && (
           <Boop onClick={jumpToVolume}>Jump to firmware volume</Boop>
