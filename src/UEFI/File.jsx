@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { memo, useContext, useState } from "react";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { Boop } from "@coalmines/indui";
@@ -17,20 +17,27 @@ export const getFviGuid = (file) => {
   }
 };
 
-const File = ({ file, open, onJumpToVolume }) => {
+const File = memo(function File({ file, open, onJumpToVolume }) {
   const [annotating, setAnnotating] = useState(false);
-  const { annotate, /* annotations, */ removeFile, removals } =
-    useContext(EditContext);
-  const annotation = useSelector(selectAnnotation(file.guid));
-  // TODO...
+  const { annotate, removeFile, removals } = useContext(EditContext);
+  // TODO: allow for loading an initial annotation from a file, memoize
+  // const initialAnnotation = useSelector(selectAnnotation(file.guid));
+  const [annotation, setAnnotation] = useState("");
   const { guid, name, size, checksum, fileType, depEx } = file;
+
+  console.info("render", guid);
 
   const toggleAnnotate = (e) => {
     e.stopPropagation();
     setAnnotating(!annotating);
   };
 
-  const onAnnotate = (e) => annotate({ guid, annotation: e.target.value });
+  const onAnnotate = (e) => {
+    const a = e.target.value;
+    setAnnotation(a);
+    // TODO: debounce
+    annotate({ guid, annotation: a });
+  };
 
   const rm = async (e) => {
     e.stopPropagation();
@@ -128,7 +135,7 @@ const File = ({ file, open, onJumpToVolume }) => {
       `}</style>
     </Entry>
   );
-};
+});
 
 File.propTypes = {
   file: PropTypes.object,
