@@ -11,17 +11,18 @@ const FV = forwardRef(function FV(
   const name = `${guid}${pGuid ? ` (${pGuid})` : ""}`.toUpperCase();
   const meta = `${size} bytes`;
   const files = ffs || [];
+  const RenderFile = ({ key, file, open }) => (
+    <File key={key} file={file} open={open} onJumpToVolume={onJumpToFV} />
+  );
   return (
     <Directory
+      ref={ref}
       name={name}
       meta={meta}
       offset={offset}
       size={size}
       files={files}
-      renderFile={(file, open, key) => (
-        <File key={key} file={file} open={open} onJumpToVolume={onJumpToFV} />
-      )}
-      ref={ref}
+      renderFile={RenderFile}
     />
   );
 });
