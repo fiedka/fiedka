@@ -2,29 +2,18 @@ import React, { createRef, useState } from "react";
 import PropTypes from "prop-types";
 import { Boop, Button, Input, TextLine } from "@coalmines/indui";
 import FV from "./FV";
+import { matches } from "../util/safeMatch";
 
 const jumpToTop = () => window.scrollTo(0, 2);
-
-const matches = (filters, val) =>
-  val && filters.some((f) => {
-    try {
-      // NOTE: This applies a regex, which may throw for an invalid expression.
-      // Example: `\`
-      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
-      const r = val.toLowerCase().match(f);
-      return r;
-    } catch (e) {
-      return false;
-    }
-  });
 
 const filterFfs = (files, filter) => {
   if (!filter) {
     return files;
   }
-  const filters = filter.toLowerCase().split(" ");
   return files.filter(
-    ({ name, guid }) => matches(filters, name) || matches(filters, guid)
+    ({ name, guid }) =>
+      name && matches(name, filter) ||
+      guid && matches(guid, filter)
   );
 };
 

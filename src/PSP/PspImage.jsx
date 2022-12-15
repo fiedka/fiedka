@@ -4,6 +4,7 @@ import PspDir from "../PSP/PspDir";
 import { Boop, Button, Input, TextLine } from "@coalmines/indui";
 import { PubKeyProvider } from "../context/PubKeyContext";
 import { hexify } from "../util/hex";
+import { matches } from "../util/safeMatch";
 
 const jumpToTop = () => window.scrollTo(0, 2);
 
@@ -23,13 +24,18 @@ const filterDir = (dir, filter) => {
   if (!filter) {
     return dir;
   }
-  const f = filter.toLowerCase();
   // sectionType can be an array, so stringify first
   return {
     ...dir,
     entries: dir.entries.filter(
-      (e) =>
-        e.sectionType && JSON.stringify(e.sectionType).toLowerCase().match(f)
+      (e) => {
+        // Retain entries without a section types so they do not feel lost.
+        if (!e.sectionType) {
+          return true;
+        }
+        const stype = JSON.stringify(e.sectionType).toLowerCase();
+        return matches(stype, filter);
+      }
     ),
   };
 };
