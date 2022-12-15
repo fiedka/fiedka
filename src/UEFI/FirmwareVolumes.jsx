@@ -6,7 +6,17 @@ import FV from "./FV";
 const jumpToTop = () => window.scrollTo(0, 2);
 
 const matches = (filters, val) =>
-  val && filters.some((f) => val.toLowerCase().match(f));
+  val && filters.some((f) => {
+    try {
+      // NOTE: This applies a regex, which may throw for an invalid expression.
+      // Example: `\`
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+      const r = val.toLowerCase().match(f);
+      return r;
+    } catch (e) {
+      return false;
+    }
+  });
 
 const filterFfs = (files, filter) => {
   if (!filter) {
