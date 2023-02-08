@@ -25,7 +25,7 @@ const File = memo(function File({ file, open, onJumpToVolume }) {
   const [annotation, setAnnotation] = useState("");
   const { guid, name, size, checksum, fileType, depEx } = file;
 
-  console.info("render", guid);
+  // console.info("render", guid);
 
   const toggleAnnotate = (e) => {
     e.stopPropagation();
@@ -139,6 +139,7 @@ const File = memo(function File({ file, open, onJumpToVolume }) {
 });
 
 File.propTypes = {
+  // key: PropTypes.string,
   file: PropTypes.object,
   open: PropTypes.bool,
   onJumpToVolume: PropTypes.func,

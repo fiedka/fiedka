@@ -3,6 +3,16 @@ import PropTypes from "prop-types";
 import { Button, Divider, TextLine } from "@coalmines/indui";
 import colors from "../util/colors";
 
+const List = ({ data }) => {
+  const items = Object.entries(data).filter(([_, v]) => v).map(([k, v]) => (
+    <li key={k}>
+      {k}: {v}
+    </li>
+  ));
+
+  return <dl>{items}</dl>;
+};
+
 export const renderFeedback = (feedback, errors) => {
   if (!(feedback || errors)) {
     return null;
@@ -15,15 +25,7 @@ export const renderFeedback = (feedback, errors) => {
           <TextLine>
             <h2>Analysis Feedback</h2>
           </TextLine>
-          <dl>
-            {Object.entries(feedback)
-              .filter(([_, v]) => v)
-              .map(([k, v]) => (
-                <li key={k}>
-                  {k}: {v}
-                </li>
-              ))}
-          </dl>
+            <List data={feedback} />
         </section>
       )}
       {feedback && errors && <Divider />}
