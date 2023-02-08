@@ -29,6 +29,7 @@ export const EditProvider = ({ children }) => {
         clear,
         removals,
         setRemovals,
+        // annotations,
         annotate,
       }}
     >

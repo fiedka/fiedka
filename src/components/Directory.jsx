@@ -6,7 +6,7 @@ import { MarkedEntriesContext } from "../context/MarkedEntriesContext";
 import { hexify } from "../util/hex";
 
 const Directory = forwardRef(function Directory(
-  { name, meta, offset, size, files, renderFile: File },
+  { name, meta, offset, size, files, renderFile },
   ref
 ) {
   const [expand, setExpand] = useState(true);
@@ -40,9 +40,7 @@ const Directory = forwardRef(function Directory(
         </TextLine>
       </div>
       <div className={cn("files", { expand })}>
-        {files.map((f, i) => (
-          <File file={f} open={expand} key={`${f.id}${i}`} />
-        ))}
+        {files.map((f, i) => renderFile(f, expand, `${f.id}${i}`))}
       </div>
       <style jsx>{`
         .directory {
