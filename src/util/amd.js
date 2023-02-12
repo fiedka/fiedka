@@ -81,7 +81,7 @@ export const transformBiosDir = (dir, range, level) => ({
 
 // TODO: Distinguish PSP and BIOS directory generations when Fiano supports it
 export const transformAmdFw = (fw) => {
-  console.info({ fw });
+  // console.info({ fw });
   const dirs = [];
   fw.PSPDirectories.forEach((d) => {
     if (d.PSPDirectoryLevel1) {
