@@ -36,80 +36,16 @@
     "url": "https://github.com/orangecms/utk-web/issues"
   },
   "homepage": "https://fiedka.app/",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "fiedka"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "linux"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ],
-      "plugins": [
-        [
-          "@electron-forge/plugin-webpack",
-          {
-            "devServer": {
-              "client": {
-                "overlay": {
-                  "errors": true,
-                  "warnings": false
-                }
-              }
-            },
-            "mainConfig": "./webpack.main.config.js",
-            "renderer": {
-              "config": "./webpack.renderer.config.js",
-              "entryPoints": [
-                {
-                  "html": "./src/index.html",
-                  "js": "./src/renderer.ts",
-                  "name": "main_window"
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "fiedka",
-              "name": "fiedka"
-            }
-          }
-        }
-      ]
-    }
-  },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-react": "^7.14.5",
-    "@electron-forge/cli": "^6.0.0-beta.63",
-    "@electron-forge/maker-deb": "^6.0.0-beta.63",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
-    "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "@electron-forge/plugin-webpack": "^6.0.0-beta.63",
-    "@electron-forge/publisher-github": "^6.0.0-beta.63",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-react": "^7.18.6",
+    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/maker-deb": "^6.0.5",
+    "@electron-forge/maker-rpm": "^6.0.5",
+    "@electron-forge/maker-squirrel": "^6.0.5",
+    "@electron-forge/maker-zip": "^6.0.5",
+    "@electron-forge/plugin-webpack": "^6.0.5",
+    "@electron-forge/publisher-github": "^6.0.5",
     "@fiedka/golang-wasm-async-loader": "^4.0.0",
     "@storybook/addon-actions": "^6.1.17",
     "@storybook/addons": "^6.1.17",
@@ -117,9 +53,9 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "@vercel/webpack-asset-relocator-loader": "1.6.0",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^9.1.2",
     "css-loader": "^6.0.0",
-    "electron": "^16.2.5",
+    "electron": "^23.0.0",
     "eslint": "^7.20.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jest": "^24.1.3",
