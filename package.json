@@ -55,6 +55,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+    "@wasm-tool/wasm-pack-plugin": "^1.6.0",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
     "electron": "^24.3.0",
