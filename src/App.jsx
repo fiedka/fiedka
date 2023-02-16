@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Divider, Infobar, TextLine } from "@coalmines/indui";
 import { useFilePicker } from "use-file-picker";
-import wasm from "./main.go";
+import gowasm from "./main.go";
 import { globalStyle, blockStyle } from "./global-style";
 import { UtkContext } from "./context/UtkContext";
 import logo from "./img/art/fiedka.svg";
@@ -16,8 +16,10 @@ import { uefiActions } from "./UEFI/store";
 import { cbfsActions } from "./CBFS/store";
 import { amdActions, selectAmdMeta } from "./PSP/store";
 import { fmapActions } from "./Flash/store";
+import { romulan } from "./rs/pkg";
+import { transformRomulanDirs } from "./util/amd";
 
-const { fmap, cbfsana, utka, utkr, amdana, mklb } = wasm;
+const { fmap, cbfsana, utka, utkr, amdana, mklb } = gowasm;
 
 // use this instead of the real utka for testing only amdana
 // const utka = () => Promise.reject("Skipping UEFI analysis");
@@ -64,9 +66,11 @@ const Analyze = () => {
   };
 
   const analyze = async (indata, size) => {
+    setInProgress(true);
     setData(null);
     setFeedback(null);
     setError(null);
+
     // TODO: fmap should never fail, what should we do if it does though?
     try {
       const res = await Promise.allSettled([
@@ -92,11 +96,25 @@ const Analyze = () => {
       console.error(e);
       setError((errors || []).concat(e));
     }
+    try {
+      const rparsed = await romulan([...indata]);
+      const dirs = transformRomulanDirs(rparsed.dirs);
+      const meta = {}; // TODO: create from efs
+      console.log(rparsed.efs);
+      dispatch(amdActions.set({ dirs, meta }));
+    } catch (e) {
+      console.error(e);
+      setError((errors || []).concat(e));
+    }
+    setInProgress(false);
   };
 
-  const reanalyze = () => {
-    analyze(new Uint8Array(fbuf), fbuf.byteLength);
-  };
+  const reanalyze = useCallback(() => {
+    if (fbuf) {
+      setInProgress(true);
+      analyze(new Uint8Array(fbuf), fbuf.byteLength);
+    }
+  }, [fbuf]);
 
   const save = () => {
     downloadU8a(`${fileName}.mod`, fbuf);
@@ -167,9 +185,12 @@ const Analyze = () => {
       const f = filesContent[0].content;
       setFile(f);
       setFbuf(f);
-      analyze(new Uint8Array(f), f.byteLength);
     }
   }, [filesContent]);
+
+  useEffect(() => {
+      reanalyze();
+  }, [reanalyze]);
 
   const fileName = plainFiles.length > 0 ? plainFiles[0].name : "";
 
@@ -207,7 +228,7 @@ const Analyze = () => {
           </Feedback>
         </div>
       </menu>
-      {fileName ? (
+      {fileName && !inProgress && !loading ? (
         <>
           <Divider />
           <UtkContext.Provider value={{ remove }}>
@@ -225,6 +246,7 @@ const Analyze = () => {
         </main>
       )}
       {inProgress && fullScreenLoader}
+      {loading && fullScreenLoader}
       <style jsx>{`
         menu {
           display: flex;

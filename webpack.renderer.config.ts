@@ -9,6 +9,10 @@ rules.push({
 });
 
 export const rendererConfig: Configuration = {
+  experiments: {
+    asyncWebAssembly: true,
+    // layers: true,
+  },
   module: {
     rules,
   },

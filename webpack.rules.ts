@@ -1,5 +1,11 @@
 import type { ModuleOptions } from "webpack";
 
+// For files that transpile to WebAssembly, make sure to set the module type
+// in the 'module.rules' section of the config
+// (e. g. 'type: "webassembly/async"').
+// (Source code omitted for this binary file)
+// type: "webassembly/async"
+
 export const rules: Required<ModuleOptions>["rules"] = [
   {
     // We"re specifying native_modules in the test because the asset relocator loader generates a
