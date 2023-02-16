@@ -1,5 +1,7 @@
 # Fiedka
 
+<img src="https://github.com/fiedka/art/raw/main/fiedka.png" alt="Fiedka" height="120" />
+
 [Fiedka](https://fiedka.app) is a firmware editor app with back-ends running in
 [WebAssembly](#webassembly).
 
