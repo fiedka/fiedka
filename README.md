@@ -1,14 +1,20 @@
 # Fiedka
 
 This is a work-in-progress version of [Fiedka](https://fiedka.app), based on the
-[utk-web](https://github.com/fiedka/fiedka/tree/utk-web) prototype with a
-back-end running in [WebAssembly](#webassembly) and written in Go.
+[utk-web](https://github.com/fiedka/fiedka/tree/utk-web) prototype.
+
+<img src="https://github.com/fiedka/art/raw/main/fiedka.png" alt="Fiedka" height="120" />
 
 [![Release](
 https://github.com/fiedka/fiedka/actions/workflows/shipit.yml/badge.svg)](
 https://github.com/fiedka/fiedka/actions/workflows/shipit.yml)
 
-## Setup
+## Releases
+
+Binaries for Linux are [published on GitHub](
+https://github.com/fiedka/fiedka/releases).
+
+## Build setup
 
 The app is based on [Electron](https://www.electronjs.org/).
 
@@ -108,11 +114,6 @@ If you want to add additional Go packages beyond what you currently find in
 ```sh
 GOOS=js GOARCH=wasm go get github.com/some-org/some-repo
 ```
-
-## Releases
-
-Binaries for Linux are [published on GitHub](
-https://github.com/fiedka/fiedka/releases).
 
 ## UEFI
 
