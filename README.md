@@ -13,12 +13,18 @@ Binaries are [published on GitHub](https://github.com/fiedka/fiedka/releases).
 
 ## Development
 
-The app is based on Electron.
+The app is based on [Electron](https://www.electronjs.org/).
 
 You need to have a [Node.js](https://nodejs.org/) runtime and `npm` installed.
-For the back-end, you need [Go](https://go.dev/) version 1.21 at least.
+For the back-ends, you need [Go](https://go.dev/) version 1.21 at least, as
+well as [Rust](https://www.rust-lang.org/) and [`wasm-pack`](
+https://github.com/rustwasm/wasm-pack) in your `$PATH`.
+
 Find them in your respective OS distribution and install them through your
-package manager, e.g., `yay -S go nodejs npm`.
+package manager, e.g., `yay -S go nodejs npm rust wasm-pack`.
+
+For `wasm-pack`, you can also `cargo install wasm-pack` (recommended) or use the
+[installer](https://rustwasm.github.io/wasm-pack/installer/).
 
 To install the dependencies, run `npm install`.
 
@@ -93,6 +99,18 @@ See [retrage's nightly OVMF builds](https://retrage.github.io/edk2-nightly/).
 Download `RELEASEX64_OVMF.fd` and load it using the file picker.
 
 ## WebAssembly
+
+Fiedka's back-ends are running in a [WebAssembly](https://webassembly.org/)
+context. In order to call into them, two Webpack loaders are set up:
+
+- [@fiedka/golang-wasm-async-loader](https://github.com/fiedka/webpack-golang-wasm-async-loader)
+- [@wasm-tool/wasm-pack-plugin](https://github.com/wasm-tool/wasm-pack-plugin)
+
+<img src="https://rustwasm.github.io/wasm-pack/public/img/wasm-ferris.png"
+alt="Rust Wasm" height="180" />
+<img src="https://github.com/fiedka/webpack-golang-wasm-async-loader/raw/main/docs/wasm-gopher.png" alt="Go Wasm" height="240" />
+
+### More on Wasm
 
 - [Research on WebAssembly](https://github.com/sophoslabs/WebAssembly)
 - [Understanding WebAssembly](
