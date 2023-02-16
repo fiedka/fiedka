@@ -1,3 +1,9 @@
+// For files that transpile to WebAssembly, make sure to set the module type
+// in the 'module.rules' section of the config
+// (e. g. 'type: "webassembly/async"').
+// (Source code omitted for this binary file)
+// type: "webassembly/async"
+
 module.exports = [
   // Add support for native node modules
   {

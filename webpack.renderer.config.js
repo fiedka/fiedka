@@ -7,6 +7,10 @@ rules.push({
 });
 
 module.exports = {
+  experiments: {
+    asyncWebAssembly: true,
+    // layers: true,
+  },
   module: {
     rules,
   },
