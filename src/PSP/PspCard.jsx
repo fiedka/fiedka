@@ -174,6 +174,7 @@ const PspCard = ({ psp, open = true }) => {
     md5,
     sizes,
     meta,
+    description,
   } = psp;
 
   const entry = { address, length: size };
@@ -249,11 +250,19 @@ const PspCard = ({ psp, open = true }) => {
               <Extra data={signature} label="signature" />
               <Extra data={sigKey} label="signing key" />
               <Extra data={encFingerprint} label="encryption key" />
+                <tr>
+                  <th>subprogram</th>
+                  <td>{meta.subprogram}</td>
+                </tr>
+                <tr>
+                  <th>ROM ID</th>
+                  <td>{meta.romId}</td>
+                </tr>
             </tbody>
           </table>
           <div className="info">
             <Blocks size={size} />
-            {JSON.stringify(meta, 0, 2)}
+            {description}
           </div>
         </span>
       </div>
