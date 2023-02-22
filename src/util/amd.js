@@ -140,3 +140,44 @@ export const getMeta = (data) => {
     },
   };
 };
+
+const transformRomulanDirEntry = (e) => {
+  const {
+    source: address,
+    destination: destinationAddress,
+    size,
+    kind: sectionType,
+    sub_program: subprogram,
+  } = e.entry;
+  return {
+    description: e.descr,
+    address: address & addrMask,
+    destinationAddress,
+    size: size === ffffffff ? 0 : size,
+    sectionType,
+    info: [], // FIXME: fun with flags...
+    version: "abcx", // FIXME
+    meta: {
+      subprogram,
+      romId: 0, // FIXME
+    },
+    sizes: {},
+  };
+};
+
+const transformRomulanDir = (d) => {
+  const {
+    checksum,
+    magic,
+  } = d.header;
+  const entries = d.entries.map(e => transformRomulanDirEntry(e));
+  return {
+    address: 0,
+    checksum,
+    magic,
+    directoryType: d.family,
+    entries,
+  };
+};
+
+export const transformRomulanDirs = (dirs) => dirs.map(d => transformRomulanDir(d));
