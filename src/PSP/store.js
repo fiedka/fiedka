@@ -5,6 +5,13 @@ const amdSlice = createSlice({
   name: "amd",
   initialState: null,
   reducers: {
+    set: (s, a) =>
+      a.payload
+        ? {
+            dirs: a.payload.dirs,
+            meta: a.payload.meta,
+          }
+        : null,
     init: (s, a) =>
       a.payload
         ? {
