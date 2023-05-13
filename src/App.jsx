@@ -71,21 +71,23 @@ const Analyze = () => {
     try {
       const res = await Promise.allSettled([
         fmap(indata, size),
-        utka(indata, size),
-        amdana(indata, size),
-        cbfsana(indata, size),
+        // utka(indata, size),
+        // amdana(indata, size),
+        // cbfsana(indata, size),
       ]);
       setData({
         fmap: getParseData(res[0]),
-        uefi: getParseData(res[1]),
-        amd: getParseData(res[2]),
-        cbfs: getParseData(res[3]),
+        // uefi: getParseData(res[1]),
+        // amd: getParseData(res[2]),
+        // cbfs: getParseData(res[3]),
       });
+      /*
       setFeedback({
         uefi: getParseFeedback(res[1]),
         amd: getParseFeedback(res[2]),
         cbfs: getParseFeedback(res[3]),
       });
+      */
     } catch (e) {
       console.error(e);
       setError((errors || []).concat(e));
