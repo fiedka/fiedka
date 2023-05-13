@@ -26,10 +26,23 @@ For DXE GUIDs, efiXplorer is used as a submodule. Do an initial checkout:
 git submodule update --init --checkout
 ```
 
-### Adding Go dependencies
+### Managing Go dependencies
+
+Due to targeting WebAssembly, we need it to tell the Go compiler to manage
+modules.
+
+**Note**: The `go.mod` file is in `src/`. Run Go commands in that directory.
+
+To upgrade Fiano, one of Fiedka's core dependencies:
 
 ```sh
-GOOS=js GOARCH=wasm go get github.com/...
+GOOS=js GOARCH=wasm go get github.com/linuxboot/fiano@v1.2.0
+```
+
+If you want to add a new dependency, run:
+
+```sh
+GOOS=js GOARCH=wasm go get github.com/foo-org/foobar-go@v1.2.3
 ```
 
 ### Running
