@@ -5,7 +5,7 @@
   "description": "Fiedka the Firmware Editor",
   "main": ".webpack/main",
   "scripts": {
-    "storybook": "storybook-server --ci --port 6006",
+    "storybook": "TS_NODE_PROJECT='./.storybook/tsconfig.json' storybook dev --ci --port 6006",
     "start": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge start",
     "package": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge package",
     "make": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge make",
