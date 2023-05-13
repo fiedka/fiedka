@@ -1,17 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import "./_utils";
 import App from "./App";
 import store from "./store";
 
-function render() {
-  ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.querySelector(".app")
-  );
-}
+const el = document.querySelector(".app");
+const root = createRoot(el);
 
-render();
+const AppWithProviders = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+root.render(<AppWithProviders />);
