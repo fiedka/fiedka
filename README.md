@@ -45,6 +45,13 @@ If you want to add a new dependency, run:
 GOOS=js GOARCH=wasm go get github.com/foo-org/foobar-go@v1.2.3
 ```
 
+**Note**: Running `go get` may leave inconsistencies in `go.mod`.
+Afterwards, always run:
+
+```sh
+go mod tidy
+```
+
 ### Running
 
 ```
