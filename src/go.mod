@@ -8,6 +8,7 @@ require (
 )
 
 require (
+	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/ulikunitz/xz v0.5.11 // indirect
 	golang.org/x/text v0.6.0 // indirect
 )
