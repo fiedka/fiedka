@@ -16,8 +16,10 @@ import { uefiActions } from "./UEFI/store";
 import { cbfsActions } from "./CBFS/store";
 import { amdActions, selectAmdMeta } from "./PSP/store";
 import { fmapActions } from "./Flash/store";
+import { intelActions, selectIntelMeta } from "./Intel/store";
+import LeakedKey from "./Intel/LeakedKey";
 
-const { fmap, cbfsana, utka, utkr, amdana, mklb } = wasm;
+const { fmap, cbfsana, utka, utkr, amdana, mklb, keycheck } = wasm;
 
 // use this instead of the real utka for testing only amdana
 // const utka = () => Promise.reject("Skipping UEFI analysis");
@@ -33,6 +35,7 @@ const Analyze = () => {
   const dispatch = useDispatch();
   const store = useSelector((s) => s);
   const amdMeta = useSelector(selectAmdMeta);
+  const intelMeta = useSelector(selectIntelMeta);
   const [error, setError] = useState(null);
   const [feedback, setFeedback] = useState(null);
   const [fbuf, setFbuf] = useState(null);
@@ -51,16 +54,19 @@ const Analyze = () => {
 
   const setData = (d) => {
     if (!d) {
+      dispatch(fmapActions.clear());
       dispatch(uefiActions.clear());
       dispatch(amdActions.clear());
       dispatch(cbfsActions.clear());
-      dispatch(fmapActions.clear());
+      dispatch(intelActions.clear());
       return;
     }
+    console.info({ fit: d.fit });
+    dispatch(fmapActions.init(d.fmap));
     dispatch(uefiActions.init(d.uefi));
     dispatch(amdActions.init(d.amd));
     dispatch(cbfsActions.init(d.cbfs));
-    dispatch(fmapActions.init(d.fmap));
+    dispatch(intelActions.init(d.fit));
   };
 
   const saveData = () => {
@@ -78,17 +84,20 @@ const Analyze = () => {
         utka(indata, size),
         amdana(indata, size),
         cbfsana(indata, size),
+        keycheck(indata, size),
       ]);
       setData({
         fmap: getParseData(res[0]),
         uefi: getParseData(res[1]),
         amd: getParseData(res[2]),
         cbfs: getParseData(res[3]),
+        fit: getParseData(res[4]),
       });
       setFeedback({
         uefi: getParseFeedback(res[1]),
         amd: getParseFeedback(res[2]),
         cbfs: getParseFeedback(res[3]),
+        fit: getParseFeedback(res[4]),
       });
     } catch (e) {
       console.error(e);
@@ -178,7 +187,10 @@ const Analyze = () => {
   const fileName = plainFiles.length > 0 ? plainFiles[0].name : "";
 
   // FIXME
-  const outline = JSON.stringify(amdMeta, null, 2);
+  const aMeta = amdMeta && JSON.stringify(amdMeta, null, 2);
+  const iMeta = intelMeta && JSON.stringify(intelMeta, null, 2);
+  const outline = aMeta || iMeta;
+  console.info({ intelMeta });
 
   return (
     <div>
@@ -200,11 +212,12 @@ const Analyze = () => {
           <Button onClick={saveData} disabled={!store}>
             Export ⬇️
           </Button>
-          {outline && (
-            <Feedback label="Outline ℹ️">
-              <pre>{outline}</pre>
-            </Feedback>
-          )}
+          <Feedback label="Outline ℹ️">
+            {intelMeta && intelMeta.LeakedKey && <LeakedKey leakedKey={intelMeta.LeakedKey} />}
+            <div style={{ padding: 10, width: 540, height: 300, overflow: "auto" }}>
+              {outline && <pre>{outline}</pre>}
+            </div>
+          </Feedback>
           <Feedback label="Feedback 🤷">
             {renderFeedback(feedback, error)}
           </Feedback>
