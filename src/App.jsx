@@ -17,7 +17,6 @@ import { cbfsActions } from "./CBFS/store";
 import { amdActions, selectAmdMeta } from "./PSP/store";
 import { fmapActions } from "./Flash/store";
 import { romulan } from "./rs/pkg";
-import { transformRomulanDirs } from "./util/amd";
 
 const { fmap, cbfsana, utka, utkr, amdana, mklb } = gowasm;
 
@@ -28,8 +27,12 @@ const getParseFeedback = ({ status: s, reason: r }) =>
   s === "rejected" && r ? r : null;
 const getParseData = ({ status: s, value: v }) =>
   s === "fulfilled" ? JSON.parse(v) : null;
+const getData = ({ status: s, value: v }) =>
+  s === "fulfilled" ? v : null;
 
 const fullScreenLoader = <FullScreenLoader />;
+
+const DEBUG_ROMULAN = true;
 
 const Analyze = () => {
   const dispatch = useDispatch();
@@ -56,7 +59,8 @@ const Analyze = () => {
       return;
     }
     dispatch(uefiActions.init(d.uefi));
-    dispatch(amdActions.init(d.amd));
+    // dispatch(amdActions.init(d.amd));
+    dispatch(amdActions.set(d.amd));
     dispatch(cbfsActions.init(d.cbfs));
     dispatch(fmapActions.init(d.fmap));
   };
@@ -71,47 +75,52 @@ const Analyze = () => {
     setFeedback(null);
     setError(null);
 
-    // TODO: fmap should never fail, what should we do if it does though?
-    try {
-      const res = await Promise.allSettled([
-        fmap(indata, size),
-        // utka(indata, size),
-        // amdana(indata, size),
-        // cbfsana(indata, size),
-      ]);
-      setData({
-        fmap: getParseData(res[0]),
-        // uefi: getParseData(res[1]),
-        // amd: getParseData(res[2]),
-        // cbfs: getParseData(res[3]),
-      });
-      /*
-      setFeedback({
-        uefi: getParseFeedback(res[1]),
-        amd: getParseFeedback(res[2]),
-        cbfs: getParseFeedback(res[3]),
-      });
-      */
-    } catch (e) {
-      console.error(e);
-      setError((errors || []).concat(e));
-    }
-    try {
-      const rparsed = await romulan([...indata]);
-      const dirs = transformRomulanDirs(rparsed.dirs);
-      const meta = {}; // TODO: create from efs
-      console.log(rparsed.efs);
-      dispatch(amdActions.set({ dirs, meta }));
-    } catch (e) {
-      console.error(e);
-      setError((errors || []).concat(e));
-    }
-    setInProgress(false);
+    console.info("START", new Date());
+    setTimeout(async () => {
+      try {
+        const res = await Promise.allSettled([
+          // TODO: fmap should never fail, what should we do if it does though?
+          fmap(indata, size),
+          utka(indata, size),
+          // amdana(indata, size),
+          // cbfsana(indata, size),
+          romulan([...indata]),
+        ]);
+
+        const rparsed = getData(res[2]);
+        if (DEBUG_ROMULAN) {
+          console.log("ROMULAN: ", { ...rparsed });
+        }
+        const { dirs } = rparsed;
+        // TODO: create metadata from efs
+        const meta = {};
+
+        setData({
+          fmap: getParseData(res[0]),
+          uefi: getParseData(res[1]),
+          // amd: getParseData(res[2]),
+          // cbfs: getParseData(res[3]),
+          amd: { dirs, meta },
+        });
+        setFeedback({
+          uefi: getParseFeedback(res[1]),
+          /*
+          amd: getParseFeedback(res[2]),
+          cbfs: getParseFeedback(res[3]),
+          */
+        });
+      } catch (e) {
+        console.error(e);
+        setError((errors || []).concat(e));
+      } finally {
+        console.info("DONE:", new Date());
+        setInProgress(false);
+      }
+    }, 100);
   };
 
   const reanalyze = useCallback(() => {
     if (fbuf) {
-      setInProgress(true);
       analyze(new Uint8Array(fbuf), fbuf.byteLength);
     }
   }, [fbuf]);
@@ -194,6 +203,8 @@ const Analyze = () => {
 
   const fileName = plainFiles.length > 0 ? plainFiles[0].name : "";
 
+  const pending = inProgress || loading;
+
   // FIXME
   const outline = JSON.stringify(amdMeta, null, 2);
 
@@ -228,7 +239,7 @@ const Analyze = () => {
           </Feedback>
         </div>
       </menu>
-      {fileName && !inProgress && !loading ? (
+      {fileName && !(pending) ? (
         <>
           <Divider />
           <UtkContext.Provider value={{ remove }}>
@@ -245,8 +256,7 @@ const Analyze = () => {
           </figure>
         </main>
       )}
-      {inProgress && fullScreenLoader}
-      {loading && fullScreenLoader}
+      {pending && fullScreenLoader}
       <style jsx>{`
         menu {
           display: flex;
