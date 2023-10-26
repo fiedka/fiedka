@@ -4,6 +4,7 @@ use gloo_utils::format::JsValueSerdeExt;
 use romulan::amd;
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
+use wasm_bindgen_futures::JsFuture;
 
 const OFFSET_ADDR_MASK: u32 = 0x00FF_FFFF;
 
@@ -55,7 +56,7 @@ const NO_ENTRY: [u32; 2] = [0, 0xFFFF_FFFF];
 const BIOS_DIR_LVL2_ENTRY: u8 = 0x70;
 
 #[wasm_bindgen]
-pub fn romulan(data: JsValue) -> JsValue {
+pub async fn romulan(data: JsValue) -> js_sys::Promise {
     let bin: Bin = data.into_serde().unwrap();
     let rom = amd::Rom::new(&bin).unwrap();
     let efs = rom.efs();
@@ -112,5 +113,6 @@ pub fn romulan(data: JsValue) -> JsValue {
         dirs,
         err,
     };
-    JsValue::from_serde(&res).unwrap()
+    let res_val = JsValue::from_serde(&res).unwrap();
+    js_sys::Promise::resolve(&res_val)
 }

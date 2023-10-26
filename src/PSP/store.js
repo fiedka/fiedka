@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getMeta, transformAmdFw } from "../util/amd";
+import { getMeta, transformAmdFw, transformRomulanDirs  } from "../util/amd";
 
 const amdSlice = createSlice({
   name: "amd",
@@ -8,7 +8,7 @@ const amdSlice = createSlice({
     set: (s, a) =>
       a.payload
         ? {
-            dirs: a.payload.dirs,
+            dirs: transformRomulanDirs(a.payload.dirs),
             meta: a.payload.meta,
           }
         : null,
