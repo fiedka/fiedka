@@ -9,10 +9,10 @@ import schema from "./exportSchema";
 import { UtkContext } from "../context/UtkContext";
 
 export const EditPaneView = ({ removals = [], setRemovals, remove, clear }) => {
-  const [openFileSelector, { filesContent, errors }] = useFilePicker({
+  const { openFilePicker, filesContent, errors } = useFilePicker({
+    multiple: false,
     accept: [".json"],
-    limitFilesConfig: { min: 1, max: 1 },
-    maxFileSize: 1,
+    maxFileSize: 1, // megabyte
   });
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export const EditPaneView = ({ removals = [], setRemovals, remove, clear }) => {
       <menu>
         <TextLine>DXEs to remove</TextLine>
         <div>
-          <Button small onClick={openFileSelector}>
+          <Button small onClick={openFilePicker}>
             Load 📁
           </Button>
           <Button small disabled={!removals.length} onClick={save}>

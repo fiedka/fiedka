@@ -5,12 +5,11 @@ import { useFilePicker } from "use-file-picker";
 import Loader from "../components/Loader";
 
 const LinuxBoot = ({ onSelectFile }) => {
-  const [openFileSelector, { filesContent, loading, errors, plainFiles }] =
+  const { openFilePicker, filesContent, loading, errors, plainFiles } =
     useFilePicker({
-      multiple: true,
+      multiple: false,
       readAs: "ArrayBuffer",
-      limitFilesConfig: { min: 1, max: 1 },
-      maxFileSize: 15,
+      maxFileSize: 15, // megabytes
     });
 
   const fileName = plainFiles.length > 0 ? plainFiles[0].name : "";
@@ -24,7 +23,7 @@ const LinuxBoot = ({ onSelectFile }) => {
   }, [filesContent]);
 
   return (
-    <Button onClick={() => openFileSelector()}>
+    <Button onClick={openFilePicker}>
       {loading ? <Loader>Reassembling...</Loader> : "LinuxBoot 🐧"}
     </Button>
   );
