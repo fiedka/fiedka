@@ -87,6 +87,6 @@
     "react-redux": "^8.0.5",
     "redux": "^4.2.1",
     "styled-jsx": "^5.1.2",
-    "use-file-picker": "^1.7.0"
+    "use-file-picker": "^2.1.0"
   }
 }

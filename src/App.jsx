@@ -38,15 +38,11 @@ const Analyze = () => {
   const [fbuf, setFbuf] = useState(null);
   const [file, setFile] = useState(null);
   const [inProgress, setInProgress] = useState(false);
-  const [openFileSelector, { filesContent, loading, errors, plainFiles }] =
+  const { openFilePicker, filesContent, loading, errors, plainFiles } =
     useFilePicker({
-      multiple: true,
+      multiple: false,
       readAs: "ArrayBuffer",
-      // accept: ['.bin', '.rom'],
-      limitFilesConfig: { min: 1, max: 1 },
-      // minFileSize: 1, // in megabytes
-      maxFileSize: 65,
-      // readFilesContent: false, // ignores file content
+      maxFileSize: 65, // megabytes
     });
 
   const setData = (d) => {
@@ -164,8 +160,6 @@ const Analyze = () => {
     }
   };
 
-  const loadImage = () => openFileSelector();
-
   useEffect(() => {
     if (filesContent.length) {
       const f = filesContent[0].content;
@@ -185,7 +179,7 @@ const Analyze = () => {
       <menu>
         <div className="menu-left">
           <Infobar>analyze a firmware image</Infobar>
-          <Button onClick={loadImage}>
+          <Button onClick={openFilePicker}>
             {loading ? <Loader>Analyzing...</Loader> : "Select file 📁"}
           </Button>
           <Button onClick={reanalyze} disabled={!fbuf}>
