@@ -2,8 +2,9 @@
 name = "fiedka-rs"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Fiedka's internal Rust interface"
+license = "MIT"
+repository = "https://github.com/fiedka/fiedka"
 
 [lib]
 crate-type = ["cdylib"]
