@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { memo, useContext, useState } from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { Boop } from "@coalmines/indui";
+import { selectAnnotation } from "./store";
 import Tooltip from "../components/Tooltip";
 import Blocks from "../components/Blocks";
 import Entry from "../components/Entry";
@@ -15,10 +17,27 @@ export const getFviGuid = (file) => {
   }
 };
 
-const File = ({ file, open, onJumpToVolume }) => {
-  const { removeFile, removals } = useContext(EditContext);
-  // TODO...
+const File = memo(function File({ file, open, onJumpToVolume }) {
+  const [annotating, setAnnotating] = useState(false);
+  const { annotate, removeFile, removals } = useContext(EditContext);
+  // TODO: allow for loading an initial annotation from a file, memoize
+  // const initialAnnotation = useSelector(selectAnnotation(file.guid));
+  const [annotation, setAnnotation] = useState("");
   const { guid, name, size, checksum, fileType, depEx } = file;
+
+  console.info("render", guid);
+
+  const toggleAnnotate = (e) => {
+    e.stopPropagation();
+    setAnnotating(!annotating);
+  };
+
+  const onAnnotate = (e) => {
+    const a = e.target.value;
+    setAnnotation(a);
+    // TODO: debounce
+    annotate({ guid, annotation: a });
+  };
 
   const rm = async (e) => {
     e.stopPropagation();
@@ -31,7 +50,12 @@ const File = ({ file, open, onJumpToVolume }) => {
     fileType === "driver" ? <Tooltip tip="driver">🚗</Tooltip> : null;
   const infoEmoji =
     guid === "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF" ? null : (
-      <button onClick={rm}>{removing ? "🔥" : "🗑️"}</button>
+      <span>
+        <button onClick={toggleAnnotate}>
+          {annotation && annotation.length ? "📝" : "🗒️"}
+        </button>
+        <button onClick={rm}>{removing ? "🔥" : "🗑️"}</button>
+      </span>
     );
   const headline = name || guid.toUpperCase();
   const header = (
@@ -71,26 +95,47 @@ const File = ({ file, open, onJumpToVolume }) => {
   };
   return (
     <Entry open={open} entry={{ address: 0, size }} header={header}>
-      <div className="content">
-        {depEx && depEx.length > 0 && <DepEx depEx={depEx} />}
-        {name && <div>guid: {guid.toUpperCase()}</div>}
-        <span>type: {fileType}</span>
-        <div>size: {size}</div>
-        <div>checksum: {JSON.stringify(checksum)}</div>
-        <Blocks size={size} />
-        {file.childFvs.length > 0 && (
-          <Boop onClick={jumpToVolume}>Jump to firmware volume</Boop>
-        )}
-      </div>
+      {annotating ? (
+        <div className="content">
+          <textarea onChange={onAnnotate} value={annotation} />
+          {annotation.length === 0 && <span className="floaty">✏️</span>}
+        </div>
+      ) : (
+        <div className="content">
+          {depEx && depEx.length > 0 && <DepEx depEx={depEx} />}
+          {name && <div>guid: {guid.toUpperCase()}</div>}
+          <span>type: {fileType}</span>
+          <div>size: {size}</div>
+          <div>checksum: {JSON.stringify(checksum)}</div>
+          <Blocks size={size} />
+          {file.childFvs.length > 0 && (
+            <Boop onClick={jumpToVolume}>Jump to firmware volume</Boop>
+          )}
+        </div>
+      )}
       <style jsx>{`
         .content {
           position: relative;
           height: 100%;
         }
+        .floaty {
+          position: absolute;
+          top: 6px;
+          left: 12px;
+          pointer-events: none;
+        }
+        textarea {
+          width: 100%;
+          height: 100%;
+          min-height: 100px;
+          border: 0;
+          padding: 6px;
+          resize: none;
+        }
       `}</style>
     </Entry>
   );
-};
+});
 
 File.propTypes = {
   file: PropTypes.object,

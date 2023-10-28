@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { uefiActions } from "./store";
 
 export const EditContext = React.createContext({});
 
 export const EditProvider = ({ children }) => {
   const [removals, setRemovals] = useState([]);
+  const dispatch = useDispatch();
+
+  const annotate = (a) => {
+    dispatch(uefiActions.annotate(a));
+  };
 
   // TODO: support undoing a single removal
   const removeFile = (b) => {
@@ -22,6 +29,7 @@ export const EditProvider = ({ children }) => {
         clear,
         removals,
         setRemovals,
+        annotate,
       }}
     >
       {children}
