@@ -3,11 +3,14 @@ import colors from "./util/colors";
 
 export const globalStyle = css.global`
   html {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
   body {
     margin: 0;
+    padding: 0 10px;
     background-color: #dedede;
     font-size: 12px;
     font-family: sans-serif;
