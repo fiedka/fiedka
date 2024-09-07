@@ -11,5 +11,6 @@ export const plugins = [
   }),
   new WasmPackPlugin({
     crateDirectory: path.resolve(__dirname, 'src', 'rs'),
+    args: '--log-level info --verbose',
   }),
 ];

@@ -81,13 +81,13 @@ const Analyze = () => {
         const res = await Promise.allSettled([
           // TODO: fmap should never fail, what should we do if it does though?
           fmap(indata, size),
-          utka(indata, size),
+          // utka(indata, size),
           // amdana(indata, size),
           // cbfsana(indata, size),
           romulan([...indata]),
         ]);
 
-        const rparsed = getData(res[2]);
+        const rparsed = getData(res[1]);
         if (DEBUG_ROMULAN) {
           console.log("ROMULAN: ", { ...rparsed });
         }
@@ -97,7 +97,7 @@ const Analyze = () => {
 
         setData({
           fmap: getParseData(res[0]),
-          uefi: getParseData(res[1]),
+          // uefi: getParseData(res[1]),
           // amd: getParseData(res[2]),
           // cbfs: getParseData(res[3]),
           amd: { dirs, meta },

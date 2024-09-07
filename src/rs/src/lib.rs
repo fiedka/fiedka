@@ -6,6 +6,8 @@ use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::JsFuture;
 
+mod utils;
+
 const OFFSET_ADDR_MASK: u32 = 0x00FF_FFFF;
 
 type Bin = Vec<u8>;
@@ -32,7 +34,7 @@ struct Res {
 }
 
 fn parse_bios_dir(bin: &[u8], family: String) -> BiosDir {
-    let dir = amd::directory::BiosDirectory::new(&bin);
+    let dir = amd::directory::BiosDirectory::new(bin);
     let d = dir.unwrap();
     let header = d.header();
     let entries = d
@@ -57,6 +59,8 @@ const BIOS_DIR_LVL2_ENTRY: u8 = 0x70;
 
 #[wasm_bindgen]
 pub async fn romulan(data: JsValue) -> js_sys::Promise {
+    utils::set_panic_hook();
+
     let bin: Bin = data.into_serde().unwrap();
     let rom = amd::Rom::new(&bin).unwrap();
     let efs = rom.efs();
