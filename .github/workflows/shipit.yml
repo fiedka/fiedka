@@ -40,7 +40,7 @@ jobs:
     - name: install dependencies
       run: npm install
     - name: install appdmg
-      run: npm i -g appdmg
+      run: npm install appdmg
     - name: publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -61,7 +61,7 @@ jobs:
     - name: install dependencies
       run: npm install
     - name: install appdmg
-      run: npm i -g appdmg
+      run: npm install appdmg
     - name: publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
