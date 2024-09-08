@@ -1,7 +1,7 @@
 {
   "name": "fiedka",
   "productName": "fiedka",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Fiedka the Firmware Editor",
   "main": ".webpack/main",
   "scripts": {
