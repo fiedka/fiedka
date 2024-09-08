@@ -39,6 +39,8 @@ jobs:
         node-version: '18.x'
     - name: install dependencies
       run: npm install
+    - name: install appdmg
+      run: npm i -g appdmg
     - name: publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -58,6 +60,8 @@ jobs:
         node-version: '18.x'
     - name: install dependencies
       run: npm install
+    - name: install appdmg
+      run: npm i -g appdmg
     - name: publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
