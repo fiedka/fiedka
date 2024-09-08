@@ -17,7 +17,7 @@ jobs:
         go-version: '^1.18.1'
     - uses: actions/setup-node@v3
       with:
-        node-version: '18.x'
+        node-version: '20.x'
     - name: install dependencies
       run: npm install
     - name: publish
@@ -34,9 +34,12 @@ jobs:
     - uses: actions/setup-go@v2
       with:
         go-version: '^1.18.1'
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
     - uses: actions/setup-node@v3
       with:
-        node-version: '18.x'
+        node-version: '20.x'
     - name: install dependencies
       run: npm install
     - name: install appdmg
@@ -55,9 +58,12 @@ jobs:
     - uses: actions/setup-go@v2
       with:
         go-version: '^1.18.1'
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
     - uses: actions/setup-node@v3
       with:
-        node-version: '18.x'
+        node-version: '20.x'
     - name: install dependencies
       run: npm install
     - name: install appdmg
