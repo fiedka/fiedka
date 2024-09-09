@@ -51,7 +51,7 @@
     "@electron-forge/plugin-webpack": "^7.4.0",
     "@electron-forge/publisher-github": "^7.4.0",
     "@electron/fuses": "^1.8.0",
-    "@fiedka/golang-wasm-async-loader": "^4.0.0",
+    "@fiedka/golang-wasm-async-loader": "^5.0.0",
     "@storybook/addon-actions": "^8.2.9",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
