@@ -51,7 +51,7 @@ jobs:
       run: npm run publish
 
   publish_on_macos_arm:
-    runs-on: macos-14-arm64
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v4
       with:
