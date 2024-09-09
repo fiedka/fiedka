@@ -14,10 +14,10 @@ jobs:
         submodules: recursive
     - uses: actions/setup-go@v2
       with:
-        go-version: '^1.18.1'
+        go-version: '^1.21.1'
     - uses: actions/setup-node@v3
       with:
-        node-version: '18.x'
+        node-version: '20.x'
     - name: install dependencies
       run: npm install
     - name: publish
