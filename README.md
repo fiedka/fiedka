@@ -1,22 +1,24 @@
 # Fiedka
 
-This is a work-in-progress version of [Fiedka](https://fiedka.app), based on the
-[utk-web](https://github.com/fiedka/fiedka/tree/utk-web) prototype with a
-back-end running in [WebAssembly](#webassembly) and written in Go.
+[Fiedka](https://fiedka.app) is a firmware editor app with back-ends running in
+[WebAssembly](#webassembly).
+
+## Releases
 
 [![Release](
 https://github.com/fiedka/fiedka/actions/workflows/shipit.yml/badge.svg)](
 https://github.com/fiedka/fiedka/actions/workflows/shipit.yml)
+
+Binaries are [published on GitHub](https://github.com/fiedka/fiedka/releases).
 
 ## Development
 
 The app is based on Electron.
 
 You need to have a [Node.js](https://nodejs.org/) runtime and `npm` installed.
-For the back-end, you need [Go](https://go.dev/) version 1.17 at least.
+For the back-end, you need [Go](https://go.dev/) version 1.21 at least.
 Find them in your respective OS distribution and install them through your
 package manager, e.g., `yay -S go nodejs npm`.
-On NixOS you can get a shell with all dependencies by running `nix-shell`.
 
 To install the dependencies, run `npm install`.
 
@@ -28,8 +30,7 @@ git submodule update --init --checkout
 
 ### Managing Go dependencies
 
-Due to targeting WebAssembly, we need it to tell the Go compiler to manage
-modules.
+Due to targeting WebAssembly, we need to pass env vars to the `go` command.
 
 **Note**: The `go.mod` file is in `src/`. Run Go commands in that directory.
 
@@ -68,10 +69,10 @@ fiedka/
 
 #### A: Using a Go workspace
 
-This requires Go 1.18. Create this symlink: `ln -s go.workspace go.work`
-That will tell Go tu use `../fiano` instead of `github.com/linuxboot/fiano`.
+Create this symlink: `ln -s go.workspace go.work`
+That will tell Go to use `../fiano` instead of `github.com/linuxboot/fiano`.
 
-Note: `go.work` is gitignore so that you cannot accidentally commit it.
+Note: `go.work` is gitignored so that you cannot accidentally commit it.
 
 #### B: Using a `replace` directive
 
@@ -82,11 +83,6 @@ replace github.com/linuxboot/fiano => ../../fiano
 ```
 
 Be sure never to have this in a PR to Fiedka. Prefer the workspace method.
-
-## Releases
-
-Binaries for Linux are [published on GitHub](
-https://github.com/fiedka/fiedka/releases).
 
 ## UEFI
 
