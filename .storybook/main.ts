@@ -1,5 +1,6 @@
 import path from "path";
 import type { StorybookConfig } from "@storybook/react-webpack5";
+import { rendererConfig } from "../webpack.renderer.config.ts";
 
 const config: StorybookConfig = {
   stories: [
@@ -38,6 +39,12 @@ const config: StorybookConfig = {
         lazyCompilation: true,
       },
     },
+  },
+  webpackFinal: async (config, { configType }) => {
+    return {
+      ...config,
+      module: rendererConfig.module,
+    };
   },
   docs: {
     autodocs: "tag",

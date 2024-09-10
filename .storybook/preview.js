@@ -1,4 +1,5 @@
 // import type { Preview } from "@storybook/react";
+import React from "react";
 import { Provider } from "react-redux";
 import "../src/_utils";
 import { globalStyle, blockStyle } from "../src/global-style";
@@ -17,14 +18,12 @@ export const decorators = [
     <Provider store={store}>
       <div>
         <Story />
-        {/*
         <style jsx global>
           {globalStyle}
         </style>
         <style jsx global>
           {blockStyle}
         </style>
-        */}
       </div>
     </Provider>
   ),
