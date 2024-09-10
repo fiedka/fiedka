@@ -8,12 +8,18 @@ export const parseEscapedHex = (d) => {
   d.replace(/\\x[0-9,a-f]{2}/g, (x) => parseHex(x));
 };
 
+// This is the portable solution, working in Node.js and web browsers.
+// See: https://stackoverflow.com/a/39460727
 export const b64ToHex = (s) => {
+  let result = "";
   if (typeof s === "string") {
-    const b = Buffer.from(s, "base64");
-    return b.toString("hex");
+    const b = atob(s);
+    for (let i = 0; i < b.length; i++) {
+      const hex = b.charCodeAt(i).toString(16);
+      result += (b.length === 2 ? hex : '0' + hex);
+    }
   }
-  return "";
+  return result.toUpperCase();
 };
 
 export const numToHex = (n) => n.toString(16);
