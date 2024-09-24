@@ -45,6 +45,7 @@ const Directory = forwardRef(function Directory(
       <style jsx>{`
         .directory {
           margin: 16px 3px;
+          min-width: 400px;
         }
         .meta {
           cursor: pointer;

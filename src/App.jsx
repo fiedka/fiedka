@@ -2,26 +2,47 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Divider, Infobar, TextLine } from "@coalmines/indui";
 import { useFilePicker } from "use-file-picker";
-import gowasm from "./main.go";
 import { globalStyle, blockStyle } from "./global-style";
+
+import gowasm from "./main.go";
+import * as rswasm from "./rs/pkg";
+
 import { UtkContext } from "./context/UtkContext";
+
 import logo from "./img/art/fiedka.svg";
-import Feedback, { renderFeedback } from "./Analysis/Feedback";
-import Main from "./Analysis/Main";
 import { downloadU8a, downloadJson } from "./util/download";
+
 import FullScreenLoader from "./components/FullScreenLoader";
 import Loader from "./components/Loader";
+
 import LinuxBoot from "./UEFI/LinuxBoot";
+
 import { uefiActions } from "./UEFI/store";
 import { cbfsActions } from "./CBFS/store";
+import { mefsActions } from "./MEFS/store";
 import { amdActions, selectAmdMeta } from "./PSP/store";
 import { fmapActions } from "./Flash/store";
-import { romulan } from "./rs/pkg";
 
-const { fmap, cbfsana, utka, utkr, amdana, mklb } = gowasm;
+import Main from "./Analysis/Main";
+import Feedback, { renderFeedback } from "./Analysis/Feedback";
 
-// use this instead of the real utka for testing only amdana
-// const utka = () => Promise.reject("Skipping UEFI analysis");
+const stub = (name) => () => Promise.reject(`Skipping ${name}`);
+
+const DO_UTK = false;
+const DO_AMD = false;
+const DO_CBFS = false;
+const DO_MEFS = true;
+const DO_ROMULAN = false;
+
+// Go based API
+const { fmap, utkr, mklb } = gowasm;
+const cbfsana = DO_CBFS ? gowasm.cbfsana : stub("cbfs");
+const amdana = DO_AMD ? gowasm.amdana : stub("utk amd");
+const utka = DO_UTK ? gowasm.utka : stub("utk uefi");
+
+// Rust based API
+const mefs = DO_MEFS ? rswasm.mefs : stub("mefs");
+const romulan = DO_ROMULAN ? rswasm.romulan : stub("romulan");
 
 const getParseFeedback = ({ status: s, reason: r }) =>
   s === "rejected" && r ? r : null;
@@ -33,6 +54,7 @@ const getData = ({ status: s, value: v }) =>
 const fullScreenLoader = <FullScreenLoader />;
 
 const DEBUG_ROMULAN = true;
+const DEBUG_ME_FS = true;
 
 const Analyze = () => {
   const dispatch = useDispatch();
@@ -56,13 +78,24 @@ const Analyze = () => {
       dispatch(amdActions.clear());
       dispatch(cbfsActions.clear());
       dispatch(fmapActions.clear());
+      dispatch(mefsActions.clear());
       return;
     }
+
+    if (DEBUG_ROMULAN) {
+      console.log("ROMULAN: ", { ...d.amd });
+    }
+
+    if (DEBUG_ME_FS) {
+      console.log("ME FS: ", { ...d.mefs });
+    }
+
     dispatch(uefiActions.init(d.uefi));
     // dispatch(amdActions.init(d.amd));
     dispatch(amdActions.set(d.amd));
     dispatch(cbfsActions.init(d.cbfs));
     dispatch(fmapActions.init(d.fmap));
+    dispatch(mefsActions.init(d.mefs));
   };
 
   const saveData = () => {
@@ -81,33 +114,33 @@ const Analyze = () => {
         const res = await Promise.allSettled([
           // TODO: fmap should never fail, what should we do if it does though?
           fmap(indata, size),
-          // utka(indata, size),
-          // amdana(indata, size),
-          // cbfsana(indata, size),
+          utka(indata, size),
+          amdana(indata, size),
+          cbfsana(indata, size),
+          mefs([...indata]),
           romulan([...indata]),
         ]);
 
-        const rparsed = getData(res[1]);
-        if (DEBUG_ROMULAN) {
-          console.log("ROMULAN: ", { ...rparsed });
-        }
-        const { dirs } = rparsed;
+        // const rparsed = getData(res[2]);
         // TODO: create metadata from efs
-        const meta = {};
+        // const meta = {};
+        // const { dirs } = rparsed;
 
+        const m = getData(res[4]);
         setData({
           fmap: getParseData(res[0]),
-          // uefi: getParseData(res[1]),
-          // amd: getParseData(res[2]),
-          // cbfs: getParseData(res[3]),
-          amd: { dirs, meta },
+          uefi: getParseData(res[1]),
+          amd: getParseData(res[2]),
+          cbfs: getParseData(res[3]),
+          // TODO: metadata from header
+          mefs: m ? m.fpt : null,
         });
         setFeedback({
           uefi: getParseFeedback(res[1]),
-          /*
           amd: getParseFeedback(res[2]),
           cbfs: getParseFeedback(res[3]),
-          */
+          // TODO
+          mefs: null,
         });
       } catch (e) {
         console.error(e);

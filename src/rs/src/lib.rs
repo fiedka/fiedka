@@ -1,6 +1,7 @@
 extern crate wasm_bindgen;
 
 use gloo_utils::format::JsValueSerdeExt;
+use me_fs_rs::ME_FPT;
 use romulan::amd;
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
@@ -56,6 +57,49 @@ const FAM17_MODEL00_0F: &str = "Family 17 Model 00-0f";
 const FAM17_MODEL10_1F: &str = "Family 17 Model 10-1f";
 const NO_ENTRY: [u32; 2] = [0, 0xFFFF_FFFF];
 const BIOS_DIR_LVL2_ENTRY: u8 = 0x70;
+
+#[derive(Serialize, Deserialize)]
+struct MeRes {
+    size: u32,
+    fpt: ME_FPT,
+    err: String,
+}
+
+#[derive(Serialize, Deserialize)]
+struct ErrRes {
+    size: u32,
+    err: String,
+}
+
+#[wasm_bindgen]
+pub async fn mefs(data: JsValue) -> js_sys::Promise {
+    utils::set_panic_hook();
+
+    let bin: Bin = data.into_serde().unwrap();
+    println!("ME FS 🦀");
+
+    match me_fs_rs::parse(&bin) {
+        Ok(fpt) => {
+            let err = String::new();
+
+            let res = MeRes {
+                size: bin.len() as u32,
+                fpt,
+                err,
+            };
+            let res_val = JsValue::from_serde(&res).unwrap();
+            js_sys::Promise::resolve(&res_val)
+        }
+        Err(err) => {
+            let res = ErrRes {
+                size: bin.len() as u32,
+                err,
+            };
+            let res_val = JsValue::from_serde(&res).unwrap();
+            js_sys::Promise::resolve(&res_val)
+        }
+    }
+}
 
 #[wasm_bindgen]
 pub async fn romulan(data: JsValue) -> js_sys::Promise {

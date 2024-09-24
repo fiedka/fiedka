@@ -14,6 +14,10 @@ const getType = (e) => {
 };
 
 const PspDir = forwardRef(function PspDir({ dir }, ref) {
+  // console.info({ dir });
+  if (!dir) {
+    return null;
+  }
   const name = hexify(dir.address);
   const cs = dir.checksum
     ? `, checksum: ${hexifyUnprefixed(dir.checksum)}`

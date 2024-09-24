@@ -83,6 +83,9 @@ export const transformBiosDir = (dir, range, level) => ({
 export const transformAmdFw = (fw) => {
   // console.info({ fw });
   const dirs = [];
+  if (!fw.PSPDirectories) {
+    return dirs;
+  }
   fw.PSPDirectories.forEach((d) => {
     if (d.PSPDirectoryLevel1) {
       dirs.push(transformPspDir(d.PSPDirectoryLevel1, 1));
