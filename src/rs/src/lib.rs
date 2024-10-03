@@ -59,49 +59,6 @@ const FAM17_MODEL10_1F: &str = "Family 17 Model 10-1f";
 const NO_ENTRY: [u32; 2] = [0, 0xFFFF_FFFF];
 const BIOS_DIR_LVL2_ENTRY: u8 = 0x70;
 
-#[derive(Serialize, Deserialize)]
-struct MeRes {
-    size: u32,
-    fpt: ME_FPT,
-    err: String,
-}
-
-#[derive(Serialize, Deserialize)]
-struct ErrRes {
-    size: u32,
-    err: String,
-}
-
-#[wasm_bindgen]
-pub async fn mefs(data: JsValue) -> js_sys::Promise {
-    utils::set_panic_hook();
-
-    let bin: Bin = data.into_serde().unwrap();
-    println!("ME FS 🦀");
-
-    match me_fs_rs::parse(&bin) {
-        Ok(fpt) => {
-            let err = String::new();
-
-            let res = MeRes {
-                size: bin.len() as u32,
-                fpt,
-                err,
-            };
-            let res_val = JsValue::from_serde(&res).unwrap();
-            js_sys::Promise::resolve(&res_val)
-        }
-        Err(err) => {
-            let res = ErrRes {
-                size: bin.len() as u32,
-                err,
-            };
-            let res_val = JsValue::from_serde(&res).unwrap();
-            js_sys::Promise::resolve(&res_val)
-        }
-    }
-}
-
 #[wasm_bindgen]
 pub async fn romulan(data: JsValue) -> js_sys::Promise {
     utils::set_panic_hook();
@@ -110,7 +67,7 @@ pub async fn romulan(data: JsValue) -> js_sys::Promise {
     let rom = amd::Rom::new(&bin).unwrap();
     let efs = rom.efs();
 
-    println!("Romulan 🦀");
+    log!("Romulan 🦀");
 
     let mut dirs: Vec<BiosDir> = Vec::new();
 
@@ -164,4 +121,47 @@ pub async fn romulan(data: JsValue) -> js_sys::Promise {
     };
     let res_val = JsValue::from_serde(&res).unwrap();
     js_sys::Promise::resolve(&res_val)
+}
+
+#[derive(Serialize, Deserialize)]
+struct MeRes {
+    size: u32,
+    fpt: ME_FPT,
+    err: String,
+}
+
+#[derive(Serialize, Deserialize)]
+struct ErrRes {
+    size: u32,
+    err: String,
+}
+
+#[wasm_bindgen]
+pub async fn mefs(data: JsValue) -> js_sys::Promise {
+    utils::set_panic_hook();
+
+    let bin: Bin = data.into_serde().unwrap();
+    log!("ME FS 🦀");
+
+    match me_fs_rs::parse(&bin) {
+        Ok(fpt) => {
+            let err = String::new();
+
+            let res = MeRes {
+                size: bin.len() as u32,
+                fpt,
+                err,
+            };
+            let res_val = JsValue::from_serde(&res).unwrap();
+            js_sys::Promise::resolve(&res_val)
+        }
+        Err(err) => {
+            let res = ErrRes {
+                size: bin.len() as u32,
+                err,
+            };
+            let res_val = JsValue::from_serde(&res).unwrap();
+            js_sys::Promise::resolve(&res_val)
+        }
+    }
 }

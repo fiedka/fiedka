@@ -17,3 +17,13 @@ export const mefs = () => (
     />
   </MarkedEntriesProvider>
 );
+
+export const noFiles = () => (
+  <MarkedEntriesProvider>
+    <MEFS
+      name="x270.rom"
+      directories={[]}
+      entries={data.entries}
+    />
+  </MarkedEntriesProvider>
+);

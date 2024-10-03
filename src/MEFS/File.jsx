@@ -17,7 +17,7 @@ const toStr = (s) => {
 };
 
 const File = ({ data, open }) => {
-  const entry = { address: data.offset, length: data.size };
+  const entry = { address: data.address, length: data.size };
   const name = toStr(data.name);
   const header = (
     <header>
@@ -51,8 +51,12 @@ const File = ({ data, open }) => {
             <td>{data.compression_flag || "none"}</td>
           </tr>
           <tr>
-            <th>address</th>
+            <th>offset</th>
             <td>{hexify(data.offset)}</td>
+          </tr>
+          <tr>
+            <th>global offset</th>
+            <td>{hexify(data.globalOffset)}</td>
           </tr>
           <tr>
             <th>size</th>

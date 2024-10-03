@@ -15,18 +15,31 @@ const getFiles = (d) => {
     return d.entries;
 };
 
-const MEFS = ({ directories, entries }) => {
+// add the actual offset within the file
+const transformFile = (file, fptBase, partitionOffset) => ({
+  ...file,
+  globalOffset: fptBase + partitionOffset + file.offset
+});
+
+const MEFS = ({ directories, entries, base }) => {
   return entries.map((e) => {
     const name = tSig(e.name);
     const dir = directories.find(([n, d]) => n === name);
     const files = dir ? getFiles(dir[1]) : [];
+    const renderFile = (f, open) => (
+      <File
+        key={f.offset}
+        data={transformFile(f, base, e.offset)}
+        open={open}
+      />
+    );
     return (
-    <Directory
-      key={name}
-      name={name}
-      files={files}
-      renderFile={(f, open) => <File key={f.offset} data={f} open={open} />}
-    />
+      <Directory
+        key={name}
+        name={name}
+        files={files}
+        renderFile={renderFile}
+      />
     );
   });
 };
