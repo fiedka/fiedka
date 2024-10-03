@@ -7,6 +7,7 @@ use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::JsFuture;
 
+#[macro_use]
 mod utils;
 
 const OFFSET_ADDR_MASK: u32 = 0x00FF_FFFF;

@@ -26,6 +26,7 @@ romulan = { path = "../../../romulan" }
 me_fs_rs = { path = "../../../me_fs_rs" }
 wasm-bindgen-futures = "0.4.37"
 js-sys = "0.3.64"
+web-sys = { version = "0.3.70", features = ["console"] }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.34"
