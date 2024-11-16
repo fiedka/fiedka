@@ -24,7 +24,7 @@ const MEFS = ({ base , entries, directories, gen2dirs}) => {
     const files = dir ? dir.entries : [];
     const renderFile = (f, open) => (
       <File
-        key={f.offset}
+        key={f.name}
         data={transformFile(f, base, e.offset)}
         open={open}
       />
