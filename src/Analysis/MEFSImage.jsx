@@ -10,7 +10,7 @@ import MEFS from "../MEFS/MEFS";
 const jumpToTop = () => window.scrollTo(0, 2);
 
 const MEFSImage = ({ data, fmap, name }) => {
-  const { directories, entries, header, base } = data;
+  const { header, base, entries, directories, gen2dirs } = data;
   return (
     <MarkedEntriesProvider>
       <Layout
@@ -34,7 +34,7 @@ const MEFSImage = ({ data, fmap, name }) => {
             </span>
           </header>
           <section>
-            <MEFS directories={directories} entries={entries} base={base} />
+            <MEFS {...{base, entries, directories, gen2dirs}} />
           </section>
         </div>
       </Layout>

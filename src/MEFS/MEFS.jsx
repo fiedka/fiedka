@@ -11,21 +11,17 @@ const tSig = (s) => {
   return r;
 };
 
-const getFiles = (d) => {
-    return d.entries;
-};
-
 // add the actual offset within the file
 const transformFile = (file, fptBase, partitionOffset) => ({
   ...file,
   globalOffset: fptBase + partitionOffset + file.offset
 });
 
-const MEFS = ({ directories, entries, base }) => {
+const MEFS = ({ base , entries, directories, gen2dirs}) => {
   return entries.map((e) => {
     const name = tSig(e.name);
-    const dir = directories.find(([n, d]) => n === name);
-    const files = dir ? getFiles(dir[1]) : [];
+    const dir = directories.find(d => d.name === name) || gen2dirs.find(d => d.name === name);
+    const files = dir ? dir.entries : [];
     const renderFile = (f, open) => (
       <File
         key={f.offset}

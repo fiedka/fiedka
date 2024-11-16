@@ -102,6 +102,17 @@ const Analyze = () => {
     downloadJson("export.json", store);
   };
 
+  const getAmdFromRomulan = (r) => {
+    if (!r || !DO_ROMULAN) {
+      return null;
+    }
+    const rparsed = getData(r);
+    // TODO: create metadata from efs
+    const meta = {};
+    const { dirs } = rparsed;
+    return { meta, dirs };
+  };
+
   const analyze = async (indata, size) => {
     setInProgress(true);
     setData(null);
@@ -121,16 +132,11 @@ const Analyze = () => {
           romulan([...indata]),
         ]);
 
-        // const rparsed = getData(res[2]);
-        // TODO: create metadata from efs
-        // const meta = {};
-        // const { dirs } = rparsed;
-
         const m = getData(res[4]);
         setData({
           fmap: getParseData(res[0]),
           uefi: getParseData(res[1]),
-          amd: getParseData(res[2]),
+          amd: DO_AMD ? getParseData(res[2]) : getAmdFromRomulan(res[5]),
           cbfs: getParseData(res[3]),
           // TODO: metadata from header
           mefs: m ? m.fpt : null,

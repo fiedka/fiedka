@@ -5,7 +5,7 @@ use me_fs_rs::ME_FPT;
 use romulan::amd;
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
-use wasm_bindgen_futures::JsFuture;
+// use wasm_bindgen_futures::JsFuture;
 
 #[macro_use]
 mod utils;
@@ -35,8 +35,8 @@ struct Res {
     err: String,
 }
 
-fn parse_bios_dir(bin: &[u8], family: String) -> BiosDir {
-    let dir = amd::directory::BiosDirectory::new(bin);
+fn parse_bios_dir(bin: &[u8], family: String, offset: usize) -> BiosDir {
+    let dir = amd::directory::BiosDirectory::new(bin, offset);
     let d = dir.unwrap();
     let header = d.header();
     let entries = d
@@ -56,7 +56,7 @@ fn parse_bios_dir(bin: &[u8], family: String) -> BiosDir {
 
 const FAM17_MODEL00_0F: &str = "Family 17 Model 00-0f";
 const FAM17_MODEL10_1F: &str = "Family 17 Model 10-1f";
-const NO_ENTRY: [u32; 2] = [0, 0xFFFF_FFFF];
+const NO_ENTRY: [u32; 2] = [0x0000_0000, 0xFFFF_FFFF];
 const BIOS_DIR_LVL2_ENTRY: u8 = 0x70;
 
 #[wasm_bindgen]
@@ -75,14 +75,14 @@ pub async fn romulan(data: JsValue) -> js_sys::Promise {
     if !NO_ENTRY.contains(&e) {
         let offset = (efs.bios_17_00_0f & OFFSET_ADDR_MASK) as usize;
         let family = FAM17_MODEL00_0F.to_string();
-        let bd = parse_bios_dir(&bin[offset..], family.clone());
+        let bd = parse_bios_dir(&bin[offset..], family.clone(), offset);
         if let Some(e) = bd
             .entries
             .iter()
             .find(|e| e.entry.kind == BIOS_DIR_LVL2_ENTRY)
         {
             let offset = (e.entry.source as u32 & OFFSET_ADDR_MASK) as usize;
-            let bd = parse_bios_dir(&bin[offset..], family);
+            let bd = parse_bios_dir(&bin[offset..], family, offset);
             dirs.push(bd);
         };
         dirs.push(bd);
@@ -98,14 +98,14 @@ pub async fn romulan(data: JsValue) -> js_sys::Promise {
     if !NO_ENTRY.contains(&e) {
         let offset = (efs.bios_17_10_1f & OFFSET_ADDR_MASK) as usize;
         let family = FAM17_MODEL10_1F.to_string();
-        let bd = parse_bios_dir(&bin[offset..], family.clone());
+        let bd = parse_bios_dir(&bin[offset..], family.clone(), offset);
         if let Some(e) = bd
             .entries
             .iter()
             .find(|e| e.entry.kind == BIOS_DIR_LVL2_ENTRY)
         {
             let offset = (e.entry.source as u32 & OFFSET_ADDR_MASK) as usize;
-            let bd = parse_bios_dir(&bin[offset..], family);
+            let bd = parse_bios_dir(&bin[offset..], family, offset);
             dirs.push(bd);
         };
         dirs.push(bd);

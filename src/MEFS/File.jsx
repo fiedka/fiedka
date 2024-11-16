@@ -17,7 +17,7 @@ const toStr = (s) => {
 };
 
 const File = ({ data, open }) => {
-  const entry = { address: data.address, length: data.size };
+  const entry = { address: data.globalOffset, length: data.size };
   const name = toStr(data.name);
   const header = (
     <header>
