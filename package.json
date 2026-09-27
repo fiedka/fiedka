@@ -11,8 +11,9 @@
     "make": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge make",
     "publish": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge publish",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint --ext .ts,.tsx,.js,.jsx src/",
-    "fmt": "prettier --write src/*.jsx src/**/*.jsx",
+    "lint": "biome lint src/",
+    "check": "biome check src/",
+    "format": "biome format --write src/",
     "test": "jest"
   },
   "repository": {
@@ -74,6 +75,7 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
+    "@biomejs/biome": "^2.5.14",
     "@coalmines/indui": "^1.6.0",
     "@reduxjs/toolkit": "^1.9.7",
     "classnames": "^2.3.2",
