@@ -1,5 +1,4 @@
 import type { ForgeConfig } from "@electron-forge/shared-types";
-import { PublisherGithub } from "@electron-forge/publisher-github";
 import { MakerSquirrel } from "@electron-forge/maker-squirrel";
 import { MakerZIP } from "@electron-forge/maker-zip";
 import { MakerDeb } from "@electron-forge/maker-deb";
@@ -66,12 +65,15 @@ const config: ForgeConfig = {
     }),
   ],
   publishers: [
-    new PublisherGithub({
-      repository: {
-        owner: "fiedka",
-        name: "fiedka",
+    {
+      name: "@electron-forge/publisher-github",
+      config: {
+        repository: {
+          owner: "fiedka",
+          name: "fiedka"
+        },
       },
-    }),
+    },
   ],
 };
 
