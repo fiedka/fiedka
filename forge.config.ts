@@ -5,12 +5,10 @@ import { MakerDeb } from "@electron-forge/maker-deb";
 import { MakerRpm } from "@electron-forge/maker-rpm";
 import { MakerDMG } from "@electron-forge/maker-dmg";
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives";
-import { WebpackPlugin } from "@electron-forge/plugin-webpack";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 
-import { mainConfig } from "./webpack.main.config";
-import { rendererConfig } from "./webpack.renderer.config";
+import webpackPlugin from "./forge.webpack";
 
 const config: ForgeConfig = {
   packagerConfig: {
@@ -28,30 +26,7 @@ const config: ForgeConfig = {
   ],
   plugins: [
     new AutoUnpackNativesPlugin({}),
-    new WebpackPlugin({
-      devServer: {
-        client: {
-          overlay: {
-            errors: true,
-            warnings: false,
-          },
-        },
-      },
-      mainConfig,
-      renderer: {
-        config: rendererConfig,
-        entryPoints: [
-          {
-            html: "./src/index.html",
-            js: "./src/renderer.ts",
-            name: "main_window",
-            preload: {
-              js: "./src/preload.ts",
-            },
-          },
-        ],
-      },
-    }),
+    webpackPlugin,
     // Fuses are used to enable/disable various Electron functionality
     // at package time, before code signing the application
     new FusesPlugin({

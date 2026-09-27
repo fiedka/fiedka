@@ -1,12 +1,19 @@
 import type { ModuleOptions } from "webpack";
 
+export const cssRule = {
+  test: /\.css$/,
+  use: [{ loader: "style-loader" }, { loader: "css-loader" }],
+};
+
 export const rules: Required<ModuleOptions>["rules"] = [
   {
-    // We"re specifying native_modules in the test because the asset relocator loader generates a
-    // "fake" .node file which is really a cjs file.
+    // We"re specifying native_modules in the test because the asset relocator
+    // loader generates a  "fake" .node file which is really a cjs file.
     test: /native_modules[/\\].+\.node$/,
     use: "node-loader",
   },
+  // NOTE: Currently broken, and apparently not needed. Fix if necessary.
+  /*
   {
     test: /[/\\]node_modules[/\\].+\.(m?js|node)$/,
     parser: { amd: false },
@@ -17,6 +24,7 @@ export const rules: Required<ModuleOptions>["rules"] = [
       },
     },
   },
+  */
   {
     test: /\.jsx?$/,
     use: {

@@ -10,6 +10,7 @@
     "package": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge package",
     "make": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge make",
     "publish": "GOPATH=$(pwd) GOROOT=$(go env GOROOT) electron-forge publish",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx src/",
     "fmt": "prettier --write src/*.jsx src/**/*.jsx",
     "test": "jest"
